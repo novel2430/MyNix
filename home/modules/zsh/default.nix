@@ -11,7 +11,7 @@
       (lib.mkIf (opt-config.use-proxy == true) ''
         export http_proxy="${opt-config.http-proxy}"
         export https_proxy="${opt-config.https-proxy}"
-        alias nixos-rebuild="http_proxy=${opt-config.http-proxy} https_proxy=${opt-config.https-proxy} nixos-rebuild"
+        alias nixos-rebuild="sudo http_proxy=${opt-config.http-proxy} https_proxy=${opt-config.https-proxy} nixos-rebuild"
       '')
       # Other Stuff
       (''
