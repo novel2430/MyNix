@@ -2,6 +2,6 @@
 {
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "Hack" "JetBrainsMono" "RobotoMono" "Ubuntu" "DejaVuSansMono" ]; })
-    custom-pkgs.latex-chinese-fonts
+    nur.repos.novel2430.latex-chinese-fonts
   ];
 }
