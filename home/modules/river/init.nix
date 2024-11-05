@@ -191,8 +191,10 @@
       # Custom Key Binding
       ## Reload RiverWM <Super+Shiht+R>
       riverctl map normal Super+Shift R spawn "~/.config/river/init reload"
-      ## Wofi
+      ## Wofi Desktop Menu
       riverctl map normal Super D spawn "${wofi}/bin/wofi --show drun"
+      ## Wofi Run Menu
+      riverctl map normal Super R spawn "${wofi}/bin/wofi --show run"
       ## Brave Browser
       riverctl map normal Super+Shift F spawn "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4"
       ## Clipboard
