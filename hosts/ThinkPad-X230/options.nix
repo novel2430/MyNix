@@ -1,3 +1,4 @@
+{pkgs, unstable-pkgs, ...}:
 {
   opt-config = rec {
     # Basic
@@ -54,6 +55,14 @@
     #   "eDP-1, disable"
     # ];
     hypr-monitors = [
+    ];
+
+    # Packages For this Machine
+    packages = with pkgs; [
+      hmcl
+      puddletag
+      audacity
+      shotcut
     ];
 
     # Use Clash

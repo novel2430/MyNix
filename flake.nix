@@ -26,7 +26,7 @@
     #   Timi-TM1701
     Default-conf = rec {
       name = "Default";
-      config = (import ./hosts/${name}/options.nix).opt-config;
+      config = (import ./hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
     };
     LENOVO-5C2-conf = rec {
       name = "LENOVO-Torronto-5C2";
@@ -38,7 +38,7 @@
     };
     ThinkPad-X230-conf = rec {
       name = "ThinkPad-X230";
-      config = (import ./hosts/${name}/options.nix).opt-config;
+      config = (import ./hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
     };
     ASUSTek-conf = rec {
       name = "ASUSTek";
@@ -46,7 +46,7 @@
     };
     MAXSUN-b450m-conf = rec {
       name = "MAXSUN-b450m";
-      config = (import ./hosts/${name}/options.nix).opt-config;
+      config = (import ./hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
     };
 
     # Superset of the default unfree packages
@@ -55,14 +55,12 @@
       "nvidia-settings"
       "nvidia-persistenced"
       "spotify"
-      "wpsoffice-cn"
       "wpsoffice"
       "baidunetdisk"
       "dingtalk"
       "qq"
       "wechat-universal-bwrap"
       "wemeet-bin-bwrap"
-      "wechat-uos"
     ];
     # Superset of the default insecure packages
     allowed-insecure-packages = [

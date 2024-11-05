@@ -26,7 +26,6 @@
       amberol
       zathura
       image-roll
-      shotcut
       spotify
       motrix
       gnome.file-roller
@@ -35,22 +34,11 @@
       rustc
       cargo
       appimage-run
-      ryujinx
-      nsz
       brightnessctl
-      docker
-      qemu
-      virt-manager
       wlr-randr
-      audacity
       ffmpeg
       vlc
-      abcde
-      cdrkit
-      wavpack
       ifuse
-      puddletag
-      hmcl
       # Modify Packages
       ## modify-pkgs.*
       # Custom Packages
@@ -67,6 +55,9 @@
       nur.repos.xddxdd.dingtalk
       nur.repos.xddxdd.qq
     ])
+    (
+      opt-config.packages
+    )
   ];
 
   # XDG_DATA_DIRS

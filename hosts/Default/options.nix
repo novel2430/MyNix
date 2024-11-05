@@ -1,3 +1,4 @@
+{pkgs, unstable-pkgs, ...}:
 {
   opt-config = rec {
     # Basic
