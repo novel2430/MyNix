@@ -54,6 +54,7 @@
       virt-manager
       ryujinx
       nsz
+      openttd
     ];
 
     # Use Clash
