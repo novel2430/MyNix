@@ -7,6 +7,10 @@
     oh-my-zsh.plugins = [ "git" ];
     oh-my-zsh.theme = "robbyrussell";
     syntaxHighlighting.enable = true;
+    shellAliases = {
+      showimage = "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations";
+      delimage = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
+    };
     initExtra = lib.mkMerge [
       (lib.mkIf (opt-config.use-proxy == true) ''
         export http_proxy="${opt-config.http-proxy}"
