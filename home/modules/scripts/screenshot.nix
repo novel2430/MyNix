@@ -4,7 +4,7 @@ let
   slurp_cmd = "${pkgs.slurp}/bin/slurp";
   dunstify_cmd = "${pkgs.dunst}/bin/dunstify";
 in
-pkgs.writeShellScriptBin "my-screenshot" ''
+pkgs.writeShellScriptBin "grim-slurp-screenshot" ''
   path="${opt-config.screenshot-dir}"
   now_date=''$(date '+%Y%m%d-%H%M%S')
   file_name="''${path}/''${now_date}.png"

@@ -63,13 +63,13 @@ let
       binding_light_up = "KEY_BRIGHTNESSUP";
       binding_light_down = "KEY_BRIGHTNESSDOWN";
       binding_power_menu = "<super> <shift> KEY_P";
-      command_clipboard = "my-show-clipboard";
+      command_clipboard = "wlroot-clipboard";
       command_launcher = "wofi --show drun";
       command_lock = "my-swaylock manual";
       command_mute = "my-volume mute";
       command_run_launcher = "wofi --show run";
-      command_screenshot = "my-screenshot full";
-      command_screenshot_interactive = "my-screenshot select";
+      command_screenshot = "grim-slurp-screenshot full";
+      command_screenshot_interactive = "grim-slurp-screenshot select";
       command_terminal = "foot";
       command_volume_down = "my-volume down";
       command_volume_up = "my-volume up";
@@ -77,7 +77,7 @@ let
       command_light_down = "brightnessctl set 10%-";
       command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
       command_waybar = "killall waybar; ~/.config/wayfire/bar-run.sh";
-      command_power_menu = "my-power";
+      command_power_menu = "wofi-power-menu";
       repeatable_binding_volume_down = "KEY_VOLUMEDOWN";
       repeatable_binding_volume_up = "KEY_VOLUMEUP";
     };

@@ -1,5 +1,5 @@
 {pkgs, opt-config, ...}:
-pkgs.writeShellScriptBin "my-power" ''
+pkgs.writeShellScriptBin "wofi-power-menu" ''
   reboot_menu="Reboot"
   shutdown_menu="Shutdown"
   lock_menu="Lock"

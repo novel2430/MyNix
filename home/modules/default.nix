@@ -18,7 +18,6 @@
     ./fzf
     ./fonts
     ./scripts
-    # ./hypr <- Xwayland in Hyprland has some bugs
   ]
   ;
 }
