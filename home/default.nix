@@ -50,8 +50,9 @@
       wavpack
       ifuse
       puddletag
+      hmcl
       # Modify Packages
-      modify-pkgs.hmcl
+      # modify-pkgs.hmcl
       # modify-pkgs.openttd
       # Custom Packages
       ## custom-pkgs.*
