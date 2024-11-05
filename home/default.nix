@@ -52,8 +52,7 @@
       puddletag
       hmcl
       # Modify Packages
-      # modify-pkgs.hmcl
-      # modify-pkgs.openttd
+      ## modify-pkgs.*
       # Custom Packages
       ## custom-pkgs.*
       # Unstable
