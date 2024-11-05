@@ -4,21 +4,21 @@
     (import ./volume.nix {
       inherit pkgs;
     })
-    (import ./power.nix {
+    (import ./wofi-power-menu.nix {
       inherit pkgs;
       inherit opt-config;
     })
-    (import ./screenshot.nix {
+    (import ./grim-slurp-screenshot.nix {
       inherit pkgs;
       inherit opt-config;
     })
-    (import ./show-clipboard.nix {
+    (import ./wlroot-clipboard.nix {
       inherit pkgs;
     })
-    (import ./swayidle.nix {
+    (import ./my-swayidle.nix {
       inherit pkgs;
     })
-    (import ./swaylock.nix {
+    (import ./my-swaylock.nix {
       inherit pkgs;
       inherit opt-config;
     })
