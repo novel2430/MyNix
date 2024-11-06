@@ -1,7 +1,7 @@
 { config, pkgs, lib, opt-config, ... }:
 {
   imports = [
-    ./init.nix
+    ./generate-init.nix
     ./scripts
   ];
 
