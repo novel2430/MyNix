@@ -60,7 +60,6 @@
     # Packages For this Machine
     packages = with pkgs; [
       hmcl
-      puddletag
       audacity
       shotcut
     ];
