@@ -58,6 +58,9 @@ let
       riverctl map normal ${binding.keybindings.all-tags} set-focused-tags $all_tags
     ''
   );
+  formatKeybindingPointer = binding: (
+      "riverctl map-pointer normal ${binding.keys} ${binding.action}"
+  );
 in
 with config; {
   home.file.".config/river/init" = {
@@ -69,6 +72,8 @@ with config; {
       ${concatStringsSep "\n" (builtins.map formatKeybindingBasic keybindings.basic)}
       # Apps
       ${concatStringsSep "\n" (builtins.map formatKeybindingApps keybindings.apps)}
+      # Pointer
+      ${concatStringsSep "\n" (builtins.map formatKeybindingPointer keybindings.pointer)}
 
       # Background and Border configuration
       ${concatStringsSep "\n" (mapAttrsToList formatBackgroundBorderSettings background-border-settings)}

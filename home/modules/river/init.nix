@@ -58,6 +58,10 @@ rec {
       # Reload Config
       { modes = ["normal"]; keys = "Super+Shift R"; action = "~/.config/river/init reload"; }
     ];
+    pointer = [
+      { keys = "Super BTN_LEFT"; action = "move-view"; }
+      { keys = "Super BTN_RIGHT"; action = "resize-view"; }
+    ];
   };
   # Define View Rules
   view-rules = {
