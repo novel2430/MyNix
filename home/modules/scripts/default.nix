@@ -22,5 +22,9 @@
       inherit pkgs;
       inherit opt-config;
     })
+    (import ./update-my-web.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
   ];
 }
