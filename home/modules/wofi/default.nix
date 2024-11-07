@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ opt-config, pkgs, ... }:
 
 {
-  home.file.".config/wofi/config".source = ./config;
-  home.file.".config/wofi/style.css".source = ./style.css;
+  imports = [
+    ./generate.nix
+  ];
   home.packages = [
     pkgs.wofi
   ];
