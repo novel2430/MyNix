@@ -55,6 +55,7 @@
       ryujinx
       nsz
       openttd
+      hugo
     ];
 
     # Use Clash
