@@ -61,6 +61,8 @@
       "qq"
       "wechat-universal-bwrap"
       "wemeet-bin-bwrap"
+      "amdgpu-pro"
+      "wechat-uos"
     ];
     # Superset of the default insecure packages
     allowed-insecure-packages = [
