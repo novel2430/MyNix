@@ -24,6 +24,7 @@
     ./polybar
     ./rofi
     ./alacritty
+    ./tint2
   ]
   ;
 }

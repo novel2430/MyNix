@@ -14,6 +14,7 @@
       ${feh}/bin/feh --bg-fill ${opt-config.wall-img}
       ${networkmanagerapplet}/bin/nm-applet &
       killall ${polybar}/bin/polybar; ${polybar}/bin/polybar &
+      killall ${tint2}/bin/tint2; ${tint2}/bin/tint2 &
       fcitx5 --replace -d &
     '';
     executable = true;
