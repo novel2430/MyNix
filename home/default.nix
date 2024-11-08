@@ -47,7 +47,7 @@
       ## unstable.*
       # NUR
       nur.repos.novel2430.wemeet-bin-bwrap
-      nur.repos.novel2430.wechat-universal-beta-bwrap
+      nur.repos.novel2430.wechat-universal-bwrap
       nur.repos.novel2430.zju-connect
       nur.repos.novel2430.wpsoffice
       nur.repos.xddxdd.baidunetdisk
