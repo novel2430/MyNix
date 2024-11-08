@@ -17,6 +17,7 @@
     ./modules/xdg.nix
     ./modules/obs-virtual-camera.nix
     ./modules/sudo.nix
+    ./modules/snd-usb-audio.nix
   ]
   ++
   lib.optionals (opt-config.gpu-type == "nvidia") [
