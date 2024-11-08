@@ -1,0 +1,17 @@
+[window]
+decorations = "Full"
+# startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
+startup_mode = "Maximized"
+
+[scrolling]
+history = 30000
+multiplier = 3
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+size = 16
+
+[colors.primary]
+background = "#3b4252"
+foreground = "#eceff4"
+

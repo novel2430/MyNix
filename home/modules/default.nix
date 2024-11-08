@@ -19,6 +19,11 @@
     ./fonts
     ./scripts
     ./river
+    ./openbox
+    ./sxhkd
+    ./polybar
+    ./rofi
+    ./alacritty
   ]
   ;
 }

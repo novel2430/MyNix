@@ -12,6 +12,10 @@
       inherit pkgs;
       inherit opt-config;
     })
+    (import ./scrot-screenshot.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
     (import ./wlroot-clipboard.nix {
       inherit pkgs;
     })

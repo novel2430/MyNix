@@ -1,0 +1,52 @@
+* {
+  background-color: #3b4252;
+  text-color: #eceff4;
+  font: "Hack Nerd Font Normal Regular 15";
+  padding: 0px;
+}
+window {
+  background-color: #3b4252;
+  width: 25%;
+  height: 25%;
+  padding: 0px;
+}
+mainbox {
+  background-color: #3b4252;
+  children: [ inputbar, listview ];
+  padding: 0px;
+}
+inputbar {
+  text-color: #eceff4;
+  background-color: #3b4252;
+  children: [ entry ];
+  padding: 0px;
+}
+entry {
+  placeholder: "Type here ...";
+  orientation: horizontal;
+  background-color: #3b4252;
+  text-color: #eceff4;
+  padding: 5px;
+  blink: true;
+}
+listview {
+  text-color: #eceff4;
+  background-color: #3b4252;
+  padding: 0px;
+  scrollbar: false;
+  border: 0px;
+}
+element {
+  children: [ element-text ];
+  cursor: pointer;
+  padding: 0px;
+}
+element-text selected {
+  background-color: #6e7275;
+  padding: 10px;
+}
+element-text {
+  text-color: #eceff4;
+  background-color: #3b4252;
+  padding: 10px;
+}

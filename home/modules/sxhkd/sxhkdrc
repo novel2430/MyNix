@@ -1,0 +1,10 @@
+#
+# My Hotkeys
+#
+
+# Rofi
+super + d
+  rofi -show drun
+# Brave
+super + shift + f
+  brave
