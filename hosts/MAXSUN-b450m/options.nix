@@ -12,9 +12,9 @@
     # Screenshots Directory
     screenshot-dir = "/home/${username}/Pictures/screenshot";
     # Wallpaper
-    lock-img = "/home/${username}/.config/wayfire/lock.png";
+    lock-img = "/home/${username}/.config/pics/lock";
     # Lock Paper
-    wall-img = "/home/${username}/.config/wayfire/wall.png";
+    wall-img = "/home/${username}/.config/pics/wall";
 
     # intel, nvidia, intel-nvidia
     gpu-type = "amd";

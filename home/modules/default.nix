@@ -25,6 +25,7 @@
     ./rofi
     ./alacritty
     ./tint2
+    ./pics
   ]
   ;
 }
