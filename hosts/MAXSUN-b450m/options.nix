@@ -56,6 +56,7 @@
       nsz
       openttd
       hugo
+      # distrobox
     ];
 
     # Use Clash

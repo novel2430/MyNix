@@ -1,8 +1,8 @@
-{ modify-pkgs, ... }:
+{ modify-pkgs, pkgs, ... }:
 {
   programs.chromium = {
     enable = true;
-    package = modify-pkgs.brave;
+    package = pkgs.brave;
     extensions = [
       { id = "padekgcemlokbadohgkifijomclgjgif"; } # Proxy SwitchyOmega
       { id = "dhdgffkkebhmkfjojejmpbldmpobfkfo"; } # TamperMonkey

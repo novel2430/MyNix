@@ -18,6 +18,7 @@
     ./modules/obs-virtual-camera.nix
     ./modules/sudo.nix
     ./modules/snd-usb-audio.nix
+    ./modules/docker.nix
   ]
   ++
   lib.optionals (opt-config.gpu-type == "nvidia") [
@@ -100,7 +101,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${opt-config.username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "libvirtd" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "video" "libvirtd" "docker"]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
