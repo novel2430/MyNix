@@ -26,6 +26,7 @@
     ./alacritty
     ./tint2
     ./pics
+    ./mpv
   ]
   ;
 }
