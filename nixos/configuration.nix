@@ -180,6 +180,8 @@
   services.dbus.enable = true;
   # rtkit
   security.rtkit.enable = true;
+  # usbmuxd
+  services.usbmuxd.enable = true;
   # Pipewire
   services.pipewire = {
     enable = true;
