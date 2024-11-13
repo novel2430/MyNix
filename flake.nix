@@ -63,6 +63,7 @@
       "wemeet-bin-bwrap"
       "amdgpu-pro"
       "wechat-uos"
+      "widevine-cdm"
     ];
     # Superset of the default insecure packages
     allowed-insecure-packages = [

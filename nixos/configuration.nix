@@ -162,6 +162,7 @@
     edk2
     usbmuxd
     libimobiledevice
+    widevine-cdm
   ];
   environment.variables.EDITOR = "vim";
 
