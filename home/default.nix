@@ -39,6 +39,7 @@
       ffmpeg
       vlc
       ifuse
+      mpv
       # Modify Packages
       ## modify-pkgs.*
       # Custom Packages

@@ -27,6 +27,7 @@
     ./tint2
     ./pics
     ./mpv
+    ./qutebrowser
   ]
   ;
 }
