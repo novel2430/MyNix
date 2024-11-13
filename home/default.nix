@@ -44,7 +44,7 @@
       ## modify-pkgs.*
       # Custom Packages
       ## custom-pkgs.*
-      custom-pkgs.qutebrowser
+      # custom-pkgs.qutebrowser
       # Unstable
       ## unstable.*
       unstable.distrobox
