@@ -56,7 +56,7 @@
       nsz
       openttd
       hugo
-      # distrobox
+      unstable-pkgs.distrobox
     ];
 
     # Use Clash
@@ -75,9 +75,6 @@
     use-zju-rvpn = false;
     zju-rvpn-port = "7895";
     zju-rvpn-config = "/home/${username}/zjuconnect/config.toml";
-
-    # In China
-    in-china = true;
 
     # Use AutoCPU
     autocpu = false;

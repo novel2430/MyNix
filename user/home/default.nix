@@ -44,10 +44,8 @@
       ## modify-pkgs.*
       # Custom Packages
       ## custom-pkgs.*
-      # custom-pkgs.qutebrowser
       # Unstable
       ## unstable.*
-      unstable.distrobox
       # NUR
       nur.repos.novel2430.wemeet-bin-bwrap
       nur.repos.novel2430.wechat-universal-bwrap

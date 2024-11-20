@@ -6,20 +6,20 @@
 
     # Git
     gitname = "novel2430";
-    gitmail = "novel2430@163.com";
+    gitmail = "";
     gitbranch = "main";
 
     # Screenshots Directory
     screenshot-dir = "/home/${username}/Pictures/screenshot";
     # Wallpaper
-    lock-img = "/home/${username}/.config/wayfire/lock.png";
+    lock-img = "/home/${username}/.config/pics/lock";
     # Lock Paper
-    wall-img = "/home/${username}/.config/wayfire/wall.png";
+    wall-img = "/home/${username}/.config/pics/wall";
 
     # intel, nvidia, intel-nvidia
     gpu-type = "intel";
-    intel-bus-id = "PCI:0:2:0";
-    nvidia-bus-id = "PCI:3:0:0";
+    intel-bus-id = "";
+    nvidia-bus-id = "";
 
     # Monitors (For Wayfire Config)
     # Example :
@@ -40,11 +40,15 @@
     # ];
     hypr-monitors = [];
 
+    # Packages For this Machine
+    packages = with pkgs; [
+    ];
+
     # Use Clash
     use-clash = false;
     clash-dir = "/home/${username}/clash";
     # Proxy
-    use-proxy = false;
+    use-proxy = true;
     http-proxy-host = "127.0.0.1";
     http-proxy-port = "7890";
     https-proxy-host = "127.0.0.1";
@@ -56,9 +60,6 @@
     use-zju-rvpn = false;
     zju-rvpn-port = "7895";
     zju-rvpn-config = "/home/${username}/zjuconnect/config.toml";
-
-    # In China
-    in-china = true;
 
     # Use AutoCPU
     autocpu = false;

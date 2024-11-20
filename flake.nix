@@ -65,7 +65,7 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.${host-conf.config.username} = import ./home;
+          home-manager.users.${host-conf.config.username} = import ./user/home;
           home-manager.extraSpecialArgs = {
             inherit inputs;
             opt-config = host-conf.config;
