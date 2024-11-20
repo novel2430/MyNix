@@ -1,0 +1,58 @@
+{pkgs, ...}:
+{
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    curl
+    git
+    tree
+    htop
+    gnumake
+    cmake
+    meson
+    gcc
+    gnutar
+    htop
+    ninja
+    zip
+    xz
+    unzip
+    p7zip
+    ripgrep
+    jq
+    yq-go
+    file
+    which
+    gnused
+    gawk
+    zstd
+    strace
+    ltrace
+    lsof
+    pciutils
+    usbutils
+    lshw
+    dconf
+    shared-mime-info
+    glib
+    swaylock-effects
+    python312
+    xdg-utils
+    maven
+    jdk17
+    jdk21
+    psmisc
+    glfw
+    libvirt
+    dnsmasq
+    bridge-utils
+    flex
+    bison
+    iptables
+    edk2
+    usbmuxd
+    libimobiledevice
+    widevine-cdm
+  ];
+
+}
