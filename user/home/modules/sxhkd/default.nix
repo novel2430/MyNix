@@ -36,6 +36,12 @@
       # screenshot select
       super + Print
         scrot-screenshot select
+      # Brightness up
+      XF86MonBrightnessUp
+        ${brightnessctl}/bin/brightnessctl set +10%
+      # Brightness down
+      XF86MonBrightnessDown
+        ${brightnessctl}/bin/brightnessctl set 10%-
     '';
   };
   home.packages = [
