@@ -9,7 +9,7 @@ multiplier = 3
 
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }
-size = 16
+size = 13
 
 [colors.primary]
 background = "#3b4252"
