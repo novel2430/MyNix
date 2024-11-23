@@ -33,13 +33,13 @@
     # }
     monitors = {
     };
-    # Monitors (For Hyprland Config)
-    # Example :
-    # hypr-monitors = [
-    #   "eDP-1, disable"
-    # ];
-    hypr-monitors = [];
 
+    # WM Options
+    wm-options = {
+      wayfire = false;
+      river = false;
+      openbox = true;
+    };
     # Packages For this Machine
     packages = with pkgs; [
     ];

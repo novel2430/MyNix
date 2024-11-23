@@ -1,34 +1,46 @@
-{lib, opt-config, modify-pkgs, ...}:
+{opt-config, lib, ...}:
 {
   imports = [
     ./ssh
     ./git
     ./bash
-    ./brave
     ./zsh
     ./fcitx5
-    ./wayfire
     ./theme
-    ./foot
     ./dunst
-    ./wofi
     ./neovim
     ./tmux
     ./mimetype
     ./fzf
     ./fonts
     ./scripts
+    ./pics
+    ./mpv
+    ./qutebrowser
+    ./brave
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.wayfire) [
+    ./wayfire
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.river) [
     ./river
-    ./openbox
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire) [
+    ./wofi
+    ./foot 
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.openbox) [
+    ./picom
     ./sxhkd
     ./polybar
     ./rofi
     ./alacritty
     ./tint2
-    ./pics
-    ./mpv
-    ./qutebrowser
-    ./picom
+    ./openbox
   ]
   ;
 }

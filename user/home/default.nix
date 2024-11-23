@@ -1,4 +1,57 @@
 { config, lib, pkgs, modify-pkgs, custom-pkgs, inputs, opt-config, ... }:
+let
+  my-packages = with pkgs;[
+    neofetch
+    socat
+    upower
+    obs-studio
+    glxinfo
+    wqy_zenhei
+    noto-fonts-color-emoji
+    papirus-icon-theme
+    pavucontrol
+    celluloid
+    gedit
+    cinnamon.nemo-with-extensions
+    gsettings-desktop-schemas
+    gtk3
+    amberol
+    zathura
+    image-roll
+    spotify
+    motrix
+    gnome.file-roller
+    wl-clipboard
+    python3
+    rustc
+    cargo
+    appimage-run
+    brightnessctl
+    wlr-randr
+    ffmpeg
+    vlc
+    ifuse
+    mpv
+    xarchiver
+    # Modify Packages
+    ## modify-pkgs.*
+    # Custom Packages
+    ## custom-pkgs.*
+    # Unstable
+    ## unstable.*
+    # NUR
+    nur.repos.novel2430.wemeet-bin-bwrap
+    nur.repos.novel2430.wechat-universal-bwrap
+    nur.repos.novel2430.zju-connect
+    nur.repos.novel2430.wpsoffice
+    nur.repos.xddxdd.baidunetdisk
+    # (lib.hiPrio nur.repos.xddxdd.dingtalk)
+    nur.repos.xddxdd.dingtalk
+    nur.repos.xddxdd.qq
+  ]
+  ++ opt-config.packages
+  ;
+in
 {
   home.username = "${opt-config.username}";
   home.homeDirectory = "/home/${opt-config.username}";
@@ -7,60 +60,7 @@
     ./modules
   ];
 
-  home.packages = lib.mkMerge [
-    (with pkgs;[
-      neofetch
-      socat
-      upower
-      obs-studio
-      glxinfo
-      wqy_zenhei
-      noto-fonts-color-emoji
-      papirus-icon-theme
-      pavucontrol
-      celluloid
-      gedit
-      cinnamon.nemo-with-extensions
-      gsettings-desktop-schemas
-      gtk3
-      amberol
-      zathura
-      image-roll
-      spotify
-      motrix
-      gnome.file-roller
-      wl-clipboard
-      python3
-      rustc
-      cargo
-      appimage-run
-      brightnessctl
-      wlr-randr
-      ffmpeg
-      vlc
-      ifuse
-      mpv
-      xarchiver
-      # Modify Packages
-      ## modify-pkgs.*
-      # Custom Packages
-      ## custom-pkgs.*
-      # Unstable
-      ## unstable.*
-      # NUR
-      nur.repos.novel2430.wemeet-bin-bwrap
-      nur.repos.novel2430.wechat-universal-bwrap
-      nur.repos.novel2430.zju-connect
-      nur.repos.novel2430.wpsoffice
-      nur.repos.xddxdd.baidunetdisk
-      # (lib.hiPrio nur.repos.xddxdd.dingtalk)
-      nur.repos.xddxdd.dingtalk
-      nur.repos.xddxdd.qq
-    ])
-    (
-      opt-config.packages
-    )
-  ];
+  home.packages = my-packages;
 
   # XDG_DATA_DIRS
   xdg.systemDirs.data = [
