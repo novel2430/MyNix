@@ -2,7 +2,7 @@
 decorations = "Full"
 # startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
 startup_mode = "Maximized"
-opacity = 0.8
+opacity = 0.9
 
 [scrolling]
 history = 30000
@@ -10,7 +10,7 @@ multiplier = 3
 
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }
-size = 13
+size = 14
 
 [colors.primary]
 background = "#3b4252"
