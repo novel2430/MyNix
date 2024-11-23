@@ -40,6 +40,7 @@
       vlc
       ifuse
       mpv
+      xarchiver
       # Modify Packages
       ## modify-pkgs.*
       # Custom Packages

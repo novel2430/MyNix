@@ -42,6 +42,9 @@
       # Brightness down
       XF86MonBrightnessDown
         ${brightnessctl}/bin/brightnessctl set 10%-
+      # Lock Screen
+      super + shift + l
+        x-lock
     '';
   };
   home.packages = [

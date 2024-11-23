@@ -10,6 +10,7 @@
     shellAliases = {
       showimage = "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations";
       delimage = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
+      startx = "rm ~/.Xauthority; startx";
     };
     initExtra = lib.mkMerge [
       (lib.mkIf (opt-config.use-proxy == true) ''

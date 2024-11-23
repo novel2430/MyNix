@@ -30,5 +30,8 @@
       inherit pkgs;
       inherit opt-config;
     })
+    (import ./x-lock.nix {
+      inherit pkgs;
+    })
   ];
 }

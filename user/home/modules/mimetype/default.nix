@@ -17,14 +17,14 @@
       "audio/flac" = ["io.bassi.Amberol.desktop" "io.github.celluloid_player.Celluloid.desktop"];
       "audio/x-wav" = ["io.bassi.Amberol.desktop" "io.github.celluloid_player.Celluloid.desktop"];
       "audio/x-flac+ogg" = ["io.github.celluloid_player.Celluloid.desktop"];
-      "application/pdf" = ["org.pwmt.zathura.desktop"];
+      "application/pdf" = ["org.pwmt.zathura.desktop" "wps-office-pdf.desktop" "brave-browser.desktop"];
       "image/png" = ["com.github.weclaw1.ImageRoll.desktop"];
       "image/jpeg" = ["com.github.weclaw1.ImageRoll.desktop"];
       "image/svg+xml" = ["com.github.weclaw1.ImageRoll.desktop"];
-      "applications/zip" = ["org.gnome.FileRoller.desktop"];
-      "application/x-bzip" = ["org.gnome.FileRoller.desktop"];
-      "application/x-bzip2" = ["org.gnome.FileRoller.desktop"];
-      "application/gzip" = ["org.gnome.FileRoller.desktop"];
+      "applications/zip" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
+      "application/x-bzip" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
+      "application/x-bzip2" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
+      "application/gzip" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
     };
     defaultApplications = {
       "inode/directory" = ["nemo.desktop"];
@@ -40,14 +40,14 @@
       "audio/flac" = ["io.bassi.Amberol.desktop"];
       "audio/x-wav" = ["io.bassi.Amberol.desktop"];
       "audio/x-flac+ogg" = ["io.github.celluloid_player.Celluloid.desktop"];
-      "application/pdf" = ["org.pwmt.zathura.desktop"];
+      "application/pdf" = ["org.pwmt.zathura.desktop" "wps-office-pdf.desktop" "brave-browser.desktop"];
       "image/png" = ["com.github.weclaw1.ImageRoll.desktop"];
       "image/jpeg" = ["com.github.weclaw1.ImageRoll.desktop"];
       "image/svg+xml" = ["com.github.weclaw1.ImageRoll.desktop"];
-      "applications/zip" = ["org.gnome.FileRoller.desktop"];
-      "application/x-bzip" = ["org.gnome.FileRoller.desktop"];
-      "application/x-bzip2" = ["org.gnome.FileRoller.desktop"];
-      "application/gzip" = ["org.gnome.FileRoller.desktop"];
+      "applications/zip" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
+      "application/x-bzip" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
+      "application/x-bzip2" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
+      "application/gzip" = ["org.gnome.FileRoller.desktop" "xarchiver.desktop"];
     };
   };
 

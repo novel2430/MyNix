@@ -28,6 +28,7 @@
     ./pics
     ./mpv
     ./qutebrowser
+    ./picom
   ]
   ;
 }
