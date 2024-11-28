@@ -23,6 +23,7 @@ in
   home.file.".config/labwc/waybar.css".source = ./waybar.css;
   home.file.".config/labwc/autostart" = {
     text = ''
+      start-wm $WAYLAND_DISPLAY
       # Wallpaper
       ${swaybg} -i ${opt-config.wall-img} -m fill &
       # bar

@@ -33,5 +33,9 @@
     (import ./x-lock.nix {
       inherit pkgs;
     })
+    (import ./start-wm.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
   ];
 }

@@ -8,35 +8,34 @@ let
   handle-lid = pkgs.writeShellScriptBin "handle-lid" ''
     bat_state=$(${pkgs.acpi}/bin/acpi -b | grep -oP '(?<=: ).*?(?=,)' )
     user_id=$(${pkgs.coreutils-full}/bin/id -u ${opt-config.username})
-    VARIABLE="WAYLAND_DISPLAY"
-    PIDS=$(${pkgs.procps}/bin/ps -u ${opt-config.username} | ${pkgs.gawk}/bin/awk '/Xwayland/ {print $1}')
-
+    WAYLAND_DISPLAY=$(cat /home/${opt-config.username}/.wm_state)
     if [ "$bat_state" == "Discharging" ]; then
       echo "[LID] BAT Discharging"
-      # Find WAYLAND_DISPLAY (Use Xwayland to identified)
-      if [ -z "$PIDS" ]; then
+      if [ -z "$WAYLAND_DISPLAY" ]; then
         systemctl suspend
-        exit 0
+      elif [ "$WAYLAND_DISPLAY" == "X11" ]; then
+        systemctl suspend
+      else
+        export XDG_RUNTIME_DIR=/run/user/$user_id
+        ${wayland-lock}/bin/my-swaylock idle &
+        ${pkgs.coreutils-full}/bin/sleep 2
+        systemctl suspend
       fi
-
-      for PID in $PIDS; do
-        if [ -e /proc/$PID/environ ]; then
-          ENVIRONMENT=$( ${pkgs.coreutils-full}/bin/tr '\0' '\n' < /proc/$PID/environ | grep "^$VARIABLE=" | ${pkgs.coreutils-full}/bin/cut -d= -f2)
-          if [ -n "$ENVIRONMENT" ]; then
-            export WAYLAND_DISPLAY="$ENVIRONMENT" 
-            echo "Current Wayland : $WAYLAND_DISPLAY"
-            export XDG_RUNTIME_DIR=/run/user/$user_id
-            ${wayland-lock}/bin/my-swaylock idle &
-            ${pkgs.coreutils-full}/bin/sleep 2
-            systemctl suspend
-            exit 0
-          fi
-        fi
-      done
-      systemctl suspend
     elif [ "$bat_state" == "Charging" ]; then
       echo "[LID] BAT Charging"
     fi
+  '';
+  handle-bright = pkgs.writeShellScriptBin "handle-bright" ''
+    current_val=$(${bright} get)
+    max_val=$(${bright} max)
+    current_per=$(${pkgs.gawk}/bin/awk '{print $1*$2/$3}' <<<"$current_val 100 $max_val")
+    echo "Current Bright : $current_per%"
+    if [ $1 == "low" ] && echo "$current_per > 30" | ${pkgs.bc}/bin/bc -l | grep -q 1; then
+      ${bright} set 30%
+    elif [ $1 == "high" ] && echo "$current_per < 80" | ${pkgs.bc}/bin/bc -l | grep -q 1; then
+      ${bright} set 80%
+    fi
+    
   '';
 in
 {
@@ -60,12 +59,12 @@ in
             00000000)
               echo unplugged
               echo unplugged >> /tmp/acpi.log
-              ${bright} set 30%
+              ${handle-bright}/bin/handle-bright low
               ;;
             00000001)
               echo plugged in
               echo plugged in >> /tmp/acpi.log
-              ${bright} set 80%
+              ${handle-bright}/bin/handle-bright high
               ;;
             *)
               ;;

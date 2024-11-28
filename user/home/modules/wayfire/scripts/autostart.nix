@@ -7,6 +7,7 @@ let
   gsettings = "${pkgs.glib}/bin/gsettings";
 in
 pkgs.writeShellScriptBin "my-wf-autostart" ''
+  start-wm $WAYLAND_DISPLAY
   # Wallpaper
   ${swaybg} -i ${opt-config.wall-img} -m fill &
   # bar

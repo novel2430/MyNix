@@ -8,6 +8,7 @@
   };
   home.file.".config/openbox/autostart" = with pkgs; {
     text = ''
+      start-wm X11
       # Update Lock Screen
       ${betterlockscreen}/bin/betterlockscreen -u ${opt-config.lock-img} &
       ${dunst}/bin/dunst &
