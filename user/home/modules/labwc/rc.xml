@@ -196,6 +196,8 @@
 
 <keyboard>
   <chainQuitKey>C-g</chainQuitKey>
+  <repeatRate>50</repeatRate>
+  <repeatDelay>300</repeatDelay>
 
   <!-- Keybindings for desktop switching -->
   <keybind key="C-A-Left">
