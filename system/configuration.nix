@@ -28,6 +28,10 @@
     ./services/others.nix
   ]
   ++
+  lib.optionals (opt-config.laptop == true) [
+    ./modules/laptop-power-management.nix
+  ]
+  ++
   lib.optionals (builtins.elem "nvidia" opt-config.gpu-type) [
     ./modules/nvidia.nix
   ]

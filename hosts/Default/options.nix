@@ -64,6 +64,9 @@
     # Use AutoCPU
     autocpu = false;
 
+    # Laptop Power Management
+    laptop = false;
+
     # No Keyboard
     no-keyboard = false;
   };

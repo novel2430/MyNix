@@ -58,7 +58,7 @@
     # ];
 
     # WM Options
-    wm-options = {
+    wm = {
       wayfire = false;
       river = true;
       openbox = true;
@@ -91,6 +91,9 @@
 
     # Use AutoCPU
     autocpu = true;
+
+    # Laptop Power Management
+    laptop = true;
 
     # No Keyboard
     no-keyboard = false;
