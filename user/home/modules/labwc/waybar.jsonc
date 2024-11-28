@@ -11,9 +11,8 @@
         // "sway/mode",
         // "sway/scratchpad",
         // "custom/media"
-	      "river/tags",
-        "river/window"
-        // "wlr/taskbar"
+	      // "river/tags"
+        "wlr/taskbar"
     ],
     "modules-center": [
         // "river/window"
@@ -95,7 +94,7 @@
         }
     },
     "river/tags": {
-	      "num-tags": 9
+	      "num-tags": 7
     },
     "river/window": {
         "format": "{}",

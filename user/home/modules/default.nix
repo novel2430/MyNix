@@ -18,6 +18,7 @@
     ./mpv
     ./qutebrowser
     ./brave
+    ./openbox-theme
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
@@ -28,7 +29,11 @@
     ./river
   ]
   ++ 
-  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire) [
+  lib.optionals (opt-config.wm.labwc) [
+    ./labwc
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire || opt-config.wm.labwc) [
     ./wofi
     ./foot 
   ]

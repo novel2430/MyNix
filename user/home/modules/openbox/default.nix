@@ -24,18 +24,11 @@
       # Idle
       ${xorg.xset}/bin/xset dpms 1800 1800 3600
       ${xss-lock}/bin/xss-lock -- x-lock &
-      ${pkgs.unstable.picom}/bin/picom &
+      # ${pkgs.unstable.picom}/bin/picom &
       fcitx5 --replace -d &
     '';
     executable = true;
   };
-  home.file.".local/share/themes" = {
-    source = ./themes;
-    recursive = true;
-  };
-  
-  
-  
   home.packages = [
     pkgs.openbox
   ];

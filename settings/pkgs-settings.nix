@@ -15,6 +15,9 @@ rec {
     "amdgpu-pro"
     "wechat-uos"
     "widevine-cdm"
+    "discord"
+    "steam"
+    "steam-original"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [

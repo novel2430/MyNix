@@ -87,7 +87,7 @@ rec {
   };
   # Define Tags Operation
   tags = {
-    count = 7;
+    count = 9;
     keybindings = {
       set-focused-tags = "Super";
       set-view-tags = "Super+Shift";

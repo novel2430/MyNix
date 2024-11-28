@@ -37,6 +37,13 @@
           fd --type d --follow --exclude ".git" . "$1"
         }
       '')
+      # JAVA
+      (
+      ''
+        export JAVA_17_HOME="${pkgs.jdk17}/bin"
+        export JAVA_21_HOME="${pkgs.jdk21}/bin"
+      ''
+      )
     ];
   };
 }

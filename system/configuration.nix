@@ -28,15 +28,15 @@
     ./services/others.nix
   ]
   ++
-  lib.optionals (opt-config.gpu-type == "nvidia") [
+  lib.optionals (builtins.elem "nvidia" opt-config.gpu-type) [
     ./modules/nvidia.nix
   ]
   ++
-  lib.optionals (opt-config.gpu-type == "intel-nvidia") [
+  lib.optionals (builtins.elem "intel-nvidia" opt-config.gpu-type) [
     ./modules/nvidia.nix
   ]
   ++
-  lib.optionals (opt-config.gpu-type == "amd") [
+  lib.optionals (builtins.elem "amd" opt-config.gpu-type) [
     ./modules/amd.nix
   ]
   ;

@@ -16,8 +16,11 @@
     # Lock Paper
     wall-img = "/home/${username}/.config/pics/wall";
 
-    # intel, nvidia, intel-nvidia
-    gpu-type = "amd";
+    # intel, nvidia, intel-nvidia, amd
+    gpu-type = [
+      "amd"
+      "nvidia"
+    ];
     intel-bus-id = "PCI:0:2:0";
     nvidia-bus-id = "PCI:3:0:0";
 
@@ -39,6 +42,7 @@
       wayfire = false;
       river = true;
       openbox = true;
+      labwc = true;
     };
 
     # Packages For this Machine
@@ -59,6 +63,11 @@
       openttd
       hugo
       unstable-pkgs.distrobox
+      discord
+      telegram-desktop
+      lutris
+      steam
+      wine
     ];
 
     # Use Clash
@@ -74,7 +83,7 @@
     https-proxy = "http://${https-proxy-host}:${https-proxy-port}";
 
     # ZJU RVPN
-    use-zju-rvpn = false;
+    use-zju-rvpn = true;
     zju-rvpn-port = "7895";
     zju-rvpn-config = "/home/${username}/zjuconnect/config.toml";
 

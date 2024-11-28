@@ -16,8 +16,10 @@
     # Lock Paper
     wall-img = "/home/${username}/.config/pics/wall";
 
-    # intel, nvidia, intel-nvidia
-    gpu-type = "intel";
+    # intel, nvidia, intel-nvidia, amd
+    gpu-type = [
+      "intel"
+    ];
     intel-bus-id = "PCI:0:2:0";
     nvidia-bus-id = "PCI:3:0:0";
 
@@ -58,8 +60,9 @@
     # WM Options
     wm-options = {
       wayfire = false;
-      river = false;
+      river = true;
       openbox = true;
+      labwc = true;
     };
 
     # Packages For this Machine
