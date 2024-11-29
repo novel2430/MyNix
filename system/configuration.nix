@@ -44,6 +44,11 @@
     ./modules/amd.nix
   ]
   ;
+  
+  # services.xserver.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
