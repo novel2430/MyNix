@@ -9,6 +9,7 @@ let
     bat_state=$(${pkgs.acpi}/bin/acpi -b | grep -oP '(?<=: ).*?(?=,)' )
     user_id=$(${pkgs.coreutils-full}/bin/id -u ${opt-config.username})
     WAYLAND_DISPLAY=$(cat /home/${opt-config.username}/.wm_state)
+    echo "Curr: $WAYLAND_DISPLAY"
     if [ "$bat_state" == "Discharging" ]; then
       echo "[LID] BAT Discharging"
       if [ -z "$WAYLAND_DISPLAY" ]; then
@@ -16,6 +17,7 @@ let
       elif [ "$WAYLAND_DISPLAY" == "X11" ]; then
         systemctl suspend
       else
+        export WAYLAND_DISPLAY=$WAYLAND_DISPLAY
         export XDG_RUNTIME_DIR=/run/user/$user_id
         ${wayland-lock}/bin/my-swaylock idle &
         ${pkgs.coreutils-full}/bin/sleep 2
