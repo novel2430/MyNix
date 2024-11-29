@@ -18,6 +18,7 @@ rec {
     "discord"
     "steam"
     "steam-original"
+    "wpsoffice-365"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [

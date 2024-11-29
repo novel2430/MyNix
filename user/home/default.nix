@@ -45,7 +45,8 @@ let
     nur.repos.novel2430.wemeet-bin-bwrap
     nur.repos.novel2430.wechat-universal-bwrap
     nur.repos.novel2430.zju-connect
-    nur.repos.novel2430.wpsoffice
+    # nur.repos.novel2430.wpsoffice
+    nur.repos.novel2430.wpsoffice-365
     nur.repos.xddxdd.baidunetdisk
     # (lib.hiPrio nur.repos.xddxdd.dingtalk)
     nur.repos.xddxdd.dingtalk
