@@ -58,11 +58,11 @@
       docker
       qemu
       virt-manager
-      ryujinx
-      nsz
+      # ryujinx
+      # nsz
       openttd
       hugo
-      unstable-pkgs.distrobox
+      distrobox
       discord
       telegram-desktop
       lutris

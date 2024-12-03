@@ -12,7 +12,7 @@ window {
 }
 mainbox {
   background-color: #3b4252;
-  children: [ inputbar, listview ];
+  children: [ inputbar, message, listview ];
   padding: 0px;
 }
 inputbar {

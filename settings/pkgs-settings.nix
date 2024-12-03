@@ -1,4 +1,4 @@
-{nixpkgs, system, nixpkgs-unstable, nixpkgs-23, nur }:
+{nixpkgs, system, nixpkgs-unstable, nur }:
 rec {
   # Superset of the default unfree packages
   allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
@@ -18,6 +18,7 @@ rec {
     "discord"
     "steam"
     "steam-original"
+    "steam-unwrapped"
     "wpsoffice-365"
   ];
   # Superset of the default insecure packages
@@ -38,12 +39,6 @@ rec {
     config.permittedInsecurePackages = allowed-insecure-packages;
     overlays = [ nur.overlay ];
   };
-  # 23.11 Packages
-  nix23-pkgs = import nixpkgs-23 {
-    inherit system;
-    config.allowUnfreePredicate = allowed-unfree-packages;
-    config.permittedInsecurePackages = allowed-insecure-packages;
-  };
   # Custom Packages
   custom-pkgs = import ../custom-pkgs {
     pkgs = stable-pkgs;
@@ -53,6 +48,5 @@ rec {
   modify-pkgs = import ../modify-pkgs {
     pkgs = stable-pkgs;
     unstable-pkgs = unstable-pkgs;
-    nix23-pkgs = nix23-pkgs;
   };
 }

@@ -10,6 +10,8 @@
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "screen-256color";
     extraConfig = ''
+      set -g prefix C-x
+      unbind-key C-b
       set -g pane-base-index 1
       set -g renumber-window on
     '';

@@ -12,7 +12,7 @@ let
     pavucontrol
     celluloid
     gedit
-    cinnamon.nemo-with-extensions
+    nemo-with-extensions
     gsettings-desktop-schemas
     gtk3
     amberol
@@ -20,7 +20,7 @@ let
     image-roll
     spotify
     motrix
-    gnome.file-roller
+    file-roller
     wl-clipboard
     python3
     rustc
@@ -42,6 +42,7 @@ let
     # Unstable
     ## unstable.*
     # NUR
+    nur.repos.novel2430.FuzzyMarks
     nur.repos.novel2430.wemeet-bin-bwrap
     nur.repos.novel2430.wechat-universal-bwrap
     nur.repos.novel2430.zju-connect

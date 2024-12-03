@@ -12,6 +12,7 @@ rec {
     volume = "my-volume";
     screenshot = "grim-slurp-screenshot";
     browser = "brave --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4";
+    fuzzyMarks = "${pkgs.nur.repos.novel2430.FuzzyMarks}/bin/fuzzyMarks";
   };
   # Define keybindings
   keybindings = {
@@ -57,6 +58,8 @@ rec {
       { modes = ["normal"]; keys = "Super Print"; action = "${apps.screenshot} select"; }
       # Reload Config
       { modes = ["normal"]; keys = "Super+Shift R"; action = "~/.config/river/init reload"; }
+      # FuzzyMarks
+      { modes = ["normal"]; keys = "Super N"; action = "${apps.fuzzyMarks}"; }
     ];
     pointer = [
       { keys = "Super BTN_LEFT"; action = "move-view"; }

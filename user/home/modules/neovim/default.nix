@@ -13,7 +13,7 @@
     # Language Server Package
     extraPackages = with pkgs; [
       lua-language-server # Lua
-      nodePackages_latest.pyright # Python
+      pyright # Python
       clang-tools # C family
       jdt-language-server # Java
       nil # Nix
