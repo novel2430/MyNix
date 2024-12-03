@@ -21,6 +21,7 @@ in
   };
   home.file.".config/labwc/waybar.jsonc".source = ./waybar.jsonc;
   home.file.".config/labwc/waybar.css".source = ./waybar.css;
+
   home.file.".config/labwc/autostart" = {
     text = ''
       start-wm $WAYLAND_DISPLAY

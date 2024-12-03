@@ -12,6 +12,7 @@
         // "sway/scratchpad",
         // "custom/media"
 	      // "river/tags"
+        "cosmic/workspaces",
         "wlr/taskbar"
     ],
     "modules-center": [
@@ -263,5 +264,10 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+    },
+    "cosmic/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": true,
+    },
 }

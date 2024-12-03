@@ -1,119 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openbox_config xmlns="http://openbox.org/3.4/rc"
-		xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<labwc_config>
 
 <resistance>
-  <strength>10</strength>
-  <screen_edge_strength>20</screen_edge_strength>
+  <screenEdgeStrength>20</screenEdgeStrength>
+  <windowEdgeStrength>20</windowEdgeStrength>
+  <!-- resistance for maximized/tiled windows -->
+  <unSnapThreshold>20</unSnapThreshold>
+  <!-- resistance for vertically/horizontally maximized windows -->
+  <unMaximizeThreshold>150</unMaximizeThreshold>
 </resistance>
 
 <focus>
-  <focusNew>yes</focusNew>
-  <!-- always try to focus new windows when they appear. other rules do
-       apply -->
   <followMouse>no</followMouse>
-  <!-- move focus to a window when you move the mouse into it -->
-  <focusLast>yes</focusLast>
-  <!-- focus the last used window when changing desktops, instead of the one
-       under the mouse pointer. when followMouse is enabled -->
-  <underMouse>no</underMouse>
-  <!-- move focus under the mouse, even when the mouse is not moving -->
-  <focusDelay>200</focusDelay>
-  <!-- when followMouse is enabled, the mouse must be inside the window for
-       this many milliseconds (1000 = 1 sec) before moving focus to it -->
+  <followMouseRequiresMovement>yes</followMouseRequiresMovement>
   <raiseOnFocus>no</raiseOnFocus>
-  <!-- when followMouse is enabled, and a window is given focus by moving the
-       mouse into it, also raise the window -->
 </focus>
 
 <placement>
-  <policy>Smart</policy>
-  <!-- 'Smart' or 'UnderMouse' -->
-  <center>yes</center>
-  <!-- whether to place windows in the center of the free area found or
-       the top left corner -->
-  <monitor>Primary</monitor>
-  <!-- with Smart placement on a multi-monitor system, try to place new windows
-       on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
-       the active window is, 'Primary' - only on the primary monitor -->
-  <primaryMonitor>1</primaryMonitor>
-  <!-- The monitor where Openbox should place popup dialogs such as the
-       focus cycling popup, or the desktop switch popup.  It can be an index
-       from 1, specifying a particular monitor.  Or it can be one of the
-       following: 'Mouse' - where the mouse is, or
-                  'Active' - where the active window is -->
+  <policy>center</policy>
+  <!--
+    When <placement><policy> is "cascade", the offset for cascading new
+    windows can be overwritten like this:
+    <cascadeOffset x="40" y="30" />
+  -->
 </placement>
 
 <theme>
   <name>Arc-Clone</name>
-  <titleLayout>NLIMC</titleLayout>
-  <!--
-      available characters are NDSLIMC, each can occur at most once.
-      N: window icon
-      L: window label (AKA title).
-      I: iconify
-      M: maximize
-      C: close
-      S: shade (roll up/down)
-      D: omnipresent (on all desktops).
-  -->
+  <icon>Papirus</icon>
+  <titlebar>
+    <layout>icon:iconify,max,close</layout>
+    <showTitle>yes</showTitle>
+  </titlebar>
+  <cornerRadius>8</cornerRadius>
   <keepBorder>yes</keepBorder>
-  <animateIconify>yes</animateIconify>
+  <dropShadows>no</dropShadows>
   <font place="ActiveWindow">
     <name>sans</name>
-    <size>12</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
+    <size>14</size>
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
+    <weight>normal</weight>
   </font>
   <font place="InactiveWindow">
     <name>sans</name>
-    <size>12</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
+    <size>14</size>
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
+    <weight>normal</weight>
   </font>
   <font place="MenuHeader">
     <name>sans</name>
-    <size>13</size>
-    <!-- font size in points -->
-    <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
+    <size>14</size>
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
+    <weight>normal</weight>
   </font>
   <font place="MenuItem">
     <name>sans</name>
-    <size>13</size>
-    <!-- font size in points -->
+    <size>14</size>
+    <slant>normal</slant>
     <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
   </font>
-  <font place="ActiveOnScreenDisplay">
+  <font place="OnScreenDisplay">
     <name>sans</name>
-    <size>13</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
+    <size>14</size>
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
-  </font>
-  <font place="InactiveOnScreenDisplay">
-    <name>sans</name>
-    <size>13</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
+    <weight>normal</weight>
   </font>
 </theme>
+
+<!--
+  Magnifier settings
+  'width' sets the width in pixels of the magnifier window.
+  'height' sets the height in pixels of the magnifier window.
+  'initScale' sets the initial magnification factor at boot.
+  'increment' sets the amount by which the magnification factor
+    changes when 'ZoomIn' or 'ZoomOut' are called.
+  'useFilter' sets whether to use a bilinear filter on the magnified
+    output or simply to take nearest pixel.
+-->
+<magnifier>
+  <width>400</width>
+  <height>400</height>
+  <initScale>2.0</initScale>
+  <increment>0.2</increment>
+  <useFilter>true</useFilter>
+</magnifier>
+
+<windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
+  <fields>
+    <field content="trimmed_identifier" width="25%" />
+    <field content="title" width="75%" />
+  </fields>
+</windowSwitcher>
+
+<snapping>
+  <!-- Set range to 0 to disable window snapping completely -->
+  <range>1</range>
+  <overlay enabled="yes">
+    <delay inner="500" outer="500" />
+  </overlay>
+  <topMaximize>yes</topMaximize>
+  <notifyClient>always</notifyClient>
+</snapping>
 
 <desktops>
   <!-- this stuff is only used at startup, pagers allow you to change them
@@ -147,52 +135,11 @@
 </desktops>
 
 <resize>
+  <!-- Show a simple resize and move indicator -->
+  <popupShow>Never</popupShow>
+  <!-- Let client redraw its contents while resizing -->
   <drawContents>yes</drawContents>
-  <popupShow>Nonpixel</popupShow>
-  <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
-  <popupPosition>Center</popupPosition>
-  <!-- 'Center', 'Top', or 'Fixed' -->
-  <popupFixedPosition>
-    <!-- these are used if popupPosition is set to 'Fixed' -->
-
-    <x>10</x>
-    <!-- positive number for distance from left edge, negative number for
-         distance from right edge, or 'Center' -->
-    <y>10</y>
-    <!-- positive number for distance from top edge, negative number for
-         distance from bottom edge, or 'Center' -->
-  </popupFixedPosition>
 </resize>
-
-<!-- You can reserve a portion of your screen where windows will not cover when
-     they are maximized, or when they are initially placed.
-     Many programs reserve space automatically, but you can use this in other
-     cases. -->
-<margins>
-  <top>0</top>
-  <bottom>0</bottom>
-  <left>0</left>
-  <right>0</right>
-</margins>
-
-<dock>
-  <position>TopLeft</position>
-  <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
-  <floatingX>0</floatingX>
-  <floatingY>0</floatingY>
-  <noStrut>no</noStrut>
-  <stacking>Above</stacking>
-  <!-- 'Above', 'Normal', or 'Below' -->
-  <direction>Vertical</direction>
-  <!-- 'Vertical' or 'Horizontal' -->
-  <autoHide>no</autoHide>
-  <hideDelay>300</hideDelay>
-  <!-- in milliseconds (1000 = 1 second) -->
-  <showDelay>300</showDelay>
-  <!-- in milliseconds (1000 = 1 second) -->
-  <moveButton>Middle</moveButton>
-  <!-- 'Left', 'Middle', 'Right' -->
-</dock>
 
 <keyboard>
   <chainQuitKey>C-g</chainQuitKey>
@@ -314,49 +261,7 @@
       </finalactions>
     </action>
   </keybind>
-  <!-- <keybind key="C-A-Tab"> -->
-  <!--   <action name="NextWindow"> -->
-  <!--     <panels>yes</panels><desktop>yes</desktop> -->
-  <!--     <finalactions> -->
-  <!--       <action name="Focus"/> -->
-  <!--       <action name="Raise"/> -->
-  <!--       <action name="Unshade"/> -->
-  <!--     </finalactions> -->
-  <!--   </action> -->
-  <!-- </keybind> -->
 
-  <!-- Keybindings for window switching with the arrow keys -->
-  <!-- <keybind key="W-S-Right"> -->
-  <!--   <action name="DirectionalCycleWindows"> -->
-  <!--     <direction>right</direction> -->
-  <!--   </action> -->
-  <!-- </keybind> -->
-  <!-- <keybind key="W-S-Left"> -->
-  <!--   <action name="DirectionalCycleWindows"> -->
-  <!--     <direction>left</direction> -->
-  <!--   </action> -->
-  <!-- </keybind> -->
-  <!-- <keybind key="W-S-Up"> -->
-  <!--   <action name="DirectionalCycleWindows"> -->
-  <!--     <direction>up</direction> -->
-  <!--   </action> -->
-  <!-- </keybind> -->
-  <!-- <keybind key="W-S-Down"> -->
-  <!--   <action name="DirectionalCycleWindows"> -->
-  <!--     <direction>down</direction> -->
-  <!--   </action> -->
-  <!-- </keybind> -->
-
-  <!-- Keybindings for running applications -->
-  <!-- <keybind key="W-e"> -->
-  <!--   <action name="Execute"> -->
-  <!--     <startupnotify> -->
-  <!--       <enabled>true</enabled> -->
-  <!--       <name>Konqueror</name> -->
-  <!--     </startupnotify> -->
-  <!--     <command>kfmclient openProfile filemanagement</command> -->
-  <!--   </action> -->
-  <!-- </keybind> -->
   <keybind key="W-Return">
     <action name="Execute">
       <command>foot</command>
@@ -375,6 +280,11 @@
   <keybind key="W-S-f">
     <action name="Execute">
       <command>brave --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4</command>
+    </action>
+  </keybind>
+  <keybind key="W-n">
+    <action name="Execute">
+      <command>fuzzyMarks</command>
     </action>
   </keybind>
   <keybind key="Print">
@@ -465,31 +375,6 @@
     <mousebind button="W-Right" action="Drag">
       <action name="Resize"/>
     </mousebind> 
-
-    <!-- <mousebind button="A-Middle" action="Press"> -->
-    <!--   <action name="Lower"/> -->
-    <!--   <action name="FocusToBottom"/> -->
-    <!--   <action name="Unfocus"/> -->
-    <!-- </mousebind> -->
-
-    <!-- <mousebind button="A-Up" action="Click"> -->
-    <!--   <action name="GoToDesktop"><to>previous</to></action> -->
-    <!-- </mousebind> -->
-    <!-- <mousebind button="A-Down" action="Click"> -->
-    <!--   <action name="GoToDesktop"><to>next</to></action> -->
-    <!-- </mousebind> -->
-    <!-- <mousebind button="C-A-Up" action="Click"> -->
-    <!--   <action name="GoToDesktop"><to>previous</to></action> -->
-    <!-- </mousebind> -->
-    <!-- <mousebind button="C-A-Down" action="Click"> -->
-    <!--   <action name="GoToDesktop"><to>next</to></action> -->
-    <!-- </mousebind> -->
-    <!-- <mousebind button="A-S-Up" action="Click"> -->
-    <!--   <action name="SendToDesktop"><to>previous</to></action> -->
-    <!-- </mousebind> -->
-    <!-- <mousebind button="A-S-Down" action="Click"> -->
-    <!--   <action name="SendToDesktop"><to>next</to></action> -->
-    <!-- </mousebind> -->
   </context>
 
   <context name="Titlebar">
@@ -499,27 +384,6 @@
     <mousebind button="Left" action="DoubleClick">
       <action name="ToggleMaximize"/>
     </mousebind>
-
-    <!-- <mousebind button="Up" action="Click"> -->
-    <!--   <action name="if"> -->
-    <!--     <shaded>no</shaded> -->
-    <!--     <then> -->
-    <!--       <action name="Shade"/> -->
-    <!--       <action name="FocusToBottom"/> -->
-    <!--       <action name="Unfocus"/> -->
-    <!--       <action name="Lower"/> -->
-    <!--     </then> -->
-    <!--   </action> -->
-    <!-- </mousebind> -->
-    <!-- <mousebind button="Down" action="Click"> -->
-    <!--   <action name="if"> -->
-    <!--     <shaded>yes</shaded> -->
-    <!--     <then> -->
-    <!--       <action name="Unshade"/> -->
-    <!--       <action name="Raise"/> -->
-    <!--     </then> -->
-    <!--   </action> -->
-    <!-- </mousebind> -->
   </context>
 
   <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
@@ -739,30 +603,7 @@
 </mouse>
 
 <menu>
-  <!-- You can specify more than one menu file in here and they are all loaded,
-       just don't make menu ids clash or, well, it'll be kind of pointless -->
-
-  <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
-  <file>menu.xml</file>
-  <hideDelay>200</hideDelay>
-  <!-- if a press-release lasts longer than this setting (in milliseconds), the
-       menu is hidden again -->
-  <middle>no</middle>
-  <!-- center submenus vertically about the parent entry -->
-  <submenuShowDelay>100</submenuShowDelay>
-  <!-- time to delay before showing a submenu after hovering over the parent
-       entry.
-       if this is a negative value, then the delay is infinite and the
-       submenu will not be shown until it is clicked on -->
-  <submenuHideDelay>400</submenuHideDelay>
-  <!-- time to delay before hiding a submenu when selecting another
-       entry in parent menu
-       if this is a negative value, then the delay is infinite and the
-       submenu will not be hidden until a different submenu is opened -->
-  <showIcons>yes</showIcons>
-  <!-- controls if icons appear in the client-list-(combined-)menu -->
-  <manageDesktops>yes</manageDesktops>
-  <!-- show the manage desktops section in the client-list-(combined-)menu -->
+  <ignoreButtonReleasePeriod>250</ignoreButtonReleasePeriod>
 </menu>
 
 <applications>
@@ -862,4 +703,4 @@
 -->
 </applications>
 
-</openbox_config>
+</labwc_config>
