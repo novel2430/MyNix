@@ -36,6 +36,7 @@
   lib.optionals (opt-config.wm.river || opt-config.wm.wayfire || opt-config.wm.labwc) [
     ./wofi
     ./foot 
+    ./fuzzel
   ]
   ++ 
   lib.optionals (opt-config.wm.openbox) [

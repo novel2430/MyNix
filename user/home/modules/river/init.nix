@@ -6,6 +6,7 @@ rec {
     foot = "${foot}/bin/foot";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     wofi = "${wofi}/bin/wofi";
+    fuzzel = "${fuzzel}/bin/fuzzel";
     wlrootsClipboard = "wlroot-clipboard";
     swaylock = "my-swaylock";
     powerMenu = "wofi-power-menu";
@@ -40,8 +41,8 @@ rec {
       # Terminal
       { modes = ["normal"]; keys = "Super Return"; action = "${apps.foot}"; }
       # Custom application bindings
-      { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
-      { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }
+      { modes = ["normal"]; keys = "Super D"; action = "${apps.fuzzel}"; }
+      { modes = ["normal"]; keys = "Super R"; action = "${apps.fuzzel} --list-executables-in-path"; }
       { modes = ["normal"]; keys = "Super+Shift F"; action = "${apps.browser}"; }
       { modes = ["normal"]; keys = "Super C"; action = "${apps.wlrootsClipboard}"; }
       { modes = ["normal"]; keys = "Super+Shift L"; action = "${apps.swaylock} manual"; }

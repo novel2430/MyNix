@@ -269,12 +269,12 @@
   </keybind>
   <keybind key="W-d">
     <action name="Execute">
-      <command>wofi --show drun</command>
+      <command>fuzzel</command>
     </action>
   </keybind>
   <keybind key="W-r">
     <action name="Execute">
-      <command>wofi --show run</command>
+      <command>fuzzel --list-executables-in-path</command>
     </action>
   </keybind>
   <keybind key="W-S-f">

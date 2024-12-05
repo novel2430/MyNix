@@ -64,10 +64,10 @@ let
       binding_light_down = "KEY_BRIGHTNESSDOWN";
       binding_power_menu = "<super> <shift> KEY_P";
       command_clipboard = "wlroot-clipboard";
-      command_launcher = "wofi --show drun";
+      command_launcher = "fuzzel";
       command_lock = "my-swaylock manual";
       command_mute = "my-volume mute";
-      command_run_launcher = "wofi --show run";
+      command_run_launcher = "fuzzel --list-executables-in-path";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot select";
       command_terminal = "foot";
