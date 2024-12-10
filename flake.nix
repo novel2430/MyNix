@@ -24,7 +24,6 @@
       inherit nixpkgs;
       inherit system;
       inherit nixpkgs-unstable;
-      # inherit nixpkgs-23;
       inherit nur;
     };
     # Host Config
@@ -37,6 +36,7 @@
         inherit allowed-insecure-packages;
         opt-config = host-conf.config;
         hostname = host-conf.name;
+        inherit custom-pkgs;
       };
       modules = [
         # Add NUR
@@ -46,14 +46,6 @@
           nixpkgs.overlays = [
             (final: prev: {
               unstable = unstable-pkgs;
-            })
-          ];
-        })
-        # Add NixOS-23 Nixpkg
-        ({
-          nixpkgs.overlays = [
-            (final: prev: {
-              nix23 = nix23-pkgs;
             })
           ];
         })

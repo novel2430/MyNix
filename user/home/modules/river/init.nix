@@ -72,6 +72,7 @@ rec {
     # Force Floating
     floating = [
       {app-id = "float*"; title = "foo";}
+      {app-id = "wemeetapp";}
     ];
     # Force Csd
     csd = [

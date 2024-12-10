@@ -24,7 +24,7 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   # systemctl --user restart dbus-org.bluez.obex.service 
   # systemctl --user restart blueman-applet.service 
   # xdg-portal
-  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
   systemctl --user stop pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
   systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
   # Swayidle

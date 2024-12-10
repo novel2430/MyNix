@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, custom-pkgs, ...}:
 {
   # Pipewire
   services.pipewire = {
@@ -9,6 +9,11 @@
     jack.enable = true;
     wireplumber.enable = true;
     extraConfig.pipewire = {
+      "10-log-level" = {
+        "context.properties" = {
+          "log.level" = 2;
+        };
+      };
       "99-input-denoising" = {
         "context.modules" = [
           {   

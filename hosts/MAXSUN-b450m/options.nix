@@ -54,7 +54,6 @@
       cdrkit
       wavpack
       audacity
-      shotcut
       docker
       qemu
       virt-manager
@@ -68,6 +67,7 @@
       lutris
       steam
       wine
+      nur.repos.novel2430.shotcut
     ];
 
     # Use Clash
