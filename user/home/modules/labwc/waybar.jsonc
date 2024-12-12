@@ -59,14 +59,14 @@
       "format": "{icon}",
 	    "spacaing": 0,
     	"icon-size": 22,
-    	"icon-theme": "Papirus",
+    	// "icon-theme": "Papirus",
     	"on-click": "activate",
     	"on-click-middle": "close",
 	    "tooltip": true,
       "app_ids-mapping": {
         "org.jackhuang.hmcl.Launcher": "HMCL",
-        "wemeetapp": "wemeet",
-        "wpsoffice": "wps",
+        "wemeetapp": "wemeet-bin",
+        "PPSSPPQt": "PPSSPP"
       },
 	    "max-length": 15
      },
