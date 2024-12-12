@@ -59,7 +59,7 @@
 
     # WM Options
     wm = {
-      wayfire = false;
+      wayfire = true;
       river = true;
       openbox = true;
       labwc = true;

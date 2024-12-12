@@ -17,7 +17,7 @@
     ./packages.nix
     ./modules/opengl.nix
     ./modules/xdg.nix
-    ./modules/obs-virtual-camera.nix
+    # ./modules/obs-virtual-camera.nix
     ./modules/sudo.nix
     ./modules/snd-usb-audio.nix
     ./modules/docker.nix
