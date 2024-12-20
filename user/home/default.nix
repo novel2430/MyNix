@@ -11,7 +11,7 @@ let
     papirus-icon-theme
     pavucontrol
     celluloid
-    gedit
+    # gedit
     nemo-with-extensions
     gsettings-desktop-schemas
     gtk3
@@ -49,6 +49,7 @@ let
     nur.repos.novel2430.zju-connect
     # nur.repos.novel2430.wpsoffice
     nur.repos.novel2430.wpsoffice-365
+    nur.repos.novel2430.gedit
     nur.repos.xddxdd.baidunetdisk
     nur.repos.xddxdd.dingtalk
     nur.repos.xddxdd.qq
