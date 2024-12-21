@@ -70,6 +70,7 @@
       hmcl
       audacity
       shotcut
+      hugo
     ];
 
     # Use Clash
