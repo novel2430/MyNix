@@ -74,6 +74,7 @@
       # "${Default-conf.name}" = system-gen { host-conf = Default-conf; };
       "${ThinkPad-X230.name}" = system-gen { host-conf = ThinkPad-X230; };
       "${MAXSUN-b450m.name}" = system-gen { host-conf = MAXSUN-b450m; };
+      "${ASUSTek.name}" = system-gen { host-conf = ASUSTek; };
     };
   };
 }

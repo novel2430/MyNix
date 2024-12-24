@@ -31,18 +31,18 @@
   lib.optionals (opt-config.laptop == true) [
     ./modules/laptop-power-management.nix
   ]
-  ++
-  lib.optionals (builtins.elem "nvidia" opt-config.gpu-type) [
-    ./modules/nvidia.nix
-  ]
-  ++
-  lib.optionals (builtins.elem "intel-nvidia" opt-config.gpu-type) [
-    ./modules/nvidia.nix
-  ]
-  ++
-  lib.optionals (builtins.elem "amd" opt-config.gpu-type) [
-    ./modules/amd.nix
-  ]
+  # ++
+  # lib.optionals (builtins.elem "nvidia" opt-config.gpu-type) [
+  #   ./modules/nvidia.nix
+  # ]
+  # ++
+  # lib.optionals (builtins.elem "intel-nvidia" opt-config.gpu-type) [
+  #   ./modules/nvidia.nix
+  # ]
+  # ++
+  # lib.optionals (builtins.elem "amd" opt-config.gpu-type) [
+  #   ./modules/amd.nix
+  # ]
   ;
   
   # services.xserver.enable = true;

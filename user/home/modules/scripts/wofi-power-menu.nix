@@ -4,7 +4,7 @@ pkgs.writeShellScriptBin "wofi-power-menu" ''
   shutdown_menu="Shutdown"
   lock_menu="Lock"
   logout_menu="Logout"
-  res=$(printf '%s\n%s\n%s\n%s' $reboot_menu $shutdown_menu $lock_menu $logout_menu | ${pkgs.fuzzel}/bin/fuzzel --dmenu --cache=$HOME/.cache/fuz)
+  res=$(printf '%s\n%s\n%s\n%s' $reboot_menu $shutdown_menu $lock_menu $logout_menu | ${pkgs.wofi}/bin/wofi --show dmenu)
 
   if [ $res = $reboot_menu ]; then
     ${pkgs.systemd}/bin/reboot
