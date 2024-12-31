@@ -11,7 +11,7 @@ in
     (import ./waybar.nix {
       inherit pkgs;
     })
-    pkgs.labwc
+    pkgs.unstable.labwc
   ];
   home.file.".config/labwc/rc.xml".source = ./rc.xml;
   home.file.".config/labwc/menu.xml".source = ./menu.xml;

@@ -67,8 +67,8 @@
       lutris
       steam
       wine
+      ppsspp
       nur.repos.novel2430.shotcut
-      nur.repos.novel2430.ppsspp
       nur.repos.novel2430.vita3k
     ];
 
