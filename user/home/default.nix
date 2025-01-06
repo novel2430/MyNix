@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modify-pkgs, custom-pkgs, inputs, opt-config, ... }:
+{ config, lib, pkgs, modify-pkgs, custom-pkgs, pkgs-2405, inputs, opt-config, ... }:
 let
   my-packages = with pkgs;[
     neofetch
@@ -53,6 +53,7 @@ let
     nur.repos.xddxdd.baidunetdisk
     nur.repos.xddxdd.dingtalk
     nur.repos.xddxdd.qq
+    # pkgs-2405.nur.repos.xddxdd.dingtalk
   ]
   ++ opt-config.packages
   ;

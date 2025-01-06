@@ -1,4 +1,4 @@
-{nixpkgs, system, nixpkgs-unstable, nur }:
+{nixpkgs, system, nixpkgs-unstable, nur, nixpkgs-2405 }:
 rec {
   # Superset of the default unfree packages
   allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
@@ -49,5 +49,12 @@ rec {
   modify-pkgs = import ../modify-pkgs {
     pkgs = stable-pkgs;
     unstable-pkgs = unstable-pkgs;
+  };
+  # Nixpkgs 24.05
+  pkgs-2405 = import nixpkgs-2405 {
+    inherit system;
+    config.allowUnfreePredicate = allowed-unfree-packages;
+    config.permittedInsecurePackages = allowed-insecure-packages;
+    overlays = [ nur.overlay ];
   };
 }

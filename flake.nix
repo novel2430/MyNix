@@ -2,7 +2,7 @@
   description = "My NixOS flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    # nixpkgs-23.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05";
     # Unstable
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # HomeManager
@@ -16,7 +16,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nur, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-2405, home-manager, nur, ... }@inputs:
   let
     system = "x86_64-linux";
     # Packages Setting
@@ -25,6 +25,7 @@
       inherit system;
       inherit nixpkgs-unstable;
       inherit nur;
+      inherit nixpkgs-2405;
     };
     # Host Config
     hosts-conf = import ./settings/hosts-conf.nix { inherit pkg-settings; };
@@ -63,6 +64,7 @@
             opt-config = host-conf.config;
             inherit modify-pkgs;
             inherit custom-pkgs;
+            inherit pkgs-2405;
           };
         }
       ];
