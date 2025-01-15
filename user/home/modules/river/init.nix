@@ -41,8 +41,8 @@ rec {
       # Terminal
       { modes = ["normal"]; keys = "Super Return"; action = "${apps.foot}"; }
       # Custom application bindings
-      { modes = ["normal"]; keys = "Super D"; action = "${apps.fuzzel}"; }
-      { modes = ["normal"]; keys = "Super R"; action = "${apps.fuzzel} --list-executables-in-path"; }
+      { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
+      { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }
       { modes = ["normal"]; keys = "Super+Shift F"; action = "${apps.browser}"; }
       { modes = ["normal"]; keys = "Super C"; action = "${apps.wlrootsClipboard}"; }
       { modes = ["normal"]; keys = "Super+Shift L"; action = "${apps.swaylock} manual"; }

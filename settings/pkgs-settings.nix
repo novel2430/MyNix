@@ -20,6 +20,7 @@ rec {
     "steam-original"
     "steam-unwrapped"
     "wpsoffice-365"
+    "reaper"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [

@@ -68,8 +68,12 @@
       steam
       wine
       ppsspp
+      reaper
+      ardour
       nur.repos.novel2430.shotcut
       nur.repos.novel2430.vita3k
+      nodejs_23
+      wl-color-picker
     ];
 
     # Use Clash
