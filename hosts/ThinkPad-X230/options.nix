@@ -71,6 +71,8 @@
       audacity
       shotcut
       hugo
+      nodejs_23
+      wl-color-picker
     ];
 
     # Use Clash
