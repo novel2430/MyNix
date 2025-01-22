@@ -1,3 +1,4 @@
+{lib, opt-config, ...}:
 {
   virtualisation.docker = {
     enable = true;
@@ -5,11 +6,13 @@
       enable = false;
       setSocketVariable = true;
     };
-    daemon.settings = {
-      proxies = {
-        http-proxy = "http://127.0.0.1:7890";
-        https-proxy = "http://127.0.0.1:7890";
-      };
-    };
+    daemon.settings = lib.mkMerge [
+      (lib.mkIf (opt-config.use-proxy == true) {
+        proxies = {
+          http-proxy = "${opt-config.http-proxy}";
+          https-proxy = "${opt-config.https-proxy}";
+        };
+      }) 
+    ];
   };
 }

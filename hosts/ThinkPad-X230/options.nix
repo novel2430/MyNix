@@ -73,13 +73,14 @@
       hugo
       nodejs_23
       wl-color-picker
+      distrobox
     ];
 
     # Use Clash
-    use-clash = true;
+    use-clash = false;
     clash-dir = "/home/${username}/clash";
     # Proxy
-    use-proxy = true;
+    use-proxy = false;
     http-proxy-host = "127.0.0.1";
     http-proxy-port = "7890";
     https-proxy-host = "127.0.0.1";
