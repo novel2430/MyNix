@@ -39,6 +39,7 @@ let
     ## modify-pkgs.*
     # Custom Packages
     ## custom-pkgs.*
+    custom-pkgs.dingtalk
     # Unstable
     ## unstable.*
     # NUR
@@ -51,7 +52,7 @@ let
     nur.repos.novel2430.wpsoffice-365
     nur.repos.novel2430.gedit
     nur.repos.xddxdd.baidunetdisk
-    nur.repos.xddxdd.dingtalk
+    # nur.repos.xddxdd.dingtalk
     nur.repos.xddxdd.qq
     # pkgs-2405.nur.repos.xddxdd.dingtalk
   ]

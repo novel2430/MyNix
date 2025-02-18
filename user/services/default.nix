@@ -2,6 +2,7 @@
 {
   imports = 
     [
+      ./nextlab-ss.nix
     ]
     ++
     lib.optionals (opt-config.use-clash == true) [
