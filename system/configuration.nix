@@ -32,6 +32,10 @@
     ./modules/laptop-power-management.nix
   ]
   ++
+  lib.optionals (opt-config.bluetooth == true) [
+    ./modules/bluetooth.nix
+  ]
+  ++
   lib.optionals (builtins.elem "nvidia" opt-config.gpu-type) [
     ./modules/nvidia.nix
   ]
@@ -98,7 +102,7 @@
 
   # Enable sound.
   # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

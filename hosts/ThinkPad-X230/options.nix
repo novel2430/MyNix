@@ -34,22 +34,22 @@
     #   vrr = "false";
     # }
     monitors = {
-      "output:LVDS-1" = {
-        depth = "8";
-        mode = "1366x768";
-        position = "auto";
-        scale = "1.0";
-        transform = "normal";
-        vrr = "false";
-      };
-      "output:HDMI-A-1" = {
-        depth = "8";
-        mode = "mirror LVDS-1";
-        position = "auto";
-        scale = "1.0";
-        transform = "normal";
-        vrr = "false";
-      };
+      # "output:LVDS-1" = {
+      #   depth = "8";
+      #   mode = "1366x768";
+      #   position = "auto";
+      #   scale = "1.0";
+      #   transform = "normal";
+      #   vrr = "false";
+      # };
+      # "output:HDMI-A-1" = {
+      #   depth = "8";
+      #   mode = "mirror LVDS-1";
+      #   position = "auto";
+      #   scale = "1.0";
+      #   transform = "normal";
+      #   vrr = "false";
+      # };
     };
     # Monitors (For Hyprland Config)
     # Example :
@@ -74,13 +74,15 @@
       nodejs_23
       wl-color-picker
       distrobox
+      reaper
+      carla
     ];
 
     # Use Clash
-    use-clash = false;
+    use-clash = true;
     clash-dir = "/home/${username}/clash";
     # Proxy
-    use-proxy = false;
+    use-proxy = true;
     http-proxy-host = "127.0.0.1";
     http-proxy-port = "7890";
     https-proxy-host = "127.0.0.1";
@@ -98,6 +100,9 @@
 
     # Laptop Power Management
     laptop = true;
+
+    # Bluetooth
+    bluetooth = true;
 
     # No Keyboard
     no-keyboard = false;

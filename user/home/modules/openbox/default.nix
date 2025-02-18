@@ -1,4 +1,7 @@
 {pkgs, opt-config, ...}:
+let
+  blutooth-cmd = if opt-config.bluetooth then "${pkgs.blueman}/bin/blueman-applet &" else "";
+in
 {
   home.file.".config/openbox/rc.xml".source = ./rc.xml;
   home.file.".config/openbox/menu.xml".source = ./menu.xml;
@@ -25,9 +28,9 @@
       # Idle
       ${xorg.xset}/bin/xset dpms 1800 1800 3600
       ${xss-lock}/bin/xss-lock -- x-lock &
-      # ${pkgs.unstable.picom}/bin/picom &
       dbus-update-activation-environment --systemd WAYLAND_DISPLAY=none XDG_CURRENT_DESKTOP=sway
       fcitx5 --replace -d &
+      ${blutooth-cmd}
     '';
     executable = true;
   };

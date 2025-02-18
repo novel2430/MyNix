@@ -5,6 +5,7 @@
       inherit pkgs;
     })
     (import ./autostart.nix {
+      inherit lib;
       inherit pkgs;
       inherit opt-config;
     })

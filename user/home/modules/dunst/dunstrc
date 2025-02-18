@@ -232,7 +232,7 @@
 
     # dmenu path.
     # dmenu = /usr/bin/dmenu -p dunst:
-    dmenu = /usr/bin/wofi -dmenu
+    dmenu = /nix/store/81ayyhhp1564787l15syj2ibl6jfdlz0-user-environment/bin/wofi -dmenu
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
@@ -298,7 +298,7 @@
     # will be executed in sequence.
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_right_click = do_action, close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.

@@ -67,6 +67,9 @@
     # Laptop Power Management
     laptop = false;
 
+    # Bluetooth
+    bluetooth = false;
+
     # No Keyboard
     no-keyboard = false;
   };
