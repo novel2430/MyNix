@@ -17,7 +17,7 @@
     wall-img = "/home/${username}/.config/pics/wall";
 
     # intel, nvidia, intel-nvidia
-    gpu-type = "intel";
+    gpu-type = [ "intel" ];
     intel-bus-id = "";
     nvidia-bus-id = "";
 
@@ -37,9 +37,9 @@
     # WM Options
     wm = {
       wayfire = true;
-      river = false;
+      river = true;
       openbox = true;
-      labwc = true;
+      labwc = false;
     };
     # Packages For this Machine
     packages = with pkgs; [
@@ -60,7 +60,7 @@
     https-proxy = "http://${https-proxy-host}:${https-proxy-port}";
 
     # ZJU RVPN
-    use-zju-rvpn = false;
+    use-zju-rvpn = true;
     zju-rvpn-port = "7895";
     zju-rvpn-config = "/home/${username}/zjuconnect/config.toml";
 
@@ -68,7 +68,7 @@
     autocpu = false;
 
     # Laptop Power Management
-    laptop = false;
+    laptop = true;
 
     # No Keyboard
     no-keyboard = false;
