@@ -28,5 +28,5 @@ pkgs.writeShellScriptBin "my-wf-autostart" ''
   # IME
   fcitx5 --replace -d &
   # Blueman-applet
-  ${blutooth-cmd}
+  #${blutooth-cmd}
 ''

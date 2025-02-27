@@ -4,6 +4,9 @@
     (import ./volume.nix {
       inherit pkgs;
     })
+    (import ./bluetooth.nix {
+      inherit pkgs;
+    })
     (import ./wofi-power-menu.nix {
       inherit pkgs;
       inherit opt-config;

@@ -81,6 +81,7 @@
     # Use Clash
     use-clash = true;
     clash-dir = "/home/${username}/clash";
+
     # Proxy
     use-proxy = true;
     http-proxy-host = "127.0.0.1";
@@ -102,7 +103,7 @@
     laptop = true;
 
     # Bluetooth
-    bluetooth = true;
+    bluetooth = false;
 
     # No Keyboard
     no-keyboard = false;
