@@ -19,7 +19,6 @@
     # intel, nvidia, intel-nvidia, amd
     gpu-type = [
       "amd"
-      "nvidia"
     ];
     intel-bus-id = "PCI:0:2:0";
     nvidia-bus-id = "PCI:3:0:0";
