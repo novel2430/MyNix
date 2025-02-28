@@ -37,7 +37,7 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-    prime = lib.mkIf (builtins.elem "intel-nvidia" opt-config.gpu-type)  {
+    prime = lib.mkIf (builtins.elem "hibird-nvidia" opt-config.gpu-type)  {
       offload = {
         enable = true;
         enableOffloadCmd = true;
