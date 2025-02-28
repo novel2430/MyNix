@@ -19,6 +19,7 @@
     ./qutebrowser
     ./brave
     ./openbox-theme
+    ./zellij
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

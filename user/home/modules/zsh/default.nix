@@ -13,7 +13,6 @@
       startx = "rm ~/.Xauthority; startx";
       ls = "${pkgs.eza}/bin/eza --icons";
       cat = "${pkgs.bat}/bin/bat";
-      tree = "${pkgs.eza}/bin/eza --icons -T";
       neofetch = "${pkgs.fastfetch}/bin/fastfetch";
     };
     initExtra = lib.mkMerge [
