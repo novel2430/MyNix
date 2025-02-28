@@ -11,6 +11,10 @@
         normal {
             // uncomment this and adjust key if using copy_on_select=false
             // bind "Alt c" { Copy; }
+            bind "Ctrl Left" { SwitchToMode "Pane"; MoveFocus "Left"; SwitchToMode "Normal"; }
+            bind "Ctrl Right" { SwitchToMode "Pane"; MoveFocus "Right"; SwitchToMode "Normal"; }
+            bind "Ctrl Down" { SwitchToMode "Pane"; MoveFocus "Down"; SwitchToMode "Normal"; }
+            bind "Ctrl Up" { SwitchToMode "Pane"; MoveFocus "Up"; SwitchToMode "Normal"; }
         }
         locked {
             bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -321,17 +325,17 @@
             black 0 0 0
             white 255 255 255
         }
-        nord {
+        mine {
             fg "#D8DEE9"
             bg "#2E3440"
             black "#3B4252"
             red "#BF616A"
-            green "#A3BE8C"
+            green "#81A1C1"
             yellow "#EBCB8B"
             blue "#81A1C1"
             magenta "#B48EAD"
             cyan "#88C0D0"
-            white "#E5E9F0"
+            white "#6E7275"
             orange "#D08770"
         }
     }
@@ -339,7 +343,7 @@
     // Choose the theme that is specified in the themes section.
     // Default: default
     //
-    theme "nord"
+    theme "mine"
 
     // The name of the default layout to load on startup
     // Default: "default"
@@ -474,18 +478,18 @@
 
             hide_frame_for_single_pane "false"
 
-            mode_normal  "#[bg=blue] "
-            mode_tmux    "#[bg=#ffc387] "
+            mode_normal  "#[bg=#6e7275] "
+            mode_tmux    "#[bg=#6e7275] "
 
-            tab_normal   "#[fg=#6C7086]  {name} "
-            tab_active   "#[fg=#9399B2,bold,italic]  {name} "
+            tab_normal   "#[fg=#6C7086]  {index}:{name} "
+            tab_active   "#[fg=#eceff4,bold,italic]  {index}:{name} "
 
             command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
             command_git_branch_format      "#[fg=blue] {stdout} "
             command_git_branch_interval    "10"
             command_git_branch_rendermode  "static"
 
-            datetime        "#[fg=#6C7086,bold] {format} "
+            datetime        "#[fg=#eceff4,bold] {format} "
             datetime_format "%d %b %Y %H:%M"
             datetime_timezone "Asia/Taipei"
           }
