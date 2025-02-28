@@ -1,7 +1,7 @@
 { config, lib, pkgs, modify-pkgs, custom-pkgs, pkgs-2405, inputs, opt-config, ... }:
 let
   my-packages = with pkgs;[
-    neofetch
+    fastfetch
     socat
     upower
     obs-studio
@@ -35,6 +35,8 @@ let
     xarchiver
     krusader
     konsole
+    eza
+    bat
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages

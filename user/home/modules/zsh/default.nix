@@ -11,6 +11,10 @@
       showimage = "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations";
       delimage = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
       startx = "rm ~/.Xauthority; startx";
+      ls = "${pkgs.eza}/bin/eza --icons";
+      cat = "${pkgs.bat}/bin/bat";
+      tree = "${pkgs.eza}/bin/eza --icons -T";
+      neofetch = "${pkgs.fastfetch}/bin/fastfetch";
     };
     initExtra = lib.mkMerge [
       (lib.mkIf (opt-config.use-proxy == true) ''
