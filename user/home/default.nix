@@ -37,11 +37,13 @@ let
     konsole
     eza
     bat
+    inputs.astal.packages.${system}.default
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages
     ## custom-pkgs.*
     custom-pkgs.dingtalk
+    custom-pkgs.novel-ags
     # Unstable
     ## unstable.*
     # NUR

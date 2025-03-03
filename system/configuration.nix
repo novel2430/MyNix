@@ -44,6 +44,11 @@
     ./modules/nvidia.nix
   ]
   ++
+  lib.optionals (builtins.elem "amd-nvidia" opt-config.gpu-type) [
+    ./modules/nvidia.nix
+    ./modules/amd.nix
+  ]
+  ++
   lib.optionals (builtins.elem "amd" opt-config.gpu-type) [
     ./modules/amd.nix
   ]

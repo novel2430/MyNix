@@ -43,40 +43,39 @@ button {
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 0;
+	  border-radius: 0px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #eceff4;
+	  border-radius: 0px;
 }
 
 #tags button {
+	font-weight: 900;
 	padding: 0px 10px;
-	/* margin-right: 5px; */
-	/* margin-left: 5px; */
 	color: #eceff4;
-	/* border: 0px solid transparent; */
-	/* border-top: 3px solid #f6c177; */
-	/* border-left: 3px solid #f6c177; */
-	/* border-bottom: 2px solid #f6c177; */
-	/* background: #1f1d2e; */
+	border-radius: 0px;
 }
 
 #tags button.occupied {
 	font-weight: 900;
 	color: #eceff4;
 	background: #4c566a;
+	border-radius: 0px;
 }
 
 #tags button.focused {
 	font-weight: 900;
 	color: #eceff4;
 	background: #6e7275;
+	border-radius: 0px;
 }
 
 #tags button.urgent {
+	font-weight: 900;
 	color: #e0def4;
 	background-color: #eb6f92;
 	border-radius: 0px;

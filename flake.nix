@@ -14,9 +14,18 @@
     nur = {
       url = "github:nix-community/NUR";
     };
+    # Other
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-2405, home-manager, nur, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-2405, home-manager, nur, astal, ags, ... }@inputs:
   let
     system = "x86_64-linux";
     # Packages Setting
@@ -26,6 +35,8 @@
       inherit nixpkgs-unstable;
       inherit nur;
       inherit nixpkgs-2405;
+      inherit astal;
+      inherit ags;
     };
     # Host Config
     hosts-conf = import ./settings/hosts-conf.nix { inherit pkg-settings; };

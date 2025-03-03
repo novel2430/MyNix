@@ -78,12 +78,19 @@ rec {
     csd = [
       {app-id = "bar";}
     ];
+    # Force Ssd
+    ssd = [
+      {app-id = "brave-browser";}
+      {app-id = "nemo";}
+      {app-id = "org.pulseaudio.pavucontrol";}
+      {app-id = "gedit";}
+    ];
   };
   # Define Gaps
   gaps = {
     smart-gap = false;
-    inner = "10";
-    outer = "20";
+    inner = "5";
+    outer = "10";
   };
   # Define Keyboard Repeat Rate
   keyboard-repeat = {

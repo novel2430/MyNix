@@ -1,6 +1,8 @@
-{ config, lib, opt-config, ...}:
+{ config, lib, opt-config, pkgs, ...}:
 {
-  # nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.full
+  ];
   boot.extraModprobeConfig = ''
     blacklist nouveau
     options nouveau modeset=0
@@ -37,13 +39,24 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-    prime = lib.mkIf (builtins.elem "hibird-nvidia" opt-config.gpu-type)  {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      intelBusId = "${opt-config.intel-bus-id}";
-      nvidiaBusId = "${opt-config.nvidia-bus-id}";
-    };
+    prime = lib.mkMerge [ 
+      (lib.mkIf (builtins.elem "intel-nvidia" opt-config.gpu-type)  {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+        intelBusId = "${opt-config.intel-bus-id}";
+        nvidiaBusId = "${opt-config.nvidia-bus-id}";
+      })
+      (lib.mkIf (builtins.elem "amd-nvidia" opt-config.gpu-type)  {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+        amdgpuBusId = "${opt-config.amd-bus-id}";
+        nvidiaBusId = "${opt-config.nvidia-bus-id}";
+      })
+    ];
+
   };
 }

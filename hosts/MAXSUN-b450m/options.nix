@@ -18,11 +18,11 @@
 
     # intel, nvidia, intel-nvidia, amd
     gpu-type = [
-      "amd"
-      "nvidia"
+      "amd-nvidia"
     ];
     intel-bus-id = "PCI:0:2:0";
-    nvidia-bus-id = "PCI:3:0:0";
+    amd-bus-id = "PCI:10:0:0";
+    nvidia-bus-id = "PCI:1:0:0";
 
     # Monitors (For Wayfire Config)
     # Example :
@@ -57,7 +57,7 @@
       docker
       qemu
       virt-manager
-      # ryujinx
+      ryujinx
       # nsz
       openttd
       hugo
@@ -74,6 +74,7 @@
       nur.repos.novel2430.vita3k
       nodejs_23
       wl-color-picker
+      winetricks
     ];
 
     # Use Clash

@@ -12,7 +12,8 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   # Wallpaper
   ${swaybg} -i ${opt-config.wall-img} -m fill &
   # bar
-  river-waybar &
+  novel-ags-bar &
+  #river-waybar &
   # nm-applet
   ${nm-applet} &
   # Clipboard <cliphist>

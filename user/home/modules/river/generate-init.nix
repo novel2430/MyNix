@@ -25,6 +25,12 @@ let
     else
       "riverctl rule-add -app-id '${binding.app-id}' csd"
   );
+  formatViewRulesSsd = binding:(
+    if binding ? title then
+      "riverctl rule-add -app-id '${binding.app-id}' -title '${binding.title}' ssd"
+    else
+      "riverctl rule-add -app-id '${binding.app-id}' ssd"
+  );
   formatGaps = binding:(
     if binding.smart-gap == true then
       "rivercarro -outer-gaps ${binding.outer} -inner-gaps ${binding.inner} &\n"
@@ -83,6 +89,8 @@ with config; {
       ${concatStringsSep "\n" (builtins.map formatViewRulesFloat view-rules.floating)}
       # Csd
       ${concatStringsSep "\n" (builtins.map formatViewRulesCsd view-rules.csd)}
+      # Ssd
+      ${concatStringsSep "\n" (builtins.map formatViewRulesSsd view-rules.ssd)}
 
       # Tags Operation
       ${formatTags tags tags.count}

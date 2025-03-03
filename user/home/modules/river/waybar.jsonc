@@ -11,8 +11,7 @@
         // "sway/mode",
         // "sway/scratchpad",
         // "custom/media"
-	      "river/tags",
-        "river/window"
+	      "river/tags"
         // "wlr/taskbar"
     ],
     "modules-center": [

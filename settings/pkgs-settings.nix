@@ -1,4 +1,4 @@
-{nixpkgs, system, nixpkgs-unstable, nur, nixpkgs-2405 }:
+{nixpkgs, system, nixpkgs-unstable, nur, nixpkgs-2405, astal, ags }:
 rec {
   # Superset of the default unfree packages
   allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
@@ -21,6 +21,29 @@ rec {
     "steam-unwrapped"
     "wpsoffice-365"
     "reaper"
+    # CUDA
+    "cuda-merged"
+    "cuda_cuobjdump"
+    "cuda_gdb"
+    "cuda_nvcc"
+    "cuda_nvdisasm"
+    "cuda_nvprune"
+    "cuda_cccl"
+    "cuda_cudart"
+    "cuda_cupti"
+    "cuda_cuxxfilt"
+    "cuda_nvml_dev"
+    "cuda_nvrtc"
+    "cuda_nvtx"
+    "cuda_profiler_api"
+    "cuda_sanitizer_api"
+    "libcublas"
+    "libcufft"
+    "libcurand"
+    "libcusolver"
+    "libnvjitlink"
+    "libcusparse"
+    "libnpp"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [
@@ -45,6 +68,8 @@ rec {
   custom-pkgs = import ../custom-pkgs {
     pkgs = stable-pkgs;
     unstable-pkgs = unstable-pkgs;
+    astal = astal.packages.${system};
+    ags = ags.packages.${system}.default;
   };
   # Modify Packages
   modify-pkgs = import ../modify-pkgs {
