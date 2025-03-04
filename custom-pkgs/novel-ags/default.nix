@@ -13,8 +13,8 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "novel2430";
     repo = "MyAGS";
-    rev = "e3186befcfffc35250c9dcc6105533dbcf3a96e6";
-    sha256 = "sha256-uURmLc7w9dUn+Rb44FTRLw+FCe1ps9J0Gve4BkqzihU=";
+    rev = "2357e56190091820bd5c88e6920bd6659010291d";
+    sha256 = "sha256-/nSlcgNgqjri0S2fSSrRRF5SHwraIcPJYYofBaRFYkk=";
   };
 
   nativeBuildInputs = [

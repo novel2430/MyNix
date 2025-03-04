@@ -74,6 +74,7 @@ rec {
     floating = [
       {app-id = "float*"; title = "foo";}
       {app-id = "wemeetapp";}
+      {app-id = "com.alibabainc.dingtalk";}
     ];
     # Force Csd
     csd = [
@@ -85,6 +86,7 @@ rec {
       {app-id = "nemo";}
       {app-id = "org.pulseaudio.pavucontrol";}
       {app-id = "gedit";}
+      {app-id = "com.alibabainc.dingtalk";}
     ];
   };
   # Define Gaps
