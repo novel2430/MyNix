@@ -11,7 +11,7 @@
       showimage = "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations";
       delimage = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
       startx = "rm ~/.Xauthority; startx";
-      ls = "${pkgs.eza}/bin/eza --icons";
+      ls = "${pkgs.eza}/bin/eza --icons auto";
       cat = "${pkgs.bat}/bin/bat";
       neofetch = "${pkgs.fastfetch}/bin/fastfetch";
     };
