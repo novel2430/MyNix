@@ -13,8 +13,8 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "novel2430";
     repo = "MyAGS";
-    rev = "39fb7f86f79de21ccb9144479731d0760a1b6350";
-    sha256 = "sha256-v7Lduh18CYw4SoYw75ZdnhNNJWWX914scEneQSieNsU=";
+    rev = "e3186befcfffc35250c9dcc6105533dbcf3a96e6";
+    sha256 = "sha256-uURmLc7w9dUn+Rb44FTRLw+FCe1ps9J0Gve4BkqzihU=";
   };
 
   nativeBuildInputs = [
@@ -39,7 +39,7 @@ stdenvNoCC.mkDerivation rec {
 
   buildPhase = ''
     runHook preBuild
-    ags bundle $src/app.ts bar 
+    ags bundle $src/app.ts novel-ags
     runHook postBuild
 
   '';
@@ -49,9 +49,10 @@ stdenvNoCC.mkDerivation rec {
 
     mkdir -p $out/bin
     mkdir -p $out/lib
-    install -Dm555 bar $out/lib/bar
-    echo "${ags}/bin/ags run $out/lib/bar" > $out/bin/novel-ags-bar
-    chmod +x $out/bin/novel-ags-bar
+
+    install -Dm555 novel-ags $out/lib/novel-ags
+    echo "${ags}/bin/ags run $out/lib/novel-ags" > $out/bin/novel-ags
+    chmod +x $out/bin/novel-ags
 
     runHook postInstall
   '';

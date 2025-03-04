@@ -11,6 +11,7 @@ rec {
     swaylock = "my-swaylock";
     powerMenu = "wofi-power-menu";
     volume = "my-volume";
+    wpctl = "${pkgs.wireplumber}/bin/wpctl";
     screenshot = "grim-slurp-screenshot";
     browser = "brave --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4";
     fuzzyMarks = "${pkgs.nur.repos.novel2430.FuzzyMarks}/bin/fuzzyMarks";
@@ -48,9 +49,9 @@ rec {
       { modes = ["normal"]; keys = "Super+Shift L"; action = "${apps.swaylock} manual"; }
       { modes = ["normal"]; keys = "Super+Shift P"; action = "${apps.powerMenu}"; }
       # Volume control
-      { modes = ["normal" "locked"]; keys = "None XF86AudioRaiseVolume"; action = "${apps.volume} up"; }
-      { modes = ["normal" "locked"]; keys = "None XF86AudioLowerVolume"; action = "${apps.volume} down"; }
-      { modes = ["normal" "locked"]; keys = "None XF86AudioMute"; action = "${apps.volume} mute"; }
+      { modes = ["normal" "locked"]; keys = "None XF86AudioRaiseVolume"; action = "${apps.wpctl} set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
+      { modes = ["normal" "locked"]; keys = "None XF86AudioLowerVolume"; action = "${apps.wpctl} set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+      { modes = ["normal" "locked"]; keys = "None XF86AudioMute"; action = "${apps.wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
       # Brightness control
       { modes = ["normal" "locked"]; keys = "None XF86MonBrightnessUp"; action = "${apps.brightnessctl} set +10%"; }
       { modes = ["normal" "locked"]; keys = "None XF86MonBrightnessDown"; action = "${apps.brightnessctl} set 10%-"; }

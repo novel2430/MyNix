@@ -11,8 +11,9 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   start-wm $WAYLAND_DISPLAY
   # Wallpaper
   ${swaybg} -i ${opt-config.wall-img} -m fill &
+  # AGS
+  novel-ags &
   # bar
-  novel-ags-bar &
   #river-waybar &
   # nm-applet
   ${nm-applet} &
@@ -32,4 +33,5 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   fcitx5 --replace -d &
   # Blueman-applet
   ${blutooth-cmd}
+
 ''
