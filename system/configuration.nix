@@ -26,6 +26,7 @@
     ./services/xserver.nix
     ./services/pipewire.nix
     ./services/others.nix
+    ./services/upower.nix
   ]
   ++
   lib.optionals (opt-config.laptop == true) [
