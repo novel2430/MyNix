@@ -8,7 +8,7 @@ pkgs.writeShellScriptBin "grim-slurp-screenshot" ''
   path="${opt-config.screenshot-dir}"
   now_date=''$(date '+%Y%m%d-%H%M%S')
   file_name="''${path}/''${now_date}.png"
-  msg="save as ''${file_name}"
+  msg="save as \n''${file_name}"
 
   mkdir -p $path
 
