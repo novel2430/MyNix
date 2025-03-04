@@ -87,6 +87,7 @@ rec {
       {app-id = "org.pulseaudio.pavucontrol";}
       {app-id = "gedit";}
       {app-id = "com.alibabainc.dingtalk";}
+      {app-id = "org.jackhuang.hmcl.Launcher";}
     ];
   };
   # Define Gaps
