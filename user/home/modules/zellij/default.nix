@@ -206,9 +206,9 @@
         shared_except "resize" "locked" {
             bind "Ctrl n" { SwitchToMode "Resize"; }
         }
-        shared_except "scroll" "locked" {
-            bind "Ctrl r" { SwitchToMode "Scroll"; }
-        }
+        //shared_except "scroll" "locked" {
+            //bind "Ctrl r" { SwitchToMode "Scroll"; }
+        //}
         shared_except "session" "locked" {
             bind "Ctrl b" { SwitchToMode "Session"; }
         }
