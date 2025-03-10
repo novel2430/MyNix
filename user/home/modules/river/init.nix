@@ -89,6 +89,7 @@ rec {
       {app-id = "com.alibabainc.dingtalk";}
       {app-id = "org.jackhuang.hmcl.Launcher";}
       {app-id = "Motrix";}
+      {app-id = "wechat";}
     ];
   };
   # Define Gaps
