@@ -9,8 +9,8 @@ pkgs.writeShellScriptBin "my-swaylock" ''
   x_pos=$(( $indicator_radius + $indicator_thickness + 10 ))
   y_pos=$(( $indicator_radius + $indicator_thickness + 10 ))
   y_pos=$(( 1080 - $y_pos ))
-  b_color="6e7275"
-  f_color="e6eff0"
+  b_color="637c8c"
+  f_color="e0deda"
 
   case $1 in
     manual)

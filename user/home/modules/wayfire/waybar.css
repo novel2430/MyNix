@@ -9,9 +9,9 @@
 
 window#waybar {
     /* background-color: rgba(43, 48, 59, 0.5); */
-    background-color: #2e3440;
+    background-color: #1c2e36;
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #eceff4;
+    color: #e0deda;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -105,14 +105,14 @@ button:hover {
     border-radius: 0px 8px 8px 8px; 
     padding: 0 0px;
     margin: 0 0px;
-    color: #ffffff;
+    color: #e0deda;
     background-color: transparent;
 }
 #taskbar button {
     border-radius: 3px 3px 3px 3px;
     padding: 0 5px;
     margin: 0px 0px;
-    color: #ffffff;
+    color: #e0deda;
     background-color: rgba(120,118,117,0);
 }
 #taskbar button.active {
@@ -178,11 +178,11 @@ button:hover {
 
 #battery {
     background-color: transparent;
-    color: #ffffff;
+    color: #e0deda;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #e0deda;
     background-color: transparent;
 }
 
@@ -295,7 +295,7 @@ label:focus {
 
 #tray {
     /* background-color: #2980b9; */
-    background-color: #6e7275;
+    background-color: #637c8c;
 }
 
 #tray > .passive {
@@ -305,7 +305,7 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     /* background-color: #eb4d4b; */
-    background-color: #6e7275;
+    background-color: #637c8c;
 }
 
 #idle_inhibitor {

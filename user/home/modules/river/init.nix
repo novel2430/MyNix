@@ -116,8 +116,8 @@ rec {
   # Define Background and Border
   background-border-settings = {
     background-color = "0x002b36";
-    border-color-focused = "0xd8dee9";
-    border-color-unfocused = "0x3b4252";
+    border-color-focused = "0xe0deda";
+    border-color-unfocused = "0x1c2e36";
     border-width = "4";
   };
 }
