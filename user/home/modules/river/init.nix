@@ -90,6 +90,7 @@ rec {
       {app-id = "org.jackhuang.hmcl.Launcher";}
       {app-id = "Motrix";}
       {app-id = "wechat";}
+      {app-id = "com.github.weclaw1.ImageRoll";}
     ];
   };
   # Define Gaps
