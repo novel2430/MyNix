@@ -189,10 +189,10 @@ c.bindings.commands = {
 
 # Them Settings
 my_colors = {
-    'background': '#3b4252',
-    'background-2': '#4c566a',
-    'foreground': '#eceff4',
-    'select-background': '#6e7275',
+    'background': '#1c2e36',
+    'background-2': '#1c2e36',
+    'foreground': '#e0deda',
+    'select-background': '#637c8c',
     'error': '#d22854',
     'warning': '#fdb730',
     'green': '#38f79b',
@@ -202,6 +202,8 @@ font_size = 15
 defualt_font_size = '{:d}pt'.format(font_size)
 c.fonts.default_family = [
     'Hack Nerd Font'
+    'Noto Sans SC'
+    'Noto Sans TC'
     'WenQuanYi Zen Hei'
 ]
 c.fonts.default_size = defualt_font_size

@@ -15,8 +15,6 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   novel-ags &
   # bar
   #river-waybar &
-  # nm-applet
-  ${nm-applet} &
   # Clipboard <cliphist>
   ${wl-paste} --watch ${cliphist} store &
   # GTK title bar layout
@@ -33,5 +31,7 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   fcitx5 --replace -d &
   # Blueman-applet
   ${blutooth-cmd}
+  # nm-applet
+  ${nm-applet} &
 
 ''
