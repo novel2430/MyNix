@@ -20,6 +20,7 @@
     ./brave
     ./openbox-theme
     ./zellij
+    ./fastfetch
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

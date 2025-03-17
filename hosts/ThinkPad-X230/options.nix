@@ -76,6 +76,9 @@
       distrobox
       reaper
       carla
+
+      qemu
+      virt-manager
     ];
 
     # Use Clash

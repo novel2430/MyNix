@@ -1,37 +1,37 @@
 * {
-  background-color: #3b4252;
-  text-color: #eceff4;
+  background-color: #1c2e36;
+  text-color: #e0deda;
   font: "Hack Nerd Font Normal Regular 15";
   padding: 0px;
 }
 window {
-  background-color: #3b4252;
+  background-color: #1c2e36;
   width: 25%;
   height: 25%;
   padding: 0px;
 }
 mainbox {
-  background-color: #3b4252;
+  background-color: #1c2e36;
   children: [ inputbar, message, listview ];
   padding: 0px;
 }
 inputbar {
-  text-color: #eceff4;
-  background-color: #3b4252;
+  text-color: #e0deda;
+  background-color: #1c2e36;
   children: [ entry ];
   padding: 0px;
 }
 entry {
   placeholder: "Type here ...";
   orientation: horizontal;
-  background-color: #3b4252;
-  text-color: #eceff4;
+  background-color: #1c2e36;
+  text-color: #e0deda;
   padding: 5px;
   blink: true;
 }
 listview {
-  text-color: #eceff4;
-  background-color: #3b4252;
+  text-color: #e0deda;
+  background-color: #1c2e36;
   padding: 0px;
   scrollbar: false;
   border: 0px;
@@ -42,11 +42,11 @@ element {
   padding: 0px;
 }
 element-text selected {
-  background-color: #6e7275;
+  background-color: #637c8c;
   padding: 10px;
 }
 element-text {
-  text-color: #eceff4;
-  background-color: #3b4252;
+  text-color: #e0deda;
+  background-color: #1c2e36;
   padding: 10px;
 }
