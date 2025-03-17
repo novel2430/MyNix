@@ -14,7 +14,7 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   # AGS
   novel-ags &
   # bar
-  #river-waybar &
+  river-waybar &
   # Clipboard <cliphist>
   ${wl-paste} --watch ${cliphist} store &
   # GTK title bar layout

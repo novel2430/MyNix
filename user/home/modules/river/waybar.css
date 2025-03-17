@@ -9,9 +9,9 @@
 
 window#waybar {
     /* background-color: rgba(43, 48, 59, 0.5); */
-    background-color: #2e3440;
+    background-color: #1c2e36;
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #eceff4;
+    color: #e0deda;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -55,28 +55,28 @@ button:hover {
 
 #tags button {
 	font-weight: 900;
-	padding: 0px 10px;
-	color: #eceff4;
+	padding: 0px 8px;
+	color: #e0deda;
 	border-radius: 0px;
 }
 
 #tags button.occupied {
 	font-weight: 900;
-	color: #eceff4;
-	background: #4c566a;
+	color: #e0deda;
+	background: #375566;
 	border-radius: 0px;
 }
 
 #tags button.focused {
 	font-weight: 900;
-	color: #eceff4;
-	background: #6e7275;
+	color: #e0deda;
+	background: #637c8c;
 	border-radius: 0px;
 }
 
 #tags button.urgent {
 	font-weight: 900;
-	color: #e0def4;
+	color: #e0deda;
 	background-color: #eb6f92;
 	border-radius: 0px;
 }
@@ -173,15 +173,16 @@ button:hover {
 #clock {
     /* background-color: #6e7275; */
     background-color: transparent;
+    color: #e0deda;
 }
 
 #battery {
     background-color: transparent;
-    color: #ffffff;
+    color: #e0deda;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #e0deda;
     background-color: transparent;
 }
 
@@ -195,7 +196,7 @@ button:hover {
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #e0deda;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -228,11 +229,12 @@ label:focus {
 
 #cpu {
     background-color: transparent;
-    color: #ffffff;
+    color: #e0deda;
 }
 
 #memory {
     background-color: transparent;
+    color: #e0deda;
 }
 
 #disk {
@@ -286,15 +288,17 @@ label:focus {
 
 #temperature {
     background-color: transparent;
+    color: #e0deda;
 }
 
 #temperature.critical {
     background-color: transparent;
+    color: #e0deda;
 }
 
 #tray {
-    /* background-color: #2980b9; */
-    background-color: #6e7275;
+    background-color: #637c8c;
+    color: #e0deda;
 }
 
 #tray > .passive {
@@ -305,6 +309,7 @@ label:focus {
     -gtk-icon-effect: highlight;
     /* background-color: #eb4d4b; */
     background-color: #6e7275;
+    color: #e0deda;
 }
 
 #idle_inhibitor {

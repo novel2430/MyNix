@@ -91,6 +91,14 @@ rec {
       {app-id = "Motrix";}
       {app-id = "wechat";}
       {app-id = "com.github.weclaw1.ImageRoll";}
+      {app-id = "pdf";}
+      {app-id = "wps";}
+      {app-id = "wpp";}
+      {app-id = "net.lutris.Lutris";}
+      {app-id = "io.github.celluloid_player.Celluloid";}
+      {app-id = "steam";}
+      {app-id = "org.pwmt.zathura";}
+      {app-id = "io.bassi.Amberol";}
     ];
   };
   # Define Gaps
