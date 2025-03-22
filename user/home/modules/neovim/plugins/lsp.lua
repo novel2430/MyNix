@@ -56,6 +56,7 @@ local on_attach = function(event)
   end
   map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
   map("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+  map("gf", "<cmd>lua vim.lsp.buf.format()<CR>")
   map("gi", "<cmd>Telescope lsp_implementations<CR>")
   map("<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
   map("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")

@@ -75,6 +75,9 @@
       nodejs_23
       wl-color-picker
       winetricks
+
+      # kdePackages.kdeconnect-kde
+      # kdePackages.kio-admin
     ];
 
     # Use Clash
