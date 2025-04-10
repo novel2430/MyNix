@@ -39,7 +39,6 @@
     python312
     xdg-utils
     maven
-    jdk17
     jdk21
     psmisc
     glfw

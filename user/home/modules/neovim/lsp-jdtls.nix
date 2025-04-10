@@ -13,15 +13,15 @@ local root_files = {
 
 -- Some Path
 local current_root = vim.fs.dirname(vim.fs.find(root_files, {stop = vim.env.HOME})[1])
-local java_home = '${java}' -- Your JDK
+local java_home = '${java}/lib/openjdk' -- Your JDK
 local jdtls_home = '${jdt}'
-local jdtls_default_config = jdtls_home .. '/share/config/config.ini'
+local jdtls_default_config = jdtls_home .. '/share/java/jdtls/config_linux/config.ini'
 local jdtls_data_path = vim.fn.expand('$HOME/.config/jdtls/workspace/')
 if current_root then
   jdtls_data_path = vim.fn.expand('$HOME/.config/jdtls/workspace/') .. current_root
 end
 local jdtls_config_path = vim.fn.expand('$HOME/.config/jdtls/config')
-local jdtls_plugin_path = jdtls_home .. '/share/java/plugins/'
+local jdtls_plugin_path = jdtls_home .. '/share/java/jdtls/plugins/'
 local jdtls_jar_path = vim.fn.globpath(jdtls_plugin_path, 'org.eclipse.equinox.launcher_*.jar')
 local java_path = java_home .. '/bin/java'
 

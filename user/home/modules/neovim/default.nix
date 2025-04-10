@@ -55,7 +55,7 @@
           (
             toLua (
               buildJdtConfig {
-                java = pkgs.jdk17; # Change to your JDK
+                java = pkgs.jdk; # JDK21
                 jdt = pkgs.jdt-language-server;
               }
             )
