@@ -113,16 +113,16 @@ let
       zoom = "0.100000";
     };
     decoration = {
-      active_color = "\\#222222AA";
-      border_size = "4";
+      active_color = "\\#637c8cFF";
+      border_size = "2";
       button_order = "minimize maximize close";
-      font = "sans-serif";
+      font = "Hack Nerd Font";
       ignore_views = "none";
-      inactive_color = "\\#333333DD";
-      title_height = "30";
+      inactive_color = "\\#1c2e36FF";
+      title_height = "25";
     };
     expo = {
-      background = "\\#1A1A1AFF";
+      background = "\\#375566FF";
       duration = "500";
       inactive_brightness = "0.700000";
       keyboard_interaction = "true";
@@ -145,9 +145,8 @@ let
       move_fingers = "3";
     };
     fast-switcher = {
-      activate = "<alt> KEY_ESC";
-      activate_backward = "<alt> <shift> KEY_ESC";
-      inactive_alpha = "0.700000";
+      activate = "<super> KEY_J";
+      activate_backward = "<super> KEY_K";
     };
     fisheye = {
       radius = "450.000000";
@@ -188,8 +187,8 @@ let
       gesture_sensitivity = "1.000000";
       kb_capslock_default_state = "false";
       kb_numlock_default_state = "false";
-      kb_repeat_delay = "400";
-      kb_repeat_rate = "40";
+      kb_repeat_delay = "300";
+      kb_repeat_rate = "50";
       left_handed_mode = "false";
       middle_emulation = "false";
       modifier_binding_timeout = "400";
@@ -256,7 +255,7 @@ let
     scale = {
       allow_zoom = "false";
       bg_color = "\\#1A1A1AE6";
-      duration = "500";
+      duration = "300";
       inactive_alpha = "0.750000";
       include_minimized = "true";
       middle_click_close = "false";
@@ -270,41 +269,10 @@ let
       toggle = "<alt> KEY_SPACE | hotspot right-top 10x10 250";
       toggle_all = "";
     };
-    scale-title-filter = {
-      bg_color = "\\#00000080";
-      case_sensitive = "false";
-      font_size = "30";
-      overlay = "true";
-      share_filter = "false";
-      text_color = "\\#CCCCCCCC";
-    };
-    shortcuts-inhibit = {
-      break_grab = "none";
-      ignore_views = "none";
-      inhibit_by_default = "none";
-    };
-    simple-title = {
-      animation_duration = "0";
-      button_move = "<super> BTN_LEFT";
-      button_resize = "<super> BTN_RIGHT";
-      inner_gap_size = "5";
-      keep_fullscreen_on_adjacent = "true";
-      key_focus_above = "<super> KEY_K";
-      key_focus_below = "<super> KEY_J";
-      key_focus_left = "<super> KEY_H";
-      key_focus_right = "<super> KEY_L";
-      key_toggle = "<super> KEY_T";
-      outer_horiz_gap_size = "0";
-      outer_vert_gap_size = "0";
-      preview_base_border = "\\#404080CC";
-      preview_base_color = "\\#8080FF80";
-      preview_border_width = "3";
-      tile_by_default = "all";
-    };
     switcher = {
       next_view = "<alt> KEY_TAB";
       prev_view = "<alt> <shift> KEY_TAB";
-      speed = "500";
+      speed = "200";
       view_thumbnail_rotation = "30";
       view_thumbnail_scale = "1.000000";
     };
@@ -342,6 +310,24 @@ let
       with_win_right = "<ctrl> <shift> <super> KEY_RIGHT";
       with_win_up = "<ctrl> <shift> <super> KEY_UP";
       wraparound = "false";
+      binding_1 = "<super> KEY_1";
+      binding_2 = "<super> KEY_2";
+      binding_3 = "<super> KEY_3";
+      binding_4 = "<super> KEY_4";
+      binding_5 = "<super> KEY_5";
+      binding_6 = "<super> KEY_6";
+      binding_7 = "<super> KEY_7";
+      binding_8 = "<super> KEY_8";
+      binding_9 = "<super> KEY_9";
+      send_win_1 = "<super> <shift> KEY_1";
+      send_win_2 = "<super> <shift> KEY_2";
+      send_win_3 = "<super> <shift> KEY_3";
+      send_win_4 = "<super> <shift> KEY_4";
+      send_win_5 = "<super> <shift> KEY_5";
+      send_win_6 = "<super> <shift> KEY_6";
+      send_win_7 = "<super> <shift> KEY_7";
+      send_win_8 = "<super> <shift> KEY_8";
+      send_win_9 = "<super> <shift> KEY_9";
     };
     wayfire-shell = {
       toggle_menu = "<super>";
