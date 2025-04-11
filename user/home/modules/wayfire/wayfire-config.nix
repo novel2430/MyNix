@@ -28,7 +28,6 @@ let
       gamma = "wlsunset";
       idle = "my-swayidle";
       my_autostart = "my-wf-autostart";
-      notifications = "dunst";
       outputs = "kanshi";
     };
     blur = {
