@@ -8,9 +8,9 @@ let
     };
     animate = {
       close_animation = "zoom";
-      duration = "400";
+      duration = "300";
       enabled_for = ''(type equals "toplevel" | (type equals "x-or" & focusable equals true))'';
-      fade_duration = "400";
+      fade_duration = "300";
       fade_enabled_for = ''type equals "overlay"'';
       fire_color = "\\#B22303FF";
       fire_duration = "300";
@@ -19,8 +19,8 @@ let
       fire_particles = "2000";
       open_animation = "zoom";
       random_fire_color = "false";
-      startup_duration = "600";
-      zoom_duration = "500";
+      startup_duration = "300";
+      zoom_duration = "300";
       zoom_enabled_for = "none";
     };
     autostart = {
@@ -123,7 +123,7 @@ let
     };
     expo = {
       background = "\\#375566FF";
-      duration = "500";
+      duration = "300";
       inactive_brightness = "0.700000";
       keyboard_interaction = "true";
       offset = "10";

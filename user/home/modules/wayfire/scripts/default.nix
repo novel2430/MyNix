@@ -1,4 +1,4 @@
-{ lib, pkgs, opt-config, ...}:
+{ lib, pkgs, opt-config, modify-pkgs, ...}:
 {
   home.packages = [
     (import ./waybar.nix {

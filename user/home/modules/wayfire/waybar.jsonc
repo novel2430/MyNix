@@ -12,6 +12,7 @@
         // "sway/scratchpad",
         // "custom/media"
 	      // "river/tags"
+        "wlr/workspaces",
         "wlr/taskbar"
     ],
     "modules-center": [
