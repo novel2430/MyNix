@@ -9,6 +9,8 @@ let
 in
 pkgs.writeShellScriptBin "my-wf-autostart" ''
   start-wm $WAYLAND_DISPLAY
+  # AGS
+  novel-ags &
   # Wallpaper
   ${swaybg} -i ${opt-config.wall-img} -m fill &
   # bar

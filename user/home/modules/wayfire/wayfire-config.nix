@@ -1,4 +1,4 @@
-{lib, opt-config, ...}:
+{lib, opt-config, pkgs, ...}:
 with lib;
 let
   wayfire-config = {
@@ -66,13 +66,13 @@ let
       command_clipboard = "wlroot-clipboard";
       command_launcher = "wofi --show drun";
       command_lock = "my-swaylock manual";
-      command_mute = "my-volume mute";
+      command_mute = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       command_run_launcher = "wofi --show run";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot select";
       command_terminal = "foot";
-      command_volume_down = "my-volume down";
-      command_volume_up = "my-volume up";
+      command_volume_down = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-";
+      command_volume_up = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
       command_light_up = "brightnessctl set 10%+";
       command_light_down = "brightnessctl set 10%-";
       command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
