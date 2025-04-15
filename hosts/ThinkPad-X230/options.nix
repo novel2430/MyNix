@@ -76,7 +76,7 @@
       distrobox
       reaper
       carla
-
+      discord
       qemu
       virt-manager
     ];
