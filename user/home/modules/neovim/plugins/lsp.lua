@@ -108,6 +108,7 @@ local lsp_servers = {
   nil_ls = {},
   -- bashls
   bashls = {},
+  -- Rust
   rust_analyzer = {
     ['rust-analyzer'] = {
       diagnostics = {
@@ -124,3 +125,18 @@ for server_name, server_config in pairs(lsp_servers) do
 	  settings = server_config
   }
 end
+
+-- For Vue (Volar)
+require('lspconfig').volar.setup {
+  capabilities = capabilities,
+  init_options = {
+    vue = {
+      hybridMode = false,
+    },
+    typescript = {
+      tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+    },
+  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+}
+

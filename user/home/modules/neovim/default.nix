@@ -19,6 +19,7 @@
       nil # Nix
       nodePackages.bash-language-server # Bash
       rust-analyzer # Rust
+      vue-language-server # Vue
     ];
     extraLuaConfig = ''
       ${builtins.readFile ./options/basic-autocommand.lua}
