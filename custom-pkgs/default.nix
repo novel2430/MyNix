@@ -5,4 +5,5 @@
     astal = astal;
     ags = ags;
   };
+  zen-browser = pkgs.callPackage ./zen-browser {};
 }

@@ -44,6 +44,7 @@ let
     ## custom-pkgs.*
     custom-pkgs.dingtalk
     custom-pkgs.novel-ags
+    # custom-pkgs.zen-browser
     # Unstable
     ## unstable.*
     # NUR
@@ -55,6 +56,7 @@ let
     # nur.repos.novel2430.wpsoffice
     nur.repos.novel2430.wpsoffice-365
     nur.repos.novel2430.gedit
+    nur.repos.novel2430.zen-browser-bin
     nur.repos.xddxdd.baidunetdisk
     # nur.repos.xddxdd.dingtalk
     nur.repos.xddxdd.qq
