@@ -33,9 +33,9 @@ let
   );
   formatGaps = binding:(
     if binding.smart-gap == true then
-      "rivercarro -outer-gaps ${binding.outer} -inner-gaps ${binding.inner} &\n"
+      "rivercarro -outer-gaps ${binding.outer} -inner-gaps ${binding.inner} -per-tag &\n"
     else
-      "rivercarro -no-smart-gaps -outer-gaps ${binding.outer} -inner-gaps ${binding.inner} &\n"
+      "rivercarro -no-smart-gaps -outer-gaps ${binding.outer} -inner-gaps ${binding.inner} -per-tag &\n"
   );
   formatKeyboardRepeat = binding:(
     "riverctl set-repeat ${binding.rate} ${binding.delay}"

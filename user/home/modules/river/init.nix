@@ -99,6 +99,7 @@ rec {
       {app-id = "steam";}
       {app-id = "org.pwmt.zathura";}
       {app-id = "io.bassi.Amberol";}
+      {app-id = "zen";}
     ];
   };
   # Define Gaps
