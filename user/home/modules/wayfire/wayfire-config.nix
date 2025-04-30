@@ -69,12 +69,13 @@ let
       command_run_launcher = "wofi --show run";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot select";
-      command_terminal = "foot";
+      command_terminal = "kitty";
       command_volume_down = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-";
       command_volume_up = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
       command_light_up = "brightnessctl set 10%+";
       command_light_down = "brightnessctl set 10%-";
-      command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
+      # command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
+      command_web_browser = "zen-browser";
       command_waybar = "killall waybar; ~/.config/wayfire/bar-run.sh";
       command_power_menu = "wofi-power-menu";
       repeatable_binding_volume_down = "KEY_VOLUMEDOWN";

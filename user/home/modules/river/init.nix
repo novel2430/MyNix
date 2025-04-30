@@ -4,6 +4,7 @@ rec {
   # Define paths to custom and standard applications
   apps = {
     foot = "${foot}/bin/foot";
+    kitty = "${kitty}/bin/kitty";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     wofi = "${wofi}/bin/wofi";
     fuzzel = "${fuzzel}/bin/fuzzel";
@@ -13,7 +14,8 @@ rec {
     volume = "my-volume";
     wpctl = "${pkgs.wireplumber}/bin/wpctl";
     screenshot = "grim-slurp-screenshot";
-    browser = "brave --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4";
+    # browser = "brave --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4";
+    browser = "zen-browser";
     fuzzyMarks = "${pkgs.nur.repos.novel2430.FuzzyMarks}/bin/fuzzyMarks";
   };
   # Define keybindings
@@ -40,7 +42,7 @@ rec {
     ];
     apps = [
       # Terminal
-      { modes = ["normal"]; keys = "Super Return"; action = "${apps.foot}"; }
+      { modes = ["normal"]; keys = "Super Return"; action = "${apps.kitty}"; }
       # Custom application bindings
       { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
       { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }
@@ -100,6 +102,7 @@ rec {
       {app-id = "org.pwmt.zathura";}
       {app-id = "io.bassi.Amberol";}
       {app-id = "zen";}
+      {app-id = "com.mitchellh.ghostty";}
     ];
   };
   # Define Gaps

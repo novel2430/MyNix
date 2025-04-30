@@ -21,6 +21,8 @@
     ./openbox-theme
     ./zellij
     ./fastfetch
+    # ./ghostty
+    ./kitty
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
