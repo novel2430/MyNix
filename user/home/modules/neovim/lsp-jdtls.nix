@@ -1,4 +1,4 @@
-{java, jdt, ...}:
+{java, jdt, lombok, ...}:
 ''
 -- Java Stuff
 -- Searching Root Files
@@ -38,7 +38,7 @@ local jdtls_server = {
     '-Dosgi.configuration.cascaded=true',
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
-    -- '-javaagent:' .. lombok_path,
+    '-javaagent:' .. '${lombok}/share/java/lombok.jar',
     '-Xmx1g',
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',

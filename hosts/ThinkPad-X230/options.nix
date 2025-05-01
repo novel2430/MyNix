@@ -69,7 +69,6 @@
     packages = with pkgs; [
       hmcl
       audacity
-      shotcut
       hugo
       nodejs_23
       wl-color-picker
@@ -79,6 +78,7 @@
       discord
       qemu
       virt-manager
+      nur.repos.novel2430.shotcut
     ];
 
     # Use Clash

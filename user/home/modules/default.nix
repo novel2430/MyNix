@@ -21,6 +21,7 @@
     ./openbox-theme
     ./zellij
     ./fastfetch
+    ./maven
     # ./ghostty
     ./kitty
   ]

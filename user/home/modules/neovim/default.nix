@@ -58,6 +58,7 @@
               buildJdtConfig {
                 java = pkgs.jdk; # JDK21
                 jdt = pkgs.jdt-language-server;
+                lombok = pkgs.lombok;
               }
             )
           )
