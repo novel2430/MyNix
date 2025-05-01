@@ -36,6 +36,9 @@
       bind -T split-mode Right run-shell "tmux resize-pane -R 3; tmux switch-client -T split-mode"
       bind -T split-mode Up run-shell "tmux resize-pane -U 2; tmux switch-client -T split-mode"
       bind -T split-mode Down run-shell "tmux resize-pane -D 2; tmux switch-client -T split-mode"
+      bind -T split-mode J run-shell "tmux swap-pane -U; tmux switch-client -T split-mode"
+      bind -T split-mode K run-shell "tmux swap-pane -D; tmux switch-client -T split-mode"
+      bind -T split-mode d run-shell "tmux kill-pane; tmux switch-client -T split-mode"
 
       # Session Mode
       bind s run-shell 'tmux set -g @mode_hint "󰿡"; tmux switch-client -T session-mode;'
