@@ -1,4 +1,4 @@
-{java, jdt, lombok, ...}:
+{java, jdt, lombok, opt-config,...}:
 ''
 -- Java Stuff
 -- Searching Root Files
@@ -67,7 +67,8 @@ local jdtls_server = {
           enabled = true
         },
         maven = {
-          enabled = true
+          enabled = true,
+          userSettings = "/home/${opt-config.username}/.m2/settings.xml"
         },
         exclusions = {
           "**/node_modules/**",

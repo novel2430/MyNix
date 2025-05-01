@@ -1,4 +1,4 @@
-{ pkgs, custom-pkgs, ... }:
+{ pkgs, custom-pkgs, opt-config, ... }:
 {
   programs.neovim = 
   let
@@ -59,6 +59,7 @@
                 java = pkgs.jdk; # JDK21
                 jdt = pkgs.jdt-language-server;
                 lombok = pkgs.lombok;
+                opt-config = opt-config;
               }
             )
           )
