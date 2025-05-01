@@ -25,6 +25,7 @@
       # Other Stuff
       (''
         export EDITOR="nvim"
+        export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
       '')
       # FZF Stuff
       (''

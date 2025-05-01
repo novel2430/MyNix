@@ -4,7 +4,6 @@ rec {
   # Define paths to custom and standard applications
   apps = {
     foot = "${foot}/bin/foot";
-    kitty = "${kitty}/bin/kitty";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     wofi = "${wofi}/bin/wofi";
     fuzzel = "${fuzzel}/bin/fuzzel";
@@ -42,7 +41,7 @@ rec {
     ];
     apps = [
       # Terminal
-      { modes = ["normal"]; keys = "Super Return"; action = "${apps.kitty}"; }
+      { modes = ["normal"]; keys = "Super Return"; action = "${apps.foot}"; }
       # Custom application bindings
       { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
       { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }

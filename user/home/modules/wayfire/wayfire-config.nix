@@ -69,7 +69,7 @@ let
       command_run_launcher = "wofi --show run";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot select";
-      command_terminal = "kitty";
+      command_terminal = "foot";
       command_volume_down = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-";
       command_volume_up = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
       command_light_up = "brightnessctl set 10%+";

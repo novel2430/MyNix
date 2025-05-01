@@ -23,7 +23,7 @@
     ./fastfetch
     ./maven
     # ./ghostty
-    ./kitty
+    # ./kitty
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
