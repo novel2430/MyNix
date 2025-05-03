@@ -23,6 +23,17 @@
       bind j next-window 
       bind k previous-window 
 
+      # Window Mode
+      bind -n M-1 select-window -t 1
+      bind -n M-2 select-window -t 2
+      bind -n M-3 select-window -t 3
+      bind -n M-4 select-window -t 4
+      bind -n M-5 select-window -t 5
+      bind -n M-6 select-window -t 6
+      bind -n M-7 select-window -t 7
+      bind -n M-8 select-window -t 8
+      bind -n M-9 select-window -t 9
+
       # Split Mode
       bind S run-shell "tmux set -g @mode_hint ''; tmux switch-client -T split-mode"
       bind -T split-mode q run-shell "tmux set -g @mode_hint \"\"; tmux switch-client -T root"
@@ -48,6 +59,7 @@
       bind -T session-mode Any run-shell "tmux switch-client -T session-mode"
       bind -T session-mode j run-shell 'tmux switch-client -n; tmux switch-client -T session-mode;'
       bind -T session-mode k run-shell 'tmux switch-client -p; tmux switch-client -T session-mode;'
+      bind -T session-mode b run-shell 'tmux switch-client -l; tmux switch-client -T session-mode;'
       bind -T session-mode r command-prompt -I "#S" -p "Rename session to:" "run-shell '
         tmux rename-session \"%%\";
         tmux switch-client -T session-mode;
@@ -63,6 +75,7 @@
         tmux set -g @mode_hint \"\"; 
         tmux switch-client -T root;
       "
+      bind -T session-mode f run-shell "tmux choose-tree -s; tmux set -g @mode_hint \"\"; tmux switch-client -T root"
     '';
     plugins = with pkgs.tmuxPlugins; [
       nord 

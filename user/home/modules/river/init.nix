@@ -36,8 +36,8 @@ rec {
       { modes = ["normal"]; keys = "Super F"; action = "toggle-fullscreen"; }
       { modes = ["normal"]; keys = "Super Space"; action = "toggle-float"; }
       # Change Layout
-      { modes = ["normal"]; keys = "Super M"; action = "send-layout-cmd rivercarro 'main-location monocle'"; }
-      { modes = ["normal"]; keys = "Super+Shift M"; action = "send-layout-cmd rivercarro 'main-location left'"; }
+      { modes = ["normal"]; keys = "Super M"; action = "send-layout-cmd rivercarro 'main-location-cycle left,monocle'"; }
+      { modes = ["normal"]; keys = "Super+Shift M"; action = "send-layout-cmd rivercarro 'main-location-cycle left,top,right,bottom,monocle'"; }
     ];
     apps = [
       # Terminal
@@ -80,6 +80,7 @@ rec {
     # Force Csd
     csd = [
       {app-id = "bar";}
+      {app-id = "wemeetapp";}
     ];
     # Force Ssd
     ssd = [
