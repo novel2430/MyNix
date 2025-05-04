@@ -41,8 +41,6 @@
     wm = {
       wayfire = true;
       river = true;
-      openbox = true;
-      labwc = true;
     };
 
     # Packages For this Machine

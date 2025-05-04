@@ -18,12 +18,8 @@
     ./mpv
     ./qutebrowser
     ./brave
-    ./openbox-theme
-    ./zellij
     ./fastfetch
     ./maven
-    # ./ghostty
-    # ./kitty
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
@@ -34,24 +30,9 @@
     ./river
   ]
   ++ 
-  lib.optionals (opt-config.wm.labwc) [
-    ./labwc
-  ]
-  ++ 
-  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire || opt-config.wm.labwc) [
+  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire) [
     ./wofi
     ./foot 
-    ./fuzzel
-  ]
-  ++ 
-  lib.optionals (opt-config.wm.openbox) [
-    ./picom
-    ./sxhkd
-    ./polybar
-    ./rofi
-    ./alacritty
-    ./tint2
-    ./openbox
   ]
   ;
 }
