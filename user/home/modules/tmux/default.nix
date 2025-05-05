@@ -18,6 +18,7 @@
       set-option -g detach-on-destroy off
       set -g @mode_hint ""
       set-option -ga status-left ' #[fg=yellow]#{@mode_hint} '
+      set -g history-limit 10000
 
       # Normal Mode
       bind j next-window 

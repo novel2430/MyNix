@@ -1,4 +1,4 @@
-{opt-config, lib, ...}:
+{opt-config, lib, custom-pkgs, ...}:
 {
   imports = [
     ./ssh
@@ -20,6 +20,11 @@
     ./brave
     ./fastfetch
     ./maven
+    ./awesome
+    ./alacritty
+    ./rofi
+    ./polybar
+    ./greenclip
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

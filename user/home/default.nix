@@ -37,6 +37,7 @@ let
     konsole
     eza
     bat
+    xclip
     inputs.astal.packages.${system}.default
     # Modify Packages
     ## modify-pkgs.*
@@ -44,7 +45,6 @@ let
     ## custom-pkgs.*
     # custom-pkgs.dingtalk
     custom-pkgs.novel-ags
-    # custom-pkgs.zen-browser
     # Unstable
     ## unstable.*
     # NUR

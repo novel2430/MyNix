@@ -1,7 +1,8 @@
 [window]
 decorations = "Full"
 # startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
-startup_mode = "Maximized"
+#startup_mode = "Maximized"
+startup_mode = "Windowed"
 opacity = 0.9
 
 [scrolling]

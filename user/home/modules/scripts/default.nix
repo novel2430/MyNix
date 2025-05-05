@@ -40,5 +40,12 @@
       inherit pkgs;
       inherit opt-config;
     })
+    (import ./greenclip-rofi.nix {
+      inherit pkgs;
+    })
+    (import ./rofi-power-menu.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
   ];
 }

@@ -6,4 +6,5 @@
     ags = ags;
   };
   zen-browser = pkgs.callPackage ./zen-browser {};
+  clipsim = pkgs.callPackage ./clipsim {};
 }
