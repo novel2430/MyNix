@@ -9,9 +9,9 @@ M.globalkeys = gears.table.join(
   -- TAG
   awful.key({ modkey, }, "s", hotkeys_popup.show_help,
     { description = "show help", group = "awesome" }),
-  awful.key({ modkey, "Shift" }, "Left", awful.tag.viewprev,
+  awful.key({ modkey, "Control" }, "Left", awful.tag.viewprev,
     { description = "view previous tag", group = "tag" }),
-  awful.key({ modkey, "Shift" }, "Right", awful.tag.viewnext,
+  awful.key({ modkey, "Control" }, "Right", awful.tag.viewnext,
     { description = "view next tag", group = "tag" }),
   awful.key({ modkey, }, "b", awful.tag.history.restore,
     { description = "go back", group = "tag" }),
