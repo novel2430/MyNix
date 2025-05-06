@@ -111,5 +111,8 @@
 
     # Alacritty Fonst Size
     alacritty-font-size = "10";
+
+    # AwesomeWM's Bar client title max len
+    awesomewm-bar-client-title-max-len = "36";
   };
 }

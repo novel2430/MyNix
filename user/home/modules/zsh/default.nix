@@ -26,6 +26,7 @@
       (''
         export EDITOR="nvim"
         export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
+        export AWESOMEWM_BAR_CLIENT_TITLE_MAX_LEN="${opt-config.awesomewm-bar-client-title-max-len}"
       '')
       # FZF Stuff
       (''

@@ -4,7 +4,11 @@ local awful = require("awful")
 -- Help Function
 ---- Sub Text
 M.sub_text = function( text )
-  return text:sub(1, M.text_max_len)
+  if text:len() > M.text_max_len then
+    return text:sub(1, M.text_max_len) .. " .."
+  else
+    return text
+  end
 end
 
 M.my_font = "Hack Nerd Font 12"
@@ -15,6 +19,7 @@ M.my_color = {
   high_bg = "#637c8cff",
   sec_bg = "#375566ff",
 }
+
 M.my_size = {
   gap = 4,
   border_width = 4,
@@ -97,6 +102,6 @@ M.layout_icon = {
   float = "[F]=",
   max = "[M]=",
 }
-M.text_max_len = 40
+M.text_max_len = tonumber(os.getenv('AWESOMEWM_BAR_CLIENT_TITLE_MAX_LEN') or "36") or 36
 
 return M
