@@ -23,14 +23,14 @@ M.run = function(my_wibox)
   -- end)
   client.connect_signal("focus", function(c)
     c.border_color = config_var.beautiful_init.border_focus
-    my_wibox.focus_titlebox.text = c.name or ""
+    my_wibox.focus_titlebox.text = config_var.sub_text(c.name) or ""
   end)
   client.connect_signal("unfocus", function(c)
     c.border_color = config_var.beautiful_init.border_normal
     my_wibox.focus_titlebox.text = ""
   end)
   client.connect_signal("property::name", function(c)
-    my_wibox.focus_titlebox.text = c.name or ""
+    my_wibox.focus_titlebox.text = config_var.sub_text(c.name) or ""
   end)
   -- }}}
 end

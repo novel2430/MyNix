@@ -1,6 +1,12 @@
 local M = {}
 local awful = require("awful")
 
+-- Help Function
+---- Sub Text
+M.sub_text = function( text )
+  return text:sub(1, M.text_max_len)
+end
+
 M.my_font = "Hack Nerd Font 12"
 M.my_color = {
   red = "#eb6f92ff",
@@ -91,5 +97,6 @@ M.layout_icon = {
   float = "[F]=",
   max = "[M]=",
 }
+M.text_max_len = 40
 
 return M

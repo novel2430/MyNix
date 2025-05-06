@@ -3,6 +3,95 @@ local wibox = require("wibox")
 local gears = require("gears")
 local awful = require("awful")
 local config_var = require("config.var")
+local bat0_path = "/sys/class/power_supply/BAT0/"
+local bat1_path = "/sys/class/power_supply/BAT1/"
+-- help Function
+---- Path Exist
+local function path_exists(path)
+  local f = io.open(path, "r")
+  if f then
+    f:close()
+    return true
+  else
+    return false
+  end
+end
+---- Read File
+local function read_file(path)
+  local file = io.open(path, "r")
+  if file then
+    local value = file:read("*l")
+    file:close()
+    return value
+  else
+    return nil
+  end
+end
+---- BAT update
+local function bat_update()
+  -- Get Correct BAT path
+  local base_path = ""
+  if path_exists(bat0_path .. "capacity") then
+    base_path = bat0_path
+  elseif path_exists(bat1_path .. "capacity") then
+    base_path = bat1_path
+  else
+    M.bat_widget.text = ""
+    return
+  end
+
+  local status = read_file(base_path .. "status") or "Unknown"
+  local per = tonumber(read_file(base_path .. "capacity") or "0") or 0
+  local icon = "󰁿"
+
+  if status == "Charging" then
+    if per >= 90 then
+      icon = "󰂅"
+    elseif per >= 80 then
+      icon = "󰂋"
+    elseif per >= 70 then
+      icon = "󰂊"
+    elseif per >= 60 then
+      icon = "󰢞"
+    elseif per >= 50 then
+      icon = "󰂉"
+    elseif per >= 40 then
+      icon = "󰢝"
+    elseif per >= 30 then
+      icon = "󰂈"
+    elseif per >= 20 then
+      icon = "󰂇"
+    elseif per >= 10 then
+      icon = "󰂆"
+    elseif per < 10 then
+      icon = "󰢜"
+    end
+  else
+    if per >= 90 then
+      icon = "󰁹"
+    elseif per >= 80 then
+      icon = "󰂂"
+    elseif per >= 70 then
+      icon = "󰂁"
+    elseif per >= 60 then
+      icon = "󰂀"
+    elseif per >= 50 then
+      icon = "󰁿"
+    elseif per >= 40 then
+      icon = "󰁾"
+    elseif per >= 30 then
+      icon = "󰁽"
+    elseif per >= 20 then
+      icon = "󰁼"
+    elseif per >= 10 then
+      icon = "󰁻"
+    elseif per < 10 then
+      icon = "󰂃"
+    end
+  end
+
+  M.bat_widget.text = icon .. " " .. per .. "%"
+end
 -- textclock widget
 M.textclock = wibox.widget.textclock(" %Y-%m-%d %a %H:%M", 5, "Asia/Shanghai")
 -- Taglist Buttons
@@ -85,4 +174,19 @@ M.layout_widget = wibox.widget {
   widget = wibox.widget.textbox,
   text = config_var.layout_icon.tile
 }
+-- BAT widget
+M.bat_widget = wibox.widget {
+  widget = wibox.widget.textbox,
+  align = "center",
+  valign = "center"
+}
+-- BAT widget - Update Function
+M.bat_widget_update = function()
+  gears.timer {
+    timeout = 5,
+    autostart = true,
+    call_now = true,
+    callback = bat_update
+  }
+end
 return M

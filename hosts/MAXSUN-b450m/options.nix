@@ -106,5 +106,8 @@
 
     # No Keyboard
     no-keyboard = false;
+
+    # Alacritty Fonst Size
+    alacritty-font-size = "14";
   };
 }

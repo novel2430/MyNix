@@ -18,6 +18,8 @@ M.ram_widget = my_widgets.ram_widget
 M.temp_widget = my_widgets.temp_widget
 -- Layout widget
 M.layout_widget = my_widgets.layout_widget
+-- BAT widget
+M.bat_widget = my_widgets.bat_widget
 
 M.layout_widget_update = function (t)
   local current_tag = awful.screen.focused().selected_tag
@@ -38,6 +40,7 @@ M.init = function()
   my_widgets.cpu_widget_watch()
   my_widgets.ram_widget_watch()
   my_widgets.temp_widget_watch()
+  my_widgets.bat_widget_update()
 end
 M.run = function(s)
   -- Create a taglist widget
@@ -85,6 +88,7 @@ M.run = function(s)
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       spacing = config_var.my_size.wibox_spacing,
+      M.bat_widget,
       M.temp_widget,
       M.ram_widget,
       M.cpu_widget,
