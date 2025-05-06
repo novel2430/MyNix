@@ -37,14 +37,17 @@ local function bat_update()
     base_path = bat1_path
   else
     M.bat_widget.text = ""
+    M.bat_widget.markup = ""
     return
   end
 
   local status = read_file(base_path .. "status") or "Unknown"
   local per = tonumber(read_file(base_path .. "capacity") or "0") or 0
   local icon = "󰁿"
+  local color = config_var.my_color.fg
 
   if status == "Charging" then
+    color = "#78cc81ff"
     if per >= 90 then
       icon = "󰂅"
     elseif per >= 80 then
@@ -90,7 +93,7 @@ local function bat_update()
     end
   end
 
-  M.bat_widget.text = icon .. " " .. per .. "%"
+  M.bat_widget.markup = string.format("<span foreground='%s'>%s %s%%</span>", color, icon, per)
 end
 -- textclock widget
 M.textclock = wibox.widget.textclock(" %Y-%m-%d %a %H:%M", 5, "Asia/Shanghai")
