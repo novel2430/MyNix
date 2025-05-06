@@ -7,7 +7,6 @@ let
   blutooth-cmd = if opt-config.bluetooth then "${pkgs.blueman}/bin/blueman-applet &" else "";
   dunst = "${pkgs.dunst}/bin/dunst";
   xset = "${pkgs.xorg.xset}/bin/xset";
-  xautolock = "${pkgs.xautolock}/bin/xautolock";
   greenclip = "${pkgs.haskellPackages.greenclip}/bin/greenclip";
   picom = "${pkgs.picom}/bin/picom";
 in
@@ -28,9 +27,9 @@ pkgs.writeShellScriptBin "my-awesome-autostart" ''
   # nm-applet
   ${nm-applet} &
   # Idle DPMS (sec)
-  ${xset} dpms 1800 3600 3600 
+  xset-dpms
   # Idle Lock Screen (min)
-  ${xautolock} -time 60 -locker "x-lock" &
+  xautolock-idle &
   # xdg-portal
   dbus-update-activation-environment --systemd WAYLAND_DISPLAY="" XDG_CURRENT_DESKTOP=awesome
   # Greenclip
@@ -39,4 +38,7 @@ pkgs.writeShellScriptBin "my-awesome-autostart" ''
   ${picom} &
   # Blueman-applet
   ${blutooth-cmd}
+  # Media Idle Guard
+  systemctl --user stop media-idle-guard.service
+  systemctl --user start media-idle-guard.service
 ''

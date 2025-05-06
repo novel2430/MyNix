@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, opt-config, ...}:
 let
   wlopm = "${pkgs.wlopm}/bin/wlopm";
   swayidle = "${pkgs.swayidle}/bin/swayidle";
@@ -9,8 +9,8 @@ pkgs.writeShellScriptBin "my-swayidle" ''
   lock_cmd="my-swaylock idle &"
 
   ${swayidle} -w \
-    timeout 1200 "''${dpms_off_cmd}" \
+    timeout ${opt-config.idle.dpms-standby} "''${dpms_off_cmd}" \
       resume "''${dpms_on_cmd}" \
-    timeout 3600 "''${lock_cmd}" \
+    timeout ${opt-config.idle.lock-sec} "''${lock_cmd}" \
       resume "''${dpms_on_cmd}"
 ''

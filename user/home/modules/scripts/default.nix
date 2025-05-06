@@ -24,6 +24,7 @@
     })
     (import ./my-swayidle.nix {
       inherit pkgs;
+      inherit opt-config;
     })
     (import ./my-swaylock.nix {
       inherit pkgs;
@@ -44,6 +45,14 @@
       inherit pkgs;
     })
     (import ./rofi-power-menu.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
+    (import ./xset-dpms.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
+    (import ./xautolock-idle.nix {
       inherit pkgs;
       inherit opt-config;
     })

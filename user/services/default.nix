@@ -3,6 +3,7 @@
   imports = 
     [
       ./nextlab-ss.nix
+      ./media-idle-guard.nix
     ]
     ++
     lib.optionals (opt-config.use-clash == true) [

@@ -114,5 +114,13 @@
 
     # AwesomeWM's Bar client title max len
     awesomewm-bar-client-title-max-len = "36";
+
+    # Idle Wait Time
+    idle = {
+      dpms-standby = "1200"; # sec
+      dpms-off = "3600"; # sec
+      lock-sec = "3600"; # sec
+      lock-min = "60"; # min
+    };
   };
 }
