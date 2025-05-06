@@ -58,7 +58,7 @@
     "wlr/taskbar": {
       "format": "{icon}",
 	    "spacaing": 0,
-    	"icon-size": 22,
+    	"icon-size": 19,
     	"icon-theme": "Papirus",
     	"on-click": "activate",
     	"on-click-middle": "close",

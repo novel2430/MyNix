@@ -7,7 +7,7 @@ local bat0_path = "/sys/class/power_supply/BAT0/"
 local bat1_path = "/sys/class/power_supply/BAT1/"
 -- help Function
 ---- Path Exist
-local function path_exists(path)
+local path_exists = function(path)
   local f = io.open(path, "r")
   if f then
     f:close()
@@ -17,7 +17,7 @@ local function path_exists(path)
   end
 end
 ---- Read File
-local function read_file(path)
+local read_file = function(path)
   local file = io.open(path, "r")
   if file then
     local value = file:read("*l")
@@ -28,7 +28,7 @@ local function read_file(path)
   end
 end
 ---- BAT update
-local function bat_update()
+local bat_update = function()
   -- Get Correct BAT path
   local base_path = ""
   if path_exists(bat0_path .. "capacity") then

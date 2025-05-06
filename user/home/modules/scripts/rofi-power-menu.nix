@@ -4,7 +4,7 @@ pkgs.writeShellScriptBin "rofi-power-menu" ''
   shutdown_menu="Shutdown"
   lock_menu="Lock"
   logout_menu="Logout"
-  res=$(printf '%s\n%s\n%s\n%s' $reboot_menu $shutdown_menu $lock_menu $logout_menu | ${pkgs.rofi}/bin/rofi -dmenu)
+  res=$(printf '%s\n%s\n%s\n%s' $reboot_menu $shutdown_menu $lock_menu $logout_menu | ${pkgs.rofi}/bin/rofi -dmenu -i)
 
   if [ $res = $reboot_menu ]; then
     ${pkgs.systemd}/bin/reboot

@@ -12,29 +12,33 @@ let
     fi
 
     USERID=$(${id} -u ${opt-config.username})
-    interval_time=10 #sec
+    interval_time=30 #sec
 
     # fallback fallback fallback!
     export XAUTHORITY="/home/${opt-config.username}/.Xauthority"
     export XDG_RUNTIME_DIR="/run/user/$USERID"
 
-    flag="1"
+    is_playing=0
+
     while true; do
       if ${playerctl} status 2>/dev/null | grep -q Playing; then
         echo "[media_guard] Playing..."
         echo "[media_guard] disable xautolock + disable dpms"
-        ${xset} -dpms
-        ${xautolock} -disable
-        flag="0"
+        if (( is_playing == 0 )); then
+          echo "[media_guard] xautolock enable detect, do disable"
+          ${xset} -dpms
+          ${xautolock} -disable
+        fi
+        is_playing=1
       else
         echo "[media_guard] Not playing."
         echo "[media_guard] re-enable xautolock + re-enable dpms"
-        ${xset} +dpms
-        if [ "$flag" == "0" ]; then
-          flag="1"
+        if (( is_playing == 1 )); then
           echo "[media_guard] xautolock disable detect, do enable"
+          ${xset} dpms ${opt-config.idle.dpms-standby} ${opt-config.idle.dpms-off} ${opt-config.idle.dpms-off} 
           ${xautolock} -enable
         fi
+        is_playing=0
       fi
       sleep $interval_time
     done
