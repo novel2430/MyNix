@@ -7,8 +7,9 @@ let
   blutooth-cmd = if opt-config.bluetooth then "${pkgs.blueman}/bin/blueman-applet &" else "";
   dunst = "${pkgs.dunst}/bin/dunst";
   xset = "${pkgs.xorg.xset}/bin/xset";
-  xss-lock = "${pkgs.xss-lock}/bin/xss-lock";
+  xautolock = "${pkgs.xautolock}/bin/xautolock";
   greenclip = "${pkgs.haskellPackages.greenclip}/bin/greenclip";
+  picom = "${pkgs.picom}/bin/picom";
 in
 pkgs.writeShellScriptBin "my-awesome-autostart" ''
   start-wm X11
@@ -26,13 +27,16 @@ pkgs.writeShellScriptBin "my-awesome-autostart" ''
   fcitx5 --replace -d &
   # nm-applet
   ${nm-applet} &
-  # Idle
-  ${xset} dpms 1800 1800 3600
-  ${xss-lock} -- x-lock &
+  # Idle DPMS (sec)
+  ${xset} dpms 1800 3600 3600 
+  # Idle Lock Screen (min)
+  ${xautolock} -time 60 -locker "x-lock" &
   # xdg-portal
   dbus-update-activation-environment --systemd WAYLAND_DISPLAY="" XDG_CURRENT_DESKTOP=awesome
   # Greenclip
   ${greenclip} daemon &
+  # Picom
+  ${picom} &
   # Blueman-applet
   ${blutooth-cmd}
 ''

@@ -11,7 +11,7 @@ M.my_color = {
 }
 M.my_size = {
   gap = 4,
-  border_width = 3,
+  border_width = 4,
   wibox_height = 25,
   wibox_spacing = 15,
   systray_spacing = 2,

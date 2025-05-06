@@ -25,6 +25,7 @@
     ./rofi
     ./polybar
     ./greenclip
+    ./picom
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
