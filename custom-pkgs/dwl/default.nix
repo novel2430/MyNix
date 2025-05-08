@@ -19,14 +19,14 @@ stdenv, fetchFromGitHub
 ,dbus
 ,python3
 }:
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "dwl";
   version = "0.7";
   src = fetchFromGitHub {
     owner = "novel2430";
     repo = "DWL";
-    rev = "c4ea56ac130496f77ac0d785cbb5b0e15771f4c8";
-    sha256 = "sha256-bDt8thYF1EpUmLTLsI0K49KbgFJ9kcAfx2RHIk6bgs8=";
+    rev = "d09c6a5d6e8617343205933105714e97cb1f7526";
+    sha256 = "sha256-RCIaXfGQHdI9xs1n67ZIG9OBU4sGYv4uFdYrDbrSHfc=";
   };
 
   nativeBuildInputs = [
