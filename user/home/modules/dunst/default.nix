@@ -77,22 +77,22 @@ in
         per_monitor_dpi = false;
       };
       urgency_low = {
-        background = "#6E7275";
-        foreground = "#E6EFF0";
-        highlight = "#E6EFF0";
+        background = "#375566";
+        foreground = "#e0deda";
+        highlight = "#e0deda";
         timeout = 10;
       };
       urgency_normal = {
-        background = "#6E7275";
-        foreground = "#E6EFF0";
-        highlight = "#E6EFF0";
+        background = "#375566";
+        foreground = "#e0deda";
+        highlight = "#e0deda";
         timeout = 10;
       };
       urgency_critical = {
-        background = "#900000";
-        foreground = "#ffffff";
-        frame_color = "#ff0000";
-        highlight = "#ffffff";
+        background = "#eb6f92";
+        foreground = "#e0deda";
+        frame_color = "#e0deda";
+        highlight = "#e0deda";
         timeout = 0;
       };
       history_ignore = {
