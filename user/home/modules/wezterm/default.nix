@@ -28,7 +28,7 @@
         -- Pixel sizes: [128]
         "Noto Color Emoji",
       }
-      M.font_size = ${opt-config.alacritty-font-size}
+      M.font_size = 14
       return M
     '';
   };
