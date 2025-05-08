@@ -7,4 +7,6 @@
   };
   zen-browser = pkgs.callPackage ./zen-browser {};
   clipsim = pkgs.callPackage ./clipsim {};
+  wezterm-git = unstable-pkgs.callPackage ./wezterm {};
+  dwl = pkgs.callPackage ./dwl {};
 }

@@ -26,6 +26,7 @@
     ./polybar
     ./greenclip
     ./picom
+    ./wezterm
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

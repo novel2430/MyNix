@@ -56,5 +56,22 @@
       inherit pkgs;
       inherit opt-config;
     })
+    (import ./my-dwl-autostart.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
+    (import ./bemenu-start.nix {
+      inherit pkgs;
+    })
+    (import ./bemenu-power-menu.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
+    (import ./bemenu-wlroot-clipboard.nix {
+      inherit pkgs;
+    })
+    (import ./bemenu-drun.nix {
+      inherit pkgs;
+    })
   ];
 }

@@ -1,10 +1,11 @@
 local M = {}
 local awful = require("awful")
+local gears = require("gears")
 
 -- Help Function
 ---- Sub Text
 M.sub_text = function( text )
-  if text:len() > M.text_max_len then
+  if text ~= nil and text:len() > M.text_max_len then
     return text:sub(1, M.text_max_len) .. " .."
   else
     return text
@@ -23,6 +24,7 @@ M.my_color = {
 M.my_size = {
   gap = 4,
   border_width = 4,
+  snap_border_width = 10,
   wibox_height = 25,
   wibox_spacing = 15,
   systray_spacing = 2,
@@ -33,7 +35,7 @@ M.my_size = {
 }
 M.modkey = "Mod4"
 M.cmd = {
-  terminal = "alacritty",
+  terminal = "wezterm",
   d_launcher = "rofi -i -show drun",
   r_launcher = "rofi -show run",
   web_browser = "zen-browser",
@@ -72,6 +74,20 @@ M.beautiful_init = {
   -- Wibox - systray
   bg_systray = M.my_color.high_bg,
   systray_icon_spacing = M.my_size.systray_spacing,
+  -- Hotkeys widget
+  hotkeys_font = M.my_font,
+  hotkeys_description_font = M.my_font,
+  hotkeys_bg = M.my_color.bg,
+  hotkeys_fg = M.my_color.fg,
+  hotkeys_border_width = M.my_size.border_width,
+  hotkeys_border_color = M.my_color.fg,
+  hotkeys_modifiers_fg = M.my_color.high_bg,
+  hotkeys_label_bg = M.my_color.high_bg,
+  hotkeys_label_fg = M.my_color.fg,
+  -- Snap
+  snap_border_width = M.my_size.snap_border_width,
+  snap_bg = M.my_color.high_bg,
+  snap_shape = gears.shape.rectangle,
 }
 M.layouts = {
   awful.layout.suit.tile,

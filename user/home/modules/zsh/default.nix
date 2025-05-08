@@ -15,6 +15,7 @@
       cat = "${pkgs.bat}/bin/bat";
       neofetch = "${pkgs.fastfetch}/bin/fastfetch";
       gitall = "git add . && git commit -m 'update' && git push";
+      v = "nvim";
     };
     initExtra = lib.mkMerge [
       (lib.mkIf (opt-config.use-proxy == true) ''

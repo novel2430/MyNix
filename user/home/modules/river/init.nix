@@ -1,20 +1,38 @@
-{ pkgs, ... }:
+{ pkgs, opt-config, custom-pkgs, ... }:
 with pkgs;
 rec {
+  swaylock-path = import ../scripts/my-swaylock.nix {
+    inherit pkgs;
+    inherit opt-config;
+  };
+  wlroot-clipboard-path = import ../scripts/wlroot-clipboard.nix {
+    inherit pkgs;
+  };
+  wofi-power-menu-path = import ../scripts/wofi-power-menu.nix {
+    inherit pkgs;
+    inherit opt-config;
+  };
+  my-volume-path = import ../scripts/volume.nix {
+    inherit pkgs;
+  };
+  screenshot-path = import ../scripts/grim-slurp-screenshot.nix {
+    inherit pkgs;
+    inherit opt-config;
+  };
+
   # Define paths to custom and standard applications
   apps = {
-    foot = "${foot}/bin/foot";
+    wezterm = "${custom-pkgs.wezterm-git}/bin/wezterm";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     wofi = "${wofi}/bin/wofi";
     fuzzel = "${fuzzel}/bin/fuzzel";
-    wlrootsClipboard = "wlroot-clipboard";
-    swaylock = "my-swaylock";
-    powerMenu = "wofi-power-menu";
-    volume = "my-volume";
+    wlrootsClipboard = "${wlroot-clipboard-path}/bin/wlroot-clipboard";
+    swaylock = "${swaylock-path}/bin/my-swaylock";
+    powerMenu = "${wofi-power-menu-path}/bin/wofi-power-menu";
+    volume = "${my-volume-path}/bin/my-volume";
     wpctl = "${pkgs.wireplumber}/bin/wpctl";
-    screenshot = "grim-slurp-screenshot";
-    # browser = "brave --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=4";
-    browser = "zen-browser";
+    screenshot = "${screenshot-path}/bin/grim-slurp-screenshot";
+    browser = "${pkgs.nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
     fuzzyMarks = "${pkgs.nur.repos.novel2430.FuzzyMarks}/bin/fuzzyMarks";
   };
   # Define keybindings
@@ -41,7 +59,7 @@ rec {
     ];
     apps = [
       # Terminal
-      { modes = ["normal"]; keys = "Super Return"; action = "${apps.foot}"; }
+      { modes = ["normal"]; keys = "Super Return"; action = "${apps.wezterm}"; }
       # Custom application bindings
       { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
       { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }

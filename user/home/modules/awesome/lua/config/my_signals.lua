@@ -1,7 +1,6 @@
 local M = {}
 local config_var = require("config.var")
 local awful = require("awful")
-local gears = require("gears")
 
 M.run = function(my_wibox)
   -- Signals
@@ -30,7 +29,9 @@ M.run = function(my_wibox)
     my_wibox.focus_titlebox.text = ""
   end)
   client.connect_signal("property::name", function(c)
-    my_wibox.focus_titlebox.text = config_var.sub_text(c.name) or ""
+    if client.focus and c == client.focus then
+      my_wibox.focus_titlebox.text = config_var.sub_text(c.name) or ""
+    end
   end)
   -- }}}
 end

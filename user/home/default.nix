@@ -45,7 +45,10 @@ let
     ## custom-pkgs.*
     # custom-pkgs.dingtalk
     custom-pkgs.novel-ags
+    custom-pkgs.wezterm-git
+    custom-pkgs.dwl
     # Unstable
+    ## unstable.*
     ## unstable.*
     # NUR
     nur.repos.novel2430.FuzzyMarks

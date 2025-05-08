@@ -1,7 +1,11 @@
-{pkgs, lib, ...}:
+{pkgs, lib, opt-config, custom-pkgs, ...}:
 with lib;
 let
-  config = import ./init.nix { inherit pkgs; };
+  config = import ./init.nix { 
+    inherit pkgs; 
+    inherit opt-config;
+    inherit custom-pkgs;
+  };
 
   # Helper function to generate commands
   pow = x: y:

@@ -77,6 +77,15 @@
         tmux switch-client -T root;
       "
       bind -T session-mode f run-shell "tmux choose-tree -s; tmux set -g @mode_hint \"\"; tmux switch-client -T root"
+
+      # Copy Mode
+      bind x run-shell 'tmux set -g @mode_hint "󰆏"; tmux copy-mode;'
+      bind -T copy-mode-vi v send -X begin-selection
+      bind -T copy-mode-vi V send -X select-line
+      bind -T copy-mode-vi C-v send -X select-block
+      bind -T copy-mode-vi y send -X copy-selection
+      bind -T copy-mode-vi q send -X clear-selection
+      bind -T copy-mode-vi Escape run-shell "tmux set -g @mode_hint \"\"; tmux send-keys -X cancel"
     '';
     plugins = with pkgs.tmuxPlugins; [
       nord 

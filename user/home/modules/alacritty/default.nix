@@ -7,7 +7,7 @@
       #startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
       #startup_mode = "Maximized"
       startup_mode = "Windowed"
-      opacity = 0.9
+      opacity = 0.8
 
       [scrolling]
       history = 30000

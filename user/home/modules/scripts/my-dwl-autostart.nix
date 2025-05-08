@@ -6,15 +6,14 @@ let
   cliphist = "${pkgs.unstable.cliphist}/bin/cliphist";
   gsettings = "${pkgs.glib}/bin/gsettings";
   blutooth-cmd = if opt-config.bluetooth then "${pkgs.blueman}/bin/blueman-applet &" else "";
+  dunst = "${pkgs.dunst}/bin/dunst";
 in
-pkgs.writeShellScriptBin "my-river-autostart" ''
+pkgs.writeShellScriptBin "my-dwl-autostart" ''
   start-wm $WAYLAND_DISPLAY
   # Wallpaper
   ${swaybg} -i ${opt-config.wall-img} -m fill &
-  # AGS
-  novel-ags &
-  # bar
-  river-waybar &
+  # Notify
+  ${dunst} &
   # Clipboard <cliphist>
   ${wl-paste} --watch ${cliphist} store &
   # GTK title bar layout
@@ -22,7 +21,7 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   # GRT Dark Theme (fix for GTK4)
   ${gsettings} set org.gnome.desktop.interface color-scheme 'prefer-dark'
   # xdg-portal
-  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
   systemctl --user stop pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
   systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
   # Swayidle
