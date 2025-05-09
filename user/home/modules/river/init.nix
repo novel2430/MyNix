@@ -34,6 +34,7 @@ rec {
     screenshot = "${screenshot-path}/bin/grim-slurp-screenshot";
     browser = "${pkgs.nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
     fuzzyMarks = "${pkgs.nur.repos.novel2430.FuzzyMarks}/bin/fuzzyMarks";
+    playerctl = "${pkgs.playerctl}/bin/playerctl";
   };
   # Define keybindings
   keybindings = {
@@ -74,6 +75,10 @@ rec {
       # Brightness control
       { modes = ["normal" "locked"]; keys = "None XF86MonBrightnessUp"; action = "${apps.brightnessctl} set +10%"; }
       { modes = ["normal" "locked"]; keys = "None XF86MonBrightnessDown"; action = "${apps.brightnessctl} set 10%-"; }
+      # Audio control
+      { modes = ["normal"]; keys = "None XF86AudioPlay"; action = "${apps.playerctl} play-pause"; }
+      { modes = ["normal"]; keys = "None XF86AudioNext"; action = "${apps.playerctl} next"; }
+      { modes = ["normal"]; keys = "None XF86AudioPrev"; action = "${apps.playerctl} previous"; }
       # Screenshot
       { modes = ["normal" "locked"]; keys = "None Print"; action = "${apps.screenshot} full"; }
       { modes = ["normal"]; keys = "Super Print"; action = "${apps.screenshot} select"; }

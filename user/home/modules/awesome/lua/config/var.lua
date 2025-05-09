@@ -49,6 +49,9 @@ M.cmd = {
   lock_screen = "x-lock",
   greenclip_rofi = "greenclip-rofi",
   power_menu = "rofi-power-menu",
+  audio_play_pause = "playerctl play-pause",
+  audio_next = "playerctl next",
+  audio_prev = "playerctl previous",
 }
 M.beautiful_init = {
   font = M.my_font,

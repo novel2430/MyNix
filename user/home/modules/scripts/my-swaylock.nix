@@ -2,6 +2,7 @@
 let
   swaylock = "${pkgs.swaylock-effects}/bin/swaylock";
   lock-img = "${opt-config.lock-img}";
+  playerctl = "${pkgs.playerctl}/bin/playerctl";
 in
 pkgs.writeShellScriptBin "my-swaylock" ''
   indicator_radius=60
@@ -14,6 +15,7 @@ pkgs.writeShellScriptBin "my-swaylock" ''
 
   case $1 in
     manual)
+      ${playerctl} play-pause 
       ${swaylock} \
               --ignore-empty-password \
               --screenshots \
@@ -40,6 +42,7 @@ pkgs.writeShellScriptBin "my-swaylock" ''
               --separator-color 00000000
       ;;
     idle)
+      ${playerctl} play-pause 
       ${swaylock} \
               --ignore-empty-password \
               --image ${lock-img} \

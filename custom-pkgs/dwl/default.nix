@@ -1,5 +1,5 @@
 {
-stdenv, fetchFromGitHub
+stdenv, fetchFromGitHub, writers
 ,gnumake
 ,libinput
 ,libxcb
@@ -17,16 +17,18 @@ stdenv, fetchFromGitHub
 ,fcft
 ,libdrm
 ,dbus
-,python3
 }:
+let
+  dwl-sys-info = import ./dwl-sys-info.nix {inherit writers;};
+in
 stdenv.mkDerivation {
   pname = "dwl";
   version = "0.7";
   src = fetchFromGitHub {
     owner = "novel2430";
-    repo = "DWL";
-    rev = "d09c6a5d6e8617343205933105714e97cb1f7526";
-    sha256 = "sha256-RCIaXfGQHdI9xs1n67ZIG9OBU4sGYv4uFdYrDbrSHfc=";
+    repo = "DWL-0.7";
+    rev = "56474ed0f96b24ba2a18b78fc76749e5d798bf08";
+    sha256 = "sha256-t/RkETBfDtoo6Knqeomrw+5bfa82yS7NbU1UvRWA+Mk=";
   };
 
   nativeBuildInputs = [
@@ -62,12 +64,10 @@ stdenv.mkDerivation {
     runHook preInstall
 
     mkdir -p $out/bin
-    mkdir -p $out/lib
 
-    install -Dm555 dwl $out/lib/dwl
-    install -Dm555 info.py $out/lib/info.py
-    echo "${python3}/bin/python $out/lib/info.py | $out/lib/dwl" > $out/bin/dwl
-    chmod +x $out/bin/dwl
+    install -Dm555 dwl $out/bin/dwl
+    echo "${dwl-sys-info} | $out/bin/dwl -s 'my-dwl-autostart' " > $out/bin/dwl-all
+    chmod +x $out/bin/dwl-all
 
     runHook postInstall
   '';

@@ -21,8 +21,8 @@ in
       global = {
         monitor = 0;
         follow = "mouse";
-        width = 400;
-        height = 300;
+        width = 350;
+        height = 500;
         origin = "top-right";
         offset = "0x20";
         scale = 0;
@@ -41,7 +41,7 @@ in
         horizontal_padding = 8;
         text_icon_padding = 0;
         frame_width = 3;
-        frame_color = "#f0e0cf";
+        frame_color = "#637c8c";
         gap_size = 0;
         separator_color = "frame";
         sort = true;
@@ -60,7 +60,7 @@ in
         icon_position = "left";
         sticky_history = true;
         history_length = 20;
-        dmenu = "${wofi} -dmenu";
+        dmenu = "bemenu-start";
         browser = "${xdg-open}";
         always_run_script = true;
         title = "Dunst";

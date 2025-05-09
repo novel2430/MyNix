@@ -38,6 +38,7 @@ let
     eza
     bat
     xclip
+    playerctl
     inputs.astal.packages.${system}.default
     # Modify Packages
     ## modify-pkgs.*

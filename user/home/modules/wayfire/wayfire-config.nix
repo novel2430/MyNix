@@ -59,9 +59,10 @@ let
       binding_terminal = "<super> KEY_ENTER";
       binding_web_browser = "<super> <shift> KEY_F";
       binding_waybar = "<super> <shift> KEY_B";
-      binding_light_up = "KEY_BRIGHTNESSUP";
-      binding_light_down = "KEY_BRIGHTNESSDOWN";
       binding_power_menu = "<super> <shift> KEY_P";
+      binding_audio_play = "KEY_PLAYPAUSE";
+      binding_audio_next = "KEY_NEXTSONG";
+      binding_audio_prev = "KEY_PREVIOUSSONG";
       command_clipboard = "wlroot-clipboard";
       command_launcher = "wofi --show drun";
       command_lock = "my-swaylock manual";
@@ -74,12 +75,17 @@ let
       command_volume_up = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
       command_light_up = "brightnessctl set 10%+";
       command_light_down = "brightnessctl set 10%-";
+      command_audio_play = "${pkgs.playerctl}/bin/playerctl play-pause";
+      command_audio_next = "${pkgs.playerctl}/bin/playerctl next";
+      command_audio_prev = "${pkgs.playerctl}/bin/playerctl previous";
       # command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
       command_web_browser = "zen-browser";
       command_waybar = "killall waybar; ~/.config/wayfire/bar-run.sh";
       command_power_menu = "wofi-power-menu";
       repeatable_binding_volume_down = "KEY_VOLUMEDOWN";
       repeatable_binding_volume_up = "KEY_VOLUMEUP";
+      repeatable_binding_light_up = "KEY_BRIGHTNESSUP";
+      repeatable_binding_light_down = "KEY_BRIGHTNESSDOWN";
     };
     core = {
       background_color = "\\#1A1A1AFF";
