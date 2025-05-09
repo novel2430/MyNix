@@ -210,14 +210,14 @@
             // "warning": 30,
             // "critical": 15
         // },
-        "format": " {capacity}%",
+        "format": "{icon} {capacity}%",
         //"format-full": "{capacity}%",
-        //"format-charging": "{capacity}%",
+        "format-charging": "󰠠 {capacity}%",
         //"format-plugged": "{capacity}%",
         //"format-alt": "{time} {icon}",
         //"format-good": "good",
-        //"format-full": "full",
-        //"format-icons": ["", "", "", "", ""]
+        "format-full": "{icon} full",
+        "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -262,7 +262,7 @@
         "on-click": "pavucontrol"
     },
     "custom/dwl-logo": {
-        "format": "[dwl-0.7]"
+        "format": "[ dwl]"
     },
     "custom/media": {
         "format": "{icon} {}",
