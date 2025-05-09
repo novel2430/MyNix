@@ -27,6 +27,7 @@
     ./greenclip
     ./picom
     ./wezterm
+    ./dwl
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

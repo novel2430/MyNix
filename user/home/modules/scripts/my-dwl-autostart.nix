@@ -7,6 +7,7 @@ let
   gsettings = "${pkgs.glib}/bin/gsettings";
   blutooth-cmd = if opt-config.bluetooth then "${pkgs.blueman}/bin/blueman-applet &" else "";
   dunst = "${pkgs.dunst}/bin/dunst";
+  waybar = "${pkgs.waybar}/bin/waybar";
 in
 pkgs.writeShellScriptBin "my-dwl-autostart" ''
   start-wm $WAYLAND_DISPLAY
@@ -16,6 +17,8 @@ pkgs.writeShellScriptBin "my-dwl-autostart" ''
   ${dunst} &
   # Clipboard <cliphist>
   ${wl-paste} --watch ${cliphist} store &
+  # Bar
+  ${waybar} -c /home/${opt-config.username}/.config/dwl/waybar.jsonc -s /home/${opt-config.username}/.config/dwl/waybar.css &
   # GTK title bar layout
   # ${gsettings} set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
   # GRT Dark Theme (fix for GTK4)
