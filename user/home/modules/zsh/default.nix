@@ -5,13 +5,12 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     autocd = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting.enable = false;
     shellAliases = {
       showimage = "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations";
       delimage = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
       startx = "rm ~/.Xauthority; startx";
       ls = "${pkgs.eza}/bin/eza --icons auto";
-      cat = "${pkgs.bat}/bin/bat";
       neofetch = "${pkgs.fastfetch}/bin/fastfetch";
       gitall = "git add . && git commit -m 'update' && git push";
       v = "nvim";
@@ -19,11 +18,22 @@
     initExtra = lib.mkMerge [
       # Other Stuff
       (''
+
+        setopt hist_verify
+        setopt NO_BEEP
+        setopt HIST_IGNORE_ALL_DUPS
+        
+        bindkey '^?' backward-delete-char
+        bindkey '^[[3~' delete-char
+        bindkey '^L' clear-screen
+
+
         zstyle ":completion:*" menu select
         zstyle ":completion:*" special-dirs true
         zstyle ":completion:*" list-colors ''${(s.:.)LS_COLORS} 
 
         autoload -Uz vcs_info
+
         preexec() {
           print -Pn "\e]0;$1\a"
         }
@@ -54,6 +64,18 @@
           fd --type d --follow --exclude ".git" . "$1"
         }
       '')
+      # zsh-history-substring-search
+      (''
+        source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+        bindkey '^P' history-substring-search-up
+        bindkey '^N' history-substring-search-down
+        bindkey '^[[1;5A' history-substring-search-up
+        bindkey '^[[1;5B' history-substring-search-down
+      '')
+      # zsh-syntax-highlighting -- Must Last
+      (''
+        source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+      '')
       (lib.mkIf (opt-config.use-proxy == true) ''
         alias nixos-rebuild="sudo http_proxy=${opt-config.http-proxy} https_proxy=${opt-config.https-proxy} nixos-rebuild"
       '')
@@ -76,6 +98,9 @@
         export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
         export AWESOMEWM_BAR_CLIENT_TITLE_MAX_LEN="${opt-config.awesomewm-bar-client-title-max-len}"
         export XDG_CACHE_HOME="/home/${opt-config.username}/.cache"
+        export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=,fg=yellow"
+        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="bg=,fg=red"
       '')
     ];
   };
