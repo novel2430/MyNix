@@ -19,6 +19,7 @@ config.use_ime = my_settings.use_ime
 config.term = my_settings.term_var
 config.scrollback_lines = my_settings.history_line
 config.notification_handling = "NeverShow"
-config. warn_about_missing_glyphs = false
+config.warn_about_missing_glyphs = false
+config.adjust_window_size_when_changing_font_size = false
 return config
 

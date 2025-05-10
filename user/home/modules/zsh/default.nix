@@ -22,6 +22,7 @@
         setopt hist_verify
         setopt NO_BEEP
         setopt HIST_IGNORE_ALL_DUPS
+        setopt no_nomatch
         
         bindkey '^?' backward-delete-char
         bindkey '^[[3~' delete-char
@@ -49,7 +50,7 @@
         zstyle ':vcs_info:git:*' unstagedstr '%F{yellow}!%f'
         zstyle ':vcs_info:git:*' formats '(%F{red}%b%f)%u%c '
 
-        export PROMPT='%B%F{green}[%n:%F{blue}%~%F{green}]$%f%b ''${vcs_info_msg_0_}'
+        export PROMPT='%B%F{blue}[%n:%F{green}%~%F{blue}]$%f%b ''${vcs_info_msg_0_}'
       '')
       # FZF Stuff
       (''
@@ -67,6 +68,8 @@
       # zsh-history-substring-search
       (''
         source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+        bindkey '^K' history-substring-search-up
+        bindkey '^J' history-substring-search-down
         bindkey '^P' history-substring-search-up
         bindkey '^N' history-substring-search-down
         bindkey '^[[1;5A' history-substring-search-up
@@ -99,8 +102,8 @@
         export AWESOMEWM_BAR_CLIENT_TITLE_MAX_LEN="${opt-config.awesomewm-bar-client-title-max-len}"
         export XDG_CACHE_HOME="/home/${opt-config.username}/.cache"
         export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
-        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=,fg=yellow"
-        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="bg=,fg=red"
+        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=yellow"
+        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red"
       '')
     ];
   };
