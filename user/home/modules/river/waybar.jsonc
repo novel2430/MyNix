@@ -187,8 +187,7 @@
     "temperature": {
         "thermal-zone": 0,
         "critical-threshold": 80,
-        "format": " {temperatureC}°C",
-        "format-icons": ["", "", ""]
+        "format": " {temperatureC}°C",
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -201,14 +200,14 @@
             // "warning": 30,
             // "critical": 15
         // },
-        "format": " {capacity}%",
+        "format": "{icon} {capacity}%",
         //"format-full": "{capacity}%",
-        //"format-charging": "{capacity}%",
+        "format-charging": "󰠠 {capacity}%",
         //"format-plugged": "{capacity}%",
         //"format-alt": "{time} {icon}",
         //"format-good": "good",
-        //"format-full": "full",
-        //"format-icons": ["", "", "", "", ""]
+        "format-full": "{icon} full",
+        "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"

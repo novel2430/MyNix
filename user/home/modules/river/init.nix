@@ -22,7 +22,7 @@ rec {
 
   # Define paths to custom and standard applications
   apps = {
-    wezterm = "${custom-pkgs.wezterm-git}/bin/wezterm";
+    foot = "${pkgs.foot}/bin/foot";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     wofi = "${wofi}/bin/wofi";
     fuzzel = "${fuzzel}/bin/fuzzel";
@@ -53,14 +53,14 @@ rec {
       { modes = ["normal"]; keys = "Super L"; action = "send-layout-cmd rivercarro 'main-ratio +0.05'"; }
       # Fullscreen and floating toggle
       { modes = ["normal"]; keys = "Super F"; action = "toggle-fullscreen"; }
-      { modes = ["normal"]; keys = "Super Space"; action = "toggle-float"; }
+      { modes = ["normal"]; keys = "Super+Shift Space"; action = "toggle-float"; }
       # Change Layout
       { modes = ["normal"]; keys = "Super M"; action = "send-layout-cmd rivercarro 'main-location-cycle left,monocle'"; }
       { modes = ["normal"]; keys = "Super+Shift M"; action = "send-layout-cmd rivercarro 'main-location-cycle left,top,right,bottom,monocle'"; }
     ];
     apps = [
       # Terminal
-      { modes = ["normal"]; keys = "Super Return"; action = "${apps.wezterm}"; }
+      { modes = ["normal"]; keys = "Super Return"; action = "${apps.foot}"; }
       # Custom application bindings
       { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
       { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }
@@ -131,8 +131,8 @@ rec {
   # Define Gaps
   gaps = {
     smart-gap = false;
-    inner = "5";
-    outer = "10";
+    inner = "0";
+    outer = "0";
   };
   # Define Keyboard Repeat Rate
   keyboard-repeat = {
@@ -154,6 +154,6 @@ rec {
     background-color = "0x002b36";
     border-color-focused = "0xe0deda";
     border-color-unfocused = "0x1c2e36";
-    border-width = "4";
+    border-width = "2";
   };
 }

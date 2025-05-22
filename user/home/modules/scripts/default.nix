@@ -73,5 +73,8 @@
     (import ./bemenu-drun.nix {
       inherit pkgs;
     })
+    (import ./wl-mirror.nix {
+      inherit pkgs;
+    })
   ];
 }
