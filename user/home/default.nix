@@ -44,7 +44,7 @@ let
     ## modify-pkgs.*
     # Custom Packages
     ## custom-pkgs.*
-    # custom-pkgs.dingtalk
+    custom-pkgs.dingtalk
     custom-pkgs.novel-ags
     custom-pkgs.wezterm-git
     custom-pkgs.dwl
@@ -62,7 +62,7 @@ let
     nur.repos.novel2430.gedit
     nur.repos.novel2430.zen-browser-bin
     nur.repos.xddxdd.baidunetdisk
-    nur.repos.xddxdd.dingtalk
+    # nur.repos.xddxdd.dingtalk
     nur.repos.xddxdd.qq
     # pkgs-2405.nur.repos.xddxdd.dingtalk
   ]

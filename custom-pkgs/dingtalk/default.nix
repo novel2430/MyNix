@@ -142,10 +142,10 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "dingtalk";
-  version = "7.6.25.4122001";
+  version = "7.6.45.5041701";
   src = fetchurl {
-    url = "https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/0211/com.alibabainc.dingtalk_${version}_amd64.deb";
-    hash = "sha256-Fjzlqj/ALgYAipEVxdk7FUk83KsgDstcHYVojbK+aD4=";
+    url = "https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_${version}_amd64.deb";
+    hash = "sha256-HXvVkIrQgXWA5NKvcVgJeOtK+kSD6a3yXJB5nyLNqzU=";
   };
 
   nativeBuildInputs = [
@@ -198,6 +198,7 @@ stdenv.mkDerivation rec {
       --unset WAYLAND_DISPLAY \
       --set QT_QPA_PLATFORM "xcb" \
       --set QT_AUTO_SCREEN_SCALE_FACTOR 1 \
+      --set GDK_BACKEND x11 \
       --prefix LD_PRELOAD : "$out/lib/libcef.so" \
       --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath libraries}"
 
