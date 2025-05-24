@@ -28,6 +28,7 @@
     ./picom
     ./wezterm
     ./dwl
+    ./emacs
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

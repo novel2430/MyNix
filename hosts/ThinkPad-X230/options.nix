@@ -110,7 +110,7 @@
     no-keyboard = false;
 
     # Alacritty Fonst Size
-    alacritty-font-size = "10";
+    alacritty-font-size = "13";
 
     # AwesomeWM's Bar client title max len
     awesomewm-bar-client-title-max-len = "36";

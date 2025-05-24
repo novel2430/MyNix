@@ -62,6 +62,22 @@
         "type": "github"
       }
     },
+    "doomemacs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747941432,
+        "narHash": "sha256-hPaLeu/1CoWADviDwcBxV7VTRFb831TF2ND7ArLzpfQ=",
+        "owner": "doomemacs",
+        "repo": "doomemacs",
+        "rev": "cfea950e60961e45fc43a820d855eb6212856126",
+        "type": "github"
+      },
+      "original": {
+        "owner": "doomemacs",
+        "repo": "doomemacs",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -192,6 +208,7 @@
       "inputs": {
         "ags": "ags",
         "astal": "astal_2",
+        "doomemacs": "doomemacs",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-2405": "nixpkgs-2405",

@@ -23,9 +23,13 @@
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    doomemacs = {
+      url = "github:doomemacs/doomemacs";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-2405, home-manager, nur, astal, ags, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-2405, home-manager, nur, astal, ags, doomemacs, ... }@inputs:
   let
     system = "x86_64-linux";
     # Packages Setting
@@ -76,6 +80,7 @@
             inherit modify-pkgs;
             inherit custom-pkgs;
             inherit pkgs-2405;
+            inherit doomemacs;
           };
         }
       ];
