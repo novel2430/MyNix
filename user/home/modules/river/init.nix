@@ -126,6 +126,7 @@ rec {
       {app-id = "io.bassi.Amberol";}
       {app-id = "zen";}
       {app-id = "com.mitchellh.ghostty";}
+      {app-id = "emacs";}
     ];
   };
   # Define Gaps
