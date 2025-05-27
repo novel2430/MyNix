@@ -68,8 +68,6 @@
       # zsh-history-substring-search
       (''
         source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-        bindkey '^K' history-substring-search-up
-        bindkey '^J' history-substring-search-down
         bindkey '^P' history-substring-search-up
         bindkey '^N' history-substring-search-down
         bindkey '^[[1;5A' history-substring-search-up
@@ -92,6 +90,8 @@
       (''
         export JAVA_17_HOME="${pkgs.jdk17}/bin"
         export JAVA_21_HOME="${pkgs.jdk21}/bin"
+        export EMACS_JAVA_21_HOME="${pkgs.openjdk21}/lib/openjdk"
+        export EMACS_JAVA_21_PATH="${pkgs.openjdk21}/lib/openjdk/bin/java"
       '')
       (''
         export FZF_COMPLETION_TRIGGER='\'

@@ -112,7 +112,7 @@ local lsp_servers = {
   rust_analyzer = {
     ['rust-analyzer'] = {
       diagnostics = {
-        enable = false;
+        enable = false,
       }
     }
   },
@@ -122,7 +122,7 @@ local lsp_servers = {
 for server_name, server_config in pairs(lsp_servers) do
   require('lspconfig')[server_name].setup {
     capabilities = capabilities,
-	  settings = server_config
+    settings = server_config
   }
 end
 
@@ -139,4 +139,3 @@ require('lspconfig').volar.setup {
   },
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 }
-

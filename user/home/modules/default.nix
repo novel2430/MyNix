@@ -29,6 +29,7 @@
     ./wezterm
     ./dwl
     ./emacs
+    ./direnv
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
