@@ -1,4 +1,5 @@
 (load! "config/lsp/lsp.el")
+(load! "config/corfu.el")
 (load! "config/ui.el")
 (load! "config/keybinds.el")
 (load! "config/treesitter.el")
@@ -8,6 +9,10 @@
 
 (use-package vterm
   :load-path  "~/.local/share/doomemacs/packages/elpa/vterm-20240825.133")
+
+;; (use-package! lsp-bridge
+;;   :config
+;;   (global-lsp-bridge-mode))
 
 
 

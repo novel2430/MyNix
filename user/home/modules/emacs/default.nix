@@ -4,18 +4,17 @@ doom = pkgs.writeShellScriptBin "doom" ''
   DOOMLOCALDIR=$HOME/.local/share/doomemacs DOOMDIR=$HOME/.doom.d ${doomemacs}/bin/doom "$@"
 '';
 emacs = pkgs.writeShellScriptBin "emacs" ''
-  DOOMLOCALDIR=$HOME/.local/share/doomemacs DOOMDIR=$HOME/.doom.d ${pkgs.emacs30-pgtk}/bin/emacs "$@"
+  GTK_CSD=0 DOOMLOCALDIR=$HOME/.local/share/doomemacs DOOMDIR=$HOME/.doom.d ${pkgs.emacs30-pgtk}/bin/emacs "$@"
 '';
 emacsclient = pkgs.writeShellScriptBin "emacsclient" ''
-  DOOMLOCALDIR=$HOME/.local/share/doomemacs DOOMDIR=$HOME/.doom.d ${pkgs.emacs30-pgtk}/bin/emacsclient "$@"
+  GTK_CSD=0 DOOMLOCALDIR=$HOME/.local/share/doomemacs DOOMDIR=$HOME/.doom.d ${pkgs.emacs30-pgtk}/bin/emacsclient "$@"
 '';
 emacsc-run = pkgs.writeShellScriptBin "emacs-run" ''
-  # 启动 Emacs Daemon 如果尚未启动
+  export GTK_CSD=0
   if ! emacsclient -e "(daemonp)" 2>/dev/null | grep -q t; then
     echo "Starting Emacs daemon..."
     emacs --daemon
   fi
-  # 使用 emacsclient 打开 GUI（--create-frame）支持 Wayland/X11
   emacsclient -c
 '';
   cacheDir = "/home/${opt-config.username}/.local/share/doomemacs/etc/lsp/lua-language-server";
@@ -44,6 +43,7 @@ in
     nodePackages.bash-language-server # Bash
     rust-analyzer # Rust
     vue-language-server # Vue
+    kotlin-language-server # Kotlin
   ];
 
   home.file.".emacs.d".source = doomemacs;

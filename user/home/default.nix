@@ -3,18 +3,13 @@ let
   my-packages = with pkgs;[
     fastfetch
     socat
-    upower
     obs-studio
-    glxinfo
     wqy_zenhei
-    noto-fonts-color-emoji
     papirus-icon-theme
     pavucontrol
     celluloid
-    # gedit
     nemo-with-extensions
     gsettings-desktop-schemas
-    gtk3
     amberol
     zathura
     image-roll
@@ -22,23 +17,18 @@ let
     motrix
     file-roller
     wl-clipboard
-    python3
-    rustc
-    cargo
-    appimage-run
+    python312
     brightnessctl
     wlr-randr
     ffmpeg
     vlc
-    ifuse
     mpv
     xarchiver
-    krusader
-    konsole
     eza
     bat
     xclip
     playerctl
+    ncspot
     inputs.astal.packages.${system}.default
     # Modify Packages
     ## modify-pkgs.*
@@ -46,7 +36,6 @@ let
     ## custom-pkgs.*
     custom-pkgs.dingtalk
     custom-pkgs.novel-ags
-    custom-pkgs.wezterm-git
     custom-pkgs.dwl
     # Unstable
     ## unstable.*
@@ -54,17 +43,14 @@ let
     # NUR
     nur.repos.novel2430.FuzzyMarks
     nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
-    # nur.repos.novel2430.wemeet-bin-bwrap
     nur.repos.novel2430.wechat-universal-bwrap
     nur.repos.novel2430.zju-connect
-    # nur.repos.novel2430.wpsoffice
     nur.repos.novel2430.wpsoffice-365
-    nur.repos.novel2430.gedit
     nur.repos.novel2430.zen-browser-bin
+    nur.repos.novel2430.gedit
     nur.repos.xddxdd.baidunetdisk
     # nur.repos.xddxdd.dingtalk
     nur.repos.xddxdd.qq
-    # pkgs-2405.nur.repos.xddxdd.dingtalk
   ]
   ++ opt-config.packages
   ;

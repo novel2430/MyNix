@@ -164,7 +164,7 @@
       clipboard-copy=Control+Shift+c XF86Copy
       clipboard-paste=Control+Shift+v XF86Paste
       # primary-paste=Shift+Insert
-      search-start=Control+Shift+f
+      # search-start=Control+Shift+f
       font-increase=Control+plus Control+equal Control+KP_Add
       font-decrease=Control+minus Control+KP_Subtract
       # font-reset=Control+0 Control+KP_0
@@ -184,10 +184,10 @@
       # noop=none
 
       [search-bindings]
-      cancel=Escape
-      commit=Return
-      find-prev=Control+n
-      find-next=Control+p
+      # cancel=Escape
+      # commit=Return
+      # find-prev=Control+n
+      # find-next=Control+p
       # cursor-left=Left Control+b
       # cursor-left-word=Control+Left Mod1+b
       # cursor-right=Right Control+f

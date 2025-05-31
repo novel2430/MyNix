@@ -44,6 +44,7 @@ rec {
     "libnvjitlink"
     "libcusparse"
     "libnpp"
+    "android-studio-stable"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [

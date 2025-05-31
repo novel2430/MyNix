@@ -12,7 +12,7 @@ stdenv, fetchFromGitHub
 ,xcbutilwm
 ,xwayland
 ,pkg-config
-,wlroots
+,wlroots_0_18
 ,tllist
 ,fcft
 ,libdrm
@@ -24,8 +24,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "novel2430";
     repo = "DWL-0.7";
-    rev = "eece7fea1bef65b7391a05f6c963a53ddfe58423";
-    sha256 = "sha256-jX7q0qKrrlLVb/ddvOUKGQ8s9tbOZDmlFDfqMdg2WtY=";
+    rev = "fc39ba6e815c607aa8753a444c706f642921ef4";
+    sha256 = "sha256-QDZZzoQbhppF6rOkeD+X5vvQZAuQmm/04QDcNw4ab74=";
   };
 
   nativeBuildInputs = [
@@ -44,11 +44,11 @@ stdenv.mkDerivation {
     libX11
     xcbutilwm
     xwayland
-    wlroots
     tllist
     fcft
     libdrm
     dbus
+    wlroots_0_18
   ];
 
   buildPhase = ''

@@ -15,7 +15,7 @@
       gitall = "git add . && git commit -m 'update' && git push";
       v = "nvim";
     };
-    initExtra = lib.mkMerge [
+    initContent = lib.mkMerge [
       # Other Stuff
       (''
 

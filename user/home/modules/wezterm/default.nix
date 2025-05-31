@@ -1,4 +1,4 @@
-{custom-pkgs, opt-config, ...}:
+{pkgs, opt-config, ...}:
 {
   home.file.".config/wezterm/wezterm.lua" = {
     source = ./wezterm.lua;
@@ -34,6 +34,6 @@
   };
 
   home.packages = [
-    custom-pkgs.wezterm-git
+    pkgs.wezterm
   ];
 }

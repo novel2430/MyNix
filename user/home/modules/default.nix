@@ -17,13 +17,11 @@
     ./pics
     ./mpv
     ./qutebrowser
-    ./brave
     ./fastfetch
     ./maven
     ./awesome
     ./alacritty
     ./rofi
-    ./polybar
     ./greenclip
     ./picom
     ./wezterm

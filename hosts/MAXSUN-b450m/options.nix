@@ -18,7 +18,7 @@
 
     # intel, nvidia, intel-nvidia, amd
     gpu-type = [
-      "amd-nvidia"
+      "amd"
     ];
     intel-bus-id = "PCI:0:2:0";
     amd-bus-id = "PCI:10:0:0";
@@ -45,7 +45,6 @@
 
     # Packages For this Machine
     packages = with pkgs; [
-      brave
       hmcl
       puddletag
       abcde
@@ -56,7 +55,6 @@
       qemu
       virt-manager
       ryujinx
-      # nsz
       openttd
       hugo
       distrobox
@@ -70,12 +68,9 @@
       ardour
       nur.repos.novel2430.shotcut
       nur.repos.novel2430.vita3k
-      nodejs_23
       wl-color-picker
       winetricks
-
-      # kdePackages.kdeconnect-kde
-      # kdePackages.kio-admin
+      android-studio
     ];
 
     # Use Clash

@@ -22,7 +22,7 @@
 ;; Text Wrap
 (global-visual-line-mode 1)
 (add-hook! 'xref--xref-buffer-mode-hook
-  (visual-line-mode 1)) ; 自动换行（推荐）
+  (visual-line-mode 1))
 (setq word-wrap t)
 
 (after! consult
@@ -30,8 +30,10 @@
         xref-show-definitions-function #'consult-xref))
 
 
-
-
 ;; Transparent
 (set-frame-parameter (selected-frame) 'alpha-background 90)
 (add-to-list 'default-frame-alist '(alpha-background . 90))
+(add-to-list 'default-frame-alist '(undecorated . t))
+
+;; Dashboard
+(load! "dashboard.el")

@@ -20,6 +20,7 @@
       nodePackages.bash-language-server # Bash
       rust-analyzer # Rust
       vue-language-server # Vue
+      kotlin-language-server # Kotlin
     ];
     extraLuaConfig = ''
       ${builtins.readFile ./options/basic-autocommand.lua}

@@ -116,6 +116,8 @@ local lsp_servers = {
       }
     }
   },
+  -- Kotlin
+  kotlin_language_server = {},
 }
 
 -- Start lspconfig

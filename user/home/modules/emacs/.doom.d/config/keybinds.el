@@ -23,19 +23,97 @@
     (evil-shift-left (region-beginning) (region-end))
     (evil-visual-restore))))
 
+(defun my/main-vterm-open ()
+  "Toggle a vterm buffer named <main-vterm>"
+  (interactive)
+  (let ((buf (get-buffer "main-vterm")))
+    (if buf
+        (switch-to-buffer buf)
+      (let ((vterm-buffer (generate-new-buffer "*main-vterm-temp*")))
+        (with-current-buffer vterm-buffer
+          (vterm-mode)
+          (rename-buffer "main-vterm" t))
+        (switch-to-buffer "main-vterm")))))
+
+(defun my/spotify-open ()
+  "Toggle a vterm buffer named <spotify> and run ncspot."
+  (interactive)
+  (let ((buf (get-buffer "spotify")))
+    (if buf
+        (switch-to-buffer buf)
+      (let ((vterm-buffer (generate-new-buffer "*spotify-temp*")))
+        (with-current-buffer vterm-buffer
+          (vterm-mode)
+          (rename-buffer "spotify" t)
+          (run-with-timer
+           0.1 nil
+           (lambda ()
+             (when (buffer-live-p (get-buffer "spotify"))
+               (with-current-buffer "spotify"
+                 (vterm-send-string "ncspot")
+                 (vterm-send-return))))))
+        (switch-to-buffer "spotify")))))
+
+(defun my/spotify-play-pause ()
+  "ncspot play/pause"
+  (interactive)
+  (if (get-buffer "spotify")
+      (progn (set-buffer "spotify")
+             (vterm-send-string "P"))))
+
+(defun my/spotify-play-next ()
+  "ncspot play next"
+  (interactive)
+  (if (get-buffer "spotify")
+      (progn (set-buffer "spotify")
+             (vterm-send-string ">"))))
+
+(defun my/spotify-play-previous ()
+  "ncspot play previous"
+  (interactive)
+  (if (get-buffer "spotify")
+      (progn (set-buffer "spotify")
+             (vterm-send-string "<"))))
+
 
 (map! :leader
       :desc "Toggle vterm"
       "t" #'+vterm/toggle)
 (map! :leader
-      :desc "Open vterm in new Buffer"
-      "T" #'+vterm/here)
+      :desc "Toggle main-vterm"
+      "T" #'my/main-vterm-open)
 (map! :leader
       :desc "Spit Window horizontal (below)"
       "w s" #'evil-window-split)
 (map! :leader
       :desc "Spit Window vertical (right)"
       "w v" #'evil-window-vsplit)
+
+(map! :leader
+      :desc "Find in current Buffer"
+      "f n" #'consult-line)
+(map! :leader
+      :desc "Find Buffer in current Workspace"
+      "f b" #'+vertico/switch-workspace-buffer)
+(map! :leader
+      :desc "Find Buffer in current Project"
+      "f p" #'project-find-file)
+(map! :leader
+      :desc "Find File"
+      "f f" #'find-file)
+
+(map! :leader
+      :desc "Open a Spotify(ncspot) buffer"
+      "m o" #'my/spotify-open)
+(map! :leader
+      :desc "Toggle Spotify(ncspot) play/pause"
+      "m p" #'my/spotify-play-pause)
+(map! :leader
+      :desc "Play Next Song Spotify(ncspot)"
+      "m >" #'my/spotify-play-next)
+(map! :leader
+      :desc "Play Previous Song Spotify(ncspot)"
+      "m <" #'my/spotify-play-previous)
 (map!
   ;; Insert mode
   ;;;; Save and Leave
@@ -45,6 +123,9 @@
   ;;;; Leave
   :i "C-]"
     (cmd! (evil-normal-state))
+  ;;;; For LSP Bridge
+  ;; :i "C-j" #'acm-select-next
+  ;; :i "C-k" #'acm-select-prev
 
   ;; Normal mode 
   :n "C-s" (cmd! (save-some-buffers t))
@@ -57,14 +138,15 @@
   ;;;; Comment
   :n "C-\\" #'comment-line
   ;;;; LSP
-  :n "gd" #'lsp-find-definition
-  :n "gs" #'consult-lsp-file-symbols
-  :n "gD" #'consult-lsp-diagnostics
-  :n "gf" #'lsp-format-buffer
-  :n "gr" #'lsp-find-references
-  :n "gI" #'lsp-find-implementation
-  :n "gt" #'lsp-find-type-definition
+  :n "gd" #'+lookup/definition
+  :n "gs" #'consult-eglot-symbols
+  :n "gD" #'+lookup/diagnostics
+  :n "gf" #'eglot-format-buffer
+  :n "gr" #'+lookup/references
+  :n "gI" #'+lookup/implementations
+  :n "gt" #'+lookup/type-definition
   :n "K"  #'lsp-describe-thing-at-point
+  ;; :n "K"  #'+lookup/documentation
   ;;;; Finding Stuff
   :n "fn"  #'consult-line
   :n "fb"  #'+vertico/switch-workspace-buffer

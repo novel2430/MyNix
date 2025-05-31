@@ -53,6 +53,8 @@
    (teal       '("#4EC9B0"))
    (dark-cyan  '("#51504F"))
    (pink       '("#C586C0"))
+   (nord-dark-blue '("#5e81ac"))
+   (nord-dark-white '("#d8dee9"))
 
    ;; Face categories
    (highlight      blue)
@@ -164,6 +166,12 @@
 
    ;; js2
    (js2-object-property-access :foreground variables)
+
+   ;; Corfu
+   (corfu-current :background nord-dark-blue :foreground fg :weight 'bold) ;; Select
+   (corfu-default :background base0 :foreground fg)               ;; Normal
+   (corfu-border :background fg)                                      ;; Border
+   (corfu-annotations :foreground nord-dark-white :slant 'italic)
 
    ;; Line numbers
    (line-number :foreground grey)
