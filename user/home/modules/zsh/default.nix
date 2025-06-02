@@ -14,6 +14,7 @@
       neofetch = "${pkgs.fastfetch}/bin/fastfetch";
       gitall = "git add . && git commit -m 'update' && git push";
       v = "nvim";
+      fhs = "nix develop ~/MyNix#fhs";
     };
     initContent = lib.mkMerge [
       # Other Stuff

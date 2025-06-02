@@ -85,6 +85,9 @@
         }
       ];
     };
+    fhsEnv = import ./user/fhs/fhs.nix { 
+      pkgs = import nixpkgs { inherit system; }; 
+    };
   in
   {
     # Main Config Fuction
@@ -93,6 +96,13 @@
       "${ThinkPad-X230.name}" = system-gen { host-conf = ThinkPad-X230; };
       "${MAXSUN-b450m.name}" = system-gen { host-conf = MAXSUN-b450m; };
       "${ASUSTek.name}" = system-gen { host-conf = ASUSTek; };
+    };
+
+    # Devenv
+    devShells = {
+      ${system} = {
+        fhs = fhsEnv.env;
+      };
     };
   };
 }

@@ -6,4 +6,5 @@
     ags = ags;
   };
   dwl = pkgs.callPackage ./dwl {};
+  waybar = pkgs.callPackage ./waybar {};
 }

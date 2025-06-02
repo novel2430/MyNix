@@ -105,7 +105,21 @@ local lsp_servers = {
   -- Clangd
   clangd = {},
   -- nil_ls (nix)
-  nil_ls = {},
+  nil_ls = {
+    ['nil'] = {
+      testSetting = 42,
+      formatting = {
+        command = { "nixfmt" },
+      },
+      nix = {
+        flake = {
+          autoArchive = false,
+          autoEvalInputs = false,
+          nixpkgsInputName = "nixpkgs",
+        },
+      },
+    },
+  },
   -- bashls
   bashls = {},
   -- Rust

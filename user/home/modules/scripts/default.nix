@@ -76,5 +76,8 @@
     (import ./wl-mirror.nix {
       inherit pkgs;
     })
+    (import ./waybar-modules-temp.nix {
+      inherit pkgs;
+    })
   ];
 }

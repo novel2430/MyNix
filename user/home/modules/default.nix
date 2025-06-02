@@ -28,6 +28,8 @@
     ./dwl
     ./emacs
     ./direnv
+
+    ./labwc
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

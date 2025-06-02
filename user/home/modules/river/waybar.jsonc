@@ -26,14 +26,14 @@
         // "pulseaudio",
         // "network",
         // "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
+        "battery",
+        "custom/temperature",
         // "backlight",
         // "keyboard-state",
         // "sway/language",
-        "battery",
         //"battery#bat2",
+        "memory",
+        "cpu",
         "tray"
     ],
     // Modules configuration
@@ -250,6 +250,13 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/temperature": {
+        "format": "{}",
+        "exec": "waybar-modules-temp",
+        "interval": 5,
+        "return-type": "json",
+        "tooltip": true
     },
     "custom/media": {
         "format": "{icon} {}",

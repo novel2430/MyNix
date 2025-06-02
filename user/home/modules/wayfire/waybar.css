@@ -152,8 +152,13 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
-    color: #ffffff;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+    color: #e0deda;
+    margin: 0;
 }
 
 #window,
@@ -182,7 +187,7 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged {
-    color: #e0deda;
+    color: #b1d196;
     background-color: transparent;
 }
 
@@ -195,8 +200,8 @@ button:hover {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: transparent;
+    color: #e0deda;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -225,15 +230,6 @@ button:hover {
 
 label:focus {
     background-color: #000000;
-}
-
-#cpu {
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#memory {
-    background-color: transparent;
 }
 
 #disk {

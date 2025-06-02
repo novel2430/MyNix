@@ -16,12 +16,12 @@
 	      "dwl/window"
         // "wlr/taskbar"
     ],
-    // "modules-center": [
+    "modules-center": [
         // "river/window"
-        //"hyprland/window"
+        // "hyprland/window"
         // "wlr/taskbar"
-        // "clock"
-    // ],
+        "clock"
+    ],
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
@@ -32,10 +32,10 @@
         // "keyboard-state",
         // "sway/language",
         "battery",
-        "temperature",
+        "custom/temperature",
         "memory",
         "cpu",
-        "clock",
+        //"clock",
         //"battery#bat2",
         "tray"
     ],
@@ -100,7 +100,7 @@
 	      "num-tags": 9
     },
     "dwl/window": {
-        "format": "{layout} {title}",
+        "format": "{layout}",
         "max-length": 50
     },
     "river/tags": {
@@ -263,6 +263,13 @@
     },
     "custom/dwl-logo": {
         "format": "[ dwl]"
+    },
+    "custom/temperature": {
+        "format": "{}",
+        "exec": "waybar-modules-temp",
+        "interval": 5,
+        "return-type": "json",
+        "tooltip": true
     },
     "custom/media": {
         "format": "{icon} {}",

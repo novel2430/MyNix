@@ -11,7 +11,7 @@
         // "sway/mode",
         // "sway/scratchpad",
         // "custom/media"
-	      // "river/tags"
+	      //"river/tags"
         "wlr/workspaces",
         "wlr/taskbar"
     ],
@@ -58,7 +58,7 @@
     "wlr/taskbar": {
       "format": "{icon}",
 	    "spacaing": 0,
-    	"icon-size": 19,
+    	"icon-size": 22,
     	"icon-theme": "Papirus",
     	"on-click": "activate",
     	"on-click-middle": "close",
@@ -71,17 +71,18 @@
 	    "max-length": 15
      },
     "wlr/workspaces": {
-      "format": "{icon}",
+      "format": "{}",
       "on-click": "activate",
       "format-icons": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "urgent": "",
-        "active": "",
-        "default": ""
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
       },
       "sort-by-number": true
     },
@@ -95,7 +96,7 @@
         }
     },
     "river/tags": {
-	      "num-tags": 7
+	      "num-tags": 9
     },
     "river/window": {
         "format": "{}",
@@ -188,8 +189,7 @@
     "temperature": {
         "thermal-zone": 0,
         "critical-threshold": 80,
-        "format": " {temperatureC}°C",
-        "format-icons": ["", "", ""]
+        "format": " {temperatureC}°C",
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -202,14 +202,14 @@
             // "warning": 30,
             // "critical": 15
         // },
-        "format": " {capacity}%",
+        "format": "{icon} {capacity}%",
         //"format-full": "{capacity}%",
-        //"format-charging": "{capacity}%",
+        "format-charging": "󰠠 {capacity}%",
         //"format-plugged": "{capacity}%",
         //"format-alt": "{time} {icon}",
         //"format-good": "good",
-        //"format-full": "full",
-        //"format-icons": ["", "", "", "", ""]
+        "format-full": "{icon} full",
+        "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"
