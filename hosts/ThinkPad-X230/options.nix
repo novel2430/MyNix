@@ -68,11 +68,9 @@
       hmcl
       audacity
       hugo
-      nodejs_23
       wl-color-picker
       distrobox
       reaper
-      carla
       discord
       qemu
       virt-manager
