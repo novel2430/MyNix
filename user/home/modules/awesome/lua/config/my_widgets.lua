@@ -48,27 +48,7 @@ local bat_update = function()
 
   if status == "Charging" then
     color = "#78cc81ff"
-    if per >= 90 then
-      icon = "󰂅"
-    elseif per >= 80 then
-      icon = "󰂋"
-    elseif per >= 70 then
-      icon = "󰂊"
-    elseif per >= 60 then
-      icon = "󰢞"
-    elseif per >= 50 then
-      icon = "󰂉"
-    elseif per >= 40 then
-      icon = "󰢝"
-    elseif per >= 30 then
-      icon = "󰂈"
-    elseif per >= 20 then
-      icon = "󰂇"
-    elseif per >= 10 then
-      icon = "󰂆"
-    elseif per < 10 then
-      icon = "󰢜"
-    end
+    icon = "󰠠"
   else
     if per >= 90 then
       icon = "󰁹"
@@ -165,7 +145,7 @@ M.temp_widget_watch = function()
     5,
     function(widget, stdout)
       local temp_usage = tonumber(stdout) or 0
-      widget.text = string.format(" %d°C", temp_usage)
+      widget.text = string.format(" %d°C", temp_usage)
     end,
     M.temp_widget
   )

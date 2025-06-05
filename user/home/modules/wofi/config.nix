@@ -20,7 +20,7 @@
         margin = "0px";
         border = "0px solid #2e3440";
         border-radius = "0px";
-        background-color = "#1c2e36";
+        background-color = "#3b4252";
         font-family = "Hack Nerd Font";
         font-size = "15px";
       };
@@ -30,14 +30,14 @@
       content = {
         margin = "5px";
         border = "2px solid #e0deda";
-        color = "#e0deda";
-        background-color = "#1c2e36";
+        color = "#eceff4";
+        background-color = "#3b4252";
       };
     }
     {
       title = "#input image";
       content = {
-      	color = "#e0deda";
+      	color = "#eceff4";
       };
     }
     {
@@ -45,7 +45,7 @@
       content = {
         margin = "5px";
         border = "none";
-        background-color = "#1c2e36";
+        background-color = "#3b4252";
       };
     }
     {
@@ -53,7 +53,7 @@
       content = {
         margin = "5px";
         border = "none";
-        background-color = "#1c2e36";
+        background-color = "#3b4252";
       };
     }
     {
@@ -68,22 +68,21 @@
       content = {
         margin = "10px";
         border = "none";
-        color = "#e0deda";
+        color = "#eceff4";
       };
     }
     {
       title = "#entry:selected";
       content = {
-        background-color = "#637c8c";
+        background-color = "#87a96b";
         font-weight = "bold";
       };
     }
     {
       title = "#text:selected";
       content = {
-        background-color = "#637c8c";
+        background-color = "#87a96b";
         font-weight = "bold";
-        font-style = "italic";
       };
     }
   ];

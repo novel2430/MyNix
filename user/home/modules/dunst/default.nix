@@ -41,7 +41,7 @@ in
         horizontal_padding = 8;
         text_icon_padding = 0;
         frame_width = 3;
-        frame_color = "#637c8c";
+        frame_color = "#eceff4";
         gap_size = 0;
         separator_color = "frame";
         sort = true;
@@ -60,7 +60,7 @@ in
         icon_position = "left";
         sticky_history = true;
         history_length = 20;
-        dmenu = "bemenu-start";
+        dmenu = "${wofi} --show dmenu";
         browser = "${xdg-open}";
         always_run_script = true;
         title = "Dunst";
@@ -77,22 +77,22 @@ in
         per_monitor_dpi = false;
       };
       urgency_low = {
-        background = "#375566";
-        foreground = "#e0deda";
-        highlight = "#e0deda";
+        background = "#4c566a";
+        foreground = "#eceff4";
+        highlight = "#eceff4";
         timeout = 10;
       };
       urgency_normal = {
-        background = "#375566";
-        foreground = "#e0deda";
-        highlight = "#e0deda";
+        background = "#4c566a";
+        foreground = "#eceff4";
+        highlight = "#eceff4";
         timeout = 10;
       };
       urgency_critical = {
-        background = "#eb6f92";
-        foreground = "#e0deda";
-        frame_color = "#e0deda";
-        highlight = "#e0deda";
+        background = "#bf616a";
+        foreground = "#eceff4";
+        frame_color = "#eceff4";
+        highlight = "#eceff4";
         timeout = 0;
       };
       history_ignore = {

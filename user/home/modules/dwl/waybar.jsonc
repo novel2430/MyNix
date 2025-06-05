@@ -32,6 +32,7 @@
         // "keyboard-state",
         // "sway/language",
         "battery",
+        "custom/weather",
         "custom/temperature",
         "memory",
         "cpu",
@@ -268,6 +269,13 @@
         "format": "{}",
         "exec": "waybar-modules-temp",
         "interval": 5,
+        "return-type": "json",
+        "tooltip": true
+    },
+    "custom/weather": {
+        "format": "{}",
+        "exec": "waybar-modules-weather",
+        "interval": 3600,
         "return-type": "json",
         "tooltip": true
     },

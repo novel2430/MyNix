@@ -69,9 +69,9 @@ rec {
       { modes = ["normal"]; keys = "Super+Shift L"; action = "${apps.swaylock} manual"; }
       { modes = ["normal"]; keys = "Super+Shift P"; action = "${apps.powerMenu}"; }
       # Volume control
-      { modes = ["normal" "locked"]; keys = "None XF86AudioRaiseVolume"; action = "${apps.wpctl} set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
-      { modes = ["normal" "locked"]; keys = "None XF86AudioLowerVolume"; action = "${apps.wpctl} set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
-      { modes = ["normal" "locked"]; keys = "None XF86AudioMute"; action = "${apps.wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+      { modes = ["normal" "locked"]; keys = "None XF86AudioRaiseVolume"; action = "${apps.volume} up"; }
+      { modes = ["normal" "locked"]; keys = "None XF86AudioLowerVolume"; action = "${apps.volume} down"; }
+      { modes = ["normal" "locked"]; keys = "None XF86AudioMute"; action = "${apps.volume} mute"; }
       # Brightness control
       { modes = ["normal" "locked"]; keys = "None XF86MonBrightnessUp"; action = "${apps.brightnessctl} set +10%"; }
       { modes = ["normal" "locked"]; keys = "None XF86MonBrightnessDown"; action = "${apps.brightnessctl} set 10%-"; }
@@ -153,8 +153,8 @@ rec {
   # Define Background and Border
   background-border-settings = {
     background-color = "0x002b36";
-    border-color-focused = "0xe0deda";
-    border-color-unfocused = "0x1c2e36";
+    border-color-focused = "0xeceff4";
+    border-color-unfocused = "0x3b4252";
     border-width = "2";
   };
 }

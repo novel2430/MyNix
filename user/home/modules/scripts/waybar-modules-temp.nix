@@ -25,9 +25,10 @@ def main():
             temp = read_temp(path)
             temp_class = "custom-temperature"
             if temp is not None:
+                temp_int = int(temp)
                 print(json.dumps({
-                    "text": f" {temp:.1f}°",
-                    "tooltip": f"Temperature {temp:.1f}°C",
+                    "text": f" {temp_int}°",
+                    "tooltip": f"Temperature {temp:.2f}°C",
                     "class": f"{temp_class}",
                     "percentage": int(temp) 
                 }))

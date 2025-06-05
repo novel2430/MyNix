@@ -14,16 +14,16 @@ end
 
 M.my_font = "Hack Nerd Font 12"
 M.my_color = {
-  red = "#eb6f92ff",
-  fg = "#e0dedaff",
-  bg = "#1c2e36ff",
-  high_bg = "#637c8cff",
-  sec_bg = "#375566ff",
+  red = "#bf616aff",
+  fg = "#eceff4ff",
+  bg = "#2e3440ff",
+  high_bg = "#87a96bff",
+  sec_bg = "#4c566aff",
 }
 
 M.my_size = {
   gap = 0,
-  border_width = 3,
+  border_width = 2,
   snap_border_width = 10,
   wibox_height = 25,
   wibox_spacing = 15,

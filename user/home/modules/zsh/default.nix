@@ -19,6 +19,7 @@
     initContent = lib.mkMerge [
       # Other Stuff
       (''
+        [ -f "$HOME/.private_env" ] && source "$HOME/.private_env"
 
         setopt hist_verify
         setopt NO_BEEP

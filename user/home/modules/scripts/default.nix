@@ -79,5 +79,8 @@
     (import ./waybar-modules-temp.nix {
       inherit pkgs;
     })
+    (import ./waybar-modules-weather.nix {
+      inherit pkgs;
+    })
   ];
 }

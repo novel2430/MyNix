@@ -1,25 +1,25 @@
 border.width: 0
 window.button.width: 36
-osd.bg.color: #1c2e36
+osd.bg.color: #3b4252
 window.titlebar.padding.height: 2
 window.button.height: 20
 
 # Active Window
-window.active.border.color: #e0deda
-window.active.title.bg.color: #637c8c
-window.active.label.text.color: #e0deda
+window.active.border.color: #eceff4
+window.active.title.bg.color: #5e81ac
+window.active.label.text.color: #eceff4
 window.active.shadow.size: 0
 
 # Inactive Window
-window.inactive.border.color: #1c2e36
-window.inactive.title.bg.color: #1c2e36
-window.inactive.label.text.color: #e0deda
+window.inactive.border.color: #4c566a
+window.inactive.title.bg.color: #4c566a
+window.inactive.label.text.color: #eceff4
 window.inactive.shadow.size: 0
 
 # Window Switcher
 osd.window-switcher.width: 25%
 osd.window-switcher.preview.border.width: 2
-osd.window-switcher.preview.border.color: #e0deda
+osd.window-switcher.preview.border.color: #eceff4
 
 # Workspace Switcher
 osd.workspace-switcher.boxes.width: 0
@@ -33,16 +33,16 @@ snapping.overlay.region.border.enabled: yes
 snapping.overlay.edge.border.enabled: yes
 snapping.overlay.region.border.width: 2
 snapping.overlay.edge.border.width: 2
-snapping.overlay.region.border.color: #e0deda
-snapping.overlay.edge.border.color: #e0deda
+snapping.overlay.region.border.color: #eceff4
+snapping.overlay.edge.border.color: #eceff4
 
 # Title Bar Btn (xbm)
 ## Close
-window.active.button.close.unpressed.image.color: #e0deda
-window.inactive.button.close.unpressed.image.color: #e0deda
+window.active.button.close.unpressed.image.color: #eceff4
+window.inactive.button.close.unpressed.image.color: #eceff4
 ## Max
-window.active.button.max.unpressed.image.color: #e0deda
-window.inactive.button.max.unpressed.image.color: #e0deda
+window.active.button.max.unpressed.image.color: #eceff4
+window.inactive.button.max.unpressed.image.color: #eceff4
 ## Iconify
-window.active.button.iconify.unpressed.image.color: #e0deda
-window.inactive.button.iconify.unpressed.image.color: #e0deda
+window.active.button.iconify.unpressed.image.color: #eceff4
+window.inactive.button.iconify.unpressed.image.color: #eceff4
