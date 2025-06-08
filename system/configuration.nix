@@ -23,6 +23,7 @@
     ./modules/docker.nix
     ./modules/virt-machine.nix
     ./modules/garbage-collect.nix
+    # ./modules/i3clock.nix
     ./services/xserver.nix
     ./services/pipewire.nix
     ./services/others.nix
@@ -125,6 +126,8 @@
 
   # Swaylock PAM
   security.pam.services.swaylock = {};
+  security.pam.services.i3lock.enable = true;
+  # security.pam.services.xlock = {};
 
   # List programs that you want to enable:
   # dconf

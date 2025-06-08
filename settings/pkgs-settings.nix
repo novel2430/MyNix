@@ -45,6 +45,7 @@ rec {
     "libcusparse"
     "libnpp"
     "android-studio-stable"
+    "bilibili"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [

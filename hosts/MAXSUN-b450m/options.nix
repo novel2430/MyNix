@@ -71,6 +71,7 @@
       wl-color-picker
       winetricks
       android-studio
+      bilibili
     ];
 
     # Use Clash
