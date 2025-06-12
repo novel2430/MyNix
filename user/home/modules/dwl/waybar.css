@@ -9,7 +9,7 @@
 
 window#waybar {
     /* background-color: rgba(43, 48, 59, 0.5); */
-    background-color: #2e3440;
+    background-color: rgba(46, 52, 64, 0.6);/* #2e3440 */
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #eceff4;
     transition-property: background-color;
@@ -70,7 +70,7 @@ button:hover {
 #tags button.focused {
 	font-weight: 900;
 	color: #eceff4;
-	background: #87a96b;
+	background: #5e81ac;
 	border-radius: 0px;
 }
 
@@ -292,7 +292,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #87a96b;
+    background-color: #5e81ac;
     color: #eceff4;
 }
 

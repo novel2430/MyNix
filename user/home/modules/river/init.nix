@@ -22,7 +22,7 @@ rec {
 
   # Define paths to custom and standard applications
   apps = {
-    foot = "${pkgs.foot}/bin/foot";
+    wezterm = "${pkgs.wezterm}/bin/wezterm";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     wofi = "${wofi}/bin/wofi";
     fuzzel = "${fuzzel}/bin/fuzzel";
@@ -56,11 +56,12 @@ rec {
       { modes = ["normal"]; keys = "Super+Shift Space"; action = "toggle-float"; }
       # Change Layout
       { modes = ["normal"]; keys = "Super M"; action = "send-layout-cmd rivercarro 'main-location-cycle left,monocle'"; }
+      { modes = ["normal"]; keys = "Super E"; action = "send-layout-cmd rivercarro 'main-location left'"; }
       { modes = ["normal"]; keys = "Super+Shift M"; action = "send-layout-cmd rivercarro 'main-location-cycle left,top,right,bottom,monocle'"; }
     ];
     apps = [
       # Terminal
-      { modes = ["normal"]; keys = "Super Return"; action = "${apps.foot}"; }
+      { modes = ["normal"]; keys = "Super Return"; action = "${apps.wezterm}"; }
       # Custom application bindings
       { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
       { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }
@@ -85,7 +86,7 @@ rec {
       # Reload Config
       { modes = ["normal"]; keys = "Super+Shift R"; action = "~/.config/river/init reload"; }
       # FuzzyMarks
-      { modes = ["normal"]; keys = "Super N"; action = "${apps.fuzzyMarks}"; }
+      # { modes = ["normal"]; keys = "Super N"; action = "${apps.fuzzyMarks}"; }
     ];
     pointer = [
       { keys = "Super BTN_LEFT"; action = "move-view"; }
@@ -148,6 +149,8 @@ rec {
       set-view-tags = "Super+Shift";
       toggle-focused-tags = "Super+Control";
       all-tags = "Super 0";
+      toggle-view-tags = "Super+Control+Shift";
+      sticky-tag="Super+Shift S";
     };
   };
   # Define Background and Border

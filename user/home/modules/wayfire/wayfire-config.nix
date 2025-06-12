@@ -66,13 +66,13 @@ let
       command_clipboard = "wlroot-clipboard";
       command_launcher = "wofi --show drun";
       command_lock = "my-swaylock manual";
-      command_mute = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+      command_mute = "my-volume mute";
       command_run_launcher = "wofi --show run";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot select";
-      command_terminal = "foot";
-      command_volume_down = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-";
-      command_volume_up = "${pkgs.wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
+      command_terminal = "wezterm";
+      command_volume_down = "my-volume down";
+      command_volume_up = "my-volume up";
       command_light_up = "brightnessctl set 10%+";
       command_light_down = "brightnessctl set 10%-";
       command_audio_play = "${pkgs.playerctl}/bin/playerctl play-pause";
@@ -94,7 +94,8 @@ let
       focus_buttons = "BTN_LEFT | BTN_MIDDLE | BTN_RIGHT";
       focus_buttons_passthrough = "true";
       max_render_time = "-1";
-      plugins = "alpha   animate   autostart   command   cube   decoration   expo   fast-switcher   fisheye   foreign-toplevel   grid   gtk-shell   idle   invert   move   oswitch   place   resize   switcher   vswitch   wayfire-shell   window-rules   wm-actions   wrot   input-method-v1   zoom scale";
+      #plugins = "alpha animate autostart command decoration expo fast-switcher grid idle move oswitch place resize switcher vswitch window-rules wm-actions input-method-v1 zoom scale gtk-shell foreign-toplev wayfire-shell";
+      plugins = "alpha animate autostart command decoration expo fast-switcher foreign-toplevel grid gtk-shell idle move oswitch place resize switcher vswitch wayfire-shell window-rules wm-actions input-method-v1 zoom scale";
       preferred_decoration_mode = "client";
       transaction_timeout = "100";
       vheight = "3";
@@ -119,20 +120,20 @@ let
       zoom = "0.100000";
     };
     decoration = {
-      active_color = "\\#637c8cFF";
+      active_color = "\\#5e81acFF";
       border_size = "2";
       button_order = "minimize maximize close";
       font = "Hack Nerd Font";
       ignore_views = "none";
-      inactive_color = "\\#1c2e36FF";
-      title_height = "25";
+      inactive_color = "\\#4c566aFF";
+      title_height = "22";
     };
     expo = {
-      background = "\\#375566FF";
+      background = "\\#5e81acFF";
       duration = "300";
       inactive_brightness = "0.700000";
       keyboard_interaction = "true";
-      offset = "10";
+      offset = "5";
       select_workspace_1 = "KEY_1";
       select_workspace_2 = "KEY_2";
       select_workspace_3 = "KEY_3";
@@ -161,23 +162,22 @@ let
     };
     grid = {
       duration = "300";
-      restore = "<super> KEY_DOWN | <super> KEY_KP0";
-      slot_b = "<super> KEY_KP2";
+      restore = "<super> KEY_KP0";
+      slot_b = "<super> KEY_DOWN";
       slot_bl = "<super> KEY_KP1";
       slot_br = "<super> KEY_KP3";
-      slot_c = "<super> KEY_UP | <super> KEY_KP5";
+      slot_c = "<super> KEY_KP5";
       slot_l = "<super> KEY_LEFT | <super> KEY_KP4";
       slot_r = "<super> KEY_RIGHT | <super> KEY_KP6";
-      slot_t = "<super> KEY_KP8";
+      slot_t = "<super> KEY_UP";
       slot_tl = "<super> KEY_KP7";
       slot_tr = "<super> KEY_KP9";
-      type = "crossfade";
+      type = "wobbly";
     };
     idle = {
       cube_max_zoom = "1.500000";
       cube_rotate_speed = "1.000000";
       cube_zoom_speed = "1000";
-      disable_initially = "false";
       disable_on_fullscreen = "true";
       dpms_timeout = "-1";
       screensaver_timeout = "3600";
@@ -226,9 +226,9 @@ let
       enable_snap = "true";
       enable_snap_off = "true";
       join_views = "false";
-      preview_base_border = "\\#404080CC";
-      preview_base_color = "\\#8080FF80";
-      preview_border_width = "3";
+      preview_base_border = "\\#4c566aCC";
+      preview_base_color = "\\#4c566a80";
+      preview_border_width = "0";
       quarter_snap_threshold = "50";
       snap_off_threshold = "10";
       snap_threshold = "10";
@@ -260,15 +260,15 @@ let
     };
     scale = {
       allow_zoom = "false";
-      bg_color = "\\#1A1A1AE6";
+      bg_color = "\\#4c566aE6";
       duration = "300";
-      inactive_alpha = "0.750000";
+      inactive_alpha = "0.6";
       include_minimized = "true";
       middle_click_close = "false";
       minimized_alpha = "0.450000";
       outer_margin = "0";
       spacing = "30";
-      text_color = "\\#CCCCCCFF";
+      text_color = "\\#eceff4FF";
       title_font_size = "20";
       title_overlay = "all";
       title_position = "center";
@@ -341,11 +341,11 @@ let
     wm-actions = {
       minimize = "none";
       send_to_back = "none";
-      toggle_always_on_top = "<super> KEY_X";
+      toggle_always_on_top = "none";
       toggle_fullscreen = "<super> KEY_F";
-      toggle_maximize = "none";
+      toggle_maximize = "<super> KEY_M";
       toggle_showdesktop = "none";
-      toggle_sticky = "none";
+      toggle_sticky = "<super> <shift> KEY_S";
     };
     wobbly = {
       friction = "3.000000";
@@ -380,6 +380,9 @@ let
       modifier = "<super>";
       smoothing_duration = "300";
       speed = "0.010000";
+    };
+    window-rules = {
+      rule_1 = "on created if app_id is \"org.wezfurlong.wezterm\" then maximize";
     };
   }
   //

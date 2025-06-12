@@ -12,7 +12,7 @@
         // "sway/scratchpad",
         // "custom/media"
 	      // "river/tags"
-        "wlr/workspaces",
+        //"wlr/workspaces",
         "wlr/taskbar"
     ],
     "modules-center": [
@@ -28,6 +28,7 @@
         // "network",
         // "power-profiles-daemon",
         "battery",
+        "custom/weather",
         "custom/temperature",
         // "backlight",
         // "keyboard-state",
@@ -257,6 +258,13 @@
         "format": "{}",
         "exec": "waybar-modules-temp",
         "interval": 5,
+        "return-type": "json",
+        "tooltip": true
+    },
+    "custom/weather": {
+        "format": "{}",
+        "exec": "waybar-modules-weather",
+        "interval": 3600,
         "return-type": "json",
         "tooltip": true
     },

@@ -74,14 +74,14 @@
     {
       title = "#entry:selected";
       content = {
-        background-color = "#87a96b";
+        background-color = "#5e81ac";
         font-weight = "bold";
       };
     }
     {
       title = "#text:selected";
       content = {
-        background-color = "#87a96b";
+        background-color = "#5e81ac";
         font-weight = "bold";
       };
     }

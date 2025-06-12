@@ -17,6 +17,36 @@ let
     neovim
     python312
     pkg-config
+    gcc
+    # Others - MSST
+    portaudio
+    pango
+    cairo
+    harfbuzz
+    fontconfig
+    freetype
+    gdk-pixbuf
+    atk
+    gobject-introspection
+    xorg.libX11
+    xorg.xorgproto
+    xorg.libXext
+    xorg.libXi
+    xorg.libXrandr
+    xorg.libXinerama
+    xorg.libXcursor
+    xorg.libXcomposite
+    xorg.libXdamage
+    xorg.libXrender
+    xorg.libXtst
+    libepoxy
+    wayland
+    gtk3
+    gtkmm3
+    gtk2
+    gtkmm2
+    glib
+    glibc
   ];
   base = pkgs.appimageTools.defaultFhsEnvArgs;
   new-home-dir = "$HOME/MyFHS";
@@ -36,6 +66,7 @@ with pkgs; buildFHSEnv {
   profile = ''
     # other
     export HOME="${new-home-dir}"
+    export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath libs}:$LD_LIBRARY_PATH"
     export SHELL=zsh
   '';
   runScript = startScript;

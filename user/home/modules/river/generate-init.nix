@@ -53,9 +53,10 @@ let
         in
           if count > 0 then
             [''
-              riverctl map normal ${binding.keybindings.set-focused-tags} ${str-count} set-focused-tags ${tags}
+              riverctl map normal ${binding.keybindings.set-focused-tags} ${str-count} set-focused-tags $(($sticky_tag + ${tags}))
               riverctl map normal ${binding.keybindings.set-view-tags} ${str-count} set-view-tags ${tags}
               riverctl map normal ${binding.keybindings.toggle-focused-tags} ${str-count} toggle-focused-tags ${tags}
+              riverctl map normal ${binding.keybindings.toggle-view-tags} ${str-count} toggle-view-tags ${tags}
             '']
             ++ generate (count - 1) 
           else [];
@@ -71,11 +72,21 @@ let
   formatKeybindingPointer = binding: (
       "riverctl map-pointer normal ${binding.keys} ${binding.action}"
   );
+  formatKeybindingSticky = binding: (
+      "riverctl map normal ${binding.keybindings.sticky-tag} toggle-view-tags $sticky_tag"
+  );
 in
 with config; {
   home.file.".config/river/init" = {
     text = ''
       #!/bin/sh
+
+      # For Sticky
+      sticky_tag=$((1 << 31))
+      all_tags=$(((1 << 32) - 1))
+      all_but_sticky_tag=$(( $all_tags ^ $sticky_tag ))
+      riverctl spawn-tagmask ''${all_but_sticky_tag}
+
 
       # River configuration
       # Basic
@@ -102,6 +113,9 @@ with config; {
 
       # Set keyboard repeat rate
       ${formatKeyboardRepeat keyboard-repeat}
+
+      # Sticky
+      ${formatKeybindingSticky tags}
 
       # Default layout and autostart
       riverctl default-layout rivercarro

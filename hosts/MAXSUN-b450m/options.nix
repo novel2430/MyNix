@@ -72,6 +72,7 @@
       winetricks
       android-studio
       bilibili
+      protonup-qt
     ];
 
     # Use Clash

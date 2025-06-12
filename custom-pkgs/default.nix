@@ -7,4 +7,7 @@
   };
   dwl = pkgs.callPackage ./dwl {};
   waybar = pkgs.callPackage ./waybar {};
+  baidunetdisk = pkgs.callPackage ./baidunetdisk {
+    electron_11 = pkgs.nur.repos.xddxdd.electron_11;
+  };
 }

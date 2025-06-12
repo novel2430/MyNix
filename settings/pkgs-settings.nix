@@ -46,6 +46,7 @@ rec {
     "libnpp"
     "android-studio-stable"
     "bilibili"
+    "wechat-appimage"
   ];
   # Superset of the default insecure packages
   allowed-insecure-packages = [

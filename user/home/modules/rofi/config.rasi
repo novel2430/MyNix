@@ -42,7 +42,7 @@ element {
   padding: 0px;
 }
 element-text selected {
-  background-color: #87a96b;
+  background-color: #5e81ac;
   padding: 10px;
 }
 element-text {
