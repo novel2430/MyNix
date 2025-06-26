@@ -38,6 +38,7 @@ let
     custom-pkgs.novel-ags
     custom-pkgs.dwl
     custom-pkgs.baidunetdisk
+    # custom-pkgs.wpsoffice-365
     # Unstable
     ## unstable.*
     ## unstable.*

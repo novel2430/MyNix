@@ -179,7 +179,7 @@ let
       cube_rotate_speed = "1.000000";
       cube_zoom_speed = "1000";
       disable_on_fullscreen = "true";
-      dpms_timeout = "-1";
+      dpms_timeout = "1200";
       screensaver_timeout = "3600";
       toggle = "none";
     };

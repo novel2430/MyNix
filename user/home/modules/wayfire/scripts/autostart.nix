@@ -34,5 +34,5 @@ pkgs.writeShellScriptBin "my-wf-autostart" ''
   # Blueman-applet
   #${blutooth-cmd}
   # Idle Inhibit
-  ${wayland-pipewire-idle-inhibit} -w &
+  #${wayland-pipewire-idle-inhibit} -w &
 ''
