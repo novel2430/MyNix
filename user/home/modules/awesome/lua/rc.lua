@@ -29,6 +29,7 @@ awful.screen.connect_for_each_screen(function(s)
   awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
   -- Tag layout Change Signal
   for _, t in pairs(s.tags) do
+    t.lastClient = nil
     t:connect_signal("property::layout", function()
       my_wibox.layout_widget_update(t)
     end)

@@ -25,7 +25,7 @@ let
     fi
 
     USERID=$(${id} -u ${opt-config.username})
-    interval_time=30 #sec
+    interval_time=10 #sec
 
     # fallback fallback fallback!
     export XAUTHORITY="/home/${opt-config.username}/.Xauthority"
@@ -37,34 +37,36 @@ let
 
     while true; do
       swayidle_pid=$(${pgrep} -l "swayidle" | ${awk} '$2 == "swayidle" { print $1 }')
-      if ${playerctl} status 2>/dev/null | grep -q Playing; then
-        echo "[media_guard] Playing..."
-        if (( is_playing == 0 )); then
-          if [ "$WAYLAND_DISPLAY" == "X11" ]; then
-            echo "[media_guard] (X11) xautolock enable detect, do disable"
-            ${xset} -dpms
-            ${xautolock} -disable
-          elif [[ -n "$swayidle_pid" && "$WAYLAND_DISPLAY" == wayland* ]]; then
-            # wayland stuff
-            echo "[media_guard] (Wayland) swayidle enable detect, do disable"
-            kill -s TERM $swayidle_pid
-          fi
-        fi
-        is_playing=1
-      else
-        echo "[media_guard] Not playing."
+      locked_pid_betterlockscreen="$(${pgrep} -f betterlockscreen || true)"
+      locked_pid_swaylock="$(${pgrep} -f swaylock || true)"
+      if [[ -n "$locked_pid_betterlockscreen" || -n "$locked_pid_swaylock" ]]; then
+        echo "[media_guard] Screen is LOCKED. Enabling idle lock."
         if (( is_playing == 1 )); then
           if [ "$WAYLAND_DISPLAY" == "X11" ]; then
             echo "[media_guard] (X11) xautolock disable detect, do enable"
             ${xset-dpms}
-            ${xautolock} -enable
-          elif [[ -z "$swayidle_pid" && "$WAYLAND_DISPLAY" == wayland* ]]; then
+            # ${xautolock} -enable
+          elif [[ -n "$swayidle_pid" && "$WAYLAND_DISPLAY" == wayland* ]]; then
             # wayland stuff
             echo "[media_guard] (Wayland) swayidle disable detect, do enable"
             ${my-swayidle} 2>/dev/null &
           fi
         fi
         is_playing=0
+      else
+        echo "[media_guard] Screen is UNLOCKED. Disabling idle lock."
+        if (( is_playing == 0 )); then
+          if [ "$WAYLAND_DISPLAY" == "X11" ]; then
+            echo "[media_guard] (X11) xautolock enable detect, do disable"
+            ${xset} -dpms
+            # ${xautolock} -disable
+          elif [[ -z "$swayidle_pid" && "$WAYLAND_DISPLAY" == wayland* ]]; then
+            # wayland stuff
+            echo "[media_guard] (Wayland) swayidle enable detect, do disable"
+            kill -s TERM $swayidle_pid
+          fi
+        fi
+        is_playing=1
       fi
       sleep $interval_time
     done

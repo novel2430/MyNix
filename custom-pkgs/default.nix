@@ -11,4 +11,5 @@
     electron_11 = pkgs.nur.repos.xddxdd.electron_11;
   };
   wpsoffice-365 = pkgs.libsForQt5.callPackage ./wpsoffice-365 {};
+  dwm = pkgs.callPackage ./dwm {};
 }

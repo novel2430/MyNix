@@ -30,6 +30,7 @@
     ./direnv
 
     ./labwc
+    ./dwm
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [

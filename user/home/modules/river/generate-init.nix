@@ -80,7 +80,6 @@ with config; {
   home.file.".config/river/init" = {
     text = ''
       #!/bin/sh
-
       # For Sticky
       sticky_tag=$((1 << 31))
       all_tags=$(((1 << 32) - 1))

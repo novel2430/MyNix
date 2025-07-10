@@ -1,6 +1,7 @@
 { config, lib, pkgs, modify-pkgs, custom-pkgs, pkgs-2405, inputs, opt-config, ... }:
 let
   my-packages = with pkgs;[
+    brave
     fastfetch
     socat
     obs-studio
@@ -30,6 +31,7 @@ let
     playerctl
     ncspot
     inputs.astal.packages.${system}.default
+    gradia # Like Small Painter
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages

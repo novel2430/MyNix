@@ -17,7 +17,7 @@ M.my_color = {
   red = "#bf616aff",
   fg = "#eceff4ff",
   bg = "#2e3440ff",
-  high_bg = "#87a96bff",
+  high_bg = "#5e81acff",
   sec_bg = "#4c566aff",
 }
 
@@ -42,8 +42,8 @@ M.cmd = {
   volume_up = "my-volume up",
   volume_down = "my-volume down",
   volume_mute = "my-volume mute",
-  screenshot = "scrot-screenshot full",
-  screenshot_select = "scrot-screenshot select",
+  screenshot = "maim-screenshot full",
+  screenshot_select = "maim-screenshot select",
   brightness_up = "brightnessctl set +10%",
   brightness_down = "brightnessctl set 10%-",
   lock_screen = "x-lock",

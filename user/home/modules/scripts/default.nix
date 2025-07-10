@@ -15,7 +15,7 @@
       inherit pkgs;
       inherit opt-config;
     })
-    (import ./scrot-screenshot.nix {
+    (import ./maim-screenshot.nix {
       inherit pkgs;
       inherit opt-config;
     })

@@ -260,7 +260,13 @@ M.run = function()
           local screen = awful.screen.focused()
           local tag = screen.tags[i]
           if tag then
-            tag:view_only()
+            local lc = tag.lastClient
+            if lc and lc.valid then
+              client.focus = lc
+              lc:raise()
+            else
+              tag:view_only()
+            end
           end
         end,
         { description = "view tag #" .. i, group = "tag" }),
