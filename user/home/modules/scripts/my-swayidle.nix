@@ -15,7 +15,7 @@ pkgs.writeShellScriptBin "my-swayidle" ''
 
   ${swayidle} -w \
     timeout ${opt-config.idle.dpms-standby} "''${dpms_off_cmd}" \
-      resume "''${dpms_on_cmd}" \
-    timeout ${opt-config.idle.lock-sec} "''${lock_cmd}" \
       resume "''${dpms_on_cmd}"
+    # timeout ${opt-config.idle.lock-sec} "''${lock_cmd}" \
+    #   resume "''${dpms_on_cmd}"
 ''

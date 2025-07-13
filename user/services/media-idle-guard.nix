@@ -31,11 +31,12 @@ let
     export XAUTHORITY="/home/${opt-config.username}/.Xauthority"
     export XDG_RUNTIME_DIR="/run/user/$USERID"
     # for WAYLAND
-    export WAYLAND_DISPLAY=$(cat "/home/${opt-config.username}/.wm_state" 2>/dev/null)
+    # export WAYLAND_DISPLAY=$(cat "/home/${opt-config.username}/.wm_state" 2>/dev/null)
 
     is_playing=0
 
     while true; do
+      export WAYLAND_DISPLAY=$(cat "/home/${opt-config.username}/.wm_state" 2>/dev/null)
       swayidle_pid=$(${pgrep} -l "swayidle" | ${awk} '$2 == "swayidle" { print $1 }')
       locked_pid_betterlockscreen="$(${pgrep} -f betterlockscreen || true)"
       locked_pid_swaylock="$(${pgrep} -f swaylock || true)"
@@ -46,7 +47,7 @@ let
             echo "[media_guard] (X11) xautolock disable detect, do enable"
             ${xset-dpms}
             # ${xautolock} -enable
-          elif [[ -n "$swayidle_pid" && "$WAYLAND_DISPLAY" == wayland* ]]; then
+          elif [[ -z "$swayidle_pid" ]]; then
             # wayland stuff
             echo "[media_guard] (Wayland) swayidle disable detect, do enable"
             ${my-swayidle} 2>/dev/null &
@@ -60,7 +61,7 @@ let
             echo "[media_guard] (X11) xautolock enable detect, do disable"
             ${xset} -dpms
             # ${xautolock} -disable
-          elif [[ -z "$swayidle_pid" && "$WAYLAND_DISPLAY" == wayland* ]]; then
+          elif [[ -n "$swayidle_pid" ]]; then
             # wayland stuff
             echo "[media_guard] (Wayland) swayidle enable detect, do disable"
             kill -s TERM $swayidle_pid

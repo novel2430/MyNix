@@ -16,20 +16,20 @@
     ./scripts
     ./pics
     ./mpv
-    ./qutebrowser
+    # ./qutebrowser
     ./fastfetch
     ./maven
-    ./awesome
+    # ./awesome
     ./alacritty
     ./rofi
     ./greenclip
     ./picom
     ./wezterm
-    ./dwl
-    ./emacs
-    ./direnv
+    # ./emacs
+    # ./direnv
+    # ./dwl
+    # ./labwc
 
-    ./labwc
     ./dwm
   ]
   ++ 

@@ -8,19 +8,19 @@ let
     };
     animate = {
       close_animation = "zoom";
-      duration = "300";
+      duration = "0";
       enabled_for = ''(type equals "toplevel" | (type equals "x-or" & focusable equals true))'';
-      fade_duration = "300";
+      fade_duration = "0";
       fade_enabled_for = ''type equals "overlay"'';
       fire_color = "\\#B22303FF";
-      fire_duration = "300";
+      fire_duration = "0";
       fire_enabled_for = "none";
       fire_particle_size = "16.000000";
       fire_particles = "2000";
       open_animation = "zoom";
       random_fire_color = "false";
-      startup_duration = "300";
-      zoom_duration = "300";
+      startup_duration = "0";
+      zoom_duration = "0";
       zoom_enabled_for = "none";
     };
     autostart = {
@@ -130,7 +130,7 @@ let
     };
     expo = {
       background = "\\#5e81acFF";
-      duration = "300";
+      duration = "0";
       inactive_brightness = "0.700000";
       keyboard_interaction = "true";
       offset = "5";
@@ -177,10 +177,10 @@ let
     idle = {
       cube_max_zoom = "1.500000";
       cube_rotate_speed = "1.000000";
-      cube_zoom_speed = "1000";
+      cube_zoom_speed = "0";
       disable_on_fullscreen = "true";
-      dpms_timeout = "1200";
-      screensaver_timeout = "3600";
+      dpms_timeout = "0";
+      screensaver_timeout = "0";
       toggle = "none";
     };
     input = {
@@ -261,7 +261,7 @@ let
     scale = {
       allow_zoom = "false";
       bg_color = "\\#4c566aE6";
-      duration = "300";
+      duration = "0";
       inactive_alpha = "0.6";
       include_minimized = "true";
       middle_click_close = "false";
@@ -303,7 +303,7 @@ let
       binding_left = "<ctrl> <super> KEY_LEFT";
       binding_right = "<ctrl> <super> KEY_RIGHT";
       binding_up = "<ctrl> <super> KEY_UP";
-      duration = "300";
+      duration = "0";
       gap = "20";
       send_win_down = "";
       send_win_last = "";

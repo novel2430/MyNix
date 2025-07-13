@@ -35,4 +35,5 @@ pkgs.writeShellScriptBin "my-wf-autostart" ''
   #${blutooth-cmd}
   # Idle Inhibit
   #${wayland-pipewire-idle-inhibit} -w &
+  systemctl --user restart media-idle-guard.service
 ''

@@ -40,7 +40,7 @@
     # WM Options
     wm = {
       wayfire = true;
-      river = true;
+      river = false;
     };
 
     # Packages For this Machine
