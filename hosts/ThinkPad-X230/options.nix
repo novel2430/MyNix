@@ -120,5 +120,8 @@
       lock-sec = "3600"; # sec
       lock-min = "60"; # min
     };
+    
+    # Force Use opengl in GTK Application
+    force-gl-gtk = true;
   };
 }

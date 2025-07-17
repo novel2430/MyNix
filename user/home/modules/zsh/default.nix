@@ -1,5 +1,36 @@
 {pkgs, lib, opt-config,  ... }:
+let
+  my-profile = lib.mkMerge [
+    (lib.mkIf (opt-config.force-gl-gtk == true) ''
+      export GSK_RENDERER=opengl
+    '')
+    (lib.mkIf (opt-config.use-proxy == true) ''
+      export http_proxy="${opt-config.http-proxy}"
+      export https_proxy="${opt-config.https-proxy}"
+    '')
+    # JAVA
+    (''
+      export JAVA_17_HOME="${pkgs.jdk17}/bin"
+      export JAVA_21_HOME="${pkgs.jdk21}/bin"
+      export EMACS_JAVA_21_HOME="${pkgs.openjdk21}/lib/openjdk"
+      export EMACS_JAVA_21_PATH="${pkgs.openjdk21}/lib/openjdk/bin/java"
+    '')
+    (''
+      export FZF_COMPLETION_TRIGGER='\'
+    '')
+    (''
+      export EDITOR="nvim"
+      export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
+      export AWESOMEWM_BAR_CLIENT_TITLE_MAX_LEN="${opt-config.awesomewm-bar-client-title-max-len}"
+      export XDG_CACHE_HOME="/home/${opt-config.username}/.cache"
+      export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+      export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=yellow"
+      export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red"
+    '')
+  ];
+in
 {
+  programs.bash.profileExtra = my-profile;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -83,30 +114,6 @@
         alias nixos-rebuild="sudo http_proxy=${opt-config.http-proxy} https_proxy=${opt-config.https-proxy} nixos-rebuild"
       '')
     ];
-    profileExtra = lib.mkMerge [
-      (lib.mkIf (opt-config.use-proxy == true) ''
-        export http_proxy="${opt-config.http-proxy}"
-        export https_proxy="${opt-config.https-proxy}"
-      '')
-      # JAVA
-      (''
-        export JAVA_17_HOME="${pkgs.jdk17}/bin"
-        export JAVA_21_HOME="${pkgs.jdk21}/bin"
-        export EMACS_JAVA_21_HOME="${pkgs.openjdk21}/lib/openjdk"
-        export EMACS_JAVA_21_PATH="${pkgs.openjdk21}/lib/openjdk/bin/java"
-      '')
-      (''
-        export FZF_COMPLETION_TRIGGER='\'
-      '')
-      (''
-        export EDITOR="nvim"
-        export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
-        export AWESOMEWM_BAR_CLIENT_TITLE_MAX_LEN="${opt-config.awesomewm-bar-client-title-max-len}"
-        export XDG_CACHE_HOME="/home/${opt-config.username}/.cache"
-        export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
-        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=yellow"
-        export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red"
-      '')
-    ];
+    profileExtra = my-profile;
   };
 }
