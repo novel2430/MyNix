@@ -26,7 +26,7 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   systemctl --user stop pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
   systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
   # Swayidle
-  my-swayidle &
+  # my-swayidle &
   # IME
   fcitx5 --replace -d &
   # Blueman-applet
@@ -34,7 +34,6 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   # nm-applet
   ${nm-applet} &
   # Media Idle Guard
-  systemctl --user stop media-idle-guard.service
-  systemctl --user start media-idle-guard.service
+  systemctl --user restart media-idle-guard.service
 
 ''

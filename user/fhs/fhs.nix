@@ -20,37 +20,38 @@ let
     gcc
     python310Full
     python312Full
+    nodejs_22
     # Others - MSST
-    portaudio
-    pango
-    cairo
-    harfbuzz
-    fontconfig
-    freetype
-    gdk-pixbuf
-    atk
-    gobject-introspection
-    xorg.libX11
-    xorg.xorgproto
-    xorg.libXext
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXinerama
-    xorg.libXcursor
-    xorg.libXcomposite
-    xorg.libXdamage
-    xorg.libXrender
-    xorg.libXtst
-    libepoxy
-    wayland
-    gtk3
-    gtkmm3
-    gtk2
-    gtkmm2
-    glib
-    glibc
+    # portaudio
+    # pango
+    # cairo
+    # harfbuzz
+    # fontconfig
+    # freetype
+    # gdk-pixbuf
+    # atk
+    # gobject-introspection
+    # xorg.libX11
+    # xorg.xorgproto
+    # xorg.libXext
+    # xorg.libXi
+    # xorg.libXrandr
+    # xorg.libXinerama
+    # xorg.libXcursor
+    # xorg.libXcomposite
+    # xorg.libXdamage
+    # xorg.libXrender
+    # xorg.libXtst
+    # libepoxy
+    # wayland
+    # gtk3
+    # gtkmm3
+    # gtk2
+    # gtkmm2
+    # glib
+    # glibc
     # Others - MIDI -> AUDIO
-    fluidsynth
+    # fluidsynth
   ];
   base = pkgs.appimageTools.defaultFhsEnvArgs;
   new-home-dir = "$HOME/MyFHS";
