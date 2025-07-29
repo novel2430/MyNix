@@ -27,7 +27,7 @@
     ./wezterm
     # ./emacs
     # ./direnv
-    # ./dwl
+    ./dwl
     # ./labwc
 
     ./dwm

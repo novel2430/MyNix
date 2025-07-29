@@ -8,10 +8,10 @@ let
     wqy_zenhei
     papirus-icon-theme
     pavucontrol
-    celluloid
+    # celluloid
     nemo-with-extensions
     gsettings-desktop-schemas
-    amberol
+    # amberol
     zathura
     image-roll
     spotify
