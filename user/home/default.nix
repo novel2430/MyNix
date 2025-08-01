@@ -47,8 +47,8 @@ let
     # NUR
     nur.repos.novel2430.FuzzyMarks
     nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
-    # nur.repos.novel2430.wechat-universal-bwrap
-    nur.repos.novel2430.wechat-appimage
+    nur.repos.novel2430.wechat-universal-bwrap
+    # nur.repos.novel2430.wechat-appimage
     nur.repos.novel2430.zju-connect
     nur.repos.novel2430.wpsoffice-365
     # nur.repos.novel2430.zen-browser-bin
