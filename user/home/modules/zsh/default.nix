@@ -26,6 +26,7 @@ let
       export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
       export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=yellow"
       export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red"
+      export XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
     '')
   ];
 in
@@ -46,6 +47,7 @@ in
       gitall = "git add . && git commit -m 'update' && git push";
       v = "nvim";
       fhs = "nix develop ~/MyNix#fhs";
+      cat = "${pkgs.bat}/bin/bat -p";
     };
     initContent = lib.mkMerge [
       # Other Stuff

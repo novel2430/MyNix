@@ -4,18 +4,15 @@ let
     brave
     fastfetch
     socat
-    obs-studio
     wqy_zenhei
     papirus-icon-theme
     pavucontrol
-    # celluloid
     nemo-with-extensions
     gsettings-desktop-schemas
-    # amberol
     zathura
     image-roll
     spotify
-    motrix
+    #motrix
     file-roller
     wl-clipboard
     python312
@@ -31,7 +28,7 @@ let
     playerctl
     ncspot
     inputs.astal.packages.${system}.default
-    gradia # Like Small Painter
+    #gradia # Like Small Painter
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages
@@ -40,7 +37,7 @@ let
     # custom-pkgs.novel-ags
     custom-pkgs.dwl
     custom-pkgs.baidunetdisk
-    custom-pkgs.zen-browser-bin
+    # custom-pkgs.zen-browser-bin
     # Unstable
     ## unstable.*
     ## unstable.*
@@ -74,9 +71,6 @@ in
   xdg.systemDirs.data = [
     "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
     "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}"
-    # flatpak
-    # "/var/lib/flatpak/exports/share"
-    # "$HOME/.local/share/flatpak/exports/share"
   ];
 
   # This value determines the Home Manager release that your

@@ -95,6 +95,12 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.proxy = lib.mkMerge [
+    (lib.mkIf (opt-config.use-proxy == true) {
+      httpsProxy = "${opt-config.http-proxy}";
+      httpProxy = "${opt-config.https-proxy}";
+    }) 
+  ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -165,6 +171,9 @@
       http_proxy = "${opt-config.https-proxy}";
     }) 
   ];
+
+  # Flatpak
+  services.flatpak.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

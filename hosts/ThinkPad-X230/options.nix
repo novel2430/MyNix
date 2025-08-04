@@ -66,15 +66,17 @@
     # Packages For this Machine
     packages = with pkgs; [
       hmcl
-      audacity
       hugo
       wl-color-picker
       distrobox
-      reaper
-      discord
       qemu
       virt-manager
-      nur.repos.novel2430.shotcut
+    ];
+    flatpak-packages = [
+      "org.openttd.OpenTTD"
+      "com.discordapp.Discord"
+      "fm.reaper.Reaper"
+      "org.shotcut.Shotcut"
     ];
 
     # Use Clash

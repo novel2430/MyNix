@@ -46,33 +46,35 @@
     # Packages For this Machine
     packages = with pkgs; [
       hmcl
-      puddletag
       abcde
       cdrkit
       wavpack
-      audacity
       docker
       qemu
       virt-manager
-      ryujinx
-      openttd
       hugo
       distrobox
-      discord
-      telegram-desktop
       lutris
       steam
       wine
-      ppsspp
-      reaper
-      ardour
-      nur.repos.novel2430.shotcut
       nur.repos.novel2430.vita3k
       wl-color-picker
       winetricks
       android-studio
       bilibili
       protonup-qt
+    ];
+    flatpak-packages = [
+      "net.puddletag.puddletag"
+      "org.audacityteam.Audacity"
+      "io.github.ryubing.Ryujinx"
+      "org.openttd.OpenTTD"
+      "com.discordapp.Discord"
+      "org.telegram.desktop"
+      "org.ppsspp.PPSSPP"
+      "fm.reaper.Reaper"
+      "org.ardour.Ardour"
+      "org.shotcut.Shotcut"
     ];
 
     # Use Clash
