@@ -6,7 +6,7 @@
 
     # Git
     gitname = "novel2430";
-    gitmail = "";
+    gitmail = "novel2430@163.com";
     gitbranch = "main";
 
     # Screenshots Directory
@@ -38,13 +38,14 @@
     wm = {
       wayfire = true;
       river = true;
-      openbox = true;
-      labwc = false;
     };
     # Packages For this Machine
     packages = with pkgs; [
       hmcl
       hugo
+    ];
+    flatpak-packages = [
+      "org.openttd.OpenTTD"
     ];
 
     # Use Clash
@@ -75,5 +76,22 @@
 
     # No Keyboard
     no-keyboard = false;
+
+    # Alacritty Fonst Size
+    alacritty-font-size = "13";
+
+    # AwesomeWM's Bar client title max len
+    awesomewm-bar-client-title-max-len = "36";
+
+    # Idle Wait Time
+    idle = {
+      dpms-standby = "1200"; # sec
+      dpms-off = "3600"; # sec
+      lock-sec = "3600"; # sec
+      lock-min = "60"; # min
+    };
+    
+    # Force Use opengl in GTK Application
+    force-gl-gtk = false;
   };
 }
