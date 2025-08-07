@@ -82,5 +82,9 @@
     (import ./waybar-modules-weather.nix {
       inherit pkgs;
     })
+    (import ./dwl-waybar.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
   ];
 }

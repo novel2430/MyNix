@@ -28,6 +28,7 @@ let
     playerctl
     ncspot
     inputs.astal.packages.${system}.default
+    lswt
     #gradia # Like Small Painter
     # Modify Packages
     ## modify-pkgs.*

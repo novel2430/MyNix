@@ -46,6 +46,7 @@
     ];
     flatpak-packages = [
       "org.openttd.OpenTTD"
+      "org.ppsspp.PPSSPP"
     ];
 
     # Use Clash
@@ -85,10 +86,10 @@
 
     # Idle Wait Time
     idle = {
-      dpms-standby = "1200"; # sec
-      dpms-off = "3600"; # sec
-      lock-sec = "3600"; # sec
-      lock-min = "60"; # min
+      dpms-standby = "600"; # sec
+      dpms-off = "600"; # sec
+      lock-sec = "600"; # sec
+      lock-min = "10"; # min
     };
     
     # Force Use opengl in GTK Application
