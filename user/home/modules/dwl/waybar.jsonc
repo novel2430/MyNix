@@ -263,7 +263,7 @@
         "on-click": "pavucontrol"
     },
     "custom/dwl-logo": {
-        "format": "[ dwl]"
+        "format": " dwl"
     },
     "custom/temperature": {
         "format": "{}",

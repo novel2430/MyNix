@@ -12,7 +12,7 @@
     ./tmux
     ./mimetype
     ./fzf
-    ./fonts
+    # ./fonts
     ./scripts
     ./pics
     ./mpv

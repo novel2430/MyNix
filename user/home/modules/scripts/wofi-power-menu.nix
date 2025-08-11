@@ -11,7 +11,7 @@ pkgs.writeShellScriptBin "wofi-power-menu" ''
   elif [ $res = $shutdown_menu ]; then
     ${pkgs.systemd}/bin/poweroff
   elif [ $res = $lock_menu ]; then
-    my-swaylock manual
+    my-swaylock idle 
   elif [ $res = $logout_menu ]; then
     ${pkgs.systemd}/bin/loginctl terminate-user ${opt-config.username}
   fi

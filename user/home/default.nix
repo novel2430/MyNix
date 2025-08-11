@@ -12,7 +12,6 @@ let
     zathura
     image-roll
     spotify
-    #motrix
     file-roller
     wl-clipboard
     python312
@@ -29,7 +28,7 @@ let
     ncspot
     inputs.astal.packages.${system}.default
     lswt
-    #gradia # Like Small Painter
+    gradia # Like Small Painter
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages

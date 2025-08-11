@@ -47,6 +47,9 @@
     flatpak-packages = [
       "org.openttd.OpenTTD"
       "org.ppsspp.PPSSPP"
+      "com.discordapp.Discord"
+      "org.shotcut.Shotcut"
+      "org.audacityteam.Audacity"
     ];
 
     # Use Clash

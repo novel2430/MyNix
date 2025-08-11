@@ -71,6 +71,8 @@
         ./system/configuration.nix
         # User's Services
         ./user/services/default.nix
+        # User's Fonts
+        ./user/fonts/default.nix
         # Home Manager
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;

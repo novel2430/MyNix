@@ -7,7 +7,6 @@
       "app.zen_browser.zen"
       "io.bassi.Amberol"
       "net.agalwood.Motrix"
-      "be.alexandervanhee.gradia"
     ]++ opt-config.flatpak-packages;
 
     overrides = {
@@ -15,13 +14,10 @@
         Context = {
           filesystems = [
             "xdg-config/fontconfig:ro" # Font
+            "/run/current-system/sw/share/X11/fonts:ro" #Font
+            "/nix/store:ro"
           ];
         };
-      };
-      "app.zen_browser.zen".Context = {
-        filesystems = [
-          "xdg-config/fontconfig:ro" # Font
-        ];
       };
     };
   };
