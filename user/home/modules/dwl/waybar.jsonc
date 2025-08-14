@@ -12,7 +12,7 @@
         // "sway/scratchpad",
         // "custom/media"
 	      "dwl/tags",
-        "custom/dwl-logo",
+        "custom/dwllogo",
 	      "dwl/window"
         // "wlr/taskbar"
     ],
@@ -262,7 +262,7 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/dwl-logo": {
+    "custom/dwllogo": {
         "format": " dwl"
     },
     "custom/temperature": {

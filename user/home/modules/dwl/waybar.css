@@ -272,6 +272,15 @@ label:focus {
     color: #eceff4;
     margin: 0;
 }
+#custom-dwllogo{
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+    color: #eceff4;
+    margin: 0;
+}
 
 #custom-weather {
     padding-right: 5px;
