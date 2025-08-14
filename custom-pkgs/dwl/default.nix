@@ -20,12 +20,12 @@ stdenv, fetchFromGitHub
 }:
 stdenv.mkDerivation {
   pname = "dwl";
-  version = "0.7";
+  version = "0.8-dev";
   src = fetchFromGitHub {
     owner = "novel2430";
     repo = "DWL";
-    rev = "3665dc8cfd355b42cde99b586713891ffafd7ed6";
-    sha256 = "sha256-u0zoVdHB41g94ZJWY6n4KkpsUUh1Lly3Yak4jCr8sg8=";
+    rev = "d42efb61c2f20fc224f8fae741746994177d2681";
+    sha256 = "sha256-R2UXvZWmEQvkWEQeFQUk1B23ZSIPQpsdStjvFEEuSBA=";
   };
 
   nativeBuildInputs = [

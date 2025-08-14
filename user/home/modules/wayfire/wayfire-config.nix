@@ -79,7 +79,7 @@ let
       command_audio_next = "${pkgs.playerctl}/bin/playerctl next";
       command_audio_prev = "${pkgs.playerctl}/bin/playerctl previous";
       # command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
-      command_web_browser = "zen-browser";
+      command_web_browser = "app.zen_browser.zen";
       command_waybar = "killall waybar; ~/.config/wayfire/bar-run.sh";
       command_power_menu = "wofi-power-menu";
       repeatable_binding_volume_down = "KEY_VOLUMEDOWN";

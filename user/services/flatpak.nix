@@ -3,7 +3,6 @@
   services.flatpak = {
 
     packages = [
-      "com.obsproject.Studio"
       "app.zen_browser.zen"
       "io.bassi.Amberol"
       "net.agalwood.Motrix"
