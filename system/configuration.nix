@@ -84,6 +84,17 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  services.resolved = {
+    enable = true;
+    fallbackDns = [ "8.8.8.8" "1.1.1.1" ];
+    llmnr = "false";
+    extraConfig = ''
+      # 強制所有查詢送到 fallback DNS，而不是連線上的 192.168.1.1
+      DNS=8.8.8.8 1.1.1.1
+      Domains=~.
+    '';
+  };
+
 
   # NTP
   networking.timeServers = options.networking.timeServers.default ++ [ "tw.ntp.org.cn" ];

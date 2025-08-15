@@ -32,7 +32,7 @@ rec {
     volume = "${my-volume-path}/bin/my-volume";
     wpctl = "${pkgs.wireplumber}/bin/wpctl";
     screenshot = "${screenshot-path}/bin/grim-slurp-screenshot";
-    browser = "${custom-pkgs.zen-browser-bin}/bin/zen-browser";
+    browser = "app.zen_browser.zen";
     fuzzyMarks = "${pkgs.nur.repos.novel2430.FuzzyMarks}/bin/fuzzyMarks";
     playerctl = "${pkgs.playerctl}/bin/playerctl";
   };

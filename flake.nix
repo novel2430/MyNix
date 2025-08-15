@@ -105,6 +105,7 @@
       "${ThinkPad-X230.name}" = system-gen { host-conf = ThinkPad-X230; };
       "${MAXSUN-b450m.name}" = system-gen { host-conf = MAXSUN-b450m; };
       "${ASUSTek.name}" = system-gen { host-conf = ASUSTek; };
+      "${Lenovo-Ideapad.name}" = system-gen { host-conf = Lenovo-Ideapad; };
     };
 
     # Devenv

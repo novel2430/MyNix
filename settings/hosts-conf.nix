@@ -17,4 +17,9 @@
     name = "ASUSTek";
     config = (import ../hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
   };
+
+  Lenovo-Ideapad = with pkg-settings; rec {
+    name = "Lenovo-Ideapad";
+    config = (import ../hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
+  };
 }
