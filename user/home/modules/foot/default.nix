@@ -184,25 +184,25 @@
       # noop=none
 
       [search-bindings]
-      # cancel=Escape
-      # commit=Return
-      # find-prev=Control+n
-      # find-next=Control+p
-      # cursor-left=Left Control+b
-      # cursor-left-word=Control+Left Mod1+b
-      # cursor-right=Right Control+f
-      # cursor-right-word=Control+Right Mod1+f
-      # cursor-home=Home Control+a
-      # cursor-end=End Control+e
-      # delete-prev=BackSpace
-      # delete-prev-word=Mod1+BackSpace Control+BackSpace
-      # delete-next=Delete
-      # delete-next-word=Mod1+d Control+Delete
-      # extend-to-word-boundary=Control+w
-      # extend-to-next-whitespace=Control+Shift+w
-      # clipboard-paste=Control+v Control+Shift+v Control+y XF86Paste
-      # primary-paste=Shift+Insert
-      # unicode-input=none
+      cancel=Escape
+      commit=Return
+      find-prev=Control+n
+      find-next=Control+p
+      cursor-left=Left Control+b
+      cursor-left-word=Control+Left Mod1+b
+      cursor-right=Right Control+f
+      cursor-right-word=Control+Right Mod1+f
+      cursor-home=Home Control+a
+      cursor-end=End Control+e
+      delete-prev=BackSpace
+      delete-prev-word=Mod1+BackSpace Control+BackSpace
+      delete-next=Delete
+      delete-next-word=Mod1+d Control+Delete
+      extend-to-word-boundary=Control+w
+      extend-to-next-whitespace=Control+Shift+w
+      clipboard-paste=Control+v Control+Shift+v Control+y XF86Paste
+      primary-paste=Shift+Insert
+      unicode-input=none
 
       [url-bindings]
       # cancel=Control+g Control+c Control+d Escape

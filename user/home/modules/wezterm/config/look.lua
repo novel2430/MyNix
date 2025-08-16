@@ -27,7 +27,7 @@ M.window_padding = {
   top = 0,
   bottom = 0,
 }
-M.opacity = 0.8
+M.opacity = 0.9
 M.colors = {
   -- The default text color
   foreground = color.fg,
