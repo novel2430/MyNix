@@ -52,6 +52,7 @@
     usbmuxd
     libimobiledevice
     widevine-cdm
+    unrar
   ];
 
 }

@@ -1,27 +1,6 @@
 {nixpkgs, system, nixpkgs-unstable, nur, nixpkgs-2405, astal, ags }:
-rec {
-  # Superset of the default unfree packages
-  allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-    "nvidia-x11"
-    "nvidia-settings"
-    "nvidia-persistenced"
-    "spotify"
-    "wpsoffice"
-    "baidunetdisk"
-    "dingtalk"
-    "qq"
-    "wechat-universal-bwrap"
-    "wemeet-bin-bwrap"
-    "amdgpu-pro"
-    "wechat-uos"
-    "widevine-cdm"
-    "discord"
-    "steam"
-    "steam-original"
-    "steam-unwrapped"
-    "wpsoffice-365"
-    "reaper"
-    # CUDA
+let
+  cuda-stuff = [
     "cuda-merged"
     "cuda_cuobjdump"
     "cuda_gdb"
@@ -44,10 +23,36 @@ rec {
     "libnvjitlink"
     "libcusparse"
     "libnpp"
+  ];
+in
+rec {
+  # Superset of the default unfree packages
+  allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) ([
+    "nvidia-x11"
+    "nvidia-settings"
+    "nvidia-persistenced"
+    "spotify"
+    "wpsoffice"
+    "baidunetdisk"
+    "dingtalk"
+    "qq"
+    "wechat-universal-bwrap"
+    "wemeet-bin-bwrap"
+    "amdgpu-pro"
+    "wechat-uos"
+    "widevine-cdm"
+    "discord"
+    "steam"
+    "steam-original"
+    "steam-unwrapped"
+    "wpsoffice-365"
+    "reaper"
     "android-studio-stable"
     "bilibili"
     "wechat-appimage"
-  ];
+    "unrar"
+  ]
+  ++ cuda-stuff);
   # Superset of the default insecure packages
   allowed-insecure-packages = [
     "electron-11.5.0"

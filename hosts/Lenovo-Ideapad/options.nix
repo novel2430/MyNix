@@ -42,6 +42,15 @@
     # Packages For this Machine
     packages = with pkgs; [
       hmcl
+      docker
+      qemu
+      virt-manager
+      lutris
+      steam
+      wine
+      winetricks
+      protonup-qt
+      blender
     ];
     flatpak-packages = [
       "org.openttd.OpenTTD"
