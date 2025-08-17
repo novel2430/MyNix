@@ -2,6 +2,7 @@
 let
   my-packages = with pkgs;[
     obs-studio
+    motrix
     brave
     fastfetch
     socat
@@ -34,11 +35,8 @@ let
     ## modify-pkgs.*
     # Custom Packages
     ## custom-pkgs.*
-    custom-pkgs.dingtalk
     # custom-pkgs.novel-ags
     custom-pkgs.dwl
-    custom-pkgs.baidunetdisk
-    # custom-pkgs.zen-browser-bin
     # Unstable
     ## unstable.*
     ## unstable.*
@@ -49,10 +47,10 @@ let
     # nur.repos.novel2430.wechat-appimage
     nur.repos.novel2430.zju-connect
     nur.repos.novel2430.wpsoffice-365
-    # nur.repos.novel2430.zen-browser-bin
+    nur.repos.novel2430.zen-browser-bin
     nur.repos.novel2430.gedit
-    # nur.repos.xddxdd.baidunetdisk
-    # nur.repos.xddxdd.dingtalk
+    nur.repos.novel2430.dingtalk
+    nur.repos.novel2430.baidunetdisk
     nur.repos.xddxdd.qq
   ]
   ++ opt-config.packages

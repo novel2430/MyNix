@@ -3,9 +3,7 @@
   services.flatpak = {
 
     packages = [
-      "app.zen_browser.zen"
       "io.bassi.Amberol"
-      "net.agalwood.Motrix"
     ]++ opt-config.flatpak-packages;
 
     overrides = {

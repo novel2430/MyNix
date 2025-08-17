@@ -51,6 +51,7 @@ rec {
     "bilibili"
     "wechat-appimage"
     "unrar"
+    "davinci-resolve"
   ]
   ++ cuda-stuff);
   # Superset of the default insecure packages

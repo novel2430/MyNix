@@ -9,7 +9,7 @@
 
 window#waybar {
     /* background-color: rgba(43, 48, 59, 0.5); */
-    background-color: rgba(46, 52, 64, 0.6);/* #2e3440 */
+    background-color: rgba(46, 52, 64, 0.75);/* #2e3440 */
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #eceff4;
     transition-property: background-color;
@@ -54,28 +54,24 @@ button:hover {
 }
 
 #tags button {
-	font-weight: 900;
-	padding: 0px 8px;
-	color: #eceff4;
+	font-weight: bold;
+	padding: 0px 6px;
+	color: #999797;
 	border-radius: 0px;
+  background-color: transparent;
 }
 
 #tags button.occupied {
-	font-weight: 900;
 	color: #eceff4;
-	background: #4c566a;
-	border-radius: 0px;
 }
 
 #tags button.focused {
-	font-weight: 900;
 	color: #eceff4;
-	background: #5e81ac;
+  background-color: #5e81ac;
 	border-radius: 0px;
 }
 
 #tags button.urgent {
-	font-weight: 900;
 	color: #eceff4;
 	background-color: #bf616a;
 	border-radius: 0px;

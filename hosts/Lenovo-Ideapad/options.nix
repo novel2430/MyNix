@@ -42,6 +42,7 @@
     # Packages For this Machine
     packages = with pkgs; [
       hmcl
+      openttd
       docker
       qemu
       virt-manager
@@ -51,9 +52,9 @@
       winetricks
       protonup-qt
       blender
+
     ];
     flatpak-packages = [
-      "org.openttd.OpenTTD"
       "org.ppsspp.PPSSPP"
       "com.discordapp.Discord"
     ];
