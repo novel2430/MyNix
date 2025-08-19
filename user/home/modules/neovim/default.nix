@@ -4,7 +4,13 @@
   let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-    buildJdtConfig = import ./lsp-jdtls.nix;
+    buildJdtConfig = import ./lsp-jdtls.nix {
+      java = pkgs.jdk; # JDK21
+      jdt = pkgs.jdt-language-server;
+      lombok = pkgs.lombok;
+      opt-config = opt-config;
+    };
+    buildVueConfig = import ./lsp-vue.nix { inherit pkgs; };
   in
   {
     enable = true;
@@ -19,7 +25,7 @@
       nil # Nix
       nodePackages.bash-language-server # Bash
       rust-analyzer # Rust
-      vue-language-server # Vue
+      vue-language-server vtsls # Vue
       kotlin-language-server # Kotlin
     ];
     extraLuaConfig = ''
@@ -53,17 +59,9 @@
       # LSP
       {
         plugin = nvim-lspconfig;
-        config = (toLuaFile ./plugins/lsp.lua) + 
-          (
-            toLua (
-              buildJdtConfig {
-                java = pkgs.jdk; # JDK21
-                jdt = pkgs.jdt-language-server;
-                lombok = pkgs.lombok;
-                opt-config = opt-config;
-              }
-            )
-          )
+        config = (toLuaFile ./plugins/lsp.lua)
+          + ( toLua buildVueConfig )
+          + ( toLua buildJdtConfig )
         ;
       }
       # treesitter

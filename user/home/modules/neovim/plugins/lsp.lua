@@ -54,7 +54,7 @@ local on_attach = function(event)
   local map = function(key, command)
     vim.api.nvim_buf_set_keymap(bufnr, "n", key, command, opts)
   end
-  map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+  map("gd", "<cmd>Telescope lsp_definitions<CR>")
   map("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
   map("gf", "<cmd>lua vim.lsp.buf.format()<CR>")
   map("gi", "<cmd>Telescope lsp_implementations<CR>")
@@ -144,15 +144,15 @@ for server_name, server_config in pairs(lsp_servers) do
 end
 
 -- For Vue (Volar)
-require('lspconfig').volar.setup {
-  capabilities = capabilities,
-  init_options = {
-    vue = {
-      hybridMode = false,
-    },
-    typescript = {
-      tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
-    },
-  },
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-}
+-- require('lspconfig').volar.setup {
+--   capabilities = capabilities,
+--   init_options = {
+--     vue = {
+--       hybridMode = false,
+--     },
+--     typescript = {
+--       tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+--     },
+--   },
+--   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+-- }

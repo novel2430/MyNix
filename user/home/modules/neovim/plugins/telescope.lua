@@ -57,6 +57,10 @@ local config = {
       -- disable_devicons = true,
       theme = "dropdown",
     },
+    lsp_definitions = {
+      -- disable_devicons = true,
+      theme = "dropdown",
+    },
     current_buffer_fuzzy_find = {
       theme = "ivy",
       previewer = true,

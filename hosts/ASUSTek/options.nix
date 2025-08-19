@@ -83,7 +83,7 @@
     laptop = true;
 
     # Bluetooth
-    bluetooth = false;
+    bluetooth = true;
 
     # No Keyboard
     no-keyboard = false;
