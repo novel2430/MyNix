@@ -107,11 +107,12 @@ local lsp_servers = {
   -- nil_ls (nix)
   nil_ls = {
     ['nil'] = {
-      testSetting = 42,
       formatting = {
         command = { "nixfmt" },
       },
       nix = {
+        binary = "nix",
+        maxMemoryMB = 2560,
         flake = {
           autoArchive = false,
           autoEvalInputs = false,

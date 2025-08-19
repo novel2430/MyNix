@@ -43,9 +43,16 @@
     packages = with pkgs; [
       hmcl
       hugo
+      openttd
+      lutris
+      wine
+      winetricks
+      protonup-qt
+      docker
+      qemu
+      virt-manager
     ];
     flatpak-packages = [
-      "org.openttd.OpenTTD"
       "org.ppsspp.PPSSPP"
       "com.discordapp.Discord"
       "org.shotcut.Shotcut"
@@ -89,9 +96,9 @@
 
     # Idle Wait Time
     idle = {
-      dpms-standby = "600"; # sec
-      dpms-off = "600"; # sec
-      lock-sec = "600"; # sec
+      dpms-standby = "300"; # sec
+      dpms-off = "300"; # sec
+      lock-sec = "300"; # sec
       lock-min = "10"; # min
     };
     

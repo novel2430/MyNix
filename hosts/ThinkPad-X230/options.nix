@@ -71,9 +71,9 @@
       distrobox
       qemu
       virt-manager
+      openttd
     ];
     flatpak-packages = [
-      "org.openttd.OpenTTD"
       "com.discordapp.Discord"
       "fm.reaper.Reaper"
       "org.shotcut.Shotcut"

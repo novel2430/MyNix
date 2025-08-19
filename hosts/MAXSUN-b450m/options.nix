@@ -63,12 +63,12 @@
       android-studio
       bilibili
       protonup-qt
+      openttd
     ];
     flatpak-packages = [
       "net.puddletag.puddletag"
       "org.audacityteam.Audacity"
       "io.github.ryubing.Ryujinx"
-      "org.openttd.OpenTTD"
       "com.discordapp.Discord"
       "org.telegram.desktop"
       "org.ppsspp.PPSSPP"
