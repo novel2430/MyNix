@@ -41,20 +41,20 @@
     };
     # Packages For this Machine
     packages = with pkgs; [
-      #hmcl
-      #openttd
-      #docker
-      #qemu
-      #virt-manager
-      #lutris
-      #steam
-      #wine
-      #winetricks
-      #protonup-qt
+      hmcl
+      openttd
+      docker
+      qemu
+      virt-manager
+      lutris
+      # steam
+      wine
+      winetricks
+      protonup-qt
       #blender
     ];
     flatpak-packages = [
-      #"org.ppsspp.PPSSPP"
+      "org.ppsspp.PPSSPP"
       #"com.discordapp.Discord"
     ];
 

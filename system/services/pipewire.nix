@@ -25,6 +25,8 @@
         ];
       };
     };
+    extraConfig.pipewire-pulse = {
+    };
     extraConfig.pipewire = {
       "10-log-level" = {
         "context.properties" = {
