@@ -41,22 +41,21 @@
     };
     # Packages For this Machine
     packages = with pkgs; [
-      hmcl
-      openttd
-      docker
-      qemu
-      virt-manager
-      lutris
-      steam
-      wine
-      winetricks
-      protonup-qt
-      blender
-
+      #hmcl
+      #openttd
+      #docker
+      #qemu
+      #virt-manager
+      #lutris
+      #steam
+      #wine
+      #winetricks
+      #protonup-qt
+      #blender
     ];
     flatpak-packages = [
-      "org.ppsspp.PPSSPP"
-      "com.discordapp.Discord"
+      #"org.ppsspp.PPSSPP"
+      #"com.discordapp.Discord"
     ];
 
     # Use Clash
@@ -80,13 +79,13 @@
     autocpu = false;
 
     # Laptop Power Management
-    laptop = true;
+    laptop = false;
 
     # Bluetooth
     bluetooth = false;
 
     # No Keyboard
-    no-keyboard = true;
+    no-keyboard = false;
 
     # Alacritty Fonst Size
     alacritty-font-size = "13";

@@ -13,23 +13,30 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.kernelParams = [
+    "iwlwifi.power_save=0"
+    "iwlwifi.disable_11ax=1"
+    "iwlwifi.enable_ini=0"
+  ];
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/8a3a5423-2496-45c2-84a0-83b954951741";
+    { device = "/dev/disk/by-uuid/35d500c3-bc3e-4ea2-9016-5a207a714d78";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3418-BD2A";
+    { device = "/dev/disk/by-uuid/0C75-88B9";
       fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/0a17b5b3-72ee-42e4-a20f-cd55834bba54";
+    { device = "/dev/disk/by-uuid/2d4a6621-ab4a-482c-a3e5-487542a51e99";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/2d3bd7cd-44a4-43c8-8bf4-7278c9d116a0"; }
+    [ { device = "/dev/disk/by-uuid/d5f203b0-eb1b-449f-a55d-d96695a89443"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
