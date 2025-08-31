@@ -114,9 +114,9 @@
 
     # Idle Wait Time
     idle = {
-      dpms-standby = "1200"; # sec 1200
-      dpms-off = "3600"; # sec 3600
-      lock-sec = "3600"; # sec
+      dpms-standby = "300"; # sec 1200
+      dpms-off = "300"; # sec 3600
+      lock-sec = "300"; # sec
       lock-min = "60"; # min
     };
 
