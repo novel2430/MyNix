@@ -1,4 +1,4 @@
-{nixpkgs, system, nixpkgs-unstable, nur, nixpkgs-2405, astal, ags }:
+{nixpkgs, system, nixpkgs-unstable, nur, ...}:
 let
   cuda-stuff = [
     "cuda-merged"
@@ -77,8 +77,8 @@ rec {
   custom-pkgs = import ../custom-pkgs {
     pkgs = stable-pkgs;
     unstable-pkgs = unstable-pkgs;
-    astal = astal.packages.${system};
-    ags = ags.packages.${system}.default;
+    # astal = astal.packages.${system};
+    # ags = ags.packages.${system}.default;
   };
   # Modify Packages
   modify-pkgs = import ../modify-pkgs {
@@ -86,10 +86,10 @@ rec {
     unstable-pkgs = unstable-pkgs;
   };
   # Nixpkgs 24.05
-  pkgs-2405 = import nixpkgs-2405 {
-    inherit system;
-    config.allowUnfreePredicate = allowed-unfree-packages;
-    config.permittedInsecurePackages = allowed-insecure-packages;
-    overlays = [ nur.overlay ];
-  };
+  # pkgs-2405 = import nixpkgs-2405 {
+  #   inherit system;
+  #   config.allowUnfreePredicate = allowed-unfree-packages;
+  #   config.permittedInsecurePackages = allowed-insecure-packages;
+  #   overlays = [ nur.overlay ];
+  # };
 }

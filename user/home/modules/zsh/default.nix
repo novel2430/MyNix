@@ -48,6 +48,7 @@ in
       v = "nvim";
       fhs = "nix develop ~/MyNix#fhs";
       cat = "${pkgs.bat}/bin/bat -p";
+      yz = "${pkgs.yazi}/bin/yazi";
     };
     initContent = lib.mkMerge [
       # Other Stuff

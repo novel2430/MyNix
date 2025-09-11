@@ -2,7 +2,7 @@
   description = "My NixOS flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05";
+    # nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05";
     # Unstable
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # HomeManager
@@ -17,21 +17,21 @@
       url = "github:nix-community/NUR";
     };
     # Other
-    astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ags = {
-      url = "github:aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    doomemacs = {
-      url = "github:doomemacs/doomemacs";
-      flake = false;
-    };
+    # astal = {
+    #   url = "github:aylur/astal";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # ags = {
+    #   url = "github:aylur/ags";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # doomemacs = {
+    #   url = "github:doomemacs/doomemacs";
+    #   flake = false;
+    # };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-2405, home-manager, nur, astal, ags, doomemacs, nix-flatpak, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nur, nix-flatpak, ... }@inputs:
   let
     system = "x86_64-linux";
     # Packages Setting
@@ -40,9 +40,9 @@
       inherit system;
       inherit nixpkgs-unstable;
       inherit nur;
-      inherit nixpkgs-2405;
-      inherit astal;
-      inherit ags;
+      # inherit nixpkgs-2405;
+      # inherit astal;
+      # inherit ags;
     };
     # Host Config
     hosts-conf = import ./settings/hosts-conf.nix { inherit pkg-settings; };

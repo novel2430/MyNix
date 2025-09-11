@@ -1,10 +1,10 @@
-{pkgs, unstable-pkgs, astal, ags, ... }:
+{pkgs, ... }:
 {
   dingtalk = pkgs.callPackage ./dingtalk {};
-  novel-ags = pkgs.callPackage ./novel-ags {
-    astal = astal;
-    ags = ags;
-  };
+  # novel-ags = pkgs.callPackage ./novel-ags {
+  #   astal = astal;
+  #   ags = ags;
+  # };
   dwl = pkgs.callPackage ./dwl {};
   waybar = pkgs.callPackage ./waybar {};
   baidunetdisk = pkgs.callPackage ./baidunetdisk {

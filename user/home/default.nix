@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modify-pkgs, custom-pkgs, pkgs-2405, inputs, opt-config, ... }:
+{ config, lib, pkgs, modify-pkgs, custom-pkgs, inputs, opt-config, ... }:
 let
   my-packages = with pkgs;[
     obs-studio
@@ -28,9 +28,9 @@ let
     xclip
     playerctl
     ncspot
-    inputs.astal.packages.${system}.default
     lswt
     gradia # Like Small Painter
+    yazi
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages

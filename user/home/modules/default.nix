@@ -30,7 +30,7 @@
     ./dwl
     # ./labwc
 
-    ./dwm
+    # ./dwm
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
