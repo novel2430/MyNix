@@ -12,25 +12,32 @@
     ./tmux
     ./mimetype
     ./fzf
-    # ./fonts
     ./scripts
     ./pics
     ./mpv
     # ./qutebrowser
     ./fastfetch
     ./maven
-    # ./awesome
-    ./alacritty
-    ./rofi
-    ./greenclip
-    ./picom
+    # ./alacritty
     ./wezterm
     # ./emacs
     # ./direnv
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.awesome) [
+    ./awesome
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.labwc) [
+    ./labwc
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.dwl) [
     ./dwl
-    # ./labwc
-
-    # ./dwm
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.dwm) [
+    ./dwm
   ]
   ++ 
   lib.optionals (opt-config.wm.wayfire) [
@@ -41,9 +48,15 @@
     ./river
   ]
   ++ 
-  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire) [
+  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire || opt-config.wm.dwl || opt-config.wm.labwc) [
     ./wofi
     ./foot 
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.awesome || opt-config.wm.dwm ) [
+    ./rofi
+    ./greenclip
+    ./picom
   ]
   ;
 }

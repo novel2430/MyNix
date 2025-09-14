@@ -1,9 +1,7 @@
 {pkgs, opt-config, ...}:
 let
   id = "${pkgs.coreutils-full}/bin/id";
-  playerctl = "${pkgs.playerctl}/bin/playerctl";
   xset = "${pkgs.xorg.xset}/bin/xset";
-  xautolock = "${pkgs.xautolock}/bin/xautolock";
   pgrep = "${pkgs.procps}/bin/pgrep";
   awk = "${pkgs.gawk}/bin/awk";
   my-swayidle-path = import ../home/modules/scripts/my-swayidle.nix {
@@ -46,7 +44,6 @@ let
           if [ "$WAYLAND_DISPLAY" == "X11" ]; then
             echo "[media_guard] (X11) xautolock disable detect, do enable"
             ${xset-dpms}
-            # ${xautolock} -enable
           elif [[ -z "$swayidle_pid" ]]; then
             # wayland stuff
             echo "[media_guard] (Wayland) swayidle disable detect, do enable"
@@ -60,7 +57,6 @@ let
           if [ "$WAYLAND_DISPLAY" == "X11" ]; then
             echo "[media_guard] (X11) xautolock enable detect, do disable"
             ${xset} -dpms
-            # ${xautolock} -disable
           elif [[ -n "$swayidle_pid" ]]; then
             # wayland stuff
             echo "[media_guard] (Wayland) swayidle enable detect, do disable"

@@ -1,4 +1,4 @@
-{ pkgs, opt-config, ...}:
+{ pkgs, opt-config, custom-pkgs, ...}:
 {
   home.packages = [
     (import ./volume.nix {
@@ -85,6 +85,11 @@
     (import ./dwl-waybar.nix {
       inherit pkgs;
       inherit opt-config;
+    })
+    (import ./dwm-polybar.nix {
+      inherit pkgs;
+      inherit opt-config;
+      inherit custom-pkgs;
     })
   ];
 }

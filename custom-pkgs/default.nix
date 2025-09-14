@@ -15,4 +15,5 @@
   wpsoffice-365 = pkgs.libsForQt5.callPackage ./wpsoffice-365 {};
   dwm = pkgs.callPackage ./dwm {};
   zen-browser-bin = pkgs.callPackage ./zen-browser {};
+  polybar-dwm = pkgs.callPackage ./polybar-dwm {};
 }

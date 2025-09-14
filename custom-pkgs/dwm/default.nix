@@ -7,12 +7,12 @@
 }:
 stdenv.mkDerivation {
   pname = "dwm";
-  version = "6.5";
+  version = "6.6";
   src = fetchFromGitHub {
     owner = "novel2430";
-    repo = "dwm-6.5";
-    rev = "eca163ad91cb5c58c804f2a3f81d7e5a41ae838b";
-    sha256 = "sha256-6JHw+I5zyz8zJuV6Osmqc2MbU0q9JUhpMzNbiqnHqfI=";
+    repo = "DWM-6.6";
+    rev = "b6ec41491626995332136f999f2980f09bb338b0";
+    sha256 = "sha256-rFnIOWcKeMH5Xi8sv5cweXVFbS9Pj2GI4O7F4eMeUSE=";
   };
 
   nativeBuildInputs = [

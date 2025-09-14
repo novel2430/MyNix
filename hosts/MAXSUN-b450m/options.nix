@@ -39,8 +39,14 @@
 
     # WM Options
     wm = {
-      wayfire = true;
-      river = true;
+      # X11
+      dwm = true;
+      awesome = false;
+      # Wayland
+      dwl = true;
+      wayfire = false;
+      river = false;
+      labwc = false;
     };
 
     # Packages For this Machine

@@ -8,19 +8,18 @@ let
   dunst = "${pkgs.dunst}/bin/dunst";
   xset = "${pkgs.xorg.xset}/bin/xset";
   greenclip = "${pkgs.haskellPackages.greenclip}/bin/greenclip";
-  picom = "${pkgs.picom}/bin/picom";
 in
 {
 
-  home.file.".dwm/info.py".source = ./info.py;
+  home.file.".dwm/config.ini".source = ./config.ini;
+  home.file.".dwm/temp.py".source = ./temp.py;
+  home.file.".dwm/bat.py".source = ./bat.py;
   home.file.".dwm/autostart.sh" = {
     executable = true;
     text = ''
       start-wm X11
       # Lock Screen
       ${betterlockscreen} -u ${opt-config.lock-img} --fx && ${pkgs.dunst}/bin/dunstify "Better Lock Screen" "Done!" &
-      # Status Bar
-      python ~/.dwm/info.py &
       # Dunst
       ${dunst} &
       # Wallpaper
@@ -36,22 +35,18 @@ in
       # Idle DPMS (sec)
       ${xset} s off
       ${xset} s noblank
-      xset-dpms
-      # Idle Lock Screen (min)
-      # xautolock-idle &
+      ${xset} -dpms
       # xdg-portal
       dbus-update-activation-environment --systemd WAYLAND_DISPLAY="" XDG_CURRENT_DESKTOP=dwm
       # Greenclip
       ${greenclip} daemon &
-      # Picom
-      ${picom} &
       # Blueman-applet
       ${blutooth-cmd}
+      # Xsetroot cursor
+      xsetroot -cursor_name left_ptr
       # Media Idle Guard
       systemctl --user stop media-idle-guard.service
       systemctl --user start media-idle-guard.service
-      # 
-      xsetroot -cursor_name left_ptr
     '';
   };
 
