@@ -3,7 +3,7 @@
   config = {
     style = "/home/${opt-config.username}/.config/wofi/style.css";
     width = "25%";
-    height = "25%";
+    height = "40%";
     always_parse_args = "true";
     show_all = "true";
     print_command = "true";
