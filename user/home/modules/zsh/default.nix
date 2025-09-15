@@ -49,6 +49,7 @@ in
       fhs = "nix develop ~/MyNix#fhs";
       cat = "${pkgs.bat}/bin/bat -p";
       yz = "${pkgs.yazi}/bin/yazi";
+      grep = "${pkgs.ripgrep}/bin/rg -i";
     };
     initContent = lib.mkMerge [
       # Other Stuff
