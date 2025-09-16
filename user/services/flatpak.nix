@@ -3,7 +3,7 @@
   services.flatpak = {
 
     packages = [
-      "io.bassi.Amberol"
+
     ]++ opt-config.flatpak-packages;
 
     overrides = {

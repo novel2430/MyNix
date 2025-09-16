@@ -72,7 +72,6 @@
       openttd
     ];
     flatpak-packages = [
-      "net.puddletag.puddletag"
       "org.audacityteam.Audacity"
       "io.github.ryubing.Ryujinx"
       "com.discordapp.Discord"
@@ -80,7 +79,6 @@
       "org.ppsspp.PPSSPP"
       "fm.reaper.Reaper"
       "org.ardour.Ardour"
-      "org.shotcut.Shotcut"
     ];
 
     # Use Clash
