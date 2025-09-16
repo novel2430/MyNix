@@ -37,8 +37,7 @@ let
     ## modify-pkgs.*
     # Custom Packages
     ## custom-pkgs.*
-    # custom-pkgs.novel-ags
-    custom-pkgs.dwl
+    custom-pkgs.shotcut-bin
     # Unstable
     ## unstable.*
     ## unstable.*

@@ -44,7 +44,7 @@
       awesome = false;
       # Wayland
       dwl = true;
-      wayfire = false;
+      wayfire = true;
       river = false;
       labwc = false;
     };
