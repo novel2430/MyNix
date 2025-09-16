@@ -1,6 +1,6 @@
 {pkgs, ...}:
 let
-  cliphist = "${pkgs.unstable.cliphist}/bin/cliphist";
+  cliphist = "${pkgs.cliphist}/bin/cliphist";
   rofi = "${pkgs.rofi-wayland}/bin/rofi";
   wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
 in

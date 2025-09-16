@@ -91,5 +91,9 @@
       inherit opt-config;
       inherit custom-pkgs;
     })
+    (import ./clash-switcher.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
   ];
 }

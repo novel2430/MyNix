@@ -29,6 +29,8 @@ in
       "super + shift + l" = "${lock}";
       # Clipboard
       "super + c" = "${clipboard}";
+      # Clash Switcher
+      "super + shift + c" = "clash-switcher";
       # Screenshot
       "Print" = "${screenshot}";
       "super + Print" = "${screenshot-select}";
