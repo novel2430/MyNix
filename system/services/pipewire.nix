@@ -33,41 +33,6 @@
           "log.level" = 2;
         };
       };
-      "99-mono-output" = {
-        "context.modules" = [
-          {
-            "name" = "libpipewire-module-combine-stream";
-            "args" = {
-              "media.name" =  "Mono Output";
-              "combine.mode" = "sink";
-              "node.name" = "combine_stereo_to_mono_sink";
-              "node.description" = "Mono Output (Combined)";
-              "combine.latency-compensate" = false;
-              "combine.props" = {
-                "audio.position" = [ "MONO" ];
-              };
-              "stream.props" = {
-                "stream.dont-remix" = true;
-              };
-              "stream.rules" = [
-                {
-                  "matches" = [
-                    {
-                      "media.class" = "Audio/Sink";
-                    }
-                  ];
-                  "actions" = {
-                    "create-stream" = {
-                      "audio.position" = [ "FL" "FR" ];
-                      "combine.audio.position" = [ "MONO" ];
-                    };
-                  };
-                }
-              ];
-            };
-          }
-        ];
-      };
       "99-input-denoising" = {
         "context.modules" = [
           {   

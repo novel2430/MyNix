@@ -1,7 +1,7 @@
-{pkgs, custom-pkgs, ...}:
+{pkgs, ...}:
 let
-  app = {
-    browser = "${custom-pkgs.zen-browser}/bin/zen-browser";
+  app = with pkgs; {
+    browser = "${nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
     lock = "x-lock";
     clipboard = "greenclip-rofi";
     screenshot = "maim-screenshot full";
@@ -10,39 +10,45 @@ let
     volume-mute = "my-volume mute";
     volume-up = "my-volume up";
     volume-down = "my-volume down";
-    brightness-up = "${pkgs.brightnessctl}/bin/brightnessctl set 10%+";
-    brightness-down = "${pkgs.brightnessctl}/bin/brightnessctl set 10%-";
-    playerctl-playpause = "${pkgs.playerctl}/bin/playerctl play-pause";
-    playerctl-next = "${pkgs.playerctl}/bin/playerctl next";
-    playerctl-prev = "${pkgs.playerctl}/bin/playerctl previous";
+    brightness-up = "${brightnessctl}/bin/brightnessctl set 10%+";
+    brightness-down = "${brightnessctl}/bin/brightnessctl set 10%-";
+    playerctl-playpause = "${playerctl}/bin/playerctl play-pause";
+    playerctl-next = "${playerctl}/bin/playerctl next";
+    playerctl-prev = "${playerctl}/bin/playerctl previous";
+    killall = "${psmisc}/bin/killall";
+    sxhkd = "${sxhkd}/bin/sxhkd";
   };
 in
 {
   services.sxhkd = {
     enable = true;
-    keybindings = {
+    keybindings = with app; {
       # Browser
-      "spuer + shift + f" = "${app.browser}";
+      "super + shift + f" = "${browser}";
       # Lock
-      "spuer + shift + l" = "${app.lock}";
+      "super + shift + l" = "${lock}";
       # Clipboard
-      "spuer + c" = "${app.clipboard}";
+      "super + c" = "${clipboard}";
       # Screenshot
-      "Print" = "${app.screenshot}";
-      "super + Print" = "${app.screenshot-select}";
+      "Print" = "${screenshot}";
+      "super + Print" = "${screenshot-select}";
       # Powermenu
-      "spuer + shift + p" = "${app.powermenu}";
+      "super + shift + p" = "${powermenu}";
       # Volume
-      "XF86AudioRaiseVolume" = "${app.volume-up}";
-      "XF86AudioLowerVolume" = "${app.volume-down}";
-      "XF86AudioMute" = "${app.volume-mute}";
+      "XF86AudioRaiseVolume" = "${volume-up}";
+      "XF86AudioLowerVolume" = "${volume-down}";
+      "XF86AudioMute" = "${volume-mute}";
       # Brightness
-      "XF86MonBrightnessUp" = "${app.brightness-up}";
-      "XF86MonBrightnessDown" = "${app.brightness-down}";
+      "XF86MonBrightnessUp" = "${brightness-up}";
+      "XF86MonBrightnessDown" = "${brightness-down}";
       # Playerctl
-      "XF86AudioPlay" = "${app.playerctl-playpause}";
-      "XF86AudioNext" = "${app.playerctl-next}";
-      "XF86AudioPrev" = "${app.playerctl-prev}";
+      "XF86AudioPlay" = "${playerctl-playpause}";
+      "XF86AudioNext" = "${playerctl-next}";
+      "XF86AudioPrev" = "${playerctl-prev}";
+      # Reload Sxhkd
+      "super + shift + r" = "${killall} -r sxhkd; ${sxhkd} &";
+      # Reload Polybar
+      "super + shift + b" = "${killall} -r polybar; dwm-polybar &";
     };
   };
 }

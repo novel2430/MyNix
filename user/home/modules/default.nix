@@ -22,6 +22,7 @@
     ./wezterm
     # ./emacs
     # ./direnv
+    ./rofi
   ]
   ++ 
   lib.optionals (opt-config.wm.awesome) [
@@ -54,9 +55,9 @@
   ]
   ++ 
   lib.optionals (opt-config.wm.awesome || opt-config.wm.dwm ) [
-    ./rofi
     ./greenclip
     ./picom
+    ./sxhkd
   ]
   ;
 }

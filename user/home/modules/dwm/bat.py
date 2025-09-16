@@ -43,7 +43,7 @@ def get_battery():
     if status == "Charging":
         return f'<span foreground="#78cc81">{icon} {per}</span>'
     else: 
-        return f"[{icon} {per}]"
+        return f"{icon} {per}"
 
 bat = get_battery()
 print(bat)

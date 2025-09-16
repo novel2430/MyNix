@@ -24,8 +24,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "novel2430";
     repo = "DWL";
-    rev = "ddd49ec1dce957e55a80f4277f24f1cfade6b32a";
-    sha256 = "sha256-e4zokHc3pe8uaTmWuCXwVq09/Hes+mDmHES6hMuiuh0=";
+    rev = "7e48101b8f3fb2eb459526559844b29458c0d914";
+    sha256 = "sha256-cylrnXBgY+koZzkpEAo9N/YYHLOxZgxaObldpiZCLNQ=";
   };
 
   nativeBuildInputs = [

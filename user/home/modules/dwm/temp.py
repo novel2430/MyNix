@@ -27,7 +27,7 @@ def get_temperature():
 
     temp_c = temp_raw / 1000
 
-    return f'[ {temp_c:.0f}°]'
+    return f' {temp_c:.0f}°'
 
 temp = get_temperature()
 

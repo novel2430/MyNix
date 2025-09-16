@@ -11,8 +11,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "novel2430";
     repo = "DWM-6.6";
-    rev = "b6ec41491626995332136f999f2980f09bb338b0";
-    sha256 = "sha256-rFnIOWcKeMH5Xi8sv5cweXVFbS9Pj2GI4O7F4eMeUSE=";
+    rev = "e13e70ccc12045e0654963726bb3e1fc9c6cbb2f";
+    sha256 = "sha256-Ch+kHMa9/hqwLtZxFSZi6kMn6STV+7pWEuWW/0Kq5BY=";
   };
 
   nativeBuildInputs = [

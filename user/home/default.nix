@@ -8,7 +8,7 @@ let
     socat
     wqy_zenhei
     papirus-icon-theme
-    pavucontrol
+    pwvucontrol
     nemo-with-extensions
     gsettings-desktop-schemas
     zathura

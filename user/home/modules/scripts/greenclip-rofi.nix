@@ -1,6 +1,6 @@
 {pkgs, ...}:
 let
-  rofi = "${pkgs.rofi}/bin/rofi";
+  rofi = "${pkgs.rofi-wayland}/bin/rofi";
   greenclip = "${pkgs.haskellPackages.greenclip}/bin/greenclip";
 in
 pkgs.writeShellScriptBin "greenclip-rofi" ''

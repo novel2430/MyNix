@@ -8,6 +8,7 @@ let
   dunst = "${pkgs.dunst}/bin/dunst";
   xset = "${pkgs.xorg.xset}/bin/xset";
   greenclip = "${pkgs.haskellPackages.greenclip}/bin/greenclip";
+  sxhkd = "${pkgs.sxhkd}/bin/sxhkd";
 in
 {
 
@@ -37,13 +38,23 @@ in
       ${xset} s noblank
       ${xset} -dpms
       # xdg-portal
-      dbus-update-activation-environment --systemd WAYLAND_DISPLAY="" XDG_CURRENT_DESKTOP=dwm
+      (
+        unset WAYLAND_DISPLAY
+        env XDG_CURRENT_DESKTOP=dwm \
+          dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP
+      )
+      systemctl --user stop xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr
+      systemctl --user restart pipewire pipewire-pulse wireplumber
+      systemctl --user start xdg-desktop-portal-gtk
+      systemctl --user start xdg-desktop-portal
       # Greenclip
       ${greenclip} daemon &
       # Blueman-applet
       ${blutooth-cmd}
       # Xsetroot cursor
       xsetroot -cursor_name left_ptr
+      # SXHKD
+      ${sxhkd} &
       # Media Idle Guard
       systemctl --user stop media-idle-guard.service
       systemctl --user start media-idle-guard.service
