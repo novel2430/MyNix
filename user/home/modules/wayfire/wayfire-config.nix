@@ -64,10 +64,10 @@ let
       binding_audio_next = "KEY_NEXTSONG";
       binding_audio_prev = "KEY_PREVIOUSSONG";
       command_clipboard = "wlroot-clipboard";
-      command_launcher = "wofi --show drun";
+      command_launcher = "rofi -show drun";
       command_lock = "my-swaylock manual";
       command_mute = "my-volume mute";
-      command_run_launcher = "wofi --show run";
+      command_run_launcher = "rofi -show run";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot select";
       command_terminal = "wezterm";
@@ -79,7 +79,7 @@ let
       command_audio_next = "${pkgs.playerctl}/bin/playerctl next";
       command_audio_prev = "${pkgs.playerctl}/bin/playerctl previous";
       # command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
-      command_web_browser = "app.zen_browser.zen";
+      command_web_browser = "zen-browser";
       command_waybar = "killall waybar; ~/.config/wayfire/bar-run.sh";
       command_power_menu = "wofi-power-menu";
       repeatable_binding_volume_down = "KEY_VOLUMEDOWN";

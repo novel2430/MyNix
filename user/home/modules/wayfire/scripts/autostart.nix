@@ -6,7 +6,6 @@ let
   cliphist = "${pkgs.unstable.cliphist}/bin/cliphist";
   gsettings = "${pkgs.glib}/bin/gsettings";
   blutooth-cmd = if opt-config.bluetooth then "${pkgs.blueman}/bin/blueman-applet &" else "";
-  wayland-pipewire-idle-inhibit = "${pkgs.wayland-pipewire-idle-inhibit}/bin/wayland-pipewire-idle-inhibit";
 in
 pkgs.writeShellScriptBin "my-wf-autostart" ''
   start-wm $WAYLAND_DISPLAY
@@ -33,7 +32,5 @@ pkgs.writeShellScriptBin "my-wf-autostart" ''
   fcitx5 --replace -d &
   # Blueman-applet
   #${blutooth-cmd}
-  # Idle Inhibit
-  #${wayland-pipewire-idle-inhibit} -w &
   systemctl --user restart media-idle-guard.service
 ''
