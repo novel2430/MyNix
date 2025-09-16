@@ -78,6 +78,7 @@
       qemu
       virt-manager
       openttd
+      nur.repos.novel2430.shotcut-bin 
     ];
     flatpak-packages = [
       "com.discordapp.Discord"

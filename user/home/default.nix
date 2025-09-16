@@ -31,13 +31,10 @@ let
     lswt
     gradia # Like Small Painter
     yazi
-    celluloid
-    amberol
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages
     ## custom-pkgs.*
-    custom-pkgs.shotcut-bin 
     # Unstable
     ## unstable.*
     ## unstable.*

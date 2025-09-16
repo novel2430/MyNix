@@ -64,6 +64,7 @@
       steam
       wine
       nur.repos.novel2430.vita3k
+      nur.repos.novel2430.shotcut-bin 
       wl-color-picker
       winetricks
       android-studio
