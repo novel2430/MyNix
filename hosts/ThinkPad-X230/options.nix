@@ -64,7 +64,7 @@
       awesome = false;
       # Wayland
       dwl = true;
-      wayfire = false;
+      wayfire = true;
       river = false;
       labwc = false;
     };
@@ -82,7 +82,6 @@
     flatpak-packages = [
       "com.discordapp.Discord"
       "fm.reaper.Reaper"
-      "org.shotcut.Shotcut"
     ];
 
     # Use Clash
