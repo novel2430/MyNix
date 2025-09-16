@@ -36,8 +36,14 @@
 
     # WM Options
     wm = {
-      wayfire = true;
-      river = true;
+      # X11
+      dwm = true;
+      awesome = false;
+      # Wayland
+      dwl = true;
+      wayfire = false;
+      river = false;
+      labwc = false;
     };
     # Packages For this Machine
     packages = with pkgs; [
@@ -54,15 +60,15 @@
       #blender
     ];
     flatpak-packages = [
-      "org.ppsspp.PPSSPP"
+      # "org.ppsspp.PPSSPP"
       #"com.discordapp.Discord"
     ];
 
     # Use Clash
-    use-clash = false;
+    use-clash = true;
     clash-dir = "/home/${username}/clash";
     # Proxy
-    use-proxy = false;
+    use-proxy = true;
     http-proxy-host = "127.0.0.1";
     http-proxy-port = "7890";
     https-proxy-host = "127.0.0.1";
@@ -95,10 +101,10 @@
 
     # Idle Wait Time
     idle = {
-      dpms-standby = "600"; # sec
-      dpms-off = "600"; # sec
-      lock-sec = "600"; # sec
-      lock-min = "10"; # min
+      dpms-standby = "300"; # sec 1200
+      dpms-off = "300"; # sec 3600
+      lock-sec = "300"; # sec
+      lock-min = "60"; # min
     };
     
     # Force Use opengl in GTK Application
