@@ -30,7 +30,6 @@ let
     ncspot
     lswt
     gradia # Like Small Painter
-    yazi
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages

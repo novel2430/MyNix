@@ -23,6 +23,7 @@
     # ./emacs
     # ./direnv
     ./rofi
+    ./yazi
   ]
   ++ 
   lib.optionals (opt-config.wm.awesome) [
