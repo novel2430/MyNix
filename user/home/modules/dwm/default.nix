@@ -58,6 +58,8 @@ in
       # Media Idle Guard
       systemctl --user stop media-idle-guard.service
       systemctl --user start media-idle-guard.service
+      # For Wemeet
+      flatpak override --user --unset-env=LD_PRELOAD com.tencent.wemeet &
     '';
   };
 

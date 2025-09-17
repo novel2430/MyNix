@@ -33,4 +33,6 @@ pkgs.writeShellScriptBin "my-wf-autostart" ''
   # Blueman-applet
   #${blutooth-cmd}
   systemctl --user restart media-idle-guard.service
+  # For Wemeet
+  flatpak override --user --env=LD_PRELOAD=/app/lib/wemeet/libhook.so com.tencent.wemeet &
 ''

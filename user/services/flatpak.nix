@@ -6,6 +6,8 @@
 
     ]++ opt-config.flatpak-packages;
 
+    uninstallUnmanaged = false;
+
     overrides = {
       global = {
         Context = {
