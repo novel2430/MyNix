@@ -10,4 +10,5 @@
   dwm = pkgs.callPackage ./dwm {};
   polybar-dwm = pkgs.callPackage ./polybar-dwm {};
   shotcut-bin = pkgs.callPackage ./shotcut {};
+  hmcl = pkgs.callPackage ./hmcl {};
 }

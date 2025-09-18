@@ -1,4 +1,4 @@
-{pkgs, unstable-pkgs, ...}:
+{pkgs, unstable-pkgs, custom-pkgs, ...}:
 {
   opt-config = rec {
     # Basic
@@ -53,7 +53,6 @@
 
     # Packages For this Machine
     packages = with pkgs; [
-      hmcl
       abcde
       cdrkit
       wavpack
@@ -74,6 +73,7 @@
       protonup-qt
       openttd
       ryubing #ryujinx
+      custom-pkgs.hmcl
     ];
     flatpak-packages = [
       "org.audacityteam.Audacity"

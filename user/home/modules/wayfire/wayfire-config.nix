@@ -1,6 +1,13 @@
-{lib, opt-config, pkgs, ...}:
+{lib, opt-config, pkgs, custom-pkgs, ...}:
 with lib;
 let
+  app = {
+    rofi = "${pkgs.rofi-wayland}/bin/rofi";
+    wezterm = "${pkgs.wezterm}/bin/wezterm";
+    brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+    playerctl = "${pkgs.playerctl}/bin/playerctl";
+    browser = "${pkgs.nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
+  };
   wayfire-config = {
     alpha = {
       min_value = "0.100000";
@@ -64,22 +71,21 @@ let
       binding_audio_next = "KEY_NEXTSONG";
       binding_audio_prev = "KEY_PREVIOUSSONG";
       command_clipboard = "wlroot-clipboard";
-      command_launcher = "rofi -show drun";
+      command_launcher = "${app.rofi} -show drun";
       command_lock = "my-swaylock manual";
       command_mute = "my-volume mute";
-      command_run_launcher = "rofi -show run";
+      command_run_launcher = "${app.rofi} -show run";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot select";
-      command_terminal = "wezterm";
+      command_terminal = "${app.wezterm}";
       command_volume_down = "my-volume down";
       command_volume_up = "my-volume up";
-      command_light_up = "brightnessctl set 10%+";
-      command_light_down = "brightnessctl set 10%-";
-      command_audio_play = "${pkgs.playerctl}/bin/playerctl play-pause";
-      command_audio_next = "${pkgs.playerctl}/bin/playerctl next";
-      command_audio_prev = "${pkgs.playerctl}/bin/playerctl previous";
-      # command_web_browser = "brave -enable-features=UseOzonePlatform -ozone-platform=wayland --gtk-version=4";
-      command_web_browser = "zen-browser";
+      command_light_up = "${app.brightnessctl} set 10%+";
+      command_light_down = "${app.brightnessctl} set 10%-";
+      command_audio_play = "${app.playerctl} play-pause";
+      command_audio_next = "${app.playerctl} next";
+      command_audio_prev = "${app.playerctl} previous";
+      command_web_browser = "${app.browser}";
       command_waybar = "killall waybar; ~/.config/wayfire/bar-run.sh";
       command_power_menu = "wofi-power-menu";
       repeatable_binding_volume_down = "KEY_VOLUMEDOWN";

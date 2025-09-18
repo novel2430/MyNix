@@ -10,7 +10,7 @@
   };
   MAXSUN-b450m = with pkg-settings; rec {
     name = "MAXSUN-b450m";
-    config = (import ../hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
+    config = (import ../hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; inherit custom-pkgs; }).opt-config;
   };
 
   ASUSTek = with pkg-settings; rec {
