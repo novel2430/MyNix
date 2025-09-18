@@ -19,10 +19,12 @@
     # intel, nvidia, intel-nvidia, amd
     gpu-type = [
       "amd"
+      "amd-nvidia"
     ];
     intel-bus-id = "PCI:0:2:0";
     amd-bus-id = "PCI:10:0:0";
     nvidia-bus-id = "PCI:1:0:0";
+    nvidia-legacy = true;
 
     # Monitors (For Wayfire Config)
     # Example :
