@@ -73,10 +73,10 @@
       bilibili
       protonup-qt
       openttd
+      ryubing #ryujinx
     ];
     flatpak-packages = [
       "org.audacityteam.Audacity"
-      "io.github.ryubing.Ryujinx"
       "com.discordapp.Discord"
       "org.telegram.desktop"
       "org.ppsspp.PPSSPP"
