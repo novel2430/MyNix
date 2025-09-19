@@ -129,6 +129,7 @@ keymap = [
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
 	{ on = [ "g", "n" ],       run = "cd ~/MyNix",   desc = "Go ~/MyNix", for = "linux" },
 	{ on = [ "g", "w" ],       run = "cd ~/Documents/WeChat_Data/home", desc = "Go Wechat", for = "linux"},
+	{ on = [ "g", "s" ],       run = "cd ~/Pictures/screenshot", desc = "Go Screenshot", for = "linux"},
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Jump interactively" },
 	{ on = [ "g", "f" ],       run = "follow",           desc = "Follow hovered symlink" },
 
