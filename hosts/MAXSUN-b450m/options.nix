@@ -82,6 +82,7 @@
       "org.ppsspp.PPSSPP"
       "fm.reaper.Reaper"
       "org.ardour.Ardour"
+      "cn.feishu.Feishu"
     ];
 
     # Use Clash
