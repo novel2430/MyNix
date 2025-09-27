@@ -1,7 +1,7 @@
 { config, lib, pkgs, modify-pkgs, custom-pkgs, inputs, opt-config, ... }:
 let
   my-packages = with pkgs;[
-    obs-studio
+    # obs-studio
     motrix
     brave
     fastfetch

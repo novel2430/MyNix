@@ -3,7 +3,7 @@
   services.flatpak = {
 
     packages = [
-
+      "com.obsproject.Studio"
     ]++ opt-config.flatpak-packages;
 
     uninstallUnmanaged = false;
