@@ -40,11 +40,10 @@ def get_battery():
         else: 
             icon = "" # 0 ~ 20
 
-    return f"{icon} {per}"
-    # if status == "Charging":
-    #     return f'<span foreground="#78cc81">{icon} {per}</span>'
-    # else: 
-    #     return f"{icon} {per}"
+    if status == "Charging":
+        return f'%{{F#78cc81}}{icon} {per}%{{F-}}'
+    else: 
+        return f'%{{F#ffffff}}{icon} {per}%{{F-}}'
 
 bat = get_battery()
 print(bat)
