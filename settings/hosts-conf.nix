@@ -6,7 +6,7 @@
   };
   ThinkPad-X230 = with pkg-settings; rec {
     name = "ThinkPad-X230";
-    config = (import ../hosts/${name}/options.nix { pkgs = stable-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
+    config = (import ../hosts/${name}/options.nix { pkgs = stable-pkgs; inherit custom-pkgs; unstable-pkgs = unstable-pkgs; }).opt-config;
   };
   MAXSUN-b450m = with pkg-settings; rec {
     name = "MAXSUN-b450m";

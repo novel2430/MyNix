@@ -1,4 +1,4 @@
-{pkgs, unstable-pkgs, ...}:
+{pkgs, custom-pkgs, unstable-pkgs, ...}:
 {
   opt-config = rec {
     # Basic
@@ -71,7 +71,7 @@
 
     # Packages For this Machine
     packages = with pkgs; [
-      hmcl
+      custom-pkgs.hmcl
       hugo
       wl-color-picker
       distrobox
