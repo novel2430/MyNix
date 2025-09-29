@@ -9,7 +9,7 @@ let
   dunst = "${pkgs.dunst}/bin/dunst";
   waybar = "${pkgs.waybar}/bin/waybar";
 in
-pkgs.writeShellScriptBin "my-dwl-autostart" ''
+pkgs.writeShellScriptBin "my-niri-autostart" ''
   start-wm $WAYLAND_DISPLAY
   # Wallpaper
   ${swaybg} -i ${opt-config.wall-img} -m fill &
@@ -18,17 +18,13 @@ pkgs.writeShellScriptBin "my-dwl-autostart" ''
   # Clipboard <cliphist>
   ${wl-paste} --watch ${cliphist} store &
   # Bar
-  ${waybar} -c /home/${opt-config.username}/.config/dwl/waybar.jsonc -s /home/${opt-config.username}/.config/dwl/waybar.css &
-  # GTK title bar layout
-  # ${gsettings} set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+  ${waybar} -c /home/${opt-config.username}/.config/niri/waybar.jsonc -s /home/${opt-config.username}/.config/niri/waybar.css &
   # GRT Dark Theme (fix for GTK4)
   ${gsettings} set org.gnome.desktop.interface color-scheme 'prefer-dark'
   # xdg-portal
-  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=gnome
   systemctl --user stop pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-desktop-portal-gnome
-  systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
-  # Swayidle
-  # my-swayidle &
+  systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome
   # IME
   fcitx5 --replace -d &
   # Blueman-applet

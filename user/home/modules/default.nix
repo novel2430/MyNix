@@ -24,6 +24,7 @@
     # ./direnv
     ./rofi
     ./yazi
+    ./niri
   ]
   ++ 
   lib.optionals (opt-config.wm.awesome) [

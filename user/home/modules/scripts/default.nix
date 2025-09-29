@@ -95,5 +95,13 @@
       inherit pkgs;
       inherit opt-config;
     })
+    (import ./my-niri-autostart.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
+    (import ./niri-swayidle.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
   ];
 }

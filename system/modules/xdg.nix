@@ -2,10 +2,13 @@
 {
   xdg.portal = {
     enable = true;
-    config.common.default = "gtk";
-    extraPortals = [ 
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [ 
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gnome
     ];
+    configPackages = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = "gtk";
   };
 }

@@ -9,6 +9,11 @@ let
     inherit opt-config;
   };
   my-swayidle = "${my-swayidle-path}/bin/my-swayidle";
+  niri-swayidle-path = import ../home/modules/scripts/niri-swayidle.nix {
+    inherit pkgs;
+    inherit opt-config;
+  };
+  niri-swayidle = "${niri-swayidle-path}/bin/niri-swayidle";
   xset-dpms-path = import ../home/modules/scripts/xset-dpms.nix {
     inherit pkgs;
     inherit opt-config;
@@ -36,6 +41,7 @@ let
     while true; do
       export WAYLAND_DISPLAY=$(cat "/home/${opt-config.username}/.wm_state" 2>/dev/null)
       swayidle_pid=$(${pgrep} -l "swayidle" | ${awk} '$2 == "swayidle" { print $1 }')
+      niri_pid=$(${pgrep} -l "niri" | ${awk} '$2 == "niri" { print $1 }')
       locked_pid_betterlockscreen="$(${pgrep} -f betterlockscreen || true)"
       locked_pid_swaylock="$(${pgrep} -f swaylock || true)"
       if [[ -n "$locked_pid_betterlockscreen" || -n "$locked_pid_swaylock" ]]; then
@@ -47,7 +53,12 @@ let
           elif [[ -z "$swayidle_pid" ]]; then
             # wayland stuff
             echo "[media_guard] (Wayland) swayidle disable detect, do enable"
-            ${my-swayidle} 2>/dev/null &
+            if [[ -n "$niri_pid" ]]; then 
+              echo "[media_guard] (Wayland) Niri Detect"
+              ${niri-swayidle} 2>/dev/null &
+            else
+              ${my-swayidle} 2>/dev/null &
+            fi
           fi
         fi
         is_playing=0
