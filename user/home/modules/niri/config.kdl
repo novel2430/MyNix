@@ -170,8 +170,8 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        // active-color "#eceff4"
-        active-gradient from="#5e81ac" to="#eceff4" angle=315
+        active-color "#eceff4"
+        // active-gradient from="#5e81ac" to="#eceff4" angle=315
 
         // Color of the ring on inactive monitors.
         //
