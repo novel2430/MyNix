@@ -162,7 +162,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 5
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -170,7 +170,8 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#eceff4"
+        // active-color "#eceff4"
+        active-gradient from="#5e81ac" to="#eceff4" angle=315
 
         // Color of the ring on inactive monitors.
         //
@@ -311,6 +312,12 @@ animations {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
+// corner
+window-rule {
+    geometry-corner-radius 9
+    clip-to-geometry true
+}
+
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 // window-rule {
@@ -396,6 +403,8 @@ binds {
     Mod+H     { focus-window-up; }
     Mod+J     { focus-column-right; }
     Mod+K     { focus-column-left; }
+    Mod+Tab    { focus-column-right; }
+    Mod+Shift+Tab    { focus-column-left; }
 
     // Mod+Ctrl+Left  { move-column-left; }
     // Mod+Ctrl+Right { move-column-right; }
