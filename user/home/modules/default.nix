@@ -24,7 +24,6 @@
     # ./direnv
     ./rofi
     ./yazi
-    ./niri
   ]
   ++ 
   lib.optionals (opt-config.wm.awesome) [
@@ -51,7 +50,15 @@
     ./river
   ]
   ++ 
-  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire || opt-config.wm.dwl || opt-config.wm.labwc) [
+  lib.optionals (opt-config.wm.niri) [
+    ./niri
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.hypr) [
+    ./hyprland
+  ]
+  ++ 
+  lib.optionals (opt-config.wm.river || opt-config.wm.wayfire || opt-config.wm.dwl || opt-config.wm.labwc || opt-config.wm.niri || opt-config.wm.hypr) [
     ./wofi
     ./foot 
   ]

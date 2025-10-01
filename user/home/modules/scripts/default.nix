@@ -103,5 +103,9 @@
       inherit pkgs;
       inherit opt-config;
     })
+    (import ./my-hyprland-autostart.nix {
+      inherit pkgs;
+      inherit opt-config;
+    })
   ];
 }

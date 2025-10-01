@@ -12,8 +12,7 @@
         // "sway/scratchpad",
         // "custom/media"
         // "wlr/taskbar"
-        "niri/workspaces",
-        "custom/waybar-modules-niri-ws-count"
+        "hyprland/workspaces"
     ],
     "modules-center": [
         // "river/window"
@@ -122,16 +121,8 @@
         "format": "{id}",
         "all-outputs": false,
         "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
         "persistent-workspaces": {
-          "1": ["HDMI-A-1", "eDP-1"],
-          "2": ["HDMI-A-1", "eDP-1"],
-          "3": ["HDMI-A-1", "eDP-1"],
-          "4": ["HDMI-A-1", "eDP-1"],
-          "5": ["HDMI-A-1", "eDP-1"],
-          "6": ["HDMI-A-1", "eDP-1"],
-          "7": ["HDMI-A-1", "eDP-1"]
+          "*": 9,
         }
     },
     "sway/mode": {
@@ -275,13 +266,6 @@
         "format": "{}",
         "exec": "waybar-modules-weather",
         "interval": 3600,
-        "return-type": "json",
-        "tooltip": true
-    },
-    "custom/waybar-modules-niri-ws-count": {
-        "format": "[{}]",
-        "exec": "python $HOME/.config/niri/waybar-modules-niri-ws-count.py --waybar",
-        "interval": 1,
         "return-type": "json",
         "tooltip": true
     },
