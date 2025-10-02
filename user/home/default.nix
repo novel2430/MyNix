@@ -30,6 +30,7 @@ let
     ncspot
     lswt
     gradia # Like Small Painter
+    swaybg
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages

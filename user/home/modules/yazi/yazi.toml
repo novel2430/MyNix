@@ -31,6 +31,9 @@ play = [
 edit = [
 	{ run = '$EDITOR "$@"', block = true, for = "unix" },
 ]
+setwallpaper = [
+	{ run = 'swaybg -i "$@" -m fill', desc = "Set Wallpaper", for = "linux" },
+]
 open = [
 	{ run = 'xdg-open "$@"', desc = "Open", for = "linux" },
 ]
@@ -41,6 +44,7 @@ extract = [
 [open]
 rules = [
 	{ mime = "text/*", use = ["edit", "open"] },
+	{ mime = "image/*", use = ["open", "setwallpaper"] },
 	{ name = "*.json", use = ["edit", "open"] },
 	{ name = "*.html", use = [ "open", "edit" ] },
   { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = "extract" },

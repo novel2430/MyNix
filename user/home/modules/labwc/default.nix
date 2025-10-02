@@ -32,15 +32,15 @@ in
       # Clipboard <cliphist>
       ${wl-paste} --watch ${cliphist} store &
       # GTK title bar layout
-      # ${gsettings} set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+      ${gsettings} set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
       # GRT Dark Theme (fix for GTK4)
       ${gsettings} set org.gnome.desktop.interface color-scheme 'prefer-dark'
       # xdg-portal
       dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-      systemctl --user stop pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
+      systemctl --user stop pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-desktop-portal-gnome
       systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
       # Swayidle
-      my-swayidle &
+      # my-swayidle &
       # IME
       fcitx5 --replace -d &
       # Blueman-applet

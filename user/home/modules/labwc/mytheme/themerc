@@ -1,11 +1,11 @@
-border.width: 0
+border.width: 2
 window.button.width: 36
 osd.bg.color: #3b4252
 window.titlebar.padding.height: 2
 window.button.height: 20
 
 # Active Window
-window.active.border.color: #eceff4
+window.active.border.color: #5e81ac
 window.active.title.bg.color: #5e81ac
 window.active.label.text.color: #eceff4
 window.active.shadow.size: 0
@@ -33,8 +33,8 @@ snapping.overlay.region.border.enabled: yes
 snapping.overlay.edge.border.enabled: yes
 snapping.overlay.region.border.width: 2
 snapping.overlay.edge.border.width: 2
-snapping.overlay.region.border.color: #eceff4
-snapping.overlay.edge.border.color: #eceff4
+snapping.overlay.region.border.color: #5e81ac
+snapping.overlay.edge.border.color: #5e81ac
 
 # Title Bar Btn (xbm)
 ## Close
