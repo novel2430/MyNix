@@ -10,6 +10,7 @@ let
     volume-mute = "my-volume mute";
     volume-up = "my-volume up";
     volume-down = "my-volume down";
+    clash-switcher = "clash-switcher";
     brightness-up = "${brightnessctl}/bin/brightnessctl set 10%+";
     brightness-down = "${brightnessctl}/bin/brightnessctl set 10%-";
     playerctl-playpause = "${playerctl}/bin/playerctl play-pause";
@@ -17,6 +18,7 @@ let
     playerctl-prev = "${playerctl}/bin/playerctl previous";
     killall = "${psmisc}/bin/killall";
     sxhkd = "${sxhkd}/bin/sxhkd";
+    reloadsxhkd = "${killall} -r sxhkd; ${sxhkd} &";
   };
 in
 {
@@ -30,7 +32,7 @@ in
       # Clipboard
       "super + c" = "${clipboard}";
       # Clash Switcher
-      "super + shift + c" = "clash-switcher";
+      "super + shift + c" = "${clash-switcher}";
       # Screenshot
       "Print" = "${screenshot}";
       "super + Print" = "${screenshot-select}";
@@ -48,9 +50,9 @@ in
       "XF86AudioNext" = "${playerctl-next}";
       "XF86AudioPrev" = "${playerctl-prev}";
       # Reload Sxhkd
-      "super + shift + r" = "${killall} -r sxhkd; ${sxhkd} &";
+      "super + shift + r" = "${reloadsxhkd}";
       # Reload Polybar
-      "super + shift + b" = "${killall} -r polybar; dwm-polybar &";
+      # "super + shift + b" = "${killall} -r polybar; dwm-polybar &";
     };
   };
 }

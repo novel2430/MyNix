@@ -8,7 +8,7 @@ rec {
   wlroot-clipboard-path = import ../scripts/wlroot-clipboard.nix {
     inherit pkgs;
   };
-  wofi-power-menu-path = import ../scripts/wofi-power-menu.nix {
+  rofi-power-menu-path = import ../scripts/rofi-power-menu.nix {
     inherit pkgs;
     inherit opt-config;
   };
@@ -24,11 +24,10 @@ rec {
   apps = {
     wezterm = "${pkgs.wezterm}/bin/wezterm";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
-    wofi = "${wofi}/bin/wofi";
-    fuzzel = "${fuzzel}/bin/fuzzel";
+    rofi = "${rofi}/bin/rofi";
     wlrootsClipboard = "${wlroot-clipboard-path}/bin/wlroot-clipboard";
     swaylock = "${swaylock-path}/bin/my-swaylock";
-    powerMenu = "${wofi-power-menu-path}/bin/wofi-power-menu";
+    powerMenu = "${rofi-power-menu-path}/bin/rofi-power-menu";
     volume = "${my-volume-path}/bin/my-volume";
     wpctl = "${pkgs.wireplumber}/bin/wpctl";
     screenshot = "${screenshot-path}/bin/grim-slurp-screenshot";
@@ -63,11 +62,11 @@ rec {
       # Terminal
       { modes = ["normal"]; keys = "Super Return"; action = "${apps.wezterm}"; }
       # Custom application bindings
-      { modes = ["normal"]; keys = "Super D"; action = "${apps.wofi} --show drun"; }
-      { modes = ["normal"]; keys = "Super R"; action = "${apps.wofi} --show run"; }
+      { modes = ["normal"]; keys = "Super D"; action = "${apps.rofi} -show drun"; }
+      { modes = ["normal"]; keys = "Super R"; action = "${apps.rofi} -show run"; }
       { modes = ["normal"]; keys = "Super+Shift F"; action = "${apps.browser}"; }
       { modes = ["normal"]; keys = "Super C"; action = "${apps.wlrootsClipboard}"; }
-      { modes = ["normal"]; keys = "Super+Shift L"; action = "${apps.swaylock} manual"; }
+      { modes = ["normal"]; keys = "Super+Shift L"; action = "${apps.swaylock} idle"; }
       { modes = ["normal"]; keys = "Super+Shift P"; action = "${apps.powerMenu}"; }
       # Volume control
       { modes = ["normal" "locked"]; keys = "None XF86AudioRaiseVolume"; action = "${apps.volume} up"; }

@@ -9,7 +9,7 @@
 
 window#waybar {
     /* background-color: rgba(43, 48, 59, 0.5); */
-    background-color: rgba(46, 52, 64, 1.0);/* #2e3440 */
+    background-color: #20281F;/* #2e3440 */
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #eceff4;
     transition-property: background-color;
@@ -96,7 +96,7 @@ button:hover {
 
 #workspaces button.active {
 	color: #eceff4;
-  background-color: #5e81ac;
+  background-color: #849971;
 	border-radius: 0px;
 }
 
@@ -282,7 +282,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #5e81ac;
+    background-color: #849971;
     color: #eceff4;
 }
 

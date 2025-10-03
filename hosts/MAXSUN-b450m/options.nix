@@ -46,10 +46,10 @@
       awesome = false;
       # Wayland
       dwl = true;
-      wayfire = true;
-      river = false;
+      wayfire = false;
+      river = true;
       labwc = true;
-      niri = true;
+      niri = false;
       hypr = false;
     };
 

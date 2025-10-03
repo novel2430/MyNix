@@ -81,7 +81,7 @@
       #background=1C2E36
       #foreground=E0DEDA
       # Nord Nightfox Theme
-      background=2e3440
+      background=20281f
       foreground=cdcecf
       regular0=3b4252
       regular1=bf616a

@@ -1,5 +1,5 @@
 * {
-  background-color: #3b4252;
+  background-color: #3B4635;
   text-color: #eceff4;
   font: "Hack Nerd Font Regular 15";
   padding: 0px;
@@ -11,19 +11,19 @@ configuration {
   kb-accept-entry: "Control+m,Return,KP_Enter";
 }
 window {
-  background-color: #3b4252;
+  background-color: #3B4635;
   width: 25%;
   height: 40%;
   padding: 10px;
 }
 mainbox {
-  background-color: #3b4252;
+  background-color: #3B4635;
   children: [ inputbar, message, listview ];
   padding: 0px;
 }
 inputbar {
   text-color: #eceff4;
-  background-color: #3b4252;
+  background-color: #3B4635;
   children: [ entry ];
   padding: 2px 5px;
   border: 2;
@@ -34,14 +34,14 @@ inputbar {
 entry {
   placeholder: " Search";
   orientation: horizontal;
-  background-color: #3b4252;
+  background-color: #3B4635;
   text-color: #eceff4;
   padding: 5px;
   blink: false;
 }
 listview {
   text-color: #eceff4;
-  background-color: #3b4252;
+  background-color: #3B4635;
   padding: 0px;
   scrollbar: false;
   border: 0px;
@@ -52,11 +52,11 @@ element {
   padding: 0px;
 }
 element-text selected {
-  background-color: #5e81ac;
+  background-color: #849971;
   padding: 10px;
 }
 element-text {
   text-color: #eceff4;
-  background-color: #3b4252;
+  background-color: #3B4635;
   padding: 10px;
 }

@@ -18,7 +18,7 @@
       size = ${opt-config.alacritty-font-size}
 
       [colors.primary]
-      background = "#2e3440"
+      background = "#20281f"
       foreground = "#cdcecf"
 
       [colors.normal]

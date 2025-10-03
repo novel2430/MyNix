@@ -79,7 +79,7 @@ M.run = function(s)
       spacing = config_var.my_size.wibox_spacing,
       s.mytaglist,
       M.layout_widget,
-      M.focus_titlebox,
+      -- M.focus_titlebox,
     },
     {
       layout = wibox.layout.align.horizontal,

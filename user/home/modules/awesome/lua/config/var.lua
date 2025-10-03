@@ -16,9 +16,9 @@ M.my_font = "Hack Nerd Font 12"
 M.my_color = {
   red = "#bf616aff",
   fg = "#eceff4ff",
-  bg = "#2e3440ff",
-  high_bg = "#5e81acff",
-  sec_bg = "#4c566aff",
+  bg = "#20281fff",
+  high_bg = "#849971ff",
+  sec_bg = "#647059ff",
 }
 
 M.my_size = {

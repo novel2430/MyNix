@@ -77,13 +77,13 @@ in
         per_monitor_dpi = false;
       };
       urgency_low = {
-        background = "#3b4252";
+        background = "#3B4635";
         foreground = "#eceff4";
         highlight = "#eceff4";
         timeout = 10;
       };
       urgency_normal = {
-        background = "#3b4252";
+        background = "#3B4635";
         foreground = "#eceff4";
         highlight = "#eceff4";
         timeout = 10;
