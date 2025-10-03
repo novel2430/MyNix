@@ -26,7 +26,7 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 play = [
-	{ run = 'mpv "$@"', orphan = true, desc = "Mpv", for = "unix" },
+	{ run = 'mpv --force-window "$@"', orphan = true, desc = "Mpv", for = "unix" },
 ]
 pdf = [
 	{ run = 'zathura "$@"', orphan = true, desc = "Zathura", for = "linux" },
