@@ -5,7 +5,7 @@ let
     lock = "x-lock";
     clipboard = "greenclip-rofi";
     screenshot = "maim-screenshot full";
-    screenshot-select = "maim-screenshot select";
+    screenshot-select = "maim-screenshot";
     powermenu = "rofi-power-menu";
     volume-mute = "my-volume mute";
     volume-up = "my-volume up";

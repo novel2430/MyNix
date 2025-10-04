@@ -365,7 +365,7 @@
       <action name="Execute" command="grim-slurp-screenshot full" />
     </keybind>
     <keybind key="W-Print">
-      <action name="Execute" command="grim-slurp-screenshot select" />
+      <action name="Execute" command="grim-slurp-screenshot" />
     </keybind>
   <!-- Workspace -->
     <keybind key="W-C-Left">

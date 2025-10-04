@@ -76,7 +76,7 @@ let
       command_mute = "my-volume mute";
       command_run_launcher = "${app.rofi} -show run";
       command_screenshot = "grim-slurp-screenshot full";
-      command_screenshot_interactive = "grim-slurp-screenshot select";
+      command_screenshot_interactive = "grim-slurp-screenshot";
       command_terminal = "${app.wezterm}";
       command_volume_down = "my-volume down";
       command_volume_up = "my-volume up";

@@ -608,7 +608,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { spawn-sh "grim-slurp-screenshot full"; }
-    Mod+Print { spawn-sh "grim-slurp-screenshot select"; }
+    Mod+Print { spawn-sh "grim-slurp-screenshot"; }
     // Ctrl+Print { screenshot-screen; }
     // Alt+Print { screenshot-window; }
 

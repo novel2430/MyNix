@@ -81,7 +81,7 @@ rec {
       { modes = ["normal"]; keys = "None XF86AudioPrev"; action = "${apps.playerctl} previous"; }
       # Screenshot
       { modes = ["normal" "locked"]; keys = "None Print"; action = "${apps.screenshot} full"; }
-      { modes = ["normal"]; keys = "Super Print"; action = "${apps.screenshot} select"; }
+      { modes = ["normal"]; keys = "Super Print"; action = "${apps.screenshot}"; }
       # Reload Config
       { modes = ["normal"]; keys = "Super+Shift R"; action = "~/.config/river/init reload"; }
       # FuzzyMarks
