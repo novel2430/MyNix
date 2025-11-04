@@ -66,9 +66,9 @@
       dwl = true;
       wayfire = true;
       river = false;
-      labwc = true;
+      labwc = false;
       niri = false;
-      hypr = false;
+      hypr = true;
     };
 
     # Packages For this Machine
