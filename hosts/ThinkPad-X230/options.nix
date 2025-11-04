@@ -73,7 +73,6 @@
 
     # Packages For this Machine
     packages = with pkgs; [
-      custom-pkgs.hmcl
       hugo
       wl-color-picker
       distrobox
@@ -81,6 +80,7 @@
       virt-manager
       openttd
       nur.repos.novel2430.shotcut-bin 
+      nur.repos.novel2430.hmcl 
     ];
     flatpak-packages = [
       "com.discordapp.Discord"
