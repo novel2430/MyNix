@@ -22,7 +22,7 @@ rec {
 
   # Define paths to custom and standard applications
   apps = {
-    wezterm = "${pkgs.wezterm}/bin/wezterm";
+    terminal = "${pkgs.foot}/bin/foot";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     rofi = "${rofi}/bin/rofi";
     wlrootsClipboard = "${wlroot-clipboard-path}/bin/wlroot-clipboard";
@@ -60,7 +60,7 @@ rec {
     ];
     apps = [
       # Terminal
-      { modes = ["normal"]; keys = "Super Return"; action = "${apps.wezterm}"; }
+      { modes = ["normal"]; keys = "Super Return"; action = "${apps.terminal}"; }
       # Custom application bindings
       { modes = ["normal"]; keys = "Super D"; action = "${apps.rofi} -show drun"; }
       { modes = ["normal"]; keys = "Super R"; action = "${apps.rofi} -show run"; }

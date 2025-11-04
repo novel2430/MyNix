@@ -50,6 +50,7 @@ in
       cat = "${pkgs.bat}/bin/bat -p";
       yz = "${pkgs.yazi}/bin/yazi";
       grep = "${pkgs.ripgrep}/bin/rg -i";
+      cp = "rsync -aHAX --info=progress2 --human-readable --";
     };
     initContent = lib.mkMerge [
       # Other Stuff

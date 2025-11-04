@@ -373,7 +373,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Terminal: Wezterm" { spawn "wezterm"; }
+    Mod+Return hotkey-overlay-title="Terminal: Foot" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Application Menu: Rofi" { spawn-sh "rofi -show drun"; }
     Mod+R hotkey-overlay-title="Shell Cmd Menu: Rofi" { spawn-sh "rofi -show run"; }
     Mod+Shift+S hotkey-overlay-title="Window Switcher" { spawn-sh "python ~/.config/niri/niri-rofi-window-switcher.py"; }

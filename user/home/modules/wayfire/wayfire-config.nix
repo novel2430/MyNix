@@ -3,7 +3,7 @@ with lib;
 let
   app = {
     rofi = "${pkgs.rofi-wayland}/bin/rofi";
-    wezterm = "${pkgs.wezterm}/bin/wezterm";
+    terminal = "${pkgs.foot}/bin/foot";
     brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
     playerctl = "${pkgs.playerctl}/bin/playerctl";
     browser = "${pkgs.nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
@@ -77,7 +77,7 @@ let
       command_run_launcher = "${app.rofi} -show run";
       command_screenshot = "grim-slurp-screenshot full";
       command_screenshot_interactive = "grim-slurp-screenshot";
-      command_terminal = "${app.wezterm}";
+      command_terminal = "${app.terminal}";
       command_volume_down = "my-volume down";
       command_volume_up = "my-volume up";
       command_light_up = "${app.brightnessctl} set 10%+";
