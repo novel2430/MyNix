@@ -135,6 +135,6 @@
     force-gl-gtk = true;
 
     # BT
-    use-qb = true;
+    use-qb = false;
   };
 }
