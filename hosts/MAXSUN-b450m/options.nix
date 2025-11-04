@@ -19,7 +19,7 @@
     # intel, nvidia, intel-nvidia, amd
     gpu-type = [
       "amd"
-      "amd-nvidia"
+      # "amd-nvidia"
     ];
     intel-bus-id = "PCI:0:2:0";
     amd-bus-id = "PCI:10:0:0";
@@ -68,6 +68,7 @@
       wine
       nur.repos.novel2430.vita3k
       nur.repos.novel2430.shotcut-bin 
+      nur.repos.novel2430.hmcl
       wl-color-picker
       winetricks
       android-studio
@@ -75,7 +76,6 @@
       protonup-qt
       openttd
       ryubing #ryujinx
-      custom-pkgs.hmcl
     ];
     flatpak-packages = [
       "org.audacityteam.Audacity"
@@ -132,5 +132,8 @@
 
     # Force Use opengl in GTK Application
     force-gl-gtk = false;
+
+    # BT
+    use-qb = true;
   };
 }

@@ -133,5 +133,8 @@
     
     # Force Use opengl in GTK Application
     force-gl-gtk = true;
+
+    # BT
+    use-qb = true;
   };
 }

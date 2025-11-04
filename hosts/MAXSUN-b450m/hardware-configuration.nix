@@ -29,6 +29,15 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home/novel2430/GAME" =
+    { device = "/dev/disk/by-uuid/b8e5bcf7-117c-4393-9d5b-21becd5cf6df";
+      fsType = "ext4";
+      options = [ "nofail" "noatime" ];
+    };
+  systemd.tmpfiles.rules = [
+    "d /home/novel2430/GAME 0755 novel2430 users -"
+  ];
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/4bd477f4-daf0-48bd-9e9e-3b84d0a5236e"; }
     ];

@@ -17,6 +17,10 @@
     lib.optionals (opt-config.no-keyboard == true) [
       ./disable-keyboard.nix
     ]
+    ++
+    lib.optionals (opt-config.use-qb == true) [
+      ./qbittorrent-nox.nix
+    ]
   ;
 
 }
