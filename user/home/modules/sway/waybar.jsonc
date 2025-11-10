@@ -4,19 +4,19 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 1, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         // "sway/workspaces",
         // "sway/mode",
         // "sway/scratchpad",
         // "custom/media"
-        "niri/workspaces",
-        "wlr/taskbar"
+	      "sway/workspaces"
+        // "wlr/taskbar"
     ],
     "modules-center": [
         // "river/window"
-        // "hyprland/window"
+        //"hyprland/window"
         // "wlr/taskbar"
         "clock"
     ],
@@ -26,35 +26,24 @@
         // "pulseaudio",
         // "network",
         // "power-profiles-daemon",
-        // "backlight",
-        // "keyboard-state",
-        // "sway/language",
         "battery",
         "custom/weather",
         "custom/temperature",
+        // "backlight",
+        // "keyboard-state",
+        // "sway/language",
+        //"battery#bat2",
         "memory",
         "cpu",
-        //"clock",
-        //"battery#bat2",
         "tray"
     ],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}"    
+    },
 
     "wlr/taskbar": {
       "format": "{icon}",
@@ -94,13 +83,6 @@
             "locked": "",
             "unlocked": ""
         }
-    },
-    "dwl/tags": {
-	      "num-tags": 9
-    },
-    "dwl/window": {
-        "format": "{layout}",
-        "max-length": 50
     },
     "river/tags": {
 	      "num-tags": 9
@@ -260,9 +242,6 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/dwllogo": {
-        "format": " dwl-0.8"
-    },
     "custom/temperature": {
         "format": "{}",
         "exec": "waybar-modules-temp",
@@ -274,13 +253,6 @@
         "format": "{}",
         "exec": "waybar-modules-weather",
         "interval": 3600,
-        "return-type": "json",
-        "tooltip": true
-    },
-    "custom/waybar-modules-niri-ws-count": {
-        "format": "[{}]",
-        "exec": "python $HOME/.config/niri/waybar-modules-niri-ws-count.py --waybar",
-        "interval": 1,
         "return-type": "json",
         "tooltip": true
     },

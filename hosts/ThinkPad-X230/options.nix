@@ -62,13 +62,15 @@
       # X11
       dwm = true;
       awesome = false;
+      i3 = false;
       # Wayland
       dwl = true;
-      wayfire = true;
+      wayfire = false;
       river = false;
-      labwc = false;
+      labwc = true;
       niri = false;
-      hypr = true;
+      hypr = false;
+      sway = false;
     };
 
     # Packages For this Machine

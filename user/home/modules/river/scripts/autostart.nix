@@ -29,4 +29,6 @@ pkgs.writeShellScriptBin "my-river-autostart" ''
   ${nm-applet} &
   # Media Idle Guard
   systemctl --user restart media-idle-guard.service
+  # For Wemeet
+  flatpak override --user --env=LD_PRELOAD=/app/lib/wemeet/libhook.so com.tencent.wemeet &
 ''

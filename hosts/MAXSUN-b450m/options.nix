@@ -43,14 +43,16 @@
     wm = {
       # X11
       dwm = true;
-      awesome = false;
+      awesome = true;
+      i3 = true;
       # Wayland
       dwl = true;
-      wayfire = false;
+      wayfire = true;
       river = true;
       labwc = true;
-      niri = false;
-      hypr = false;
+      niri = true;
+      hypr = true;
+      sway = true;
     };
 
     # Packages For this Machine

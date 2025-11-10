@@ -15,19 +15,19 @@ let
     };
     animate = {
       close_animation = "zoom";
-      duration = "0";
+      duration = "300";
       enabled_for = ''(type equals "toplevel" | (type equals "x-or" & focusable equals true))'';
-      fade_duration = "0";
+      fade_duration = "300";
       fade_enabled_for = ''type equals "overlay"'';
       fire_color = "\\#B22303FF";
-      fire_duration = "0";
+      fire_duration = "300";
       fire_enabled_for = "none";
       fire_particle_size = "16.000000";
       fire_particles = "2000";
       open_animation = "zoom";
       random_fire_color = "false";
-      startup_duration = "0";
-      zoom_duration = "0";
+      startup_duration = "300";
+      zoom_duration = "300";
       zoom_enabled_for = "none";
     };
     autostart = {
@@ -38,19 +38,19 @@ let
       outputs = "kanshi";
     };
     blur = {
-      blur_by_default = ''type is "toplevel"'';
+      blur_by_default = "app_id is \"foot\"";
       bokeh_degrade = "1";
       bokeh_iterations = "15";
-      bokeh_offset = "5.000000";
+      bokeh_offset = "5";
       box_degrade = "1";
       box_iterations = "2";
-      box_offset = "1.000000";
+      box_offset = "1";
       gaussian_degrade = "1";
       gaussian_iterations = "2";
-      gaussian_offset = "1.000000";
+      gaussian_offset = "1";
       kawase_degrade = "3";
       kawase_iterations = "2";
-      kawase_offset = "1.700000";
+      kawase_offset = "1.7";
       method = "kawase";
       saturation = "1.000000";
       toggle = "none";
@@ -101,7 +101,7 @@ let
       focus_buttons_passthrough = "true";
       max_render_time = "-1";
       #plugins = "alpha animate autostart command decoration expo fast-switcher grid idle move oswitch place resize switcher vswitch window-rules wm-actions input-method-v1 zoom scale gtk-shell foreign-toplev wayfire-shell";
-      plugins = "alpha animate autostart command decoration expo fast-switcher foreign-toplevel grid gtk-shell idle move oswitch place resize switcher vswitch wayfire-shell window-rules wm-actions input-method-v1 zoom scale";
+      plugins = "alpha animate autostart command decoration expo fast-switcher foreign-toplevel grid gtk-shell idle move oswitch place resize switcher vswitch wayfire-shell window-rules wm-actions input-method-v1 zoom scale wobbly blur";
       preferred_decoration_mode = "client";
       transaction_timeout = "100";
       vheight = "3";
@@ -136,7 +136,7 @@ let
     };
     expo = {
       background = "\\#849971FF";
-      duration = "0";
+      duration = "300";
       inactive_brightness = "0.700000";
       keyboard_interaction = "true";
       offset = "5";
@@ -167,7 +167,7 @@ let
       zoom = "7.000000";
     };
     grid = {
-      duration = "300";
+      duration = "500";
       restore = "<super> KEY_KP0";
       slot_b = "<super> KEY_DOWN";
       slot_bl = "<super> KEY_KP1";
@@ -267,7 +267,7 @@ let
     scale = {
       allow_zoom = "false";
       bg_color = "\\#4c566aE6";
-      duration = "0";
+      duration = "300";
       inactive_alpha = "0.6";
       include_minimized = "true";
       middle_click_close = "false";
@@ -291,7 +291,7 @@ let
     vswipe = {
       background = "\\#1A1A1AFF";
       delta_threshold = "24.000000";
-      duration = "180";
+      duration = "300";
       enable_free_movement = "false";
       enable_horizontal = "true";
       enable_smooth_transition = "false";
@@ -309,7 +309,7 @@ let
       binding_left = "<ctrl> <super> KEY_LEFT";
       binding_right = "<ctrl> <super> KEY_RIGHT";
       binding_up = "<ctrl> <super> KEY_UP";
-      duration = "0";
+      duration = "300";
       gap = "20";
       send_win_down = "";
       send_win_last = "";
