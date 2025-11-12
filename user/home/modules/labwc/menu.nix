@@ -200,7 +200,7 @@ in
         >
           <item label="Lock">
             <action name="Execute">
-              <execute>x-lock</execute>
+              <execute>my-swaylock idle</execute>
             </action>
           </item>
           <item label="Reboot">
