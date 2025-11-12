@@ -45,6 +45,7 @@
       dwm = true;
       awesome = true;
       i3 = true;
+      openbox = true;
       # Wayland
       dwl = true;
       wayfire = true;
@@ -53,6 +54,7 @@
       niri = true;
       hypr = true;
       sway = true;
+      mangowc = true;
     };
 
     # Packages For this Machine
@@ -86,7 +88,6 @@
       "org.ppsspp.PPSSPP"
       "fm.reaper.Reaper"
       "org.ardour.Ardour"
-      "cn.feishu.Feishu"
     ];
 
     # Use Clash
