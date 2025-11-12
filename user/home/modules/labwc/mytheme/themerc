@@ -36,6 +36,24 @@ snapping.overlay.edge.border.width: 2
 snapping.overlay.region.border.color: #849971
 snapping.overlay.edge.border.color: #849971
 
+# Menu settings
+menu.border.color: #eceff4
+menu.border.width: 0
+menu.title.bg: Flat Solid
+menu.title.bg.color: #3b4635
+menu.title.text.color: #eceff4
+menu.items.bg: Flat Solid
+menu.items.bg.color: #3b4635
+menu.items.text.color: #eceff4
+menu.items.active.bg: Flat Solid 
+menu.items.active.bg.color: #849971
+menu.items.active.bg.border.color: #eceff4
+menu.items.active.text.color: #eceff4
+menu.separator.width: 1
+menu.separator.padding.width: 0
+menu.separator.padding.height: 3
+menu.separator.color: #eceff4
+
 # Title Bar Btn (xbm)
 ## Close
 window.active.button.close.unpressed.image.color: #eceff4

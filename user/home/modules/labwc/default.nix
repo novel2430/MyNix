@@ -10,8 +10,7 @@ let
 in
 {
   imports = [
-    # ./generate-init.nix
-    # ./scripts
+    ./menu.nix
   ];
 
   home.file.".config/labwc/rc.xml".source = ./rc.xml;

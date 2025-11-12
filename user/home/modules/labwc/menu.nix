@@ -1,6 +1,6 @@
 { pkgs, opt-config, ... }:
 let
-  terminal = "${pkgs.wezterm}/bin/wezterm";
+  terminal = "${pkgs.foot}/bin/foot";
   browser = "${pkgs.nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
   file = "${pkgs.nemo}/bin/nemo";
   spotify = "${pkgs.spotify}/bin/spotify";
@@ -18,7 +18,7 @@ let
   yazi = "${pkgs.yazi}/bin/yazi";
 in
 {
-  home.file.".config/openbox/menu.xml" = {
+  home.file.".config/labwc/menu.xml" = {
     executable = false;
     text = ''
     <?xml version="1.0" encoding="utf-8"?>
@@ -95,7 +95,7 @@ in
           </item>
           <item label="Network Editer">
             <action name="Execute">
-              <execute>${terminal} -e ${networkmanager}/nmtui</execute>
+              <execute>${terminal} ${networkmanager}/nmtui</execute>
             </action>
           </item>
           <item label="Fcitx5 Configure">
@@ -175,7 +175,7 @@ in
           </item>
           <item label="Yazi">
             <action name="Execute">
-              <execute>${terminal} -e ${yazi}</execute>
+              <execute>${terminal} ${yazi}</execute>
             </action>
           </item>
           <item label="Dingtalk">
