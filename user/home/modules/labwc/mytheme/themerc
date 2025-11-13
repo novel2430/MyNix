@@ -27,8 +27,10 @@ osd.workspace-switcher.boxes.height: 0
 osd.workspace-switcher.boxes.border.width: 0
 
 # Snapping
-snapping.overlay.region.bg.enabled: no
-snapping.overlay.edge.bg.enabled: no
+snapping.overlay.region.bg.enabled: yes
+snapping.overlay.edge.bg.enabled: yes
+snapping.overlay.region.bg.color: #3b4635af
+snapping.overlay.edge.bg.color: #3b4635af
 snapping.overlay.region.border.enabled: yes
 snapping.overlay.edge.border.enabled: yes
 snapping.overlay.region.border.width: 2
