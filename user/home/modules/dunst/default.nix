@@ -1,15 +1,10 @@
-{ config, pkgs, ... }:
+{ opt-config, pkgs, ... }:
 
 let
-  wofi = "${pkgs.wofi}/bin/wofi";
+  rofi = "${pkgs.rofi-wayland}/bin/rofi";
   xdg-open = "${pkgs.xdg-utils}/bin/xdg-open";
 in
 {
-  # home.file.".config/dunst/dunstrc".source = ./dunstrc;
-  # home.packages = [
-  #   pkgs.dunst 
-  # ];
-
   services.dunst = {
     enable = true;
     iconTheme = {
@@ -41,7 +36,7 @@ in
         horizontal_padding = 8;
         text_icon_padding = 0;
         frame_width = 3;
-        frame_color = "#eceff4";
+        frame_color = "#${opt-config.colors.dunst-border}";
         gap_size = 0;
         separator_color = "frame";
         sort = true;
@@ -60,7 +55,7 @@ in
         icon_position = "left";
         sticky_history = true;
         history_length = 20;
-        dmenu = "${wofi} --show dmenu";
+        dmenu = "${rofi} -dmenu";
         browser = "${xdg-open}";
         always_run_script = true;
         title = "Dunst";
@@ -77,22 +72,22 @@ in
         per_monitor_dpi = false;
       };
       urgency_low = {
-        background = "#3B4635";
-        foreground = "#eceff4";
-        highlight = "#eceff4";
+        background = "#${opt-config.colors.dunst-background}";
+        foreground = "#${opt-config.colors.foreground}";
+        highlight = "#${opt-config.colors.foreground}";
         timeout = 10;
       };
       urgency_normal = {
-        background = "#3B4635";
-        foreground = "#eceff4";
-        highlight = "#eceff4";
+        background = "#${opt-config.colors.dunst-background}";
+        foreground = "#${opt-config.colors.foreground}";
+        highlight = "#${opt-config.colors.foreground}";
         timeout = 10;
       };
       urgency_critical = {
-        background = "#bf616a";
-        foreground = "#eceff4";
-        frame_color = "#eceff4";
-        highlight = "#eceff4";
+        background = "#${opt-config.colors.red}";
+        foreground = "#${opt-config.colors.foreground}";
+        frame_color = "#${opt-config.colors.dunst-border}";
+        highlight = "#${opt-config.colors.foreground}";
         timeout = 0;
       };
       history_ignore = {

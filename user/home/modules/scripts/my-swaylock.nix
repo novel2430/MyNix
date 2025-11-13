@@ -9,8 +9,9 @@ pkgs.writeShellScriptBin "my-swaylock" ''
   x_pos=$(( $indicator_radius + $indicator_thickness + 10 ))
   y_pos=$(( $indicator_radius + $indicator_thickness + 10 ))
   y_pos=$(( 1080 - $y_pos ))
-  b_color="3b4252"
-  f_color="eceff4"
+  b_color="${opt-config.colors.dmenu-background}"
+  f_color="${opt-config.colors.focus-background}"
+  text_f_color="${opt-config.colors.foreground}"
   wrong_color="bf616a"
 
   case $1 in
@@ -34,10 +35,10 @@ pkgs.writeShellScriptBin "my-swaylock" ''
               --inside-ver-color 00000088 \
               --inside-clear-color 00000088 \
               --inside-wrong-color $wrong_color \
-              --text-color $f_color \
-              --text-ver-color $f_color \
-              --text-clear-color $f_color \
-              --text-wrong-color $f_color \
+              --text-color $text_f_color \
+              --text-ver-color $text_f_color \
+              --text-clear-color $text_f_color \
+              --text-wrong-color $text_f_color \
               --separator-color 00000000
       ;;
     idle)
@@ -59,10 +60,10 @@ pkgs.writeShellScriptBin "my-swaylock" ''
               --inside-ver-color 00000088 \
               --inside-clear-color 00000088 \
               --inside-wrong-color $wrong_color \
-              --text-color $f_color \
-              --text-ver-color $f_color \
-              --text-clear-color $f_color \
-              --text-wrong-color $f_color \
+              --text-color $text_f_color \
+              --text-ver-color $text_f_color \
+              --text-clear-color $text_f_color \
+              --text-wrong-color $text_f_color \
               --separator-color 00000000
       ;;
   esac

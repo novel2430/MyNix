@@ -11,9 +11,7 @@ let
 in
 {
 
-  home.file.".config/sway/config".source = ./config;
   home.file.".config/sway/waybar.jsonc".source = ./waybar.jsonc;
-  home.file.".config/sway/waybar.css".source = ./waybar.css;
   home.file.".config/sway/autostart.sh" = {
     executable = true;
     text = ''
@@ -52,5 +50,7 @@ in
 
   imports = [
     ./keybind.nix
+    ./sway-config.nix
+    ./waybar.nix
   ];
 }

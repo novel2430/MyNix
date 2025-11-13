@@ -126,16 +126,16 @@ let
       zoom = "0.100000";
     };
     decoration = {
-      active_color = "\\#849971FF";
+      active_color = "\\#${opt-config.colors.focus-background}ff";
       border_size = "2";
       button_order = "minimize maximize close";
       font = "Hack Nerd Font";
       ignore_views = "none";
-      inactive_color = "\\#4c566aFF";
+      inactive_color = "\\#${opt-config.colors.unfocus-border}ff";
       title_height = "22";
     };
     expo = {
-      background = "\\#849971FF";
+      background = "\\#${opt-config.colors.focus-background}ff";
       duration = "300";
       inactive_brightness = "0.700000";
       keyboard_interaction = "true";
@@ -232,8 +232,8 @@ let
       enable_snap = "true";
       enable_snap_off = "true";
       join_views = "false";
-      preview_base_border = "\\#849971CC";
-      preview_base_color = "\\#849971CC";
+      preview_base_border = "\\#${opt-config.colors.focus-background}cc";
+      preview_base_color = "\\#${opt-config.colors.focus-background}cc";
       preview_border_width = "0";
       quarter_snap_threshold = "50";
       snap_off_threshold = "10";
@@ -266,7 +266,7 @@ let
     };
     scale = {
       allow_zoom = "false";
-      bg_color = "\\#4c566aE6";
+      bg_color = "\\#${opt-config.colors.dmenu-background}e6";
       duration = "300";
       inactive_alpha = "0.6";
       include_minimized = "true";
@@ -274,7 +274,7 @@ let
       minimized_alpha = "0.450000";
       outer_margin = "0";
       spacing = "30";
-      text_color = "\\#eceff4FF";
+      text_color = "\\#${opt-config.colors.foreground}ff";
       title_font_size = "20";
       title_overlay = "all";
       title_position = "center";

@@ -3,10 +3,10 @@
   imports = [
     ./generate-init.nix
     ./scripts
+    ./waybar.nix
   ];
 
   home.file.".config/river/waybar.jsonc".source = ./waybar.jsonc;
-  home.file.".config/river/waybar.css".source = ./waybar.css;
 
   home.packages = [
     pkgs.river

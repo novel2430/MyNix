@@ -81,8 +81,8 @@
       #background=1C2E36
       #foreground=E0DEDA
       # Nord Nightfox Theme
-      background=20281f
-      foreground=cdcecf
+      background=${opt-config.colors.terminal-background}
+      foreground=${opt-config.colors.terminal-foreground}
       regular0=3b4252
       regular1=bf616a
       regular2=a3be8c

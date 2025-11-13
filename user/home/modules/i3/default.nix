@@ -14,9 +14,6 @@ let
 in
 {
 
-  home.file.".config/i3/config".source = ./config;
-  home.file.".config/i3/config.ini".source = ./config.ini;
-  home.file.".config/i3/bat.py".source = ./bat.py;
   home.file.".config/i3/temp.py".source = ./temp.py;
   home.file.".config/i3/autostart.sh" = {
     executable = true;
@@ -70,5 +67,11 @@ in
 
   home.packages = [
     pkgs.i3
+  ];
+
+  imports = [
+    ./bat.nix
+    ./i3-config.nix
+    ./polybar-config.nix
   ];
 }

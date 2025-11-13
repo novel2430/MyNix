@@ -12,9 +12,7 @@ let
 in
 {
 
-  home.file.".dwm/config.ini".source = ./config.ini;
   home.file.".dwm/temp.py".source = ./temp.py;
-  home.file.".dwm/bat.py".source = ./bat.py;
   home.file.".dwm/autostart.sh" = {
     executable = true;
     text = ''
@@ -65,5 +63,10 @@ in
 
   home.packages = [
     custom-pkgs.dwm
+  ];
+
+  imports = [
+    ./bat.nix
+    ./polybar-config.nix
   ];
 }

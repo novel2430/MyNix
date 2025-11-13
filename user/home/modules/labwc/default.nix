@@ -11,11 +11,12 @@ in
 {
   imports = [
     ./menu.nix
+    ./themerc.nix
+    ./waybar.nix
   ];
 
   home.file.".config/labwc/rc.xml".source = ./rc.xml;
   home.file.".config/labwc/waybar.jsonc".source = ./waybar.jsonc;
-  home.file.".config/labwc/waybar.css".source = ./waybar.css;
   home.file.".themes/mytheme/labwc" = {
     recursive = true;
     source = ./mytheme;

@@ -11,8 +11,7 @@
         // "sway/mode",
         // "sway/scratchpad",
         // "custom/media"
-        "niri/workspaces",
-        "wlr/taskbar"
+        "niri/workspaces"
     ],
     "modules-center": [
         // "river/window"

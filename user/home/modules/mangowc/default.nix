@@ -11,9 +11,7 @@ let
 in
 {
 
-  home.file.".config/mango/config.conf".source = ./config.conf;
   home.file.".config/mango/waybar.jsonc".source = ./waybar.jsonc;
-  home.file.".config/mango/waybar.css".source = ./waybar.css;
   home.file.".config/mango/autostart.sh" = {
     executable = true;
     text = ''
@@ -48,5 +46,10 @@ in
 
   home.packages = [
     pkgs.nur.repos.novel2430.mangowc
+  ];
+
+  imports = [
+    ./mangowc-config.nix
+    ./waybar.nix
   ];
 }

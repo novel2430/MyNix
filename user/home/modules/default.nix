@@ -18,7 +18,6 @@
     # ./qutebrowser
     ./fastfetch
     ./maven
-    # ./alacritty
     ./wezterm
     # ./emacs
     # ./direnv
@@ -75,7 +74,6 @@
   ]
   ++ 
   lib.optionals (opt-config.wm.mangowc || opt-config.wm.sway || opt-config.wm.river || opt-config.wm.wayfire || opt-config.wm.dwl || opt-config.wm.labwc || opt-config.wm.niri || opt-config.wm.hypr) [
-    ./wofi
     ./foot 
   ]
   ++ 

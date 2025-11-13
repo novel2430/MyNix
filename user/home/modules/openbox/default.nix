@@ -17,9 +17,7 @@ in
     recursive = true;
     source = ./mytheme;
   };
-  home.file.".config/openbox/config.ini".source = ./config.ini;
   home.file.".config/openbox/temp.py".source = ./temp.py;
-  home.file.".config/openbox/bat.py".source = ./bat.py;
   home.file.".config/openbox/rc.xml".source = ./rc.xml;
   home.file.".config/openbox/autostart" = {
     executable = true;
@@ -77,5 +75,8 @@ in
 
   imports = [
     ./menu.nix
+    ./bat.nix
+    ./themerc.nix
+    ./polybar-config.nix
   ];
 }

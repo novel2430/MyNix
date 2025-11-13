@@ -138,5 +138,23 @@
 
     # BT
     use-qb = true;
+
+    colors = {
+      focus-border = "eceff4";
+      unfocus-border = "3d4f82";
+      bar-background = "2e3440";
+      foreground = "eceff4";
+      focus-background = "547bc9";
+      focus-sec-background = "4c566a";
+      dmenu-background = "313e55";
+      dunst-background = "313e55";
+      dunst-border = "eceff4";
+      terminal-background = "2e3440";
+      terminal-foreground = "eceff4";
+      gray = "999797";
+      red = "bf616a";
+      green = "b1d196";
+      focus-background-rgb = "84,123,201"; # RGB of <focus-background>
+    };
   };
 }
