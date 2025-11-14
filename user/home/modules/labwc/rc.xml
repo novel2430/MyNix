@@ -284,13 +284,6 @@
     <!-- time is in ms -->
     <doubleClickTime>500</doubleClickTime>
 
-    <context name="Frame">
-      <mousebind button="A-Left" action="Press">
-        <action name="Focus" />
-        <action name="Raise" />
-      </mousebind>
-    </context>
-
     <context name="TitleBar">
       <mousebind button="Left" action="Press">
         <action name="Focus" />
@@ -330,6 +323,9 @@
     </context>
 
     <context name="Client">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+      </mousebind>
       <mousebind button="W-Right" action="Drag">
         <action name="Resize" />
       </mousebind>

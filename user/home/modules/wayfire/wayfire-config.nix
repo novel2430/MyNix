@@ -87,7 +87,7 @@ let
       command_audio_prev = "${app.playerctl} previous";
       command_web_browser = "${app.browser}";
       command_waybar = "killall waybar; ~/.config/wayfire/bar-run.sh";
-      command_power_menu = "wofi-power-menu";
+      command_power_menu = "rofi-power-menu";
       repeatable_binding_volume_down = "KEY_VOLUMEDOWN";
       repeatable_binding_volume_up = "KEY_VOLUMEUP";
       repeatable_binding_light_up = "KEY_BRIGHTNESSUP";

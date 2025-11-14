@@ -60,17 +60,19 @@
     # WM Options
     wm = {
       # X11
-      dwm = true;
+      dwm = false;
       awesome = false;
       i3 = false;
+      openbox = true;
       # Wayland
       dwl = true;
-      wayfire = false;
+      wayfire = true;
       river = false;
       labwc = true;
       niri = false;
       hypr = false;
       sway = false;
+      mangowc = false;
     };
 
     # Packages For this Machine
@@ -138,5 +140,23 @@
 
     # BT
     use-qb = false;
+
+    colors = {
+      focus-border = "eceff4";
+      unfocus-border = "3d4f82";
+      bar-background = "2e3440";
+      foreground = "eceff4";
+      focus-background = "547bc9";
+      focus-sec-background = "4c566a";
+      dmenu-background = "313e55";
+      dunst-background = "313e55";
+      dunst-border = "eceff4";
+      terminal-background = "2e3440";
+      terminal-foreground = "eceff4";
+      gray = "999797";
+      red = "bf616a";
+      green = "b1d196";
+      focus-background-rgb = "84,123,201"; # RGB of <focus-background>
+    };
   };
 }
