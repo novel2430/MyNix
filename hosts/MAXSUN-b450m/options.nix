@@ -141,20 +141,20 @@
 
     colors = {
       focus-border = "eceff4";
-      unfocus-border = "3d4f82";
-      bar-background = "2e3440";
+      unfocus-border = "3f3f36";
+      bar-background = "2d2825";
       foreground = "eceff4";
-      focus-background = "547bc9";
-      focus-sec-background = "4c566a";
-      dmenu-background = "313e55";
-      dunst-background = "313e55";
+      focus-background = "827f45";
+      focus-sec-background = "646544";
+      dmenu-background = "646544";
+      dunst-background = "646544";
       dunst-border = "eceff4";
-      terminal-background = "2e3440";
+      terminal-background = "2d2e1a";
       terminal-foreground = "eceff4";
       gray = "999797";
       red = "bf616a";
       green = "b1d196";
-      focus-background-rgb = "84,123,201"; # RGB of <focus-background>
+      focus-background-rgb = "130,127,69"; # RGB of <focus-background>
     };
   };
 }

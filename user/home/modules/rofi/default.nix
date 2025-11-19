@@ -19,6 +19,7 @@
       width: 25%;
       height: 40%;
       padding: 10px;
+      border: 0;
     }
     mainbox {
       background-color: #${opt-config.colors.dmenu-background};
