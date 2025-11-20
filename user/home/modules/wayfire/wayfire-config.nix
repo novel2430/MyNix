@@ -72,7 +72,7 @@ let
       binding_audio_prev = "KEY_PREVIOUSSONG";
       command_clipboard = "wlroot-clipboard";
       command_launcher = "${app.rofi} -show drun";
-      command_lock = "my-swaylock manual";
+      command_lock = "my-swaylock idle";
       command_mute = "my-volume mute";
       command_run_launcher = "${app.rofi} -show run";
       command_screenshot = "grim-slurp-screenshot full";
@@ -278,7 +278,7 @@ let
       title_font_size = "20";
       title_overlay = "all";
       title_position = "center";
-      toggle = "<alt> KEY_SPACE | hotspot right-top 10x10 250";
+      toggle = "<alt> KEY_SPACE";
       toggle_all = "";
     };
     switcher = {
@@ -304,11 +304,11 @@ let
     };
     vswitch = {
       background = "\\#1A1A1AFF";
-      binding_down = "<ctrl> <super> KEY_DOWN";
+      binding_down = "<ctrl> <super> KEY_DOWN | <ctrl> <super> KEY_J";
       binding_last = "";
-      binding_left = "<ctrl> <super> KEY_LEFT";
-      binding_right = "<ctrl> <super> KEY_RIGHT";
-      binding_up = "<ctrl> <super> KEY_UP";
+      binding_left = "<ctrl> <super> KEY_LEFT | <ctrl> <super> KEY_H";
+      binding_right = "<ctrl> <super> KEY_RIGHT | <ctrl> <super> KEY_L";
+      binding_up = "<ctrl> <super> KEY_UP | <ctrl> <super> KEY_K";
       duration = "300";
       gap = "20";
       send_win_down = "";
