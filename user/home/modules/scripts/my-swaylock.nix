@@ -2,6 +2,8 @@
 let
   swaylock = "${pkgs.swaylock-effects}/bin/swaylock";
   lock-img = "${opt-config.lock-img}";
+  grim_cmd = "${pkgs.grim}/bin/grim";
+  ffmpeg = "${pkgs.ffmpeg}/bin/ffmpeg";
 in
 pkgs.writeShellScriptBin "my-swaylock" ''
   indicator_radius=60
@@ -13,6 +15,12 @@ pkgs.writeShellScriptBin "my-swaylock" ''
   f_color="${opt-config.colors.focus-background}"
   text_f_color="${opt-config.colors.foreground}"
   wrong_color="bf616a"
+  screenshot="/tmp/temp_screenshot.png"
+  blur_screenshot="/tmp/temp_screenshot_blur.jpg"
+  take_full_and_blur() {
+    ${grim_cmd} "''${screenshot}" && \
+      ${ffmpeg} -i $screenshot -vf "gblur=sigma=10" $blur_screenshot -y 
+  }
 
   case $1 in
     manual)
@@ -42,9 +50,9 @@ pkgs.writeShellScriptBin "my-swaylock" ''
               --separator-color 00000000
       ;;
     idle)
-      ${swaylock} \
+      take_full_and_blur && ${swaylock} \
               --ignore-empty-password \
-              --image ${lock-img} \
+              --image $blur_screenshot \
               --clock \
               --indicator \
               --indicator-radius $indicator_radius \
