@@ -36,6 +36,7 @@ in
       # Screenshot
       "Print" = "${screenshot}";
       "super + Print" = "${screenshot-select}";
+      "super + shift + s" = "${screenshot-select}";
       # Powermenu
       "super + shift + p" = "${powermenu}";
       # Volume

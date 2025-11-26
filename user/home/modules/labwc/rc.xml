@@ -150,9 +150,9 @@
       <action name="Execute" command="rofi-power-menu"/>
     </keybind>
     <!-- Maybe Sticky? -->
-    <keybind key="W-S-s">
-      <action name="ToggleOmnipresent" />
-    </keybind>
+    <!-- <keybind key="W-S-s"> -->
+    <!--   <action name="ToggleOmnipresent" /> -->
+    <!-- </keybind> -->
     <keybind key="W-f">
       <action name="ToggleFullscreen" />
     </keybind>
@@ -208,6 +208,9 @@
       <action name="Execute" command="grim-slurp-screenshot full" />
     </keybind>
     <keybind key="W-Print">
+      <action name="Execute" command="grim-slurp-screenshot" />
+    </keybind>
+    <keybind key="W-S-s">
       <action name="Execute" command="grim-slurp-screenshot" />
     </keybind>
   <!-- Workspace -->

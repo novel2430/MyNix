@@ -272,6 +272,7 @@ in
     bind = $mainMod SHIFT, E, exit,
     bind = $mainMod SHIFT, SPACE, togglefloating,
     bind = , PRINT, exec, $screenshot
+    bind = $mainMod SHIFT, S, exec, $screenshotSelect
     bind = $mainMod, PRINT, exec, $screenshotSelect
     bind = $mainMod SHIFT, C, exec, $clashSwitcher
 

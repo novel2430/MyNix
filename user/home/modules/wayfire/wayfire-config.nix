@@ -62,7 +62,7 @@ let
       binding_mute = "KEY_MUTE";
       binding_run_launcher = "<super> KEY_R";
       binding_screenshot = "KEY_SYSRQ";
-      binding_screenshot_interactive = "<super> KEY_SYSRQ";
+      binding_screenshot_interactive = "<super> KEY_SYSRQ | <super> <shift> KEY_S";
       binding_terminal = "<super> KEY_ENTER";
       binding_web_browser = "<super> <shift> KEY_F";
       binding_waybar = "<super> <shift> KEY_B";
@@ -351,7 +351,8 @@ let
       toggle_fullscreen = "<super> KEY_F";
       toggle_maximize = "<super> KEY_M";
       toggle_showdesktop = "none";
-      toggle_sticky = "<super> <shift> KEY_S";
+      # toggle_sticky = "<super> <shift> KEY_S";
+      toggle_sticky = "";
     };
     wobbly = {
       friction = "3.000000";

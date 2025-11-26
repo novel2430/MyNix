@@ -82,6 +82,7 @@ rec {
       # Screenshot
       { modes = ["normal" "locked"]; keys = "None Print"; action = "${apps.screenshot} full"; }
       { modes = ["normal"]; keys = "Super Print"; action = "${apps.screenshot}"; }
+      { modes = ["normal"]; keys = "Super+Shift S"; action = "${apps.screenshot}"; }
       # Reload Config
       { modes = ["normal"]; keys = "Super+Shift R"; action = "~/.config/river/init reload"; }
       # FuzzyMarks
@@ -149,7 +150,7 @@ rec {
       toggle-focused-tags = "Super+Control";
       all-tags = "Super 0";
       toggle-view-tags = "Super+Control+Shift";
-      sticky-tag="Super+Shift S";
+      sticky-tag="";
     };
   };
   # Define Background and Border

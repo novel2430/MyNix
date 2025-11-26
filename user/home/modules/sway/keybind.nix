@@ -53,6 +53,7 @@ in
       bindsym XF86AudioPrev exec ${playerctl} previous
       bindsym Print exec ${screenshot} full
       bindsym Mod4+Print exec ${screenshot}
+      bindsym Mod4+Shift+s exec ${screenshot}
     '';
   };
 }

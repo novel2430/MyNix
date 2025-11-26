@@ -174,6 +174,7 @@ in
     bind=NONE,XF86AudioPrev,spawn,${apps.playerctl} previous
     bind=NONE,Print,spawn,grim-slurp-screenshot full
     bind=SUPER,Print,spawn,grim-slurp-screenshot
+    bind=SUPER+SHIFT,s,spawn,grim-slurp-screenshot
 
     # exit
     bind=SUPER+SHIFT,e,quit

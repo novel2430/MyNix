@@ -622,6 +622,7 @@ in
 
         Print { spawn-sh "grim-slurp-screenshot full"; }
         Mod+Print { spawn-sh "grim-slurp-screenshot"; }
+        Mod+Shift+S { spawn-sh "grim-slurp-screenshot"; }
         // Ctrl+Print { screenshot-screen; }
         // Alt+Print { screenshot-window; }
 
