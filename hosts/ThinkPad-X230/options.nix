@@ -86,6 +86,8 @@
       chromium
       nur.repos.novel2430.shotcut-bin 
       nur.repos.novel2430.hmcl 
+      # lutris
+      # wine
     ];
     flatpak-packages = [
       "com.discordapp.Discord"
