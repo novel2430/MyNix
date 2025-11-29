@@ -15,12 +15,11 @@
         "wlr/workspaces",
         "wlr/taskbar"
     ],
-    "modules-center": [
+    // "modules-center": [
         // "river/window"
         //"hyprland/window"
         // "wlr/taskbar"
-        "clock"
-    ],
+    // ],
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
@@ -36,6 +35,7 @@
         //"battery#bat2",
         "memory",
         "cpu",
+        "clock",
         "tray"
     ],
     // Modules configuration
