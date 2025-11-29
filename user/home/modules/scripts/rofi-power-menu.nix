@@ -4,7 +4,7 @@ pkgs.writeShellScriptBin "rofi-power-menu" ''
   shutdown_menu="Shutdown"
   lock_menu="Lock"
   logout_menu="Logout"
-  res=$(printf '%s\n%s\n%s\n%s' $reboot_menu $shutdown_menu $lock_menu $logout_menu | ${pkgs.rofi-wayland}/bin/rofi -dmenu -i)
+  res=$(printf '%s\n%s\n%s\n%s' $reboot_menu $shutdown_menu $lock_menu $logout_menu | ${pkgs.rofi}/bin/rofi -dmenu -i)
   WAYLAND_DISPLAY=$(cat /home/${opt-config.username}/.wm_state)
 
   if [ $res = $reboot_menu ]; then

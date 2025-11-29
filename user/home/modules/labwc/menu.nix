@@ -1,4 +1,4 @@
-{ pkgs, opt-config, ... }:
+{ pkgs, opt-config, custom-pkgs, ... }:
 let
   terminal = "${pkgs.foot}/bin/foot";
   browser = "${pkgs.nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
@@ -8,11 +8,10 @@ let
   pwvucontrol = "${pkgs.pwvucontrol}/bin/pwvucontrol";
   networkmanager = "${pkgs.networkmanager}/bin";
   flatpak = "${pkgs.flatpak}/bin/flatpak";
-  gedit = "${pkgs.nur.repos.novel2430.gedit}/bin/gedit";
+  gedit = "${custom-pkgs.gedit}/bin/gedit";
   obs = "${pkgs.obs-studio}/bin/obs";
   dingtalk = "${pkgs.nur.repos.novel2430.dingtalk}/bin/dingtalk";
   brave = "${pkgs.brave}/bin/brave";
-  baidunetdisk = "${pkgs.nur.repos.novel2430.baidunetdisk}/bin/baidunetdisk";
   fcitx5-configtool = "${pkgs.fcitx5}/bin/fcitx5-configtool";
   motrix = "${pkgs.motrix}/bin/motrix";
   yazi = "${pkgs.yazi}/bin/yazi";
@@ -185,7 +184,7 @@ in
           </item>
           <item label="Baidu Netdisk">
             <action name="Execute">
-              <execute>${baidunetdisk}</execute>
+              <execute>baidunetdisk</execute>
             </action>
           </item>
           <item label="Brave Browser">

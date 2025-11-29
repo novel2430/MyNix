@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{pkgs, pkgs-2505, ... }:
 {
   dingtalk = pkgs.callPackage ./dingtalk {};
   # novel-ags = pkgs.callPackage ./novel-ags {
@@ -9,6 +9,7 @@
   waybar = pkgs.callPackage ./waybar {};
   dwm = pkgs.callPackage ./dwm {};
   polybar-dwm = pkgs.callPackage ./polybar-dwm {};
-  shotcut-bin = pkgs.callPackage ./shotcut {};
+  # shotcut-bin = pkgs.callPackage ./shotcut {};
   hmcl = pkgs.callPackage ./hmcl {};
+  gedit = pkgs-2505.callPackage ./gedit {};
 }

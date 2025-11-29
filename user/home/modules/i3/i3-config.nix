@@ -40,7 +40,7 @@
     bindsym Mod4+q kill
 
     # start dmenu (a program launcher)
-    bindsym Mod4+d exec ${pkgs.rofi-wayland}/bin/rofi -show drun
+    bindsym Mod4+d exec ${pkgs.rofi}/bin/rofi -show drun
 
     # change focus
     bindsym Mod4+$left focus left

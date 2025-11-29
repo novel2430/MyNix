@@ -90,6 +90,10 @@ stdenv.mkDerivation (finalAttrs: {
 
   patches = [ ./remove-hardcoded-etc.diff ];
 
+  cmakeFlags = [
+    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+  ];
+
   # Replace hardcoded /etc when copying and reading the default config.
   postPatch = ''
     substituteInPlace CMakeLists.txt --replace "/etc" $out

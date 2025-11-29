@@ -20,8 +20,8 @@ let
   };
   apps = with pkgs; {
     terminal = "${foot}/bin/foot";
-    dmenu = "${rofi-wayland}/bin/rofi -show drun";
-    rmenu = "${rofi-wayland}/bin/rofi -show run";
+    dmenu = "${rofi}/bin/rofi -show drun";
+    rmenu = "${rofi}/bin/rofi -show run";
     browser = "${nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     wlrootsClipboard = "${wlroot-clipboard-path}/bin/wlroot-clipboard";

@@ -2,7 +2,7 @@
 let
   dunstify = "${pkgs.dunst}/bin/dunstify";
   find = "${pkgs.findutils}/bin/find";
-  rofi = "${pkgs.rofi-wayland}/bin/rofi";
+  rofi = "${pkgs.rofi}/bin/rofi";
 in
 pkgs.writeShellScriptBin "clash-switcher" ''
   choice="$(

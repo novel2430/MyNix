@@ -4,7 +4,7 @@ let
   slurp_cmd    = "${pkgs.slurp}/bin/slurp";
   dunstify_cmd = "${pkgs.dunst}/bin/dunstify";
   gradia       = "${pkgs.gradia}/bin/gradia";
-  rofi_cmd     = "${pkgs.rofi-wayland}/bin/rofi";
+  rofi_cmd     = "${pkgs.rofi}/bin/rofi";
 in
 pkgs.writeShellScriptBin "grim-slurp-screenshot" ''
   set -euo pipefail

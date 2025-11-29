@@ -3,7 +3,7 @@ let
   maim_cmd     = "${pkgs.maim}/bin/maim";
   dunstify_cmd = "${pkgs.dunst}/bin/dunstify";
   gradia       = "${pkgs.gradia}/bin/gradia";
-  rofi_cmd     = "${pkgs.rofi-wayland}/bin/rofi";
+  rofi_cmd     = "${pkgs.rofi}/bin/rofi";
 in
 pkgs.writeShellScriptBin "maim-screenshot" ''
   set -euo pipefail

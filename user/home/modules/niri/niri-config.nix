@@ -2,7 +2,7 @@
 let
   apps = with pkgs; {
     terminal = "${pkgs.foot}/bin/foot";
-    dmenu = "${rofi-wayland}/bin/rofi";
+    dmenu = "${rofi}/bin/rofi";
     web-browser = "${nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     playerctl = "${playerctl}/bin/playerctl";

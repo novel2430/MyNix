@@ -1,7 +1,7 @@
 { opt-config, pkgs, ... }:
 
 let
-  rofi = "${pkgs.rofi-wayland}/bin/rofi";
+  rofi = "${pkgs.rofi}/bin/rofi";
   xdg-open = "${pkgs.xdg-utils}/bin/xdg-open";
 in
 {

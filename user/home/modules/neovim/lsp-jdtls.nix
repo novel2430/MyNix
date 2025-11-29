@@ -170,5 +170,8 @@ local jdtls_server = {
     },
   },
 }
-require('lspconfig').jdtls.setup(jdtls_server)
+
+vim.lsp.config('jdtls', jdtls_server)
+vim.lsp.enable('jdtls')
+
 ''

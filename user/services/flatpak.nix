@@ -3,7 +3,7 @@
   services.flatpak = {
 
     packages = [
-      # "com.obsproject.Studio"
+      "com.tencent.wemeet"
     ]++ opt-config.flatpak-packages;
 
     uninstallUnmanaged = false;

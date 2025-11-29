@@ -9,7 +9,7 @@
   home.file.".config/river/waybar.jsonc".source = ./waybar.jsonc;
 
   home.packages = [
-    pkgs.river
+    pkgs.river-classic
     pkgs.rivercarro
   ];
 }

@@ -1,13 +1,13 @@
 {
   description = "My NixOS flake";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    # nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-2505.url = "github:NixOS/nixpkgs/nixos-25.05";
     # Unstable
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # HomeManager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Nix-Flatpak
@@ -31,7 +31,7 @@
     # };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nur, nix-flatpak, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-2505, nixpkgs-unstable, home-manager, nur, nix-flatpak, ... }@inputs:
   let
     system = "x86_64-linux";
     # Packages Setting
@@ -40,7 +40,7 @@
       inherit system;
       inherit nixpkgs-unstable;
       inherit nur;
-      # inherit nixpkgs-2405;
+      inherit nixpkgs-2505;
       # inherit astal;
       # inherit ags;
     };

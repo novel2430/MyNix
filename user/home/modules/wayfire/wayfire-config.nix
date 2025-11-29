@@ -2,7 +2,7 @@
 with lib;
 let
   app = {
-    rofi = "${pkgs.rofi-wayland}/bin/rofi";
+    rofi = "${pkgs.rofi}/bin/rofi";
     terminal = "${pkgs.foot}/bin/foot";
     brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
     playerctl = "${pkgs.playerctl}/bin/playerctl";

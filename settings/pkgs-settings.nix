@@ -1,4 +1,4 @@
-{nixpkgs, system, nixpkgs-unstable, nur, ...}:
+{nixpkgs, system, nixpkgs-unstable, nur, nixpkgs-2505, ...}:
 let
   cuda-stuff = [
     "cuda-merged"
@@ -58,6 +58,7 @@ rec {
   allowed-insecure-packages = [
     "electron-11.5.0"
     "openssl-1.1.1w"
+    "qtwebengine-5.15.19"
   ];
   # Stable Brach Packages
   stable-pkgs = import nixpkgs {
@@ -73,10 +74,19 @@ rec {
     config.permittedInsecurePackages = allowed-insecure-packages;
     overlays = [ nur.overlay ];
   };
+
+  pkgs-2505 = import nixpkgs-2505 {
+    inherit system;
+    config.allowUnfreePredicate = allowed-unfree-packages;
+    config.permittedInsecurePackages = allowed-insecure-packages;
+    overlays = [ nur.overlay ];
+  };
+
   # Custom Packages
   custom-pkgs = import ../custom-pkgs {
     pkgs = stable-pkgs;
     unstable-pkgs = unstable-pkgs;
+    inherit pkgs-2505;
     # astal = astal.packages.${system};
     # ags = ags.packages.${system}.default;
   };

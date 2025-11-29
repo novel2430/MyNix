@@ -137,22 +137,9 @@ local lsp_servers = {
 
 -- Start lspconfig
 for server_name, server_config in pairs(lsp_servers) do
-  require('lspconfig')[server_name].setup {
+  vim.lsp.config(server_name, {
     capabilities = capabilities,
     settings = server_config
-  }
+  })
+  vim.lsp.enable(server_name)
 end
-
--- For Vue (Volar)
--- require('lspconfig').volar.setup {
---   capabilities = capabilities,
---   init_options = {
---     vue = {
---       hybridMode = false,
---     },
---     typescript = {
---       tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
---     },
---   },
---   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
--- }
