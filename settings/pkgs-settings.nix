@@ -52,6 +52,7 @@ rec {
     "wechat-appimage"
     "unrar"
     "davinci-resolve"
+    "cursor"
   ]
   ++ cuda-stuff);
   # Superset of the default insecure packages

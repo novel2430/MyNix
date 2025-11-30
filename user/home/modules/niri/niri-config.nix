@@ -389,7 +389,7 @@ in
         Mod+Return hotkey-overlay-title="Terminal: Foot" { spawn "${apps.terminal}"; }
         Mod+D hotkey-overlay-title="Application Menu: Rofi" { spawn-sh "${apps.dmenu} -show drun"; }
         Mod+R hotkey-overlay-title="Shell Cmd Menu: Rofi" { spawn-sh "${apps.dmenu} -show run"; }
-        Mod+Shift+S hotkey-overlay-title="Window Switcher" { spawn-sh "python ~/.config/niri/niri-rofi-window-switcher.py"; }
+        // Mod+Shift+S hotkey-overlay-title="Window Switcher" { spawn-sh "python ~/.config/niri/niri-rofi-window-switcher.py"; }
         Mod+Shift+L hotkey-overlay-title="Screenlock: Swaylock" { spawn-sh "my-swaylock idle"; }
         Mod+Shift+P hotkey-overlay-title="Powermenu" { spawn-sh "rofi-power-menu"; }
         Mod+C hotkey-overlay-title="Clipboard Menu" { spawn-sh "wlroot-clipboard"; }

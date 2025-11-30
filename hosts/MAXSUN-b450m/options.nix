@@ -80,6 +80,7 @@
       protonup-qt
       openttd
       ryubing #ryujinx
+      code-cursor-fhs
     ];
     flatpak-packages = [
       "org.audacityteam.Audacity"
