@@ -100,8 +100,7 @@ let
       focus_buttons = "BTN_LEFT | BTN_MIDDLE | BTN_RIGHT";
       focus_buttons_passthrough = "true";
       max_render_time = "-1";
-      #plugins = "alpha animate autostart command decoration expo fast-switcher grid idle move oswitch place resize switcher vswitch window-rules wm-actions input-method-v1 zoom scale gtk-shell foreign-toplev wayfire-shell";
-      plugins = "alpha animate autostart command decoration expo fast-switcher foreign-toplevel grid gtk-shell idle move oswitch place resize switcher vswitch wayfire-shell window-rules wm-actions input-method-v1 zoom scale wobbly blur";
+      plugins = "alpha animate autostart command decoration expo fast-switcher foreign-toplevel grid gtk-shell idle move oswitch place resize switcher vswitch wayfire-shell window-rules wm-actions input-method-v1 zoom scale wobbly blur session-lock";
       preferred_decoration_mode = "client";
       transaction_timeout = "100";
       vheight = "3";

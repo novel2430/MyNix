@@ -145,17 +145,17 @@
       unfocus-border = "3f3f36";
       bar-background = "2d2825";
       foreground = "eceff4";
-      focus-background = "827f45";
-      focus-sec-background = "646544";
-      dmenu-background = "646544";
-      dunst-background = "646544";
+      focus-background = "5e936c";
+      focus-sec-background = "827f45";
+      dmenu-background = "3e5f44";
+      dunst-background = "3e5f44";
       dunst-border = "eceff4";
-      terminal-background = "2d2e1a";
+      terminal-background = "2d2825";
       terminal-foreground = "eceff4";
       gray = "999797";
       red = "bf616a";
       green = "b1d196";
-      focus-background-rgb = "130,127,69"; # RGB of <focus-background>
+      focus-background-rgb = "94,147,108"; # RGB of <focus-background>
     };
   };
 }
