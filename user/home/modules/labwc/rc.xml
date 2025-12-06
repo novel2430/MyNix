@@ -129,7 +129,7 @@
     </keybind>
     <!-- Application -->
     <keybind key="W-Return">
-      <action name="Execute" command="foot" />
+      <action name="Execute" command="wezterm" />
     </keybind>
     <keybind key="W-d">
       <action name="Execute" command="rofi -show drun" />

@@ -3,6 +3,7 @@ local my_look = require("config.look")
 local my_font = require("config.fonts")
 local my_settings = require("config.settings")
 local my_keys = require("config.keys")
+local my_bar = require("config.bar")
 local config = {}
 
 config.colors = my_look.colors
@@ -21,6 +22,13 @@ config.scrollback_lines = my_settings.history_line
 config.notification_handling = "NeverShow"
 config.warn_about_missing_glyphs = false
 config.adjust_window_size_when_changing_font_size = false
+
+-- Tab Bar Stuff
+config.enable_tab_bar = my_bar.enable_tab_bar
+config.hide_tab_bar_if_only_one_tab = my_bar.hide_tab_bar_if_only_one_tab
+config.use_fancy_tab_bar = my_bar.use_fancy_tab_bar
+config.show_new_tab_button_in_tab_bar = my_bar.show_new_tab_button_in_tab_bar
+config.tab_bar_at_bottom = my_bar.tab_bar_at_bottom
 
 return config
 

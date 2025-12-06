@@ -3,7 +3,7 @@ with lib;
 let
   app = {
     rofi = "${pkgs.rofi}/bin/rofi";
-    terminal = "${pkgs.foot}/bin/foot";
+    terminal = "${pkgs.wezterm}/bin/wezterm";
     brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
     playerctl = "${pkgs.playerctl}/bin/playerctl";
     browser = "${pkgs.nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";

@@ -18,8 +18,8 @@ let
     python312
     pkg-config
     gcc
-    python310Full
-    python312Full
+    # python310Full
+    # python312Full
     nodejs_22
     # Others - MSST
     # portaudio
@@ -51,7 +51,7 @@ let
     # glib
     # glibc
     # Others - MIDI -> AUDIO
-    # fluidsynth
+    fluidsynth
   ];
   base = pkgs.appimageTools.defaultFhsEnvArgs;
   new-home-dir = "$HOME/MyFHS";

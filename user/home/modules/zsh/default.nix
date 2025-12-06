@@ -46,7 +46,7 @@ in
       neofetch = "${pkgs.fastfetch}/bin/fastfetch";
       gitall = "git add . && git commit -m 'update' && git push";
       v = "nvim";
-      fhs = "nix develop ~/MyNix#fhs";
+      fhs = "nix develop ~/src/MyNix#fhs";
       cat = "${pkgs.bat}/bin/bat -p";
       yz = "${pkgs.yazi}/bin/yazi";
       grep = "${pkgs.ripgrep}/bin/rg -i";

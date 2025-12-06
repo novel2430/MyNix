@@ -1,7 +1,7 @@
 {opt-config, pkgs, ...}:
 let
   apps = with pkgs; {
-    terminal = "${pkgs.foot}/bin/foot";
+    terminal = "${pkgs.wezterm}/bin/wezterm";
     dmenu = "${rofi}/bin/rofi";
     web-browser = "${nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";

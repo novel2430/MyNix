@@ -19,7 +19,7 @@ let
     inherit opt-config;
   };
   apps = with pkgs; {
-    terminal = "${foot}/bin/foot";
+    terminal = "${wezterm}/bin/wezterm";
     dmenu = "${rofi}/bin/rofi -show drun";
     rmenu = "${rofi}/bin/rofi -show run";
     browser = "${nur.repos.novel2430.zen-browser-bin}/bin/zen-browser";

@@ -22,7 +22,7 @@ rec {
 
   # Define paths to custom and standard applications
   apps = {
-    terminal = "${pkgs.foot}/bin/foot";
+    terminal = "${pkgs.wezterm}/bin/wezterm";
     brightnessctl = "${brightnessctl}/bin/brightnessctl";
     rofi = "${rofi}/bin/rofi";
     wlrootsClipboard = "${wlroot-clipboard-path}/bin/wlroot-clipboard";
