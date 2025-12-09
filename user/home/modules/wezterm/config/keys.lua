@@ -95,8 +95,6 @@ M.keybind = {
   { key = 'k',        mods = 'CTRL',       action = act.ScrollByLine(-1) },
   { key = 'j',        mods = 'CTRL',       action = act.ScrollByLine(1) },
   -- Tab
-  -- -- Create Tab
-  { key = 'c',        mods = 'CTRL|SHIFT', action = act.SpawnTab 'CurrentPaneDomain' },
   -- -- Delete Tab
   { key = 'd',        mods = 'CTRL|SHIFT', action = act.CloseCurrentTab { confirm = false } },
   -- -- Rename Tab
@@ -124,13 +122,13 @@ M.keybind = {
 for i = 1, 9 do
   table.insert(M.keybind, {
     key = tostring(i),
-    mods = 'CTRL',
+    mods = 'ALT',
     action = act.ActivateTab(i - 1),
   })
 end
 table.insert(M.keybind, {
   key = '0',
-  mods = 'CTRL',
+  mods = 'ALT',
   action = act.ActivateTab(10),
 })
 
