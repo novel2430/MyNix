@@ -12,14 +12,11 @@
         // "sway/scratchpad",
         // "custom/media"
 	      //"river/tags"
-        "wlr/workspaces",
-        "wlr/taskbar"
+        "wlr/workspaces"
     ],
-    // "modules-center": [
-        // "river/window"
-        //"hyprland/window"
-        // "wlr/taskbar"
-    // ],
+    "modules-center": [
+        "clock"
+    ],
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
@@ -35,7 +32,6 @@
         //"battery#bat2",
         "memory",
         "cpu",
-        "clock",
         "tray"
     ],
     // Modules configuration

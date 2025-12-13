@@ -19,7 +19,7 @@
     <icon>Papirus</icon>
     <fallbackAppIcon>labwc</fallbackAppIcon>
     <titlebar>
-      <layout>icon:iconify,max,close</layout>
+      <layout>icon:max,close</layout>
       <showTitle>yes</showTitle>
     </titlebar>
     <cornerRadius>0</cornerRadius>

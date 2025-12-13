@@ -27,6 +27,7 @@
       rust-analyzer # Rust
       vue-language-server vtsls # Vue
       kotlin-language-server # Kotlin
+      typescript-language-server
     ];
     extraLuaConfig = ''
       ${builtins.readFile ./options/basic-autocommand.lua}

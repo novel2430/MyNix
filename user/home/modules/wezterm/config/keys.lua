@@ -92,8 +92,6 @@ M.keybind = {
   -- Moving
   { key = 'PageUp',   mods = 'CTRL|SHIFT', action = act.ScrollByPage(-1) },
   { key = 'PageDown', mods = 'CTRL|SHIFT', action = act.ScrollByPage(1) },
-  { key = 'k',        mods = 'CTRL',       action = act.ScrollByLine(-1) },
-  { key = 'j',        mods = 'CTRL',       action = act.ScrollByLine(1) },
   -- Tab
   -- -- Delete Tab
   { key = 'd',        mods = 'CTRL|SHIFT', action = act.CloseCurrentTab { confirm = false } },
