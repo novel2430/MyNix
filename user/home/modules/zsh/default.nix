@@ -16,9 +16,6 @@ let
       export EMACS_JAVA_21_PATH="${pkgs.openjdk21}/lib/openjdk/bin/java"
     '')
     (''
-      export FZF_COMPLETION_TRIGGER='\'
-    '')
-    (''
       export EDITOR="nvim"
       export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
       export AWESOMEWM_BAR_CLIENT_TITLE_MAX_LEN="${opt-config.awesomewm-bar-client-title-max-len}"
@@ -89,19 +86,6 @@ in
         zstyle ':vcs_info:git:*' formats '(%F{red}%b%f)%u%c '
 
         export PROMPT='%B%F{blue}[%n:%F{green}%~%F{blue}]$%f%b ''${vcs_info_msg_0_}'
-      '')
-      # FZF Stuff
-      (''
-        # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
-        # - The first argument to the function ($1) is the base path to start traversal
-        # - See the source code (completion.{bash,zsh}) for the details.
-        _fzf_compgen_path() {
-          fd --follow --exclude ".git" . "$1"
-        }
-        # Use fd to generate the list for directory completion
-        _fzf_compgen_dir() {
-          fd --type d --follow --exclude ".git" . "$1"
-        }
       '')
       # zsh-history-substring-search
       (''

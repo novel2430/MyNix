@@ -11,7 +11,7 @@
     ./neovim
     ./tmux
     ./mimetype
-    ./fzf
+    # ./fzf
     ./scripts
     ./pics
     ./mpv
