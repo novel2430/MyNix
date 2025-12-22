@@ -50,9 +50,9 @@ pkgs.writeShellScriptBin "my-swaylock" ''
               --separator-color 00000000
       ;;
     idle)
-      take_full_and_blur && ${swaylock} \
+      ${swaylock} \
               --ignore-empty-password \
-              --image $blur_screenshot \
+              --image ${lock-img} \
               --clock \
               --indicator \
               --indicator-radius $indicator_radius \
