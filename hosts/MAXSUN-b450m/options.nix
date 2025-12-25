@@ -81,6 +81,9 @@
       openttd
       ryubing #ryujinx
       code-cursor-fhs
+
+      lmms
+      soundfont-fluid
     ];
     flatpak-packages = [
       "org.audacityteam.Audacity"
