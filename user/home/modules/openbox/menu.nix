@@ -8,7 +8,7 @@ let
   pwvucontrol = "${pkgs.pwvucontrol}/bin/pwvucontrol";
   networkmanager = "${pkgs.networkmanager}/bin";
   flatpak = "${pkgs.flatpak}/bin/flatpak";
-  gedit = "${custom-pkgs.gedit}/bin/gedit";
+  #gedit = "${custom-pkgs.gedit}/bin/gedit";
   obs = "${pkgs.obs-studio}/bin/obs";
   dingtalk = "${pkgs.nur.repos.novel2430.dingtalk}/bin/dingtalk";
   brave = "${pkgs.brave}/bin/brave";
@@ -54,7 +54,7 @@ in
           </item>
           <item label="Gedit">
             <action name="Execute">
-              <execute>${gedit}</execute>
+              <execute>gedit</execute>
             </action>
           </item>
         </menu>

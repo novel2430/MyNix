@@ -31,12 +31,13 @@ let
     lswt
     gradia # Like Small Painter
     swaybg
+    gedit
 
     # Modify Packages
     ## modify-pkgs.*
     # Custom Packages
     ## custom-pkgs.*
-    custom-pkgs.gedit
+    #custom-pkgs.gedit
     # Unstable
     ## unstable.*
     ## unstable.*

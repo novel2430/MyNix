@@ -66,21 +66,19 @@ rec {
     inherit system;
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
-    overlays = [ nur.overlay ];
+    overlays = [ nur.overlays.default ];
   };
   # Unstable Brach Packages
   unstable-pkgs = import nixpkgs-unstable {
     inherit system;
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
-    overlays = [ nur.overlay ];
   };
 
   pkgs-2505 = import nixpkgs-2505 {
     inherit system;
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
-    overlays = [ nur.overlay ];
   };
 
   # Custom Packages
