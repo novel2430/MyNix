@@ -21,6 +21,10 @@
     lib.optionals (opt-config.use-qb == true) [
       ./qbittorrent-nox.nix
     ]
+    ++
+    lib.optionals (opt-config.use-clash == true) [
+      ./mihomo-tw.nix
+    ]
   ;
 
 }

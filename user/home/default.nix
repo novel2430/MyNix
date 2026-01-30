@@ -49,7 +49,7 @@ let
     nur.repos.novel2430.zju-connect
     nur.repos.novel2430.wpsoffice-365
     nur.repos.novel2430.zen-browser-bin
-    nur.repos.novel2430.dingtalk
+    # nur.repos.novel2430.dingtalk
     nur.repos.novel2430.baidunetdisk
     nur.repos.xddxdd.qq
   ]

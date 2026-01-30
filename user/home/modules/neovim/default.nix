@@ -66,29 +66,29 @@
         ;
       }
       # treesitter
-      {
-        plugin = (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-          p.tree-sitter-vim
-          p.tree-sitter-bash
-          p.tree-sitter-lua
-          p.tree-sitter-python
-          p.tree-sitter-json
-          p.tree-sitter-jsonc
-          p.tree-sitter-yaml
-          p.tree-sitter-xml
-          p.tree-sitter-ninja
-          p.tree-sitter-meson
-          p.tree-sitter-markdown
-          p.tree-sitter-java
-          p.tree-sitter-html
-          p.tree-sitter-css
-          p.tree-sitter-cpp
-          p.tree-sitter-cmake
-          p.tree-sitter-c
-        ]));
-        config = toLuaFile ./plugins/treesitter.lua;
-      }
+      # {
+      #   plugin = (nvim-treesitter.withPlugins (p: [
+      #     p.tree-sitter-nix
+      #     p.tree-sitter-vim
+      #     p.tree-sitter-bash
+      #     p.tree-sitter-lua
+      #     p.tree-sitter-python
+      #     p.tree-sitter-json
+      #     p.tree-sitter-jsonc
+      #     p.tree-sitter-yaml
+      #     p.tree-sitter-xml
+      #     p.tree-sitter-ninja
+      #     p.tree-sitter-meson
+      #     p.tree-sitter-markdown
+      #     p.tree-sitter-java
+      #     p.tree-sitter-html
+      #     p.tree-sitter-css
+      #     p.tree-sitter-cpp
+      #     p.tree-sitter-cmake
+      #     p.tree-sitter-c
+      #   ]));
+      #   config = toLuaFile ./plugins/treesitter.lua;
+      # }
       # indent-blankline (Blank Line)
       {
         plugin = indent-blankline-nvim;

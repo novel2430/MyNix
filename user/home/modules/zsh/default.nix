@@ -48,6 +48,7 @@ in
       yz = "${pkgs.yazi}/bin/yazi";
       grep = "${pkgs.ripgrep}/bin/rg -i";
       cp = "rsync -aHAX --info=progress2 --human-readable --";
+      reset-mon = "wlr-randr --output DP-1 --mode 1920x1080@60 --transform 90 --pos 0,0 && wlr-randr --output HDMI-A-1 --mode 1920x1080@60 --transform normal --pos 1080,0";
     };
     initContent = lib.mkMerge [
       # Other Stuff

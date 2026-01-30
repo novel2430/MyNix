@@ -231,8 +231,8 @@ let
       enable_snap = "true";
       enable_snap_off = "true";
       join_views = "false";
-      preview_base_border = "\\#${opt-config.colors.focus-background}cc";
-      preview_base_color = "\\#${opt-config.colors.focus-background}cc";
+      preview_base_border = "\\#${opt-config.colors.focus-background}0f";
+      preview_base_color = "\\#${opt-config.colors.focus-background}0f";
       preview_border_width = "0";
       quarter_snap_threshold = "50";
       snap_off_threshold = "10";

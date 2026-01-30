@@ -10,7 +10,7 @@ let
   flatpak = "${pkgs.flatpak}/bin/flatpak";
   #gedit = "${custom-pkgs.gedit}/bin/gedit";
   obs = "${pkgs.obs-studio}/bin/obs";
-  dingtalk = "${pkgs.nur.repos.novel2430.dingtalk}/bin/dingtalk";
+  dingtalk = "dingtalk";
   brave = "${pkgs.brave}/bin/brave";
   fcitx5-configtool = "${pkgs.fcitx5}/bin/fcitx5-configtool";
   motrix = "${pkgs.motrix}/bin/motrix";

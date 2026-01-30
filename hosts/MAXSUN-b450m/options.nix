@@ -75,8 +75,8 @@
       nur.repos.novel2430.hmcl
       wl-color-picker
       winetricks
-      android-studio
-      bilibili
+      # android-studio
+      # bilibili
       protonup-qt
       openttd
       ryubing #ryujinx
@@ -84,6 +84,8 @@
 
       lmms
       soundfont-fluid
+
+      codex
     ];
     flatpak-packages = [
       "org.audacityteam.Audacity"
