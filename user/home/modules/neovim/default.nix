@@ -63,6 +63,22 @@
           + ( toLua buildJdtConfig )
         ;
       }
+      # treesitter
+      {
+        plugin = (nvim-treesitter.withPlugins (p: [
+          p.python
+          p.java
+          p.html
+          p.typescript
+          p.tsx
+          p.javascript
+          p.vue
+          p.cpp
+          p.c_sharp
+          p.css
+        ]));
+        config = toLuaFile ./plugins/treesitter.lua;
+      }
       # indent-blankline (Blank Line)
       {
         plugin = indent-blankline-nvim;
