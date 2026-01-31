@@ -39,5 +39,6 @@ vim.opt.numberwidth = 4                         -- set number column width to 2 
 --vim.opt.shortmess:append "c"
 --vim.cmd "set whichwrap+=<,>,[,],h,l"
 --vim.cmd [[set iskeyword+=-]]
---vim.cmd [[set formatoptions-=cro]] -- TODO fjweijij
--- TODO hello
+--vim.cmd [[set formatoptions-=cro]]
+
+-- vim.opt.winborder = "rounded"
