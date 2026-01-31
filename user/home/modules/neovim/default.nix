@@ -42,21 +42,19 @@
         config = toLuaFile ./plugins/autopairs.lua;
       }
       # nvim-cmp
-      luasnip
       cmp-nvim-lsp
       cmp-path
       {
         plugin = nvim-cmp;
         config = toLuaFile ./plugins/cmp.lua;
       }
-      # nvim-telescope
-      telescope-ui-select-nvim
       nvim-web-devicons
-      plenary-nvim
+      # Mini Stuff
       {
-        plugin = telescope-nvim;
-        config = toLuaFile ./plugins/telescope.lua;
+        plugin = mini-pick;
+        config = (toLuaFile ./plugins/mini.pick.lua);
       }
+      mini-extra
       # LSP
       {
         plugin = nvim-lspconfig;
@@ -65,30 +63,6 @@
           + ( toLua buildJdtConfig )
         ;
       }
-      # treesitter
-      # {
-      #   plugin = (nvim-treesitter.withPlugins (p: [
-      #     p.tree-sitter-nix
-      #     p.tree-sitter-vim
-      #     p.tree-sitter-bash
-      #     p.tree-sitter-lua
-      #     p.tree-sitter-python
-      #     p.tree-sitter-json
-      #     p.tree-sitter-jsonc
-      #     p.tree-sitter-yaml
-      #     p.tree-sitter-xml
-      #     p.tree-sitter-ninja
-      #     p.tree-sitter-meson
-      #     p.tree-sitter-markdown
-      #     p.tree-sitter-java
-      #     p.tree-sitter-html
-      #     p.tree-sitter-css
-      #     p.tree-sitter-cpp
-      #     p.tree-sitter-cmake
-      #     p.tree-sitter-c
-      #   ]));
-      #   config = toLuaFile ./plugins/treesitter.lua;
-      # }
       # indent-blankline (Blank Line)
       {
         plugin = indent-blankline-nvim;
@@ -105,11 +79,6 @@
       {
         plugin = pkgs.nur.repos.novel2430.nvim-vscode-colorscheme;
         config = toLuaFile ./plugins/vscode-nvim.lua;
-      }
-      # Catppuccin colorscheme
-      {
-        plugin = catppuccin-nvim;
-        config = toLuaFile ./plugins/catppuccin-nvim.lua;
       }
     ];
   };

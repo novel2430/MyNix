@@ -1,21 +1,24 @@
 local on_attach = function(event)
   -- Basic Setting --
-  local signs = {
-    { name = "DiagnosticSignError", text = "E" },
-    { name = "DiagnosticSignWarn",  text = "W" },
-    { name = "DiagnosticSignHint",  text = "H" },
-    { name = "DiagnosticSignInfo",  text = "I" },
-  }
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
+  vim.diagnostic.config({
+		signs = {
+			text = {
+				[vim.diagnostic.severity.ERROR] = "E ",
+				[vim.diagnostic.severity.WARN] = "W ",
+				[vim.diagnostic.severity.INFO] = "I",
+				[vim.diagnostic.severity.HINT] = "H ",
+			},
+			linehl = {
+				[vim.diagnostic.severity.ERROR] = "Error",
+				[vim.diagnostic.severity.WARN] = "Warn",
+				[vim.diagnostic.severity.INFO] = "Info",
+				[vim.diagnostic.severity.HINT] = "Hint",
+			},
+		},
+	})
   local config = {
     -- disable virtual text
     virtual_text = false,
-    -- show signs
-    signs = {
-      active = signs,
-    },
     update_in_insert = true,
     underline = true,
     severity_sort = true,
@@ -57,24 +60,27 @@ local on_attach = function(event)
     })
   end
   -- keymap
-  local bufnr = event.buf
+  local map = vim.keymap.set
   local opts = { noremap = true, silent = true }
-  local map = function(key, command)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", key, command, opts)
-  end
-  map("gd", "<cmd>Telescope lsp_definitions<CR>")
-  map("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-  map("gf", "<cmd>lua vim.lsp.buf.format()<CR>")
-  map("gi", "<cmd>Telescope lsp_implementations<CR>")
-  map("<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-  map("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-  map("gr", "<cmd>Telescope lsp_references<CR>")
-  map("[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
-  map("gl", "<cmd>lua vim.diagnostic.open_float(nil, {focus=false})<CR>")
-  map("<leader>d", "<cmd>Telescope lsp_document_symbols<cr>")
-  map("]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
-  map("<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
-  map("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+  local extra = require("mini.extra")
+  -- LSP pickers
+  map("n", "gd", vim.lsp.buf.definition, opts)
+  map("n", "gi", function()
+    extra.pickers.lsp({ scope = "implementation" })
+  end, opts)
+  map("n", "gr", function()
+    extra.pickers.lsp({ scope = "references" })
+  end, opts)
+  map("n", "K", vim.lsp.buf.hover, opts)
+  map("n", "gf", function() vim.lsp.buf.format({ async = true }) end, opts)
+  map("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+  map("n", "<leader>rn", vim.lsp.buf.rename, opts)
+  map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+  map("n", "[d", function() vim.diagnostic.goto_prev({ border = "rounded" }) end, opts)
+  map("n", "]d", function() vim.diagnostic.goto_next({ border = "rounded" }) end, opts)
+  map("n", "gl", function() vim.diagnostic.open_float(nil, { focus = false }) end, opts)
+  map("n", "<leader>q", vim.diagnostic.setloclist, opts)
 end
 
 -- LSP autocmd for attach
@@ -85,9 +91,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+
 -- LSP capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 -- LSP Server Config
 local lsp_servers = {

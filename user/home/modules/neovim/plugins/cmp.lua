@@ -4,15 +4,8 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 end
 local cmp = require('cmp')
-local luasnip = require('luasnip')
-luasnip.config.setup {}
 
 local config = {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
   completion = { completeopt = 'menu,menuone,noinsert' },
   mapping = cmp.mapping.preset.insert {
     -- Select the [n]ext item
@@ -34,16 +27,6 @@ local config = {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
-    ['<C-l>'] = cmp.mapping(function()
-      if luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      end
-    end, { 'i', 's' }),
-    ['<C-h>'] = cmp.mapping(function()
-      if luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      end
-    end, { 'i', 's' }),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -51,7 +34,6 @@ local config = {
       vim_item.kind = string.format("[%s]", vim_item.kind)
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -60,7 +42,6 @@ local config = {
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer' },
   },

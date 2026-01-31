@@ -97,10 +97,24 @@ keymap("n", "<Leader>p", "\"+p", opts)
 -- Replace
 keymap("v", "p", "\"_d\"ap", opts)
 -- Telescope
-keymap('n', '<leader>fk', '<cmd>Telescope keymaps<CR>', opts)
-keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
-keymap('n', '<leader>fd', '<cmd>Telescope diagnostics<CR>', opts)
-keymap('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', opts)
-keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
-keymap('n', '<leader>fn', '<cmd>Telescope current_buffer_fuzzy_find<CR>', opts)
-keymap('n', '<leader>fs', '<cmd>Telescope lsp_document_symbols<CR>', opts)
+-- keymap('n', '<leader>fk', '<cmd>Telescope keymaps<CR>', opts)
+-- keymap('n', '<leader>fd', '<cmd>Telescope diagnostics<CR>', opts)
+-- keymap('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', opts)
+-- keymap('n', '<leader>fn', '<cmd>Telescope current_buffer_fuzzy_find<CR>', opts)
+-- keymap('n', '<leader>fs', '<cmd>Telescope lsp_document_symbols<CR>', opts)
+-- Mini.pick
+local map = vim.keymap.set
+local pick = require("mini.pick")
+local extra = require("mini.extra")
+-- -- Find Files
+map("n", "<leader>ff", function() pick.builtin.files() end, opts)
+-- -- Find Buffers
+map("n", "<leader>fb", function() pick.builtin.buffers() end, opts)
+-- -- Find Keymap
+map("n", "<leader>fk", function() extra.pickers.keymaps() end, opts)
+-- -- Find diagnostics
+map("n", "<leader>fd", function() extra.pickers.diagnostic({ scope = "current" }) end, opts)
+-- -- Find current file
+map("n", "<leader>fn", function() extra.pickers.buf_lines({ scope = "current" }) end, opts)
+-- -- Find Symbol
+map("n", "<leader>fs", function() extra.pickers.lsp({ scope = "document_symbol" }) end, opts)

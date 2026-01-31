@@ -4,9 +4,17 @@
 
     packages = [
       "com.tencent.wemeet"
+      "com.dingtalk.DingTalk"
     ]++ opt-config.flatpak-packages;
 
     uninstallUnmanaged = false;
+    update = {
+      onActivation = false;
+      auto = {
+        enable = true;
+        onCalendar = "weekly"; # Default value
+      };
+    };
 
     overrides = {
       global = {
