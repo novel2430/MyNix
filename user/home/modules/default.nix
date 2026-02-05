@@ -19,7 +19,7 @@
     ./fastfetch
     ./maven
     ./wezterm
-    # ./emacs
+    ./emacs
     # ./direnv
     ./rofi
     ./yazi
