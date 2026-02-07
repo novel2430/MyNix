@@ -37,9 +37,9 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    # package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
     # package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
-    package = if opt-config.nvidia-legacy then config.boot.kernelPackages.nvidiaPackages.legacy_535 else config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = if opt-config.nvidia-legacy then config.boot.kernelPackages.nvidiaPackages.legacy_535 else config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = lib.mkMerge [ 
       (lib.mkIf (builtins.elem "intel-nvidia" opt-config.gpu-type)  {

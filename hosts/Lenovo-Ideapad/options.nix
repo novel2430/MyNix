@@ -39,11 +39,17 @@
       # X11
       dwm = true;
       awesome = false;
+      i3 = false;
+      openbox = false;
       # Wayland
       dwl = true;
-      wayfire = false;
+      wayfire = true;
       river = false;
       labwc = false;
+      niri = false;
+      hypr = false;
+      sway = false;
+      mangowc = false;
     };
     # Packages For this Machine
     packages = with pkgs; [
@@ -65,10 +71,10 @@
     ];
 
     # Use Clash
-    use-clash = true;
+    use-clash = false;
     clash-dir = "/home/${username}/clash";
     # Proxy
-    use-proxy = true;
+    use-proxy = false;
     http-proxy-host = "127.0.0.1";
     http-proxy-port = "7890";
     https-proxy-host = "127.0.0.1";
@@ -91,7 +97,7 @@
     bluetooth = false;
 
     # No Keyboard
-    no-keyboard = false;
+    no-keyboard = true;
 
     # Alacritty Fonst Size
     alacritty-font-size = "13";
@@ -109,5 +115,26 @@
     
     # Force Use opengl in GTK Application
     force-gl-gtk = false;
+
+    # BT
+    use-qb = false;
+
+    colors = {
+      focus-border = "eceff4";
+      unfocus-border = "3f3f36";
+      bar-background = "2d2825";
+      foreground = "eceff4";
+      focus-background = "5e936c";
+      focus-sec-background = "827f45";
+      dmenu-background = "3e5f44";
+      dunst-background = "3e5f44";
+      dunst-border = "eceff4";
+      terminal-background = "2d2825";
+      terminal-foreground = "eceff4";
+      gray = "999797";
+      red = "bf616a";
+      green = "b1d196";
+      focus-background-rgb = "94,147,108"; # RGB of <focus-background>
+    };
   };
 }
